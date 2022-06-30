@@ -10,4 +10,5 @@ var removeDigit=function(stringNum, targetDigit){
     }
     // get max number by sorting ascending and getting the last number
     return stringArray.sort()[stringArray.length - 1]
+    
 }
