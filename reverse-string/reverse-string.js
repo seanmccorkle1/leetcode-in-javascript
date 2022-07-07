@@ -7,7 +7,7 @@ var reverseString = function(array) {
         let index=0
     let backIndex=array.length-1
 
-    while(index<=backIndex){
+    while( index <= backIndex){
         [array[index],array[backIndex]] = [array[backIndex],array[index]]
 
         index++
