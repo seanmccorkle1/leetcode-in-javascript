@@ -18,7 +18,7 @@ const strStr = function (bigString, substring) {
         index2
 
         // they have to be the same letter or the while loop wont work
-        while (bigString[index] == substring[index2] && index2 < substring.length){
+        while (bigString[index] == substring[index2]){
                 index++
                 index2++
 
