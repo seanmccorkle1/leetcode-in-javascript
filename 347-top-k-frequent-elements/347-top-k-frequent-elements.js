@@ -24,6 +24,10 @@ for (let [number, frequency] of freqMap) { // existing set || new Set()
   for (let backIndex = setArray.length - 1; backIndex >= 0; backIndex--) {
 
      const setElement = setArray[backIndex]
+    if (kMostFrequentArray.length == kMostFrequent) {
+        return kMostFrequentArray
+        // break
+    }
 
   if (setElement  !== undefined) {
     
@@ -33,11 +37,9 @@ for (let [number, frequency] of freqMap) { // existing set || new Set()
  
         kMostFrequentArray.push(...setElement)   // push the set as normal values
     }
-    
-    if (kMostFrequentArray.length == kMostFrequent) {
-        return kMostFrequentArray
-        // break
-    }
+      
+      // it must have k elements at all
+      // so putting the return in a if statement is fine
+      
   }
-  // return kMostFrequentArray
 }
