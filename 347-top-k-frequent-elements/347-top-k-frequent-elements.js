@@ -6,10 +6,10 @@ var topKFrequent = function (array, kMostFrequent) {
   const setArray = [] // array of sets
   const kMostFrequentArray = [] 
 
- for (const number of array) {
+  for (const number of array) {
     freqMap.set(number, (freqMap.get(number) || 0) + 1) // frequency + 1
   }
-
+    
   // there cant be two 5's in the map but there can be two numbers with a frequency of 5 each
 
 for (let [number, frequency] of freqMap) { // existing set || new Set()
@@ -34,14 +34,10 @@ for (let [number, frequency] of freqMap) { // existing set || new Set()
         kMostFrequentArray.push(...setElement)   // push the set as normal values
     }
     
-    
     if (kMostFrequentArray.length == kMostFrequent) {
         return kMostFrequentArray
         // break
     }
   }
-  
-  return kMostFrequentArray
+  // return kMostFrequentArray
 }
-
-// console.log(xd([-1, -1, 2, 2,1,3], 2), [-1, 2])
