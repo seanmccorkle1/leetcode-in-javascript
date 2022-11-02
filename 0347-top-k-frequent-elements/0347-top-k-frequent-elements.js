@@ -1,43 +1,46 @@
+
+
+
 var topKFrequent = function (array, kMostFrequent) {
+    const frequencyMap = new Map()
 
-  const freqMap = new Map()
-  const setArray = [] // array of sets
-  const kMostFrequentArray = [] 
+    // array of sets
+    const setArray = []
+    const mostFrequentArray = []
 
-  for (const number of array) {
-    freqMap.set(number, (freqMap.get(number) || 0) + 1) // frequency + 1
-  }
-    
-  // there cant be two 5's in the map but there can be two numbers with a frequency of 5 each
-
-for (let [number, frequency] of freqMap) { // existing set || new Set()
-    setArray[frequency] = (setArray[frequency] || new Set()).add(number)  // set.add returns the new set  
-  }
-
-// Higher frequency means a higher index, start from the back to get the most frequent
-// no sorting is why it looks like this
-  
-  setArray  
-
-  for (let backIndex = setArray.length - 1; backIndex >= 0; backIndex--) {
-
-     const setElement = setArray[backIndex]
-
-     if (setElement  !== undefined) {
-    
-    // kMostFrequent-- doesnt work because it could be 2 or 3 numbers pushed at once in the set
-    // it would need to be -= 2 or -=3 then
-   
- 
-        kMostFrequentArray.push(...setElement)   // push the set as normal values
+    for (const number of array) {
+        frequencyMap.set(number, (frequencyMap.get(number) || 0) + 1) // frequency + 1
     }
-      
-      // it must have k elements at all
-      // so putting the return in a if statement is fine
-      
-          if (kMostFrequentArray.length == kMostFrequent) {
-        return kMostFrequentArray
-    }
-  }
 
+
+    for (let [number, frequency] of frequencyMap) {
+        // the frequency is the index
+        
+        if (setArray[frequency] == undefined){
+            setArray[frequency] = [number]
+        }
+        else setArray[frequency].push(number)
+
+        // setArray[frequency] = (setArray[frequency] || new Set()).add(number)
+    }
+
+    // Higher frequency means a higher index, start from the back to get the most frequent
+    // no element has a frequency of 0, so it cant go to setArray[0]
+
+    setArray
+
+    for (let backIndex = setArray.length - 1; backIndex >= 0; backIndex--) {
+
+        const setElement = setArray[backIndex]
+
+        if (setElement != undefined) {
+            mostFrequentArray.push(...setElement)
+            // mostFrequentArray.push(...setElement)
+        }
+
+        if (mostFrequentArray.length == kMostFrequent) {
+            return mostFrequentArray
+        }
+    }
+    return mostFrequentArray
 }
