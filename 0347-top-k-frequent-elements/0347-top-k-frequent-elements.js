@@ -1,57 +1,52 @@
-
-
-
-var topKFrequent = function (array, kMostFrequent) {
+var topKFrequent = function (array, kMostFrequentNums) {
     const frequencyMap = new Map()
 
-    const doubleArray = []
+    const frequencyArray = []
     const returnArray = []
-
+    
     for (const number of array) {
-        frequencyMap.set(number, (frequencyMap.get(number) || 0) + 1) // frequency + 1
+        frequencyMap.set(number, (frequencyMap.get(number) || 0) + 1) // frequencyIndex + 1
     }
 
-    // the frequency IS the index        
-    // add the number as an [array] to make elements with the same frequency pushable
+    frequencyMap
+    frequencyMap.size
 
 
+    // arrays can hold multiple elements with the same frequency, so use [number]
     for (let [number, frequency] of frequencyMap) {
-        if (doubleArray[frequency] == undefined){
-            doubleArray[frequency] = [number]             
+
+        if (frequencyArray[frequency] == undefined){
+            frequencyArray[frequency] = [number] // higher index == more frequent
         }
+
         else {
-            doubleArray[frequency].push(number)
+            frequencyArray[frequency].push(number)
         }
 
     }
 
-    // Higher frequency means a higher index, start from the back to get the most frequent
-    // no element can have a frequency of 0, so it cant go to doubleArray[0]
+    // no element can have a frequency of 0, so frequencyArray[0] is empty
+    frequencyArray
 
-    doubleArray
 
-    for (let backIndex = doubleArray.length - 1; backIndex >= 0; backIndex--) {
-
-        const subarray = doubleArray[backIndex]
+    for (let backIndex = frequencyArray.length - 1; backIndex >= 0; backIndex--) {
+        const subarray = frequencyArray[backIndex]
 
         if (subarray != undefined) {
             returnArray.push(...subarray)
-            kMostFrequent -= subarray.length
+            kMostFrequentNums -= subarray.length
         }
 
-        kMostFrequent
-
-        if (kMostFrequent === 0){
+        if (kMostFrequentNums == 0){
             return returnArray
         }
 
-        // if (returnArray.length == kMostFrequent) {
+        //   if (returnArray.length == kMostFrequentNums) {
         //     return returnArray
         // }
     }
-    // return returnArray
+    return returnArray
 }
-// console.log(topKFrequent([5,3,1,1,1,3,73,1], 2))
 
-// console.log(topKFrequent([1, 2, 6, 6, 6, 6, 7, 7, 7, 8, 8], 2), [6, 7])
-// console.log(topKFrequent([8, 8, 8, 8], 1),  [8])
+console.log(topKFrequent([7,7,7,11,11,11,15], 2), [7, 11], "two most frequent elements are 7 and 1")
+// console.log(topKFrequent([7,7,7,11,11,11,15], 3), [7, 11], "k is in the range 1 to 3")
