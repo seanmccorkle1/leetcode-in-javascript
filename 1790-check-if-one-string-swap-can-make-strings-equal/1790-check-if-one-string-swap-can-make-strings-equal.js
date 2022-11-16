@@ -18,9 +18,9 @@ var areAlmostEqual= function(string1, string2){
  
         diffCount++
  
-        if (diffCount >= 3) {
-            return false
-        }
+        // if (diffCount >= 3) {
+        //     return false
+        // }
       
         if (twoLettersArray.length === 0) {
             twoLettersArray = [currString1Letter, currString2Letter]
