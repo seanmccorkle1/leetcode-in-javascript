@@ -1,6 +1,4 @@
-
-
-// let output = [[-4,0,4],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2],[-1,0,1]]
+// let output = [[-4,0,4],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2]z[-1,0,1]]
 // output.length
 
 // let expected = [[-4,0,4],[-4,1,3],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2],[-1,0,1]]
@@ -43,7 +41,7 @@ var threeSum = function(array) {
         // getting 2 equal numbers right next to each other
         // means that that three-sum has already been done in the loop before
 
-        if (frontIndex >= 1 && prevNum === currNum) {
+        if (prevNum === currNum) {
             continue outerFrontIndexLoop
         }
 
