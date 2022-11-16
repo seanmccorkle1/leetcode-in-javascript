@@ -1,20 +1,12 @@
-// let output = [[-4,0,4],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2]z[-1,0,1]]
-// output.length
-
-// let expected = [[-4,0,4],[-4,1,3],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2],[-1,0,1]]
-// expected.length
-
-
 var threeSum = function(array) {
 
-    let indexArray = []
-    let zero = 0
+    const indexArray = []
 
     // sort first
     array = array.sort((a, b) => a - b)
 
-
     outerFrontIndexLoop:
+
     for (let frontIndex = 0; frontIndex < array.length - 2; frontIndex += 1) {
 
         frontIndex
@@ -41,7 +33,7 @@ var threeSum = function(array) {
         // getting 2 equal numbers right next to each other
         // means that that three-sum has already been done in the loop before
 
-        if (prevNum === currNum) {
+        if (frontIndex >= 1 && prevNum === currNum) {
             continue outerFrontIndexLoop
         }
 
@@ -58,9 +50,10 @@ var threeSum = function(array) {
         // loop 2: [-6, X, -4, 10] - three sum            
         // loop 3: [X, -5, -4, 10]
         
-        
-        while (midIndex < backIndex) {
+    
+        // dont look at the same number
 
+        while (midIndex < backIndex) {
             frontIndex
             midIndex
             backIndex
@@ -76,32 +69,23 @@ var threeSum = function(array) {
             
             // loop 5 is a repeat of the last loop, curr and prev are the same, continue
             // after loop 5(index < array.length - 2) isnt true in the outer loop, break everything
+            let nextMidNum = array[midIndex + 1]
+            let prevRightNum = array[backIndex -  1]
 
-            // [-4, -3, -2, -1, -1, 0, 0, 1, 2, 3, 4]
-        
             
             let frontNum = array[frontIndex]
             let midNum = array[midIndex]
             let rightNum = array[backIndex]
 
-            let nextMidNum = array[midIndex + 1]
-            let prevRightNum = array[backIndex -  1]
+            // After [-4, 0, 4] go straight to [-4, 1, 3] by moving BOTH indexes 
+            // If you only move one index like [-4, 0, X]
+            // there wont be another answer thats NOT X = 4 to sum it exactly to 0.
 
             let threeSum = frontNum + midNum + rightNum    
 
-            frontNum
-            midNum
-            rightNum
+            if (threeSum === 0) {
 
-			// if we find the zero threeSum, do midIndex += 1 and backIndex -= 1
-            // to find other 3-threeSums where `frontIndex` is the same
-
-            // store the three-sum in indexArray
-
-
-            if (threeSum === zero) {
-
-                currNum
+                frontNum
                 midNum
                 rightNum
 
@@ -114,28 +98,25 @@ var threeSum = function(array) {
 
                 midIndex
 
-                if (midNum === nextMidNum){                    
-                    midIndex
+                if (midNum === nextMidNum){
 
+                    midNum
+                    nextMidNum
+                    
                     skipMidDuplicates:
-                    while (midNum === nextMidNum) { 
+                    while (array[midIndex] === array[midIndex + 1]) { 
                         midIndex += 1
-                        midNum = array[midIndex]
-                        nextMidNum = array[midIndex + 1]
                 }
             }
-
+                
                 // skip values that have already been seen, 
                 // otherwise, [-2,0,0,2,2] would result in [[-2,0,2], [-2,0,2]]
 
-                if (rightNum === prevRightNum){
+                if (array[backIndex] == array[backIndex - 1]){
 
                     skipBackDuplicates:
-
-                    while (rightNum === prevRightNum) {
+                    while (array[backIndex] === array[backIndex - 1]) {
                         backIndex -= 1
-                        rightNum = array[backIndex]
-                        prevRightNum = array[backIndex - 1]
                     }    
                 }
 
@@ -148,14 +129,13 @@ var threeSum = function(array) {
 
             // if the sum is too low, move `midIndex` to the right to get a higher number 
 
-            else if (threeSum < zero) {
+            else if (threeSum < 0) {
 				midIndex += 1
 			}
 
-            // if the sum is too high (threeSum > zero), decrement `backIndex` to get a lower number
-
-            else if (threeSum > zero) { 
-				backIndex -= 1
+            // if the sum is too high, decrement `backIndex` to get a lower number
+            else if (threeSum > 0) { 
+                backIndex -= 1
             }
         } // end while, go back to the for loop
 	}
