@@ -1,48 +1,80 @@
-var areAlmostEqual= function(string1, string2){
 
-    let diffCount = 0
-    let twoLettersArray = []
-    
-    if (string1 === string2){
+
+var areAlmostEqual = function(string1, string2) {
+
+    let differenceCount = 0
+    let twoLetterArray = []
+
+    if (string1 === string2) {
         return true
     }
-    
-    for (let index = 0; index < string1.length; index++) {
- 
-        let currString1Letter = string1[index]
-        let currString2Letter = string2[index]
+
+    // no way to make "asd" and "zxcv" equal to each other with a swap
+    // you have to add a letter
+
+    if (string1.length != string2.length) {
+        return false
+    }
+
+    for (let index = 0; index < string1.length; index += 1) {
+
+        index
+
+        const currString1Letter = string1[index]
+        const currString2Letter = string2[index]
 
         if (currString1Letter === currString2Letter) {
-          continue // no difference, dont do diffCount++
+            continue // no need to swap the letters if theyre already equal
+        } 
+
+        // if it skips the `if` statement,
+        // that means the letters are different
+
+        differenceCount += 1
+
+        
+        // you can only swap exactly 2 letters
+        if (differenceCount >= 3) {
+            return false 
+        } 
+        twoLetterArray
+
+
+        if (twoLetterArray.length === 0) {
+            twoLetterArray = [currString1Letter, currString2Letter] 
+            continue // go to the next letter
         }
- 
-        diffCount++
- 
-        // if (diffCount >= 3) {
-        //     return false
-        // }
-      
-        if (twoLettersArray.length === 0) {
-            twoLettersArray = [currString1Letter, currString2Letter]
-            continue
+        
+        
+        // when twoLetterArray gets ["a", "b"], the loop goes back to the top
+        // now ["a", "b"] are the previous letters
+        twoLetterArray
+
+        const prevString1Letter = twoLetterArray[0]
+        const prevString2Letter = twoLetterArray[1]
+
+        prevString1Letter
+        currString2Letter
+
+        prevString2Letter
+        currString1Letter
+        
+        // dont return false, but dont return true yet
+        // the differenceCount has to be 2
+
+        if (prevString1Letter === currString2Letter && prevString2Letter === currString1Letter) {
+            continue 
+        }
+
+        else return false
+        // return false
     }
- 
-    let prevString1Letter = twoLettersArray[0]
-    let prevString2Letter = twoLettersArray[1]
- 
- 
-    if (prevString1Letter === currString2Letter && prevString2Letter === currString1Letter) {
-        continue   // dont return false
-    }
-    return false
-}
-  
-    // diffCount 0 means theyre the same
-    // need 2 letters to swap
-  
-   if (diffCount === 2){
+
+    differenceCount
+
+    if (differenceCount === 2) {
         return true
     }
-    else return false
+    else return false    
+    
 }
- 
