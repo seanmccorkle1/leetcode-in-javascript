@@ -1,9 +1,9 @@
-var removeElements = function(head, val) {
+var removeElements = function(head, numToDelete) {
     if (!head) return head;
 	
 	// if head is the value were deleting and if there is any repetition lets handle that case first otherwise we'll just break out of the loop
     while(head) {
-        if(head.val === val) {
+        if(head.val === numToDelete) {
             head = head.next;
         } else {
             break;
@@ -15,7 +15,7 @@ var removeElements = function(head, val) {
 	// otherwise iterate forward
     let curr = head;
     while(curr && curr.next) {
-        if (curr.next.val === val) curr.next = curr.next.next;
+        if (curr.next.val === numToDelete) curr.next = curr.next.next;
         else curr = curr.next;
     }
     
