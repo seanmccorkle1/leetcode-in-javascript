@@ -5,7 +5,7 @@ var minimumAverageDifference = function (array) {
 
     let minFound = Infinity
     let minDiff = Infinity
-    let indexOfMinDifference = 0
+    let indexOfMinDifference;
 
         // parantheses on (index+1) cause  theres / and +
     //Math floor so you dont get array decimal with the division
