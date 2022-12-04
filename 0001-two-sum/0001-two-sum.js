@@ -1,7 +1,6 @@
 var twoSum = function(array, targetNumber) {
 
     // const returnArray = [...array]
-    let returnArray = []
 
     for (let index=0; index < array.length; index += 1){
         let number=array[index]
