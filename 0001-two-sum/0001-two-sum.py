@@ -7,5 +7,4 @@ class Solution:
             if remainder in obj: 
                 pastIndex = obj[remainder]
                 return [pastIndex, currentIndex]  # [indexOfRemainder, currentIndex]
-            else: 
-                obj[num] = currentIndex
+            obj[num] = currentIndex
