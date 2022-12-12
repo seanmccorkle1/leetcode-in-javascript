@@ -1,39 +1,51 @@
-
-
-
+/**
+ * @param {number[]} barcodes
+ * @return {number[]}
+ */
 
 var rearrangeBarcodes = function(inputArray) {
-    const map = new Map()
+    
+    const map=new Map()
+    
+    //separate loop to set the map
+    for (const letter of inputArray){
 
-    for (const element of inputArray) {
-        map.set(element, (map.get(element) || 0) + 1)
-    }
+        let frequency = map.get(letter)
 
-
-    const array = Array.from(map.keys()).sort(((a, b) => map.get(b) - map.get(a)))
-    const uniqueNum = inputArray.length
-
-    let index = 0 
-    const resultArray = []
-
-
-    for (const element of array) {
-        let count = map.get(element)
-
-        while (count > 0) {
-            resultArray[index] = element
-            index += 2
-
-            if (index >= uniqueNum) {
-                index = 1
-            }
-
-            count -= 1
+        if (map.get(letter) == undefined){
+            map.set(letter, 1)
+        }
+        
+        else if (map.get(letter)) {
+            map.set(letter, frequency + 1)
         }
     }
     
+    let ascArray = Array.from(map.keys()).sort((a,b)=> map.get(b) - map.get(a)) 
+    
+    let index=0
+    let resultArray=[]
+    
+    for (const letter of ascArray){
+
+        let frequency = map.get(letter)
+        
+
+        while (frequency > 0){
+            
+            resultArray[index] = letter
+            index += 2
+            
+            // check after the index is updated
+
+            if (index >= inputArray.length){
+                index= 1 // odds [1, 3, 5]
+            }
+            
+            frequency -= 1
+        }
+    }
     return resultArray
 }
 
-console.log(rearrangeBarcodes([1, 1, 1, 2, 2, 2]), [2, 1, 2, 1, 2, 1])
-// rearrangeBarcodes([1 ,12, 0, -12])
+console.log(rearrangeBarcodes(["a", "a", "a", "a", "b", "b", "b"]), [ 'a', 'b', 'a', 'b', 'a', 'b', 'a' ])
