@@ -18,7 +18,10 @@ var finalPrices = function(array) {
         array.shift()
         
         const lowerNumExists = array.find(num => num <= originalNum)
-        let difference = originalNum - lowerNumExists
+
+        let lowerNum = lowerNumExists
+        
+        let difference = originalNum - lowerNum
         
         if (lowerNumExists){
             returnArray.push(difference)
