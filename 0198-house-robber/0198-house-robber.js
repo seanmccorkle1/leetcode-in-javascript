@@ -1,13 +1,18 @@
 var rob = function(inputArray) {
     
+    
+    if (inputArray.length === 0) {
+        return 0
+    }
+
+    
+    // for rob([8])  array[1] = Math.max(8, inputArray[1]) returns NaN
+    // Math.max and min always privilege NaN
+    
     if (inputArray.length===1){ 
-        // || inputArray.length==2){
         return Math.max(...inputArray)
     }
     
-        if (inputArray === null || inputArray.length === 0) {
-        return 0
-    }
 
     let array = new Array(inputArray.length)
 
