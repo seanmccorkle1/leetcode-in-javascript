@@ -1,6 +1,7 @@
 var rob = function(inputArray) {
     
-    if (inputArray.length===1 || inputArray.length==2){
+    if (inputArray.length===1){ 
+        // || inputArray.length==2){
         return Math.max(...inputArray)
     }
     
