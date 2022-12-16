@@ -13,15 +13,20 @@
  */
 
 var insertIntoBST = function(tree, value) {
+
     if (tree == null) {
-        return new TreeNode(value);
+        return new TreeNode(value)
     }
     
     if(value < tree.val) {
-        tree.left = insertIntoBST(tree.left, value);
-    } else {
-        tree.right = insertIntoBST(tree.right, value);
+        tree.left = insertIntoBST(tree.left, value)
+    } 
+    else {
+        tree.right = insertIntoBST(tree.right, value)
     }
     
-    return tree;
-};
+    return tree
+}
+
+
+insertIntoBST([4, 2, 7, 1, 3], 5)
