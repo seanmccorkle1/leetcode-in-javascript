@@ -1,77 +1,44 @@
 var letterCombinations = function(digitString) {
     
-    if (digitString.length === 0) {
+    if (digitString == ""){ 
         return []
     }
-
-
+    
     let array = []
-
-
     const obj = { 2: 'abc', 3: 'def', 4: 'ghi', 5: 'jkl', 6: 'mno', 7: 'pqrs', 8: 'tuv', 9: 'wxyz' }
-
-
+    
     digitString
     digitString.length
+    
+    const fillArray = (inputString, index)  => {
+        
+        // early if statement in functions
 
+        if (inputString.length === digitString.length){
+            array.push(inputString)
 
-
-    const fillArrayFn = (index, inputString)  => {
-
-
-        array
-
-
-        if (inputString.length == digitString.length) {
-
-
-            array
-            array.push(inputString) 
-          
-            array
-
-
-            // just need to push to the array
-            // you dont have to return anything
-
-
+            // break the fillArray() call before it gets to the end
             return 
         }
 
-
-        index
-        digitString
-
-
-        digitString[0]
-        digitString[1]
-
-
-        obj[digitString[index]]
-
-
-        let digit= digitString[index]
+        let digit = Number(digitString[index])
+        
         let threeLetters = obj[digit]
 
-
-
-        for (const letter of threeLetters) {
-            inputString
-            inputString + letter
-
-
-            fillArrayFn(index + 1, inputString + letter)
+        for (const letter of threeLetters){
+            fillArray(inputString + letter, index + 1)
         }
-
-
-        array
     }
     
+    // fillArray(index, inputString), 
+    // index 0 maps to string ""
     
-    // have to call the function outside the function itself for backtracking
-
-
-    fillArrayFn(0, "") // (index, inputString), 0 maps to ''
+    // use literals instead of variables in backtracking
+    // dont use +=, either
+    
+    // this is the first base call 
+    
+    fillArray("", 0)
     
     array
     return array
