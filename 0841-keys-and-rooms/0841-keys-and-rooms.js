@@ -1,14 +1,82 @@
-/**
- * @param {number[][]} rooms
- * @return {boolean}
- */
-var canVisitAllRooms = function(R) {
-    let vis = new Uint8Array(R.length), stack = [0], count = 1
-    vis[0] = 1
-    while (stack.length) {
-        let keys = R[stack.pop()]
-        for (let k of keys)
-            if (!vis[k]) stack.push(k), vis[k] = 1, count++
+var canVisitAllRooms = function (doubleArray) {
+
+
+    // same as a boolean array
+    let roomsVisitedArray = new Uint8Array(doubleArray.length)
+
+
+    const stack = [0]
+
+
+    // automatically get access to room 0
+    let roomsVisited = 1
+
+
+    roomsVisitedArray[0] = 1
+    roomsVisitedArray
+
+
+
+    doubleArray
+
+
+    while (stack.length != 0) {
+
+
+        stack
+        let mostRecentKey = stack.pop()
+        stack
+
+
+        mostRecentKey
+
+
+        // keys in room1, keys in room2
+        let keysInRoomArray = doubleArray[mostRecentKey]
+
+
+        for (let key of keysInRoomArray) {
+
+
+            key
+            roomsVisitedArray
+
+
+            const roomIsUnvisited = roomsVisitedArray[key] == 0
+
+
+
+            if (roomIsUnvisited) {
+
+
+                stack.push(key)
+                stack
+
+
+                // now we visited it
+                roomsVisitedArray[key] = 1
+                roomsVisitedArray
+
+
+                roomsVisited += 1
+            }
+        }
     }
-    return R.length === count
-};
+
+
+    doubleArray
+    doubleArray.length
+
+
+    roomsVisited    
+
+
+    // CAN visit all rooms
+    if (doubleArray.length == roomsVisited) {
+        return true
+    }
+
+
+    // cant visit all
+    return false
+}
