@@ -13,7 +13,7 @@ var isPowerOfThree = function(num) {
     
     const power = Math.log(num) / Math.log(3)
 
-    let smallRange  = Math.abs(power  - Math.trunc(power))
+    let smallRange  = Math.abs(power  - parseInt(power))
 
     if (smallRange <= 1e-10){
         return true
