@@ -13,9 +13,9 @@ var isPowerOfThree = function(num) {
     
     const power = Math.log(num) / Math.log(3)
 
-    let smallRange  = Math.abs(power  - Math.round(power))
+    let smallRange  = Math.abs(power  - Math.trunc(power))
 
-    if (smallRange < 1e-10){
+    if (smallRange <= 1e-10){
         return true
     }
 
@@ -33,5 +33,6 @@ var isPowerOfThree = function(num) {
 // console.log(isPowerOfThree(59049))
 // isPowerOfThree(19682)
 // isPowerOfThree(19683)
+
 isPowerOfThree(0)
 isPowerOfThree(-1)
