@@ -1,3 +1,14 @@
+/**
+ Many question are incorrectly labeled, but I think less than 10 min for easy, 20 min for medium, and 40 min for hard 
+ is a good strategy. How many - depend on your schedule, but I think the number isnt really important. Learning from the question youve solved is indeed more essential.
+* 
+ * @param {string} 
+ * @return {number}
+ *
+ * 
+*/
+
+
 class RandomizedSet {
 
     constructor() {
@@ -5,82 +16,107 @@ class RandomizedSet {
         this.array = [];
     }
 
-    insert(key) {
-        
-        // if it already has the element, return falseand dont insert
+    // if it already has the element, return false and dont insert
 
-        if (this.map.has(key)) {
+    insert(keyString) {
+
+        if (this.map.has(keyString)) {
             return false // cut early
         }
 
+
         // start at index 0 by doing while array is still at []
-        this.map.set(key, this.array.length)
+        keyString
 
-        this.array.push(key)
+        this.map.set(keyString, this.array.length)
 
+        this.map
+
+
+        this.array.push(keyString)
+        
         this
-
         return true
+
     }
 
 
-    remove(key) {
+    remove(keyString) {
 
         // if it doesnt have it, you cant remove it
-        if (!this.map.has(key)) {
+
+        this.map
+
+        if (!this.map.has(keyString)) {
             return false
         }
 
-        key
+        keyString
 
-        let deleteIndex = this.map.get(key)
+        let deleteIndex = this.map.get(keyString)
+
         let lastIndex = this.array.length - 1
-
-        //need semicolons with [] and "this" and assignment
-        let lastElement = this.array[lastIndex];
-
-        deleteIndex 
-        lastIndex 
-        lastElement;
+        let lastElement = this.array[lastIndex]; // NEED SEMICOLON WITH "THIS" AND []
 
         // this is how you swap
-        // [firstPosition, lastPosition] = [lastElement, firstElement]       
+        // [firstPosition, lastPosition] = [lastElement, firstElement]
 
-        [this.array[deleteIndex], this.array[lastIndex]] =  [this.array[lastIndex], this.array[deleteIndex]]    
 
+        // [position0, lastPosition] = ["second", valToDelete]
+
+        [this.array[deleteIndex], this.array[lastIndex]] = [this.array[lastIndex], this.array[deleteIndex]];
 
         this.array
+
+        // pop to keep array.length consistent
         this.array.pop()
+
+
         this.array
 
         // lastElement is at the original deleted elements place now
         // you have to update the index
 
+
         this.map
         this.map.set(lastElement, deleteIndex)
         this.map
 
-
         // delete at the end
-        this.map.delete(key)
+        this.map.delete(keyString)
 
         this.map
         this.array
 
+
         return true
     }
 
-
     getRandom() {
-        const randIndex = Math.floor(Math.random() * this.array.length)
+        
+        const randIndex = Math.trunc(Math.random() * this.array.length)
         return this.array[randIndex]
     }
 
 }
 
+
 const randomizedSet = new RandomizedSet()
+randomizedSet
 
-randomizedSet.insert("first")
-randomizedSet.insert("second")
+console.log(randomizedSet.insert("first"), true)
+randomizedSet
 
-randomizedSet.remove("first")
+console.log(randomizedSet.insert("second"), true)
+randomizedSet
+
+console.log(randomizedSet.insert("second"), false, "already there")
+randomizedSet
+
+console.log(randomizedSet.remove("first"), true)
+
+console.log(randomizedSet.remove("first"), false, "can't remove it, `first` isnt there")
+
+randomizedSet.insert("third")
+
+randomizedSet.getRandom()
