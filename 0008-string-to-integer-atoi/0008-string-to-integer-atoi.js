@@ -6,17 +6,14 @@
  * @return {number}
  */
 
-
 var myAtoi = function (stringnum) {
-
-    stringnum
 
     stringnum = stringnum.trim()
 
     // param is a stringnum, so "" at worst    
     // check this after the trim(), so myAtoi("    ") should return 0
 
-    if (stringnum == "" || stringnum == null) {
+    if (stringnum == "" || stringnum == null)  { 
         return 0
     }
 
@@ -24,94 +21,81 @@ var myAtoi = function (stringnum) {
     let sign = 1
 
     let index = 0
-    let currNum = 0
 
-    let currString = ""
+    let currNum = 0
     let firstChar = stringnum[0]
 
     if (firstChar == '+') {
-        index += 1 // start at the digit in "+3154", not the "+"
+        index += 1 // start at "3" in "+3154", not the "+"
     }
 
     // only if the first non-whitespace character is + or -
     // -42 is valid, 42-3 is not
-    else if (firstChar == '-') {
+
+    if (firstChar == '-') {
         sign = -1
         index += 1
     }
+
+    // "3".charCodeAt() = 51
+    // String.fromCharCode(51) = "3"
+
+    // "w".charCodeAt() - 48 = 71
+    // 71 is not in the range [0-9], so 71 must be a letter
+
     stringnum
-
-    // index was already set before this
-    // for (; index < stringnum.length; index += 1) {
-
     index
 
+
     while (index < stringnum.length) {
+    
+        index
 
         let charCode = stringnum.charCodeAt(index) - 48
-        const charIsNotANumber = (charCode <= -1 || charCode >= 10)
 
+        const charIsNotANumber = (charCode <= -1 || charCode >= 10)
 
         // -1 and 10 are not in the range [0 - 9]    
 
         if (charIsNotANumber) {
-            break
+            break // break before adding the letter
         }
 
-        // if (charCode <= -1 || charCode >= 10) {
-        //         break
-        // }
-
-        currNum
-
-
-
-
-        // cant start a left-hand side with a "-"
-
-
-        // if (currString > 2147483647 / 10 || currNum > (2147483647 - charCode) / 10) {
-
-        //     if (sign == 1) {
-        //         return max 
-        //     }
-
-        //     else if (sign == -1){
-        //         return min
-        //     }
-
-        // }
-
-        // if (currNum > 2147483647 / 10 || currNum > (2147483647 - charCode) / 10) {
-        //     return sign == 1 ? 2147483647 : -2147483648
-        // } 
-
-        // else {
+        // convert these string digits into an INTEGER
+        // "0032" -> 32
 
         let digit = charCode
+
+        // start with (0x10) + 3 = 3
+        // then (3 x 10) + 1 = 31
+        // each extra digit is another place, ie x10
+
+        currNum
+        currNum * 10
 
         currNum
         digit
 
-        currNum = (currNum * 10) + digit
+        let sum = (currNum *  10) + digit
 
-        currString += digit
+        // overwrite, dont do += or you get 3 + 31 (34)
 
-        // currNum = currNum * 10 + charCode
+        currNum = sum
 
-        let max = 2 ** 31 - 1
 
-        // need Math.pow with negatives in an exponent
+        // need Math.pow with negatives in an exponent instead of -2 ** 31
 
+        let max = Math.pow(2, 31) - 1
         let min = Math.pow(-2, 31)
 
-        
         // it becomes a negative at the end, 
         //right now you only look at unsigned (positive)
 
         // if num is 2147483647, its ok, its inclusive
 
-        if (currString > max) {
+        // check AFTER currNum is updated
+
+        if (currNum > max) {
 
             if (sign == 1) {
                 return max
@@ -120,54 +104,31 @@ var myAtoi = function (stringnum) {
             else if (sign == -1) {
                 return min
             }
-
         }
-
-
-        // }
 
         index += 1
     }
 
+    sign
+
+    currNum
+
     if (sign == -1){
-        return currString * -1
+        return currNum * -1
     }
 
-    else return currString
-    sign
+    else return currNum
 }    
-    // it becomes a negative at the end
 
+// console.log(myAtoi("3154 with words"), 3154)
+// console.log(myAtoi("+3154 with words"), 3154)
 
-    // check one more time
-
-    // if (currString > 2147483647 / 10 || currNum > (2147483647 - charCode) / 10) {
-
-    //     if (sign == 1) {
-    //         return max 
-    //     }
-
-    //     else if (sign == -1){
-    //         return min
-    //     }
-    // } 
-
-
-    // return currNum * sign
-
-console.log(myAtoi("+3154 with words"), 3154)
+// console.log(myAtoi("   -42"),  -42)
 
 // console.log(myAtoi("-999999999999999"),  -2147483648)
 // console.log(myAtoi("+999999999999999"),  2147483647)
 
-// console.log(myAtoi("3154 with words"), 3154)
-// console.log(myAtoi("3a154 with words"), 3)
-
-// console.log(myAtoi("   -42"),  -42)
-// console.log(myAtoi("42-3"), 42)
-
-
-// console.log(myAtoi("0032"),  32)
+console.log(myAtoi("0032"),  32)
 
 // console.log(myAtoi(""),  0)
 // console.log(myAtoi("   "),  0)
