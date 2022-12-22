@@ -102,13 +102,21 @@ var myAtoi = function (stringnum) {
         let max = 2 ** 31 - 1
 
         // need Math.pow with negatives in an exponent
+
         let min = Math.pow(-2, 31)
 
+        
+        // it becomes a negative at the end, 
+        //right now you only look at unsigned (positive)
 
-        if (currString > max ) {  // || currNum > (2147483647 - charCode) / 10) {
+        // if num is 2147483647, its ok, its inclusive
+
+        if (currString > max) {
+
             if (sign == 1) {
                 return max
-            } 
+            }
+
             else if (sign == -1) {
                 return min
             }
@@ -121,9 +129,14 @@ var myAtoi = function (stringnum) {
         index += 1
     }
 
+    if (sign == -1){
+        return currString * -1
+    }
 
+    else return currString
+    sign
+}    
     // it becomes a negative at the end
-    return currString * sign
 
 
     // check one more time
@@ -141,7 +154,6 @@ var myAtoi = function (stringnum) {
 
 
     // return currNum * sign
-}
 
 console.log(myAtoi("+3154 with words"), 3154)
 
