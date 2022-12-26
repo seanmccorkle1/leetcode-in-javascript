@@ -33,7 +33,7 @@ var commonFactors = function(num1, num2) {
 
     let commonFactors = [1]
     let nonCommonFactors = [0]
-    
+
     let quotient1 = 0
     let quotient2 = 0
 
@@ -85,9 +85,12 @@ var commonFactors = function(num1, num2) {
 
         index++
     }
-    
+
+    nonCommonFactors
+        
     commonFactors
     commonFactors.length
+
 
     return factorCount
 }
