@@ -23,9 +23,11 @@ var canJump = function(array) {
             return true
         }
 
-        // got a 0, end it
+        
+        // got a 0 and it didnt make it to the end
+
         if (max <= index && num == 0) {
-            return false
+            break
         }
 
         index++
