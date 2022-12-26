@@ -13,7 +13,7 @@
 
 var commonFactors = function(num1, num2) {
 
-    let factorCount = 1
+    let factorCount = 0
 
     // const lastFactor = (Math.min(num1, num2))
 
@@ -36,13 +36,10 @@ var commonFactors = function(num1, num2) {
     num2
 
     lastFactor
-
-    for (let index = 2; index <= lastFactor; index++) {
+    
+    for (let index = 0; index <= lastFactor; index++) {
 
         index
-
-
-
 
         const indexIsCommonFactor = ((num1 % index)== 0 && (num2 % index)== 0)
 
