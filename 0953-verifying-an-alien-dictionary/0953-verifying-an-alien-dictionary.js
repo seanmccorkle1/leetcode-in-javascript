@@ -30,7 +30,7 @@ var isAlienSorted =function(stringArray, alphabet){
 //        }
    
     
-        if (leftWord.includes(rightWord) && leftWord.length  > rightWord.length) {
+        if (leftWord.includes(rightWord) && leftWord.length!= rightWord.length) {
             return false
         }
         
