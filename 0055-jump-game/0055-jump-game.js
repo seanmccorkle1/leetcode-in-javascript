@@ -1,23 +1,41 @@
 
 
-var canJump = function(nums) {
-  let idx = 0;
-  let max = 0;
-  let target = nums.length - 1;
 
-  while(idx < nums.length) {
-    max = Math.max(max, idx + nums[idx]);
+var canJump = function(array) {
+    let index = 0
+    let max = 0
+
+    let lastIndex = array.length - 1
+
+    lastIndex
+
     
-    if (max >= target) {
-      return true;
+    while (index < array.length) {
+
+        let num = array[index]
+
+        index
+        index + array[index]
+
+        max = Math.max(max, index + array[index])
+        
+        max
+
+
+        if (max >= lastIndex) {
+            return true
+        }
+
+        // got a 0, end it
+        if (max <= index && num == 0) {
+            return false
+        }
+
+        index++
     }
-    
-    if (max <= idx && nums[idx] === 0) {
-      return false;
-    }
-    
-    idx++;
-  }
-  
-  return false;
-};
+
+    return false
+
+}
+
+console.log(canJump([2,3,1,1,4]), true, "1 step to 3 and end at the last element")
