@@ -11,7 +11,6 @@ var isAlienSorted =function(stringArray, alphabet){
         let letterIndex = alphabet.indexOf(letter)
             
         letterMap.set(letter, letterIndex)
-        // letterMap.set(letter, index)
     }
     
     
@@ -25,12 +24,13 @@ var isAlienSorted =function(stringArray, alphabet){
 
         leftWord
         rightWord
-        
-        if (leftWord == rightWord){
-            continue
-        }
-        
-        if (leftWord.includes(rightWord) == true && leftWord.length  > rightWord.length) {
+       
+//         if (leftWord == rightWord){
+     //       continue
+//        }
+   
+    
+        if (leftWord.includes(rightWord) && leftWord.length  > rightWord.length) {
             return false
         }
         
