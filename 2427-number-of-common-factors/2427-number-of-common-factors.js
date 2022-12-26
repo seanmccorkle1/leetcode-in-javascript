@@ -13,21 +13,27 @@
 
 var commonFactors = function(num1, num2) {
 
-    let factorCount = 0
+    let factorCount = 1
+    let index = 2
 
-    // const lastFactor = (Math.min(num1, num2))
+    // const lowestNum = (Math.min(num1, num2))
 
     num1
     num2
 
-    // const lastFactor = (Math.min(num1, num2) + 1)
-    const lastFactor = (Math.min(num1, num2))
+    const lowestNum = 
 
-    lastFactor
+    Math.min(
+        num1,  
+        num2) 
 
-    let commonFactors = []
-    let nonCommonFactors = []
 
+    lowestNum
+
+
+    let commonFactors = [1]
+    let nonCommonFactors = [0]
+    
     let quotient1 = 0
     let quotient2 = 0
 
@@ -35,9 +41,17 @@ var commonFactors = function(num1, num2) {
     num1
     num2
 
-    lastFactor
+    lowestNum
     
-    for (let index = 0; index <= lastFactor; index++) {
+    // <= to get the last 12 as a factor 
+
+    factorCount
+    index
+    
+    lowestNum
+
+
+    while (index <= lowestNum) {
 
         index
 
@@ -68,15 +82,17 @@ var commonFactors = function(num1, num2) {
 
             nonCommonFactors
         }
-    
-    }
 
+        index++
+    }
+    
     commonFactors
+    commonFactors.length
 
     return factorCount
 }
 
-console.log(commonFactors(12,24), "[1, 2, 3, 4, 6, 12] are the 6 common factors of both numbs")
+console.log(commonFactors(12,24), "[1, 2, 3, 4, 6, 12] are the 6 common factors of both nums")
 
 // console.log(commonFactors(6, 1),   1,  "[1] is the only common factor, 6/1 and 1/1 are both integers")
 // console.log(commonFactors(3, 12),   2, "1 and 3")
