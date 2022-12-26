@@ -24,21 +24,22 @@ var isAlienSorted =function(stringArray, alphabet){
 
         leftWord
         rightWord
-       
-//         if (leftWord == rightWord){
-     //       continue
-//        }
-   
+         
     
         if (leftWord.includes(rightWord) && leftWord.length!= rightWord.length) {
             return false
         }
+    
         
         for (let index = 0; index < leftWord.length; index++){ 
-
+            
             let letterA = leftWord[index]
             let letterB = rightWord[index]
-
+            
+            if (letterA == letterB){
+                continue
+            }
+            
             letterA
             letterB
 
