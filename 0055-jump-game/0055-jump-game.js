@@ -1,6 +1,3 @@
-
-
-
 var canJump = function(array) {
     let index = 0
     let max = 0
@@ -17,7 +14,7 @@ var canJump = function(array) {
         index
         index + array[index]
 
-        max = Math.max(max, index + array[index])
+        max = Math.max(max, index + num)
         
         max
 
