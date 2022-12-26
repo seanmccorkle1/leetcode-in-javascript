@@ -28,6 +28,7 @@ var isAlienSorted =function(stringArray, alphabet){
         // so the leftWord has to be the bigger word to return false
 
 
+        //["hello", "hello"] is valid order
         if (leftWord.includes(rightWord) && leftWord != rightWord) { 
             return false
         }
