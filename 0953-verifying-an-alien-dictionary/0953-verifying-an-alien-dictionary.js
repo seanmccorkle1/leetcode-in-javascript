@@ -30,10 +30,10 @@ var isAlienSorted =function(stringArray, alphabet){
             continue
         }
         
-        if (leftWord.includes(rightWord) == true) {
+        if (leftWord.includes(rightWord) == true && leftWord.length  > rightWord.length) {
             return false
         }
-
+        
         for (let index = 0; index < leftWord.length; index++){ 
 
             let letterA = leftWord[index]
