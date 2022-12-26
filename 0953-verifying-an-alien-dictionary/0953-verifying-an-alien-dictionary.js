@@ -6,11 +6,9 @@ var isAlienSorted =function(stringArray, alphabet){
 
 
     for (let index = 0; index < alphabet.length; index++){
-
-        let letter = alphabet[index]
-        let letterIndex = alphabet.indexOf(letter)
-            
-        letterMap.set(letter, letterIndex)
+        
+        let letter = alphabet[index]        
+        letterMap.set(letter, index)
     }
     
     
