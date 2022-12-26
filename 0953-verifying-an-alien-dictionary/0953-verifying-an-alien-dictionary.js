@@ -26,9 +26,9 @@ var isAlienSorted =function(stringArray, alphabet){
         // "app".includes("apple") is false
         
         // so the leftWord has to be the bigger word to return false
-    
 
-        if (leftWord.includes(rightWord) && leftWord != rightWord) { //leftWord.length > rightWord.length) {
+
+        if (leftWord.includes(rightWord) && leftWord != rightWord) { 
             return false
         }
         
