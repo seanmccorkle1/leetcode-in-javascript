@@ -32,3 +32,5 @@ var arithmeticTriplets = function(array, targetDifference) {
 
 
 console.log(arithmeticTriplets([0,1,4,6,7,10], 3), 2, "(1,2,4) and (2, 4, 5) are the two triplets")
+
+console.log(arithmeticTriplets([0, 1, 2]))
