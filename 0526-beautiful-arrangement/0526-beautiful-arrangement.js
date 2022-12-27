@@ -7,6 +7,7 @@ var countArrangement = function(num) {
     // array[3] is valid because it breaks at GREATER than 3, not equal to 3
     // so there needs to be a fourth element
     const visitedArray = Array(num + 1).fill(false)
+    
     let permutationCount = 0
 
     var dfsFn = (element) => {
@@ -21,7 +22,7 @@ var countArrangement = function(num) {
         // so it still has to loop 2 more times to get all the permutations
 
 
-        for (let index = 1; index <= num; index += 1) {
+        for (let index = 1; index <= num; index++) {
 
             visitedArray
             index
