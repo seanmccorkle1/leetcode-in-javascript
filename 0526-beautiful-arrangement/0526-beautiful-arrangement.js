@@ -28,9 +28,12 @@ var countArrangement = function(num) {
             index
 
             // avoid double counting
-
-            if ((visitedArray[index] === false) && (index % element === 0 || element % index === 0)) {
-
+            
+            const alreadyVisited = visitedArray[index]
+            const isDivisible=  index % element === 0 || element % index === 0
+            
+            if (!alreadyVisited && isDivisible) {
+                
                 visitedArray[index] = true
                 dfsFn(element + 1)
                 visitedArray[index] = false
