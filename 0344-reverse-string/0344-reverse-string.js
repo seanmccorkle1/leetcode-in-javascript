@@ -9,34 +9,28 @@ var reverseString = function (array) {
 
     while (index < backIndex) {
 
-        // index
-        // backIndex
+        index
+        backIndex
 
-        //            index
-        //            backIndex
 
-        //            array
+        array
 
         let frontLetter = array[index]
         let backLetter = array[backIndex]
 
-        // [array[index], array[backIndex]] = [array[backIndex], array[index]]
-        // let temp = array[index]
 
-        // "frontPosition = backLetter"
         array[index] = backLetter
         array[backIndex] = frontLetter
 
         
-        // [array[index], array[backIndex]] = [frontLetter, backLetter]
 
         index++
         backIndex--
     }
 
 
-    return array
+    // array
 }
 
-reverseString(["h", "e", "l", "l", "o"])
-reverseString(["one", "two", "three", "four", "five"])
+// reverseString(["h", "e", "l", "l", "o"])
+// reverseString(["one", "two", "three", "four", "five"])
