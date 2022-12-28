@@ -12,12 +12,12 @@ var reverseString = function(array) {
         
         while(index<backIndex){
 
-            // index
-            // backIndex
+            index
+            backIndex;
         
-            // array
+            array;
             [array[index],array[backIndex]] = [array[backIndex],array[index]]
-            array
+            array;
             
             index++
             backIndex--
