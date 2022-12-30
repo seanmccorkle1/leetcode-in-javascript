@@ -3,11 +3,22 @@ var searchInsert = function (array, numToInsert) {
 
     // If the numToInsert is less then the very last item then insert it at that item index
     // Otherwise insert it at that item index + 1    
+    
+    // array.includes() is the same as == 
+    // now you dont need an == check in the other function
 
+    
     if (array.includes(numToInsert)){
         return array.indexOf(numToInsert)
     }
-
+    
+    // the array is sorted in ascending order, 
+    // so array[0] has to be the lowest number
+    
+    if (numToInsert < array[0]) {
+        return 0 
+    }
+    
     const recursiveBinarySearch = function(array, numToInsert, startIndex, endIndex) {
 
         startIndex
@@ -27,9 +38,9 @@ var searchInsert = function (array, numToInsert) {
 
         // found the number successfully
 
-        if (num == numToInsert) {
-            return midIndex
-        }
+        // if (num == numToInsert) {
+        //     return midIndex
+        // }
 
         //  numToInsert is lower, search the left side
 
@@ -62,9 +73,11 @@ var searchInsert = function (array, numToInsert) {
     const backIndex = array.length - 1
 
     let indexToInsertAt = recursiveBinarySearch(array, numToInsert, 0, backIndex)
-    return indexToInsertAt
+    
+    // the program resumes below the call
+    // just return the main function searchInsert() after the call in this case
 
-    // return binarySearch(array, numToInsert, 0, backIndex)
+    return indexToInsertAt
 }
 
 
