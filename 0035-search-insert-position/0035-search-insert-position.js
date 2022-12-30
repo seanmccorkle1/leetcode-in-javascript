@@ -6,11 +6,6 @@ var searchInsert = function (array, numToInsert) {
     
     // array.includes() is the same as == 
     // now you dont need an == check in the other function
-
-    
-    if (array.includes(numToInsert)){
-        return array.indexOf(numToInsert)
-    }
     
     // the array is sorted in ascending order, 
     // so array[0] has to be the lowest number
@@ -26,21 +21,23 @@ var searchInsert = function (array, numToInsert) {
 
         // endIndex cant get higher than array.length - 1
         // [5, 6, 10], array length is 3, so endIndex = 2
-
-
+        
+        // but startIndex can go one higher 
+        // because of the `midIndex + 1` line 
+        
         if (startIndex > endIndex) {
             return startIndex
         }
-
+        
         const midIndex = Math.trunc((startIndex + endIndex) / 2)
-
+        
         let num = array[midIndex]
 
         // found the number successfully
-
-        // if (num == numToInsert) {
-        //     return midIndex
-        // }
+        
+        if (num == numToInsert) {
+            return midIndex
+        }
 
         //  numToInsert is lower, search the left side
 
