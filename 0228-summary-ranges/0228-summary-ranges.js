@@ -38,8 +38,9 @@ var summaryRanges = function (array) {
         // at least its [7, undefined] for the first one
     
         leftNum + 1
-
-        if (leftNum + 1 != rightNum) {      //   || index == array.length)
+        rightNum
+        
+        if ((leftNum + 1) != rightNum) {      //   || index == array.length)
 
             // let leftmostNum = array[staticIndex]
             leftNum
@@ -55,9 +56,8 @@ var summaryRanges = function (array) {
             leftNum
 
             // 3 != 7, there are multiple numbers in the range
-
+                    
             if (leftmostNum != leftNum) {
-
                 let range = `${leftmostNum}->${leftNum}`
                 range
 
