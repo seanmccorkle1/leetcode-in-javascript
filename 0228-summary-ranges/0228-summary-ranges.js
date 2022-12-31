@@ -100,4 +100,5 @@ var summaryRanges = function (array) {
 }
 
 console.log(summaryRanges([0, 1, 2, 4, 5, 7]), ["0->2", "4->5", "7"], "break at 3 and at 6, total of 3 ranges. 7 is left alone at the end")
+
 // console.log(summaryRanges([0,2,3,4,6,8,9]), ["0","2->4","6","8->9"])
