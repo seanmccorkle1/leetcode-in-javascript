@@ -9,32 +9,63 @@
  */
 
 
-var wordPattern = function(pattern, string) {
 
-    // const wordArray = string.split(/\s+/)
-    const wordArray = string.split(" ")
-
+var wordPattern = function (patternLetters, string) {
+    
+    patternLetters = patternLetters.toUpperCase()
+    
     const map = new Map()
+    let wordArray = string.split(" ")
 
-    pattern
-    wordArray 
+    patternLetters
+    wordArray
 
-    if (wordArray.length != pattern.length) {
+    // one word must correspond to one letter
+
+    if (wordArray.length != patternLetters.length) {
         return false
     }
+
     const uniqueWords = new Set(wordArray)
-    const uniqueLetters = new Set(pattern)
+    const uniqueLetters = new Set(patternLetters)
 
-    if (uniqueWords.size != uniqueLetters.size){
+    if (uniqueWords.size != uniqueLetters.size) {
         return false
     }
-        
-    for (let index = 0; index < pattern.length; index++) {
-        if (map.has(pattern[index]) &&  map.get(pattern[index]) !== wordArray[index]) {
+
+
+
+    for (let index = 0; index < patternLetters.length; index++) {
+
+        let patternLetter = patternLetters[index]
+
+        let currWord = wordArray[index]
+        let matchingWord = map.get(patternLetter)
+
+
+        const wordsMatch = (currWord == matchingWord)
+
+        // const noPattern = map.has(patternLetter && !wordsMatch)
+
+        patternLetter
+
+
+        if (map.has(patternLetter) && !wordsMatch){
             return false
         }
-        map.set(pattern[index], wordArray[index])
+
+        // if condition comes first
+        // updating the object comses last
+
+        // no duplicate keys can exist in a map or obj
+
+        patternLetter
+        currWord
+
+        map.set(patternLetter, currWord)
     }
+
+    map
 
     return true
 }
