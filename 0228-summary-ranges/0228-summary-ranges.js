@@ -10,7 +10,11 @@
 var summaryRanges = function (array) {
 
     const rangeArray = []
-    let staticIndex = 0
+    const missingNumbers = []
+
+    let missingNum = 0
+    let leftIndex = 0
+
 
     // index <= array.length
     // start at index=1 for the difference 
@@ -21,14 +25,13 @@ var summaryRanges = function (array) {
 
     for (let index = 1; index <= array.length; index++) {
 
-        index
+        let startOfRange = array[leftIndex]
 
-        let leftmostNum = array[staticIndex]
         let leftNum = array[index - 1]
         let rightNum = array[index]
 
-
-        leftmostNum
+        
+        startOfRange
         leftNum
         rightNum
 
@@ -37,60 +40,64 @@ var summaryRanges = function (array) {
         // this if statement will (maybe) always execute on the last loop
         // at least its [7, undefined] for the first one
     
+
         leftNum + 1
         rightNum
         
+        const rangeFond = (leftNum + 1 != rightNum)
+
         if ((leftNum + 1) != rightNum) {      //   || index == array.length)
 
-            // let leftmostNum = array[staticIndex]
+            leftNum 
+            // let startOfRange = array[leftIndex]
             leftNum
             rightNum
 
-            // if (array[staticIndex] != leftNum)
+            // if (array[leftIndex] != leftNum)
 
             // case: there are multiple numbers in the range
 
-            leftmostNum
             leftNum
-            
+
             // 3 != 7, so push the range '3->7'
-            
-            if (leftmostNum != leftNum) {
 
-                let range = `${leftmostNum}->${leftNum}`
-                range
+            missingNum = leftNum + 1
+            missingNumbers.push(missingNum)
 
+
+            if (startOfRange != leftNum) {                
+                let inclusiveRange= `${startOfRange}->${leftNum}`
                 rangeArray            
-                rangeArray.push(range)
+                rangeArray.push(inclusiveRange)
 
                 rangeArray
             }
         
             // 7 == 7, its just one number (7)
             
-            else if (leftmostNum == leftNum) {
+            else if (startOfRange == leftNum) {
                 rangeArray.push(leftNum.toString())
                 rangeArray
             }
 
-            // store the index of `rightNum` in staticIndex
+            // store the index of `rightNum` in leftIndex
             // only do this when the non-nested if statement executes
 
-            leftmostNum
+            startOfRange
             leftNum
             rightNum
 
             // ignore "6" and undefined
 
-            staticIndex
+            leftIndex
             index
 
             rangeArray
 
-            array[staticIndex]
+            array[leftIndex]
             
-            staticIndex = index
-            array[staticIndex]
+            leftIndex = index
+            array[leftIndex]
 
         }
     }
