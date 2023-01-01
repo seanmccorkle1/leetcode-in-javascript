@@ -9,18 +9,31 @@
  */
 
 
-var wordPattern = function(pattern, str) {
-    const words = str.split(/\s+/)
+var wordPattern = function(pattern, string) {
+
+    const wordArray = string.split(/\s+/)
     const map = new Map()
-    
-    if(words.length !== pattern.length) return false
-    if(new Set(words).size !== new Set(pattern).size) return false
-    
-    for(let index = 0; index < pattern.length; index++) {
-        if(map.has(pattern[index]) && 
-           map.get(pattern[index]) !== words[index]) return false
-        map.set(pattern[index], words[index])
+
+    pattern
+    wordArray 
+
+    if (wordArray.length != pattern.length) {
+        return false
     }
+    const uniqueWords = new Set(wordArray)
+    const uniqueLetters = new Set(pattern)
+
+    if (uniqueWords.size != uniqueLetters.size){
+        return false
+    }
+        
+    for (let index = 0; index < pattern.length; index++) {
+        if (map.has(pattern[index]) &&  map.get(pattern[index]) !== wordArray[index]) {
+            return false
+        }
+        map.set(pattern[index], wordArray[index])
+    }
+
     return true
 }
 
