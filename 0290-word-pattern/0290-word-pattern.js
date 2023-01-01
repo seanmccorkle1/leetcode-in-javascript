@@ -11,7 +11,9 @@
 
 var wordPattern = function(pattern, string) {
 
-    const wordArray = string.split(/\s+/)
+    // const wordArray = string.split(/\s+/)
+    const wordArray = string.split(" ")
+
     const map = new Map()
 
     pattern
