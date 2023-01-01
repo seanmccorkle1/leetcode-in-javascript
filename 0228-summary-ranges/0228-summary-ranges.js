@@ -50,14 +50,13 @@ var summaryRanges = function (array) {
 
             // case: there are multiple numbers in the range
 
-            // let leftmostNum = array[staticIndex]
-
             leftmostNum
             leftNum
-
-            // 3 != 7, there are multiple numbers in the range
-                    
+            
+            // 3 != 7, so push the range '3->7'
+            
             if (leftmostNum != leftNum) {
+
                 let range = `${leftmostNum}->${leftNum}`
                 range
 
