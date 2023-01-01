@@ -29,6 +29,11 @@ var summaryRanges = function (array) {
 
 
 
+    //  currNum is at array[index - 1]
+    // in order to get the last number inside currNum, you have to do index + 1
+    // to make it [lastNum (curr), undefined (rightNum)]
+    
+    
     for (let rightIndex = 1; rightIndex <= array.length; rightIndex++) {
 
 
@@ -61,7 +66,7 @@ var summaryRanges = function (array) {
         // or it will be its own range
         
         
-        if (numberIsMissing || array[rightIndex] == undefined) {
+        if (numberIsMissing || rightNum == undefined) {
             
             currNum 
             // let startOfRange = array[leftIndex]
