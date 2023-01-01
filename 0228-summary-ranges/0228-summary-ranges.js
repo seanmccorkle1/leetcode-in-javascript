@@ -66,7 +66,9 @@ var summaryRanges = function (array) {
 
 
             if (startOfRange != leftNum) {                
-                let inclusiveRange= `${startOfRange}->${leftNum}`
+                
+                let inclusiveRange=  startOfRange + "->" + leftNum
+                
                 rangeArray            
                 rangeArray.push(inclusiveRange)
 
