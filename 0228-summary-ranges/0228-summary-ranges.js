@@ -13,22 +13,22 @@ var summaryRanges = function (array) {
     const missingNumbers = []
 
     let missingNum = 0
-    let leftIndex = 0
+    let prevIndex = 0
 
 
-    // index <= array.length
-    // start at index=1 for the difference 
+    // currIndex <= array.length
+    // start at currIndex=1 for the difference 
     
     // 7+1 != undefined  = true
     // the if statement will always execute on the last element (undefined)
 
 
-    for (let index = 1; index <= array.length; index++) {
+    for (let currIndex = 1; currIndex <= array.length; currIndex++) {
 
-        let startOfRange = array[leftIndex]
+        let startOfRange = array[prevIndex]
 
-        let leftNum = array[index - 1]
-        let rightNum = array[index]
+        let leftNum = array[currIndex - 1]
+        let rightNum = array[currIndex]
 
         
         startOfRange
@@ -44,16 +44,20 @@ var summaryRanges = function (array) {
         leftNum + 1
         rightNum
         
-        const rangeFond = (leftNum + 1 != rightNum)
-
-        if ((leftNum + 1) != rightNum) {      //   || index == array.length)
-
+        const numberIsMissing = (leftNum + 1 != rightNum)
+        
+        // the last number will always either be the end of a range 
+        // or it will be its own range
+        
+        
+        if (numberIsMissing || array[currIndex] == undefined) {
+            
             leftNum 
-            // let startOfRange = array[leftIndex]
+            // let startOfRange = array[prevIndex]
             leftNum
             rightNum
 
-            // if (array[leftIndex] != leftNum)
+            // if (array[prevIndex] != leftNum)
 
             // case: there are multiple numbers in the range
 
@@ -63,26 +67,24 @@ var summaryRanges = function (array) {
 
             missingNum = leftNum + 1
             missingNumbers.push(missingNum)
+            
+            let endOfRange = leftNum
 
+            const rangeFound = (startOfRange != endOfRange)
 
-            if (startOfRange != leftNum) {                
-                
-                let inclusiveRange=  startOfRange + "->" + leftNum
-                
-                rangeArray            
+            if (rangeFound) { 
+                let inclusiveRange=  startOfRange+"->" + endOfRange
                 rangeArray.push(inclusiveRange)
-
-                rangeArray
             }
-        
+
             // 7 == 7, its just one number (7)
             
-            else if (startOfRange == leftNum) {
-                rangeArray.push(leftNum.toString())
+            else if (!rangeFound) {
+                rangeArray.push(endOfRange.toString())
                 rangeArray
             }
 
-            // store the index of `rightNum` in leftIndex
+            // store the currIndex of `rightNum` in prevIndex
             // only do this when the non-nested if statement executes
 
             startOfRange
@@ -91,15 +93,15 @@ var summaryRanges = function (array) {
 
             // ignore "6" and undefined
 
-            leftIndex
-            index
+            prevIndex
+            currIndex
 
             rangeArray
 
-            array[leftIndex]
+            array[prevIndex]
             
-            leftIndex = index
-            array[leftIndex]
+            prevIndex = currIndex
+            array[prevIndex]
 
         }
     }
