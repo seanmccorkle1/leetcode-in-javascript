@@ -50,7 +50,7 @@ var summaryRanges = function (array) {
 
             // case: there are multiple numbers in the range
 
-            let leftmostNum = array[staticIndex]
+            // let leftmostNum = array[staticIndex]
 
             leftmostNum
             leftNum
