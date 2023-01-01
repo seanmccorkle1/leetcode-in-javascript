@@ -35,17 +35,16 @@ var summaryRanges = function (array) {
         let startOfRange = array[prevIndex]
 
 
-        let leftNum = array[currIndex - 1]
+        let currNum = array[currIndex - 1]
         let rightNum = array[currIndex]
-
 
         
         startOfRange
-        leftNum
+        currNum
         rightNum
 
 
-        // rightNum and leftNum converge on the last loop
+        // rightNum and currNum converge on the last loop
 
 
         // this if statement will (maybe) always execute on the last loop
@@ -53,10 +52,10 @@ var summaryRanges = function (array) {
     
 
 
-        leftNum + 1
+        currNum + 1
         rightNum
         
-        const numberIsMissing = (leftNum + 1 != rightNum)
+        const numberIsMissing = (currNum + 1 != rightNum)
         
         // the last number will always either be the end of a range 
         // or it will be its own range
@@ -64,28 +63,28 @@ var summaryRanges = function (array) {
         
         if (numberIsMissing || array[currIndex] == undefined) {
             
-            leftNum 
+            currNum 
             // let startOfRange = array[prevIndex]
-            leftNum
+            currNum
             rightNum
 
 
-            // if (array[prevIndex] != leftNum)
+            // if (array[prevIndex] != currNum)
 
 
             // case: there are multiple numbers in the range
 
 
-            leftNum
+            currNum
 
 
             // 3 != 7, so push the range '3->7'
 
 
-            missingNum = leftNum + 1
+            missingNum = currNum + 1
             missingNumbers.push(missingNum)
             
-            let endOfRange = leftNum
+            let endOfRange = currNum
 
 
             rangeFound = (startOfRange != endOfRange)
@@ -111,7 +110,7 @@ var summaryRanges = function (array) {
 
 
             startOfRange
-            leftNum
+            currNum
             rightNum
 
 
