@@ -7,13 +7,18 @@
 */
 
 
+
 var summaryRanges = function (array) {
+
 
     const rangeArray = []
     const missingNumbers = []
+    var rangeFound = false
+
 
     let missingNum = 0
     let prevIndex = 0
+
 
 
     // currIndex <= array.length
@@ -23,23 +28,30 @@ var summaryRanges = function (array) {
     // the if statement will always execute on the last element (undefined)
 
 
+
     for (let currIndex = 1; currIndex <= array.length; currIndex++) {
+
 
         let startOfRange = array[prevIndex]
 
+
         let leftNum = array[currIndex - 1]
         let rightNum = array[currIndex]
+
 
         
         startOfRange
         leftNum
         rightNum
 
+
         // rightNum and leftNum converge on the last loop
+
 
         // this if statement will (maybe) always execute on the last loop
         // at least its [7, undefined] for the first one
     
+
 
         leftNum + 1
         rightNum
@@ -57,58 +69,77 @@ var summaryRanges = function (array) {
             leftNum
             rightNum
 
+
             // if (array[prevIndex] != leftNum)
+
 
             // case: there are multiple numbers in the range
 
+
             leftNum
 
+
             // 3 != 7, so push the range '3->7'
+
 
             missingNum = leftNum + 1
             missingNumbers.push(missingNum)
             
             let endOfRange = leftNum
 
-            const rangeFound = (startOfRange != endOfRange)
+
+            rangeFound = (startOfRange != endOfRange)
+
 
             if (rangeFound) { 
                 let inclusiveRange=  startOfRange+"->" + endOfRange
                 rangeArray.push(inclusiveRange)
             }
 
+
             // 7 == 7, its just one number (7)
-            
+
+
             else if (!rangeFound) {
                 rangeArray.push(endOfRange.toString())
                 rangeArray
             }
 
+
             // store the currIndex of `rightNum` in prevIndex
             // only do this when the non-nested if statement executes
+
 
             startOfRange
             leftNum
             rightNum
 
+
             // ignore "6" and undefined
+
 
             prevIndex
             currIndex
 
+
             rangeArray
+
 
             array[prevIndex]
             
             prevIndex = currIndex
             array[prevIndex]
 
+
         }
     }
+
 
     return rangeArray
 }
 
+
 console.log(summaryRanges([0, 1, 2, 4, 5, 7]), ["0->2", "4->5", "7"], "break at 3 and at 6, total of 3 ranges. 7 is left alone at the end")
+
 
 // console.log(summaryRanges([0,2,3,4,6,8,9]), ["0","2->4","6","8->9"])
