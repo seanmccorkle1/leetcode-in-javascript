@@ -17,27 +17,27 @@ var summaryRanges = function (array) {
 
 
     let missingNum = 0
-    let prevIndex = 0
+    let leftIndex = 0
 
 
 
-    // currIndex <= array.length
-    // start at currIndex=1 for the difference 
+    // rightIndex <= array.length
+    // start at rightIndex=1 for the difference 
     
     // 7+1 != undefined  = true
     // the if statement will always execute on the last element (undefined)
 
 
 
-    for (let currIndex = 1; currIndex <= array.length; currIndex++) {
+    for (let rightIndex = 1; rightIndex <= array.length; rightIndex++) {
 
 
-        let startOfRange = array[prevIndex]
+        let startOfRange = array[leftIndex]
 
-
-        let currNum = array[currIndex - 1]
-        let rightNum = array[currIndex]
-
+        // start at array[0]
+        
+        let currNum = array[rightIndex - 1]
+        let rightNum = array[rightIndex]
         
         startOfRange
         currNum
@@ -61,15 +61,15 @@ var summaryRanges = function (array) {
         // or it will be its own range
         
         
-        if (numberIsMissing || array[currIndex] == undefined) {
+        if (numberIsMissing || array[rightIndex] == undefined) {
             
             currNum 
-            // let startOfRange = array[prevIndex]
+            // let startOfRange = array[leftIndex]
             currNum
             rightNum
 
 
-            // if (array[prevIndex] != currNum)
+            // if (array[leftIndex] != currNum)
 
 
             // case: there are multiple numbers in the range
@@ -98,14 +98,13 @@ var summaryRanges = function (array) {
 
             // 7 == 7, its just one number (7)
 
-
-            else if (!rangeFound) {
-                rangeArray.push(endOfRange.toString())
+            else if (startOfRange == endOfRange) {
+                rangeArray.push(currNum.toString())
                 rangeArray
             }
 
 
-            // store the currIndex of `rightNum` in prevIndex
+            // store the rightIndex of `rightNum` in leftIndex
             // only do this when the non-nested if statement executes
 
 
@@ -117,19 +116,18 @@ var summaryRanges = function (array) {
             // ignore "6" and undefined
 
 
-            prevIndex
-            currIndex
+            leftIndex
+            rightIndex
 
 
             rangeArray
 
 
-            array[prevIndex]
+            array[leftIndex]
             
-            prevIndex = currIndex
-            array[prevIndex]
-
-
+            leftIndex = rightIndex
+            array[leftIndex]
+            
         }
     }
 
