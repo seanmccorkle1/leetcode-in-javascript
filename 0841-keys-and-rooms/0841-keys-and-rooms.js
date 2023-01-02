@@ -66,17 +66,18 @@ var canVisitAllRooms = function (doubleArray) {
 
     doubleArray
     doubleArray.length
-
-
+    
     roomsVisited    
 
-
+    let totalRooms = doubleArray.length
+    
     // CAN visit all rooms
-    if (doubleArray.length == roomsVisited) {
+    if (roomsVisited == totalRooms) {
         return true
     }
 
-
     // cant visit all
-    return false
+    else if (roomsVisited != totalRooms){
+        return false
+    } 
 }
