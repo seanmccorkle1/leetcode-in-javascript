@@ -26,7 +26,7 @@ var findDuplicate = function(array) {
         // fastIndex = array[array[fastIndex]]
 
         console.log(`two steps is ${fastIndex}`)
-        
+
         if (slowIndex == fastIndex) {
             indexesAreDifferent = false
             break
@@ -60,6 +60,7 @@ var findDuplicate = function(array) {
     return -1
 }
 
-console.log(findDuplicate([1,3,4,2,2]),  2)
+console.log(findDuplicate([4, 5, 1, 7, 7, 3, 2, 7, 6]),  7, "7 is the duplicate")
 
-console.log(findDuplicate([2, 5, 9, 6, 9, 3, 8, 9, 7, 1]),  9, "9 is the duplicate")
+// console.log(findDuplicate([1,3,4,2,2]),  2)
+// console.log(findDuplicate([2, 5, 9, 6, 9, 3, 8, 9, 7, 1]),  9, "9 is the duplicate")
