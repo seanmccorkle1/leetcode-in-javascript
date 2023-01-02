@@ -11,9 +11,9 @@ var detectCapitalUse = function(str){
     let firstLetter = str.at(0)    
     if (firstLetter == firstLetter.toUpperCase()){
         
-        let rest = str.slice(1)
-        
-        if (rest.match(/[A-Z]/) == null){
+        let body = str.slice(1)
+        let lowercaseBody = body.toLowerCase()
+        if (body==lowercaseBody) {
             return true
         }
 
