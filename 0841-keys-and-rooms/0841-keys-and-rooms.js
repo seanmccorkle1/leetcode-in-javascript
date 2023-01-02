@@ -1,6 +1,7 @@
 var canVisitAllRooms = function (doubleArray) {
-
-
+    
+    let totalRooms = doubleArray.length
+    
     // same as a boolean array
     let roomsVisitedArray = new Uint8Array(doubleArray.length)
 
@@ -68,8 +69,6 @@ var canVisitAllRooms = function (doubleArray) {
     doubleArray.length
     
     roomsVisited    
-
-    let totalRooms = doubleArray.length
     
     // CAN visit all rooms
     if (roomsVisited == totalRooms) {
