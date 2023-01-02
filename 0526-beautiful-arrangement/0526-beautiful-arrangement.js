@@ -17,7 +17,7 @@ var countArrangement = function(inputNum) {
     // array[3] is valid because it breaks at GREATER than 3, not equal to 3
     // so there needs to be a fourth currNum
 
-    const visitedArray = Array(inputNum + 1).fill(false)
+    const visitedArray = new Array(inputNum + 1).fill(false)
 
     visitedArray
 
@@ -59,7 +59,7 @@ var countArrangement = function(inputNum) {
                 visitedArray[index] = false
                 visitedArray
             }
-            
+
             visitedArray
         }
 
@@ -83,3 +83,6 @@ console.log(countArrangement(2), 2, "[1, 2] and [2, 1] are the two arrangements"
 // "[2 (i1), 1 (i2), 3 (i3)]  [(2 % (i)1 == 0), ( (i)2 % 1 == 0), (3 % i3 == 0)], 3 beautiful arrays")
 
 // console.log(countArrangement(4), 8)
+
+// console.log(countArrangement(3), 3, "[1,2,3] [3,2,1] [2,1,3]",
+// "[2 (i1), 1 (i2), 3 (i3)]  [(2 % (i)1 == 0), ( (i)2 % 1 == 0), (3 % i3 == 0)], 3 beautiful arrays")
