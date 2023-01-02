@@ -62,7 +62,7 @@ var sortColors = function(array) {
             rightIndex -= 1
 
             // index stays at this position for one more loop on the next iteration
-            continue
+            index -= 1
         }
 
         index += 1
@@ -71,6 +71,4 @@ var sortColors = function(array) {
     array
 }
 
-
 console.log(sortColors([2,0,2,1,1,0]),  [0,0,1,1,2,2], "sort it")
-
