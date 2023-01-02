@@ -5,18 +5,16 @@
 
 
 var sortColors = function(array) {
-
-    const [RED, WHITE, BLUE] = [0, 1, 2]
-
+    
     let leftIndex = 0
     let index = 0
     let rightIndex = array.length - 1
     
     let leftTemp
-    let rightTemp
-
+    let rightTemp 
+    
     // Swap red (0) to lefthand side
-
+    
     while (index <= rightIndex) {
 
         let num = array[index]
@@ -37,9 +35,9 @@ var sortColors = function(array) {
             array[index] = leftTemp
 
             array
-
-            // [ array[index], array[leftIndex] ] = [ array[leftIndex], array[index] ];
-
+            
+            // index and leftIndex both go up by 1, this is fine
+            
             leftIndex += 1
         }
         
@@ -56,12 +54,12 @@ var sortColors = function(array) {
             array[index] = rightTemp
 
             array            
-
-            // [ array[index], array[rightIndex] ] = [ array[rightIndex], array[index] ];
-
+            
             rightIndex -= 1
 
-            // index stays at this position for one more loop on the next iteration
+            // index stays at this position, but the loop still progresses
+            // because the condition is index <= rightIndex
+            
             index -= 1
         }
 
@@ -71,4 +69,5 @@ var sortColors = function(array) {
     array
 }
 
-console.log(sortColors([2,0,2,1,1,0]),  [0,0,1,1,2,2], "sort it")
+// console.log(sortColors([2,0,2,1,1,0]),  [0,0,1,1,2,2], "sort it")
+console.log(sortColors([2, 0, 1]), [0, 1, 2], "2 has to go from the front to back")
