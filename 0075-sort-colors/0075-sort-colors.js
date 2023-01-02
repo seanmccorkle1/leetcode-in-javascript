@@ -66,7 +66,7 @@ var sortColors = function(array) {
         index += 1
     }
 
-    array
+return    array
 }
 
 // console.log(sortColors([2,0,2,1,1,0]),  [0,0,1,1,2,2], "sort it")
