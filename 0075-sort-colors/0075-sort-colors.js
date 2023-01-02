@@ -39,34 +39,36 @@ var sortColors = function(array) {
             // index and leftIndex both go up by 1, this is fine
             
             leftIndex += 1
+            index += 1
         }
-        
         
         // Swap blue (2) to the right
 
-        else if (num == 2) {
+        else if (num == 2) { 
             rightIndex
-            rightTemp = array.at(rightIndex)
 
+            rightTemp = array.at(rightIndex)
+            
             array
 
             array[rightIndex] = 2
             array[index] = rightTemp
-
+            
             array            
             
-            rightIndex -= 1
 
+            rightIndex -= 1
+            
             // index stays at this position, but the loop still progresses
             // because the condition is index <= rightIndex
-            
-            index -= 1
+
+            // index -= 1
         }
-
-        index += 1
+        
+        else index++
     }
-
-return    array
+    
+    return array
 }
 
 // console.log(sortColors([2,0,2,1,1,0]),  [0,0,1,1,2,2], "sort it")
