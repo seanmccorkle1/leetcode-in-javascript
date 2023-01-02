@@ -11,11 +11,7 @@
 
 
 var countArrangement = function(inputNum) {
-
-    // if (inputNum <= 3) {
-    //     return inputNum
-    // }
-
+    
     inputNum
 
     // array[3] is valid because it breaks at GREATER than 3, not equal to 3
@@ -29,7 +25,9 @@ var countArrangement = function(inputNum) {
 
 
     var depthFirstSearch = currNum => {
-
+        
+        // it can only get here if it repeatedly hits (notVisitedYet && isDivisibleByEither)
+        
         if (currNum > inputNum) {
             permutationCount++
             return  // start from beginning of call stack
@@ -49,9 +47,9 @@ var countArrangement = function(inputNum) {
             visitedArray
                          
             const notVisitedYet = visitedArray[index] == false
-            const isDivisible = (currNum % index == 0) || (index % currNum == 0)
+            const isDivisibleByEither = (currNum % index == 0) || (index % currNum == 0)
 
-            if (notVisitedYet && isDivisible) {
+            if (notVisitedYet && isDivisibleByEither) {
 
                 visitedArray[index] = true
                 visitedArray
@@ -61,7 +59,7 @@ var countArrangement = function(inputNum) {
                 visitedArray[index] = false
                 visitedArray
             }
-
+            
             visitedArray
         }
 
@@ -79,9 +77,9 @@ var countArrangement = function(inputNum) {
     return permutationCount
 }
 
-console.log(countArrangement(3), 3, "[1,2,3] [3,2,1] [2,1,3]",   
-"[2 (1), 1 (2), 3 (3)]  [(2 % 1 == 0), (2 % 1 == 0), (3 % 3 == 0)], 3 beautiful arrays")
+console.log(countArrangement(2), 2, "[1, 2] and [2, 1] are the two arrangements")
 
-console.log(countArrangement(4), 8)
+// console.log(countArrangement(3), 3, "[1,2,3] [3,2,1] [2,1,3]",   
+// "[2 (i1), 1 (i2), 3 (i3)]  [(2 % (i)1 == 0), ( (i)2 % 1 == 0), (3 % i3 == 0)], 3 beautiful arrays")
 
-// console.log(countArrangement(2), 2, "[1, 2] and [2, 1] are the two arrangements")
+// console.log(countArrangement(4), 8)
