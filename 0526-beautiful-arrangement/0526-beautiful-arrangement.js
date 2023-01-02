@@ -12,9 +12,9 @@
 
 var countArrangement = function(inputNum) {
 
-    if (inputNum <= 3) {
-        return inputNum
-    }
+    // if (inputNum <= 3) {
+    //     return inputNum
+    // }
 
     inputNum
 
