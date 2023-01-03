@@ -46,9 +46,9 @@ var answerQueries = function(inputArray, limitNums) {
 
     // there should be one count in the array per limitNum
 
-    if (numCounts.length != limitNums.length){
-        numCounts.push(numCount)
-    }
+    // if (numCounts.length != limitNums.length){
+    //     numCounts.push(numCount)
+    // }
         
     return numCounts
 }
