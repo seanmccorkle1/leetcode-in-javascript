@@ -33,7 +33,7 @@ var longestPalindrome = function(string) {
     string
 
     for (let slowIndex = 0; slowIndex < string.length; slowIndex++) {
-
+        
 
         // they start at the same index, then right goes up 1 and left stays
 
@@ -56,7 +56,7 @@ var longestPalindrome = function(string) {
         
         
         for (const fastIndex of oddAndEvenIndexArray) {
-
+            
             let leftIndex = slowIndex
             let rightIndex = fastIndex
                         
@@ -86,13 +86,19 @@ var longestPalindrome = function(string) {
 
                 const currPalindrome = string.slice(leftIndex, rightIndex + 1)
                 const longestPalindromeFound = string.slice(leftmostIndex, rightmostIndex + 1)
-
+                
                 currPalindrome
                 longestPalindromeFound
-
+                
                 if (currPalindrome.length > longestPalindromeFound.length) {
-                    leftmostIndex = leftIndex
+
+                    leftmostIndex = leftIndex // this affects `longestPalindromeFound`
                     rightmostIndex = rightIndex
+                    
+                    if (currPalindrome.length == string.length){
+                        return string
+                    }
+
                 }
 
                 // go more to the left
@@ -131,4 +137,4 @@ var longestPalindrome = function(string) {
 
 console.log(longestPalindrome("razcecar"),   "cec",     "cec is the only SUBSTRING thats a palindrome, the two `ra`'s are separated, theyre not substrings")
 
-// console.log(longestPalindrome("racecar"),    "racecar",  "the whole string is a palindrome")
+// console.log(longestPalindrome("racecar"),    "racecar",  "the whole string is a palindrome, odd length")
