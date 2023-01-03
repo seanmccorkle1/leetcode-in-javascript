@@ -1,11 +1,12 @@
 var isValid = function(string) {
-
+    
     const stack = []
     
+    // must be even length
     if (string.length %2===1){
         return false
     }
-
+    
     for (let index =0; index < string.length; index++) {
         
         let bracket = string[index]
@@ -41,13 +42,11 @@ var isValid = function(string) {
     
     // check if all the closing brackets were popped    
 
-    if (stack.length == 0){
+    if (stack.length == []){
         return true
     }
 
-    else if (stack.length != 0) {
-        return false    
-    }
+    else return false
 }
 
 console.log(isValid("[([])]"), true)
