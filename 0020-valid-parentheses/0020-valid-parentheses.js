@@ -48,11 +48,11 @@ var isValid = function(string) {
         return true
     }
     
-    else return false
+    else if(stack.length != 0) {return false}
 }
+
 
 console.log(isValid("[([])]"), true)
 
-// console.log(isValid("[([])]]"), false)
-// console.log(isValid("[[([])]"), false)
-// console.log(isValid("{)"), false)
+// console.log(isValid("[([])]]"), false, "theres an extra ] at the end")
+// console.log(isValid("[["), false, "no closing brackets")
