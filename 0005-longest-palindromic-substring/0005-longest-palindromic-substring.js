@@ -37,31 +37,38 @@ var longestPalindrome = function(string) {
 
         // they start at the same index, then right goes up 1 and left stays
 
-        // leftIndex = 0, rightIndex = 0
-        // leftIndex = 0, rightIndex = 1
-        
-        // leftIndex = 1, rightIndex = 1
-         // leftIndex = 1, rightIndex = 2
 
-         const twoIndexArray = [slowIndex, slowIndex + 1]
+         // leftIndex = 0, rightIndex = 0
+         // leftIndex = 0, rightIndex = 1
          
-         twoIndexArray
+         // leftIndex = 1, rightIndex = 1
+         // leftIndex = 1, rightIndex = 2
+        
+        // 0(left) + 0(right) = 0 (even length)
+        // 0 + 1 = 1 (odd)
+        
+        const oddAndEvenIndexArray = [slowIndex, slowIndex + 1]
 
-        for (const fastIndex of twoIndexArray) {
+        oddAndEvenIndexArray
+        
+        // loop 2 times, one for an even-length substring [2, 4,6] and one for an odd-length [1, 3, 5, 7]
+        // because the distance is 2 away on each loop (leftIndex-- and rightIndex++)
+        
+        
+        for (const fastIndex of oddAndEvenIndexArray) {
 
             let leftIndex = slowIndex
             let rightIndex = fastIndex
-
-            // while (string[leftIndex] && string[leftIndex] == string[rightIndex]) {
-            // while (leftLetter && (leftLetter == rightLetter)) {
-                
-            var leftLetter = string[leftIndex]
-            var rightLetter = string[rightIndex]
-
+                        
+            let leftLetter = string[leftIndex]
+            let rightLetter = string[rightIndex]
+            
             leftLetter
             rightLetter
-
-            var substringIsPalindrome = leftLetter && (leftLetter == rightLetter) ? true : false
+            
+            var substringIsPalindrome = 
+                (leftLetter && (leftLetter == rightLetter)) ? true : false
+            
             
             while (substringIsPalindrome) {
 
@@ -88,13 +95,15 @@ var longestPalindrome = function(string) {
                     rightmostIndex = rightIndex
                 }
 
+                // go more to the left
                 leftIndex -= 1
+                
                 rightIndex += 1
 
                 leftLetter = string[leftIndex]
                 rightLetter = string[rightIndex]
                 
-                substringIsPalindrome = leftLetter && (leftLetter == rightLetter) ? true : false
+                substringIsPalindrome = (leftLetter && (leftLetter == rightLetter)) ? true : false
 
             }
 
@@ -112,14 +121,14 @@ var longestPalindrome = function(string) {
     leftmostIndex
     rightmostIndex
     rightmostIndex + 1
-
-    const sliceLength = (rightmostIndex + 1) - leftmostIndex
-    sliceLength
+    
+    // it would be string.slice(3, 5) (2 letters) without the +1
     
     let finalPalindrome = string.slice(leftmostIndex, rightmostIndex + 1)
 
     return finalPalindrome
 }
 
-console.log(longestPalindrome("razcecar"),   "cec",     "cec is a longer palindrome than `ra` ")
+console.log(longestPalindrome("razcecar"),   "cec",     "cec is the only SUBSTRING thats a palindrome, the two `ra`'s are separated, theyre not substrings")
+
 // console.log(longestPalindrome("racecar"),    "racecar",  "the whole string is a palindrome")
