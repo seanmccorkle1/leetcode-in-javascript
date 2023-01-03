@@ -6,17 +6,15 @@
 
 
 var answerQueries = function(inputArray, limitNums) {
-
     inputArray.sort((a,b)=>a - b)
     const numCounts = []
+    const sumsReference = []
 
-    let sum = 0
-    let numCount = 0
 
     for (const limitNum of limitNums){
         
-        sum = 0
-        numCount = 0
+        let sum = 0
+        let numCount = 0
 
         for (let num of inputArray) {
             
