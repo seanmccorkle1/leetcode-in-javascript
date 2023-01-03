@@ -42,10 +42,12 @@ var isValid = function(string) {
     
     // check if all the closing brackets were popped    
 
-    if (stack.length == []){
+    // if its []
+    
+    if (stack.length == 0) {
         return true
     }
-
+    
     else return false
 }
 
