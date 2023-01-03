@@ -32,21 +32,28 @@ var minDeletionSize = function (array) {
 
             index
             wordIndex
+            
+            const columnIsNotSorted = !(letterAbove <= letterBelow)
 
-            const notSorted = letterAbove > letterBelow
+            // since the nested loop goes top-to-bottom, 
+            // you can only have 1 delete per column
 
-            // delete this column
-            // we would need to delete this letter to make it sorted
+            // break to avoid counting multiple column deletions for one column
 
-            if (notSorted == true){
+            if (columnIsNotSorted){
                 columnDeletions += 1
                 break
             }
 
         }
     }
+
     return columnDeletions
 }
 
-minDeletionSize([ "abc", "bce", "cae"], 1)
 
+console.log(
+    minDeletionSize(
+       ["abc", 
+        "bce", 
+        "cae"]),  1)
