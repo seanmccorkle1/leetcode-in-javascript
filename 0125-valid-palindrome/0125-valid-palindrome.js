@@ -1,18 +1,22 @@
 /**
- * @param {string} s
+ * @param {string} string
  * @return {boolean}
  */
 
 
 var isPalindrome = function (string) {
 
-    let fixed = string.toLowerCase().replace(/[^a-z0-9]/g, "")
-    let reverse = fixed.split("").reverse().join("")
-
-    if (fixed==reverse){
+    const fixedString = string.toLowerCase().replace(/[^a-z0-9]/g, "")
+    const reverseString = fixedString.split("").reverse().join("")
+    
+    if (fixedString == reverseString){
         return true
     }
+
     return false
-        
-        // return string.toLowerCase().replace(/[^a-z0-9]+/g, "") === string.toLowerCase().replace(/[^a-z0-9]+/g, "").split("").reverse().join("")
 }
+
+console.log(isPalindrome("racecar ___   "), true)
+console.log(isPalindrome("newstring"), false, "not a palindrome")
+
+// console.log(isPalindrome("   "), true, "make it an empty string")
