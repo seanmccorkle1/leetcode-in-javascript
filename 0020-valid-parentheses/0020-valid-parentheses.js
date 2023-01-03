@@ -1,6 +1,10 @@
 var isValid = function(string) {
 
     const stack = []
+    
+    if (string.length %2===1){
+        return false
+    }
 
     for (let index =0; index < string.length; index++) {
         
@@ -24,8 +28,8 @@ var isValid = function(string) {
 
         else {
             
-            let closingBracket  = string[index]
-            let correctClosingBracket = stack.at(-1)
+            closingBracket  = string[index]
+             correctClosingBracket = stack.at(-1)
             
             stack.pop()
             
