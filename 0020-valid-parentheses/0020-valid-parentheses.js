@@ -2,39 +2,40 @@ var isValid = function(string) {
 
     const stack = []
 
-    for (const char of string) {
+    for (let index =0; index < string.length; index++) {
+        
+        let bracket = string[index]
         
         // "(" must be matched by a ")"
-        if (char == "("){
+        if (bracket == "("){
             stack.push(")") 
             stack
         }
 
-        else if (char == "{"){            
+        else if (bracket == "{"){            
             stack.push("}")
             stack
         }
 
-        else if (char == "["){
+        else if (bracket == "["){
             stack.push("]")
             stack
         }
 
         else {
-
-            const closingBracket  = char
-            const correctClosingBracket = stack.at(-1)
-
+            
+            let closingBracket  = string[index]
+            let correctClosingBracket = stack.at(-1)
+            
             stack.pop()
-
+            
             if (closingBracket != correctClosingBracket){
                 return false
             }
         }
     }
-
-
-    // check if all the closing brackets were popped
+    
+    // check if all the closing brackets were popped    
 
     if (stack.length == 0){
         return true
