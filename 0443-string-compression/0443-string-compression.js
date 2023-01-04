@@ -1,5 +1,4 @@
 var compress = function (array) {
-
     // "a" automatically counts as length 1    
     let count = 1
     
