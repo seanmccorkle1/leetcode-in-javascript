@@ -12,7 +12,7 @@ var uniqueOccurrences = function(array) {
     const uniqueFrequenciesArray = [...new Set(frequencyArray)]
     
     
-    if (Object.values(obj).length == uniqueFrequenciesArray.length) {
+    if (frequencyArray.length == uniqueFrequenciesArray.length) {
         return true
     }
     
