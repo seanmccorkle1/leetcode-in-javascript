@@ -15,13 +15,17 @@
 
 
 var isPowerOfFour = function (num) {
-
-    let twoLogExponent = Math.log2(num)
-    const numIsPowerOf4 = (twoLogExponent % 2) == 0
-
-    if (numIsPowerOf4) {
+    
+    if (num == 4){
         return true
-    } 
+    }
+    let twoLogExponent = Math.log2(num)
+    const exponentIsEven = (twoLogExponent % 2) == 0
+    
+    if (exponentIsEven) {
+        return true
+    }
+    
     else return false
 }
 
