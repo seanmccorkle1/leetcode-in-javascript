@@ -11,6 +11,7 @@ var uniqueOccurrences = function(array) {
     const frequencyArray = Object.values(obj)
     const uniqueFrequenciesArray = [...new Set(frequencyArray)]
     
+    // <= is wrong, if its equal, all are unique
     
     if (uniqueFrequenciesArray.length < frequencyArray.length) {
         return false
@@ -18,6 +19,7 @@ var uniqueOccurrences = function(array) {
     
     return true
 }
+
 
 console.log(uniqueOccurrences([1,2,2,1,1,3]), true, "all frequencies are unique")
 
