@@ -1,9 +1,9 @@
 var uniqueOccurrences = function(array) {
-
-    const obj = {}
-
     
-    for(let element of array) {
+    const obj = {}
+    
+    
+    for (let element of array) {
         (obj[element]) ? obj[element] += 1 
         : obj[element] = 1
     }
@@ -12,11 +12,11 @@ var uniqueOccurrences = function(array) {
     const uniqueFrequenciesArray = [...new Set(frequencyArray)]
     
     
-    if (frequencyArray.length == uniqueFrequenciesArray.length) {
-        return true
+    if (uniqueFrequenciesArray.length < frequencyArray.length) {
+        return false
     }
     
-    return false
+    return true
 }
 
 console.log(uniqueOccurrences([1,2,2,1,1,3]), true, "all frequencies are unique")
