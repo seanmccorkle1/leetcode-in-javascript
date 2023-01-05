@@ -8,8 +8,8 @@ var uniqueOccurrences = function(array) {
         : obj[element] = 1
     }
     
-
-    const uniqueFrequenciesArray = [...new Set(Object.values(obj))]
+    const frequencyArray = Object.values(obj)
+    const uniqueFrequenciesArray = [...new Set(frequencyArray)]
     
     
     if (Object.values(obj).length == uniqueFrequenciesArray.length) {
