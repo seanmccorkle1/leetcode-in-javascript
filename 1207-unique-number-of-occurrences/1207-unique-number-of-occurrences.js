@@ -5,10 +5,11 @@ var uniqueOccurrences = function(array) {
     
     for(let element of array) {
         (obj[element]) ? obj[element] += 1 
-        : obj[element] = 1 // cant do (undefined + 1)
+        : obj[element] = 1
     }
-    const uniqueFrequenciesArray = [...new Set(Object.values(obj))]
     
+    const uniqueFrequenciesArray = [...new Set(Object.values(obj))]
+
     if (Object.values(obj).join("") == uniqueFrequenciesArray.join("")) {
         return true
     }
