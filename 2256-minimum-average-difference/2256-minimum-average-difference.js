@@ -36,11 +36,11 @@ var minimumAverageDifference = function (array) {
        
        // start at (x / 1)
        let leftSumDenominator = index + 1
-       let rightSumDenominator = (array.length - index - 1) || 1
-
-       // if (rightSumDenominator === 0) {
-       //     rightSumDenominator = 1 
-       // }
+       let rightSumDenominator = (array.length - index - 1)
+       
+       if (rightSumDenominator === 0) {
+           rightSumDenominator = 1 
+       }
 
        // start at (leftSum / 1) with leftSum / (index + 1)
        // with index=0, that way you still get array[0]
