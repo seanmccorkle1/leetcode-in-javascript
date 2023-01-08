@@ -1,22 +1,7 @@
-/**
- Many question are incorrectly labeled, but i think less than 10 minutes for easy, 20 minutes for medium, and 40 minutes for hard problems is a good strategy. How many depends on your schedule, but i think the number isn't really important. Learning from the question you've solved is more important.
- * 
- * @param summaryRanges([0, 1, 2, 4, 5, 7])
- * @return  ["0->2", "4->5", "7"]
- * @explain
-*/
-
-
-
 var summaryRanges = function (array) {
-
-
+    
     const rangeArray = []
-    const missingNumbers = []
-    var rangeFound = false
-
-
-    let missingNum = 0
+    var rangeFound = false    
     let leftIndex = 0
 
 
@@ -65,8 +50,7 @@ var summaryRanges = function (array) {
         // the last number will always either be the end of a range 
         // or it will be its own range
         
-        
-        if (numberIsMissing || rightNum == undefined) {
+        if (numberIsMissing) { // || rightNum == undefined) {
             
             currNum 
             // let startOfRange = array[leftIndex]
@@ -85,22 +69,14 @@ var summaryRanges = function (array) {
 
             // 3 != 7, so push the range '3->7'
 
-
-            missingNum = currNum + 1
-            missingNumbers.push(missingNum)
-            
             let endOfRange = currNum
-
-
-            rangeFound = (startOfRange != endOfRange)
-
-
-            if (rangeFound) { 
+            
+            
+            if (startOfRange != endOfRange) { 
                 let inclusiveRange=  startOfRange+"->" + endOfRange
                 rangeArray.push(inclusiveRange)
             }
-
-
+            
             // 7 == 7, its just one number (7)
 
             else if (startOfRange == endOfRange) {
@@ -111,24 +87,15 @@ var summaryRanges = function (array) {
 
             // store the rightIndex of `rightNum` in leftIndex
             // only do this when the non-nested if statement executes
-
-
+            
             startOfRange
             currNum
             rightNum
-
-
-            // ignore "6" and undefined
-
-
+            
             leftIndex
             rightIndex
-
-
+            
             rangeArray
-
-
-            array[leftIndex]
             
             leftIndex = rightIndex
             array[leftIndex]
