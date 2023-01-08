@@ -1,4 +1,3 @@
-
 var minimumAverageDifference = function (array) {
 
     let leftSum = 0    
@@ -25,15 +24,15 @@ var minimumAverageDifference = function (array) {
 
        let num = array[index]
 
-       leftSum
-       rightSum
-   
        // leftSum starts at 2
        // rightSum leavs out  the 2 by doing (rightSum -= 2)
        
        leftSum += num
        rightSum -= num
        
+       leftSum
+       rightSum
+
        let leftSumDenominator = index + 1 // start at (x / 1)
        let rightSumDenominator = (array.length - index - 1)
        
@@ -43,18 +42,21 @@ var minimumAverageDifference = function (array) {
        
        // start at (leftSum / 1) with leftSum / (index + 1)
        // with index=0, that way you still get array[0]
-       
+    
+
+       // floor(19 / 4) - (12 / 3) => 4 - 4
+
        let leftSumAvg = Math.trunc(leftSum / leftSumDenominator)
        let rightSumAvg = Math.trunc(rightSum / rightSumDenominator)
-
-       let difference = Math.abs(leftSumAvg - rightSumAvg)
        
-       if (difference < min) { 
-           min = difference 
+       let absDifference = Math.abs(leftSumAvg - rightSumAvg)
+
+       if (absDifference < min) { 
+           min = absDifference 
            indexOfMinDifference = index // store this specific index
-           
-           // 0 is the lowest possible absolute difference
-           if (min == 0) {               
+
+           // 0 is the lowest possible absolute absDifference
+           if (min == 0) {
                return indexOfMinDifference
            }
        }
