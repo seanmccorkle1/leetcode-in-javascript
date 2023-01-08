@@ -1,17 +1,9 @@
-/**
- Many question are incorrectly labeled, but i think less than 10 minutes for easy, 20 minutes for medium, and 40 minutes for hard problems is a good strategy. How many depends on your schedule, but i think the number isn't really important. Learning from the question you've solved is more important.
-* 
-*/
-
-
-
-
 var canJump = function (array) {
-    let index = 0
-    let maxJump = 0
 
+    let maxJump = 0
     let lastIndex = array.length - 1
-    lastIndex
+
+    let index = 0
 
     while (index < array.length) {
 
@@ -29,16 +21,18 @@ var canJump = function (array) {
             return true
         }
 
-        // got a 0 and it didnt make it to the end
-        
+        // if index catches up to maxJump by looping through
+        // and the element (num) at that current index is 0,
+        // return false
+
         if (maxJump <= index && num == 0) {
             return false
         }
-        index++
+
+        index += 1
     }
 
-
-    // return false
-
-
 }
+
+// console.log(canJump([3, 0, 0, 0]), true, "true, you can getto the last element")
+console.log(canJump([3, 0, 0, 0, 0]), false)
