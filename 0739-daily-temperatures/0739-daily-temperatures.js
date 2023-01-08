@@ -2,8 +2,8 @@ var dailyTemperatures = function(temperatureArray) {
 
     // .fill(0) for the days where no temperature to the right is higher (the last two days)
     // let daysArray = new Array(temperatureArray.length).fill(0)
-    const daysArray = new Array(temperatureArray.length).fill(0)
 
+    const daysArray = new Array(temperatureArray.length - 1).fill(0)
     var mostRecentIndex = 0
     
     // stack always starts as []
@@ -106,7 +106,7 @@ var dailyTemperatures = function(temperatureArray) {
     
     // these last two elements stay at 0 in `daysArray`
     stack
-    
+    daysArray.push(0)
     return daysArray
 }
 
