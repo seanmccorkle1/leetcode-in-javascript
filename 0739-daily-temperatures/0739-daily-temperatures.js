@@ -84,11 +84,13 @@ var dailyTemperatures = function(temperatureArray) {
             rightTemp 
 
         }
-        
+
         stack
 
         stack.push(rightIndex)
         stack
+
+        daysArray
     }
 
     //daysArray=
