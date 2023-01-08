@@ -11,7 +11,9 @@ var dailyTemperatures = function(temperatureArray) {
 
     const stack = []
     
-    for (let rightIndex = 0; rightIndex < temperatureArray.length; rightIndex += 1) {
+    // you still need to get the last temperature to compare
+    
+    for (let rightIndex = 0; rightIndex < temperatureArray.length; rightIndex++) {
 
         rightIndex
 
