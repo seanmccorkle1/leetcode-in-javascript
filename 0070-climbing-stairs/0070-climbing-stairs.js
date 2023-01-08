@@ -8,8 +8,11 @@
 
 var climbStairs = function (num) {
 
-    const array = new Array(num).fill(0)
-
+    // const array = new Array(num).fill(0)
+    const array=[]
+    
+    // 0 ways to climb 0 stairs
+    
     array[1] = 1
     array[2] = 2
     array[3] = 3
@@ -26,12 +29,11 @@ var climbStairs = function (num) {
     for (let index = 4; index <= num; index += 1) {
         let oneBefore=array[index - 1]
         let twoBefore=array[index - 2]
-        array[index] = oneBefore+  twoBefore
+        array[index] = oneBefore +  twoBefore
     }
     
-    // last number is the number of ways to climb stairs
+    // last number is the number of ways to climb stairs    
     
-    // return array[num]
     let numWaysToClimbStairs = array.at(-1)
     return numWaysToClimbStairs
 }
