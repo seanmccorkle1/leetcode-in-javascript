@@ -9,8 +9,8 @@ var commonFactors = function (num1, num2) {
     const lowerNum = Math.min(num1, num2)
 
     // index <= lowerNum
-
-    for (let index = 0; index <= lowerNum; index++) {
+    
+    for (let index = 1; index <= lowerNum; index++) {
 
         index
 
