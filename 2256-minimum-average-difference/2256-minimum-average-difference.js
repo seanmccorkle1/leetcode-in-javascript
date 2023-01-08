@@ -1,9 +1,15 @@
+/**
+ Many question are incorrectly labeled, but i think less than 10 minutes for easy, 20 minutes for medium, and 40 minutes for hard problems is a good strategy. How many depends on your schedule, but i think the number isn't really important. Learning from the question you've solved is more important.
+* 
+*/
+
+
 var minimumAverageDifference = function (array) {
 
     let leftSum = 0    
    let rightSum = array.reduce((s, c) => s + c, 0)
    
-   let min = Infinity
+   let minDifference = Infinity
    let indexOfMinDifference = 0
    
    // parantheses on (index+1) cause theres / and +
@@ -48,15 +54,15 @@ var minimumAverageDifference = function (array) {
 
        let leftSumAvg = Math.trunc(leftSum / leftSumDenominator)
        let rightSumAvg = Math.trunc(rightSum / rightSumDenominator)
-       
+
        let absDifference = Math.abs(leftSumAvg - rightSumAvg)
 
-       if (absDifference < min) { 
-           min = absDifference 
+       if (absDifference < minDifference) { 
+           minDifference = absDifference 
            indexOfMinDifference = index // store this specific index
 
            // 0 is the lowest possible absolute absDifference
-           if (min == 0) {
+           if (minDifference == 0) {
                return indexOfMinDifference
            }
        }
