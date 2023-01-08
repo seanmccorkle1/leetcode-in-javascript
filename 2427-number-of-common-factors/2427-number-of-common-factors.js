@@ -8,12 +8,10 @@ var commonFactors = function (num1, num2) {
     // only go to the lower of the 2 numbers
     const lowerNum = Math.min(num1, num2)
 
-    // index <= lowerNum
-    
+    // index <= lowerNum, 0 isnt a factor
+
     for (let index = 1; index <= lowerNum; index++) {
-
-        index
-
+        
         let quotient1 = num1 / index
         let quotient2 = num2 / index
 
