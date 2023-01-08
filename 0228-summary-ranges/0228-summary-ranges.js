@@ -16,9 +16,10 @@ var summaryRanges = function (array) {
 
     for (let rightIndex = 1; rightIndex <= array.length; rightIndex++) {
         
-        let startOfRange = array[leftIndex]
-
+        let startOfRange = array[leftIndex]        
         let currNum = array[rightIndex - 1]
+        let endOfRange = currNum
+
         let rightNum = array[rightIndex]
         
         startOfRange
@@ -42,7 +43,7 @@ var summaryRanges = function (array) {
             currNum
             rightNum
             
-            let endOfRange = currNum
+            // let endOfRange = currNum
             
             // if (array[leftIndex ] != array[rightIndex - 1])
             
