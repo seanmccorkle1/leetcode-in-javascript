@@ -8,9 +8,7 @@ var dailyTemperatures = function(temperatureArray) {
     // const stack is fine because you only use pop() on it
 
     const stack = []
-
-
-
+    
     for (let rightIndex = 0; rightIndex < temperatureArray.length; rightIndex += 1) {
 
         rightIndex
@@ -58,17 +56,16 @@ var dailyTemperatures = function(temperatureArray) {
             // [2] is 75, the highest temperature that goes into daysArray last
 
             stack
-
-            let leftIndex = stack.pop()
-
+            let leftIndex = stack.pop()            
             stack
 
             leftIndex
             rightIndex        
-
-            // (1 - 0) is just one day, dont need an extra -1
+            
+            // (1 - 0) is just one day to the right, dont need -1
             const daysUntilHigherTemp = rightIndex - leftIndex 
-
+            
+            
             leftIndex
             daysArray[leftIndex] = daysUntilHigherTemp
 
