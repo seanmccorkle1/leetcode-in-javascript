@@ -42,7 +42,7 @@ var minimumAverageDifference = function (array) {
         rightSum
 
         let leftSumDenominator = index + 1 // start at (x / 1)
-        let rightSumDenominator = (array.length - index - 1)
+        let rightSumDenominator = (array.length - index) - 1
 
         if (rightSumDenominator == 0) {
             rightSumDenominator = 1
