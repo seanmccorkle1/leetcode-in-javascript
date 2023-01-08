@@ -16,6 +16,8 @@ var climbStairs = function (num) {
 
     array
     
+    // array = [0, 1, 2, 3]
+    
     // climbStairs(2), return 2
     if (num <= 3) {
         return num
@@ -27,8 +29,10 @@ var climbStairs = function (num) {
         array[index] = oneBefore+  twoBefore
     }
     
-    // get the last number in the array
-    return array[num]
+    // last number is the number of ways to climb stairs
+    
+    // return array[num]
+    return array.at(-1)
 }
 
 console.log(climbStairs(4), 5, "5 ways to climb 4 steps, [[2, 2], [1,1,1,1], [2, 1, 1], [1, 2, 1], [1, 1, 2]")
