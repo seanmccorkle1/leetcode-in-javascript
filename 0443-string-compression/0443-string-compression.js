@@ -37,26 +37,23 @@ var compress = function (array) {
                 startDeleteIndex = backIndex + 2
                 
                 // split to get the digits ["1", "2"] instead of ["12"]
-
+                
                 if (adjacentCount >= 10) {
-
-                    // stringDigitArray = String(adjacentCount).split("")
-                    array.splice(startDeleteIndex, deleteCount - 1, ...String(adjacentCount))
-
+                    array.splice(startDeleteIndex, deleteCount - 1, ...String(adjacentCount))    
                     array
                 }
-
-                // (backIndex  + 2) to start deleting at the SECOND "b
-                // to get ["b", "1", "2"] instead of ["1", "2", "b"]
-
+            
+                // [backIndex  + 2) to start deleting at the SECOND "b"
+                // result is ["b", "1", "2"] instead of ["1", "2", "b"]
+                
                 else if (adjacentCount <= 9) {
                     array.splice(startDeleteIndex, deleteCount - 1, String(adjacentCount))
                 }
-
+                
                 adjacentCount = 1
             }
         }
-
+        
     }
 
     // if it repeats on the last loop
@@ -71,17 +68,16 @@ var compress = function (array) {
         deleteCount = adjacentCount
 
         if (adjacentCount >= 10) {
-            // stringDigitArray = String(adjacentCount).split("")
             array.splice(1, deleteCount - 1, ...String(adjacentCount))
-        } 
+        }
 
         else if (adjacentCount <= 9) {
             array.splice(1, deleteCount - 1, String(adjacentCount))
         }    
     }
-
+    
     adjacentCount
     array
-
+    
     return array.length
 }
