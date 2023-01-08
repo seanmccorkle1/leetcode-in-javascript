@@ -8,18 +8,17 @@
 
 var climbStairs = function (num) {
 
-    // const array = new Array(num).fill(0)
     const array=[]
     
     // 0 ways to climb 0 stairs
-    
+    array[0] = 0
     array[1] = 1
     array[2] = 2
     array[3] = 3
 
     array
     
-    // array = [0, 1, 2, 3]
+    // array = [, 1, 2, 3]
     
     // climbStairs(2), return 2
     if (num <= 3) {
