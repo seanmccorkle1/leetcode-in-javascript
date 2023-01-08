@@ -1,58 +1,87 @@
 var compress = function (array) {
-    // "a" automatically counts as length 1    
-    let count = 1
-    
-    let deleteCount // not global variable, its function-scoped
-    let digitArray
-    let startIndex
 
-    // array[index+1] over -1
 
-    for (let backIndex = array.length - 2; backIndex >= 0; backIndex -= 1){
+    let deleteCount = 0
+    // let stringDigitArray = []
+
+    let startDeleteIndex = 0
+
+    // array[index+1] over array[index-1]
+
+    // "a" automatically counts as length 1, not 0
+    let adjacentCount = 1
+
+    for (let backIndex = array.length - 2; backIndex >= 0; backIndex -= 1) {
+
+        array
 
         const leftNum = array[backIndex]
         const rightNum = array[backIndex + 1]
-        
-        if (leftNum == rightNum){
-            count += 1
-        }
-        
-        
-        else if (leftNum != rightNum){
-            
-            if (count>=2){
-                deleteCount = count - 1
-                digitArray = count.toString().split("") // split to get the digits ["1", "2"] instead of ["12"]
-                startIndex = backIndex +2
-                
-                array.splice(startIndex, deleteCount, ...digitArray)  // modify with splice
 
-                count =1
+        const numsAreEqualAndAdjacent = (leftNum == rightNum)
+
+        if (numsAreEqualAndAdjacent) {
+            adjacentCount += 1
+        }
+
+        // adjacentCount starts at 1 because a single letter "b" is already length 1, 
+        // ["z"] instead of ["z", 1]
+
+        else if (!numsAreEqualAndAdjacent) {
+
+            // only if the letters are unequal and (count >= 2)
+
+            if (adjacentCount >= 2) {
+
+                deleteCount = adjacentCount
+                startDeleteIndex = backIndex + 2
+                
+                // split to get the digits ["1", "2"] instead of ["12"]
+
+                if (adjacentCount >= 10) {
+
+                    // stringDigitArray = String(adjacentCount).split("")
+                    array.splice(startDeleteIndex, deleteCount - 1, ...String(adjacentCount))
+
+                    array
+                }
+
+                // (backIndex  + 2) to start deleting at the SECOND "b
+                // to get ["b", "1", "2"] instead of ["1", "2", "b"]
+
+                else if (adjacentCount <= 9) {
+                    array.splice(startDeleteIndex, deleteCount - 1, String(adjacentCount))
+                }
+
+                adjacentCount = 1
             }
-        
-    }
-  
+        }
+
     }
 
     // if it repeats on the last loop
-    
-    if (count >= 2){
-    
-        deleteCount = count - 1
-        digitArray = count.toString().split("") // split to get the digits ["1", "2"] instead of ["12"]
+    // split to get the digits ["1", "2"] instead of ["12"]
 
-        // start at index 1 and delete to the right
-        // backIndex isnt valid outside the loop
-                
+    adjacentCount
 
-        array.splice(1, deleteCount, ...digitArray)
-        
+    array
+
+    if (adjacentCount >= 2) {
+
+        deleteCount = adjacentCount
+
+        if (adjacentCount >= 10) {
+            // stringDigitArray = String(adjacentCount).split("")
+            array.splice(1, deleteCount - 1, ...String(adjacentCount))
+        } 
+
+        else if (adjacentCount <= 9) {
+            array.splice(1, deleteCount - 1, String(adjacentCount))
+        }    
     }
+
+    adjacentCount
+    array
 
     return array.length
 }
-
-console.log(compress(["a", "a", "b","b","b","b","b","b","b","b","b","b","b","b", "z"]),   6,
-`array should be modified to ['a', '2', 'b', '1', '2', 'z']  b12 becomes b 1 2`)
-
-// console.log(compress(["a"]), 1 ,"return array.length")
