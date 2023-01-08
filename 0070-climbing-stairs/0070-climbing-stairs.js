@@ -32,7 +32,8 @@ var climbStairs = function (num) {
     // last number is the number of ways to climb stairs
     
     // return array[num]
-    return array.at(-1)
+    let numWaysToClimbStairs = array.at(-1)
+    return numWaysToClimbStairs
 }
 
 console.log(climbStairs(4), 5, "5 ways to climb 4 steps, [[2, 2], [1,1,1,1], [2, 1, 1], [1, 2, 1], [1, 1, 2]")
