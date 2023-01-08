@@ -47,9 +47,8 @@ var summaryRanges = function (array) {
             
             // if (array[leftIndex ] != array[rightIndex - 1])
             
-            if (startOfRange != endOfRange) { 
-                let inclusiveRange=  startOfRange+"->" + endOfRange
-                rangeArray.push(inclusiveRange)
+            if (startOfRange != endOfRange) {
+                rangeArray.push(startOfRange+"->" + endOfRange)
             }
             
             // 7 == 7, its just one number (7)
