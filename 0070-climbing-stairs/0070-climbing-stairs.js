@@ -15,15 +15,18 @@ var climbStairs = function (num) {
     array[3] = 3
 
     array
-
+    
+    // climbStairs(2), return 2
     if (num <= 3) {
         return num
     }
 
     for (let index = 4; index <= num; index += 1) {
-        array[index] = array[index - 1] + array[index - 2]
+        let oneBefore=array[index - 1]
+        let twoBefore=array[index - 2]
+        array[index] = oneBefore+  twoBefore
     }
-
+    
     // get the last number in the array
     return array[num]
 }
