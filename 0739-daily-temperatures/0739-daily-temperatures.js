@@ -2,8 +2,9 @@ var dailyTemperatures = function(temperatureArray) {
 
     // .fill(0) for the days where no temperature to the right is higher (the last two days)
     // let daysArray = new Array(temperatureArray.length).fill(0)
-    const daysArray = new Array(temperatureArray.length - 1).fill(0)
-    
+    const daysArray = new Array(temperatureArray.length).fill(0)
+
+    var mostRecentIndex = 0
     
     // stack always starts as []
     // const stack is fine because you only use pop() on it
@@ -19,7 +20,7 @@ var dailyTemperatures = function(temperatureArray) {
         // temperatureArray = 
         // [ 73, 74, 75, 71, 69, 72, 76, 73 ]
         
-        let mostRecentIndex = stack.at(-1)
+        mostRecentIndex = stack.at(-1)
         
         let leftTemp = temperatureArray[mostRecentIndex]
         let rightTemp = temperatureArray[rightIndex]
@@ -57,11 +58,11 @@ var dailyTemperatures = function(temperatureArray) {
             // [2] is 75, the highest temperature that goes into daysArray last
 
             stack
-            let leftIndex = stack.pop()            
+            let leftIndex = stack.pop()
             stack
 
             leftIndex
-            rightIndex        
+            rightIndex
             
             // (1 - 0) is just one day to the right, dont need -1
             const daysUntilHigherTemp = rightIndex - leftIndex 
@@ -72,16 +73,19 @@ var dailyTemperatures = function(temperatureArray) {
 
             daysArray
 
-        
+
             // change the variable (leftTemp) for the while loop
             // `stack` was modified  with pop()
 
-            leftTemp = temperatureArray[stack.at(-1)]
+            mostRecentIndex = stack.at(-1)
+            leftTemp = temperatureArray[mostRecentIndex]
 
             // keep rightTemp at 76 
             rightTemp 
 
         }
+        
+        stack
 
         stack.push(rightIndex)
         stack
@@ -97,12 +101,10 @@ var dailyTemperatures = function(temperatureArray) {
 
     // [ 1, 1, 0, 2, 1, 1, 0, 0 ]     
     // [ 1, 1, 4, 2, 1, 1, 0, 0 ]
-
-
+    
     // these last two elements stay at 0 in `daysArray`
     stack
-
-    daysArray.push(0)
+    
     return daysArray
 }
 
