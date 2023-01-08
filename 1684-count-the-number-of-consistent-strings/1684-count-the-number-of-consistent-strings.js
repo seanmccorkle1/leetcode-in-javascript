@@ -1,17 +1,15 @@
 var countConsistentStrings = function(allowedLetters, stringArray){
 
     let count = 0
-    const r  = new RegExp(`[${allowedLetters}]` , "g") 
-
+    const twoLetterRegex = new RegExp(`[${allowedLetters}]` , "g") 
     
     for (let word of stringArray) {
-        word = word.replace(r, "")
+        word = word.replace(twoLetterRegex, "")
+
         if (word===""){
             count++
         }
-            
-    }
-    
+    }    
     return count
 }
 
