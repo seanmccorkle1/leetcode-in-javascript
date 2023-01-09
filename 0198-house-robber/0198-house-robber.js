@@ -8,19 +8,15 @@
 
 var rob = function(inputArray) {
     
-    if (inputArray.length === 0) {
+    if (inputArray.length == 0) {
         return 0
     }
-
-    // for robMoney([8])  array[1] = Math.max(8, inputArray[1]) returns NaN
-    // Math.max and min always privilege NaN
-
-    if (inputArray.length == 1){ 
-        return Math.max(...inputArray)
-    }
-
-    const array = new Array(inputArray.length)
     
+    if (inputArray.length == 1){ 
+        return inputArray[0]
+    }
+    
+    const array = new Array(inputArray.length)
 
     array[0] = inputArray[0]
 
