@@ -41,7 +41,10 @@ var rob = function(inputArray) {
         index
         const currNum = inputArray[index]
 
+        // rob by adding the currNum (robbing the current house)
         let robMoney = array[index - 2] + currNum
+        
+        // skip by ignoring currNum (ignoring the house)
         let skipMoney = array[index - 1]
 
         robMoney
@@ -53,7 +56,7 @@ var rob = function(inputArray) {
                 skipMoney)
 
         array[index] = maxMoney
-
+        
         // 2 + 9 beats 7 + 3, so put 11 in ("robMoney" it)
         // "skipMoney" [3] by just ignoring it and keeping 11
         
@@ -66,6 +69,6 @@ var rob = function(inputArray) {
 }
 
 // console.log(rob([2, 7, 9, 3, 1]), 12, "2 + 9 + 1 = 12, move up 2 each time")
-console.log(rob([7, 2, 9, 3, 1]), 12, "2 + 9 + 1 = 12, move up 2 each time")
+console.log(rob([7, 2, 9, 3, 1]),  17, "[7, 9, 1] 17 points max")
 
 // console.log(rob([2,1,1,2]), 4)
