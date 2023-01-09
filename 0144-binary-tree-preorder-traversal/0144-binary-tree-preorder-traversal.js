@@ -14,13 +14,13 @@
 
 var preorderTraversal = function(root) {
 
-    if (!root)  {
-        return []
-    }
-    
-    // if (root == undefined || root == null){
+    // if (!root)  {
     //     return []
     // }
+    
+    if (root == undefined || root == null){
+        return []
+    }
     
     const result = []
     const stack = [root]
