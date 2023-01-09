@@ -13,10 +13,6 @@
 
 
 var preorderTraversal = function(root) {
-
-    // if (!root)  {
-    //     return []
-    // }
     
     if (root == undefined || root == null){
         return []
