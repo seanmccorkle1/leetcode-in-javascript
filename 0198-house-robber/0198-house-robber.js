@@ -1,11 +1,3 @@
-/**
- * 
- * @function
- * @return
- * 
- */
-
-
 var rob = function(inputArray) {
     
     if (inputArray.length == 0) {
@@ -16,35 +8,31 @@ var rob = function(inputArray) {
         return inputArray[0]
     }
     
-    const array = new Array(inputArray.length)
-
-    array[0] = inputArray[0]
-
     // start [2,1,1,2] off as [2, 2]    
     // you have to skipMoney (inputArray[0]) or robMoney (take the current element) here
 
-    array[1] = Math.max(inputArray[0], inputArray[1])
-    array
-
-    /*
-    If we choose to robMoney, we can't robMoney the next house
-    If we choose to skipMoney, we can robMoney the next house
-
-    array[index] is the max amount of money we can robMoney without alerting the police at house `index`
-    */
+    const array = new Array(inputArray.length)
     
+    array[0] = inputArray[0]
+    array[1] = Math.max(inputArray[0], inputArray[1])
+    // array[1] = inputArray[1]
+    
+    
+    // array[index] (each element) is the max amount of money you can rob without alerting the police at house #`index`
     // modify the array to keep the sum running
+    
     array
     
     for (let index = 2; index < inputArray.length; index++) {
 
         index
-        const currNum = inputArray[index]
-
-        // rob by adding the currNum (robbing the current house)
-        let robMoney = array[index - 2] + currNum
         
-        // skip by ignoring currNum (ignoring the house)
+        let currHouse = inputArray[index]
+
+        // rob by adding the currHouse (robbing the current house)
+        let robMoney = array[index - 2] + currHouse
+        
+        // skip by ignoring currHouse (ignoring the house)
         let skipMoney = array[index - 1]
 
         robMoney
