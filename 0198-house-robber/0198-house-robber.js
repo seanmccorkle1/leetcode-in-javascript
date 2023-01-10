@@ -4,8 +4,12 @@ var rob = function(inputArray) {
         return 0
     }
     
-    if (inputArray.length == 1){ 
-        return inputArray[0]
+    // if (inputArray.length == 1){ 
+    //     return inputArray[0]
+    // }
+    
+    if (inputArray.length == 1 || inputArray.length == 2){
+        return Math.max(...inputArray)
     }
     
     // start [2,1,1,2] off as [2, 2]    
