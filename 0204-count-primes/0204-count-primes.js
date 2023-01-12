@@ -39,12 +39,12 @@ var countPrimes = function (num) {
         // 6 was already seen because its a multiple of 2
 
         // (let index = 0) only happens once, it doesnt refresh
-        
-        var power = Math.pow(index, 2)
-        
-        while (power < num){
-            array[power] = 1   // mark the number as visited, "hot"
-            power += index
+
+        let indexSquared = Math.pow(index, 2)
+                
+        while (indexSquared < num){
+            array[indexSquared] = 1   // mark the number as visited, "hot"
+            indexSquared += index
 
             array
         }
