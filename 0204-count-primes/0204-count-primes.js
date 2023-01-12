@@ -36,7 +36,7 @@ var countPrimes = function (inputNum) {
         
         var power = Math.pow(increment, 2)
         
-        while (power <= inputNum){
+        while (power < inputNum){
             array[power] = 1   // mark the number as visited, "hot"
             power += increment
 
