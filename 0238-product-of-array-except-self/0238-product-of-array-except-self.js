@@ -77,7 +77,9 @@ var productExceptSelf = function (array) {
         // we can do the multiplication on the spot.
 
         rightArray
-
+        
+        // (24 x 1) and (12 x 1) for rightArray[0] and rightArray[1]
+        
         rightArray[backIndex] *= leftArray[backIndex]
 
         leftArray
