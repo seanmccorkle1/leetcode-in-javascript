@@ -1,9 +1,7 @@
 var maxProfit = function (array) {
-
-
+    
     let maxStockProfit = 0
-
-
+    
     // accounts for buying first by being behind and being negative
     let buyNum = array[0]
 
@@ -15,15 +13,14 @@ var maxProfit = function (array) {
         maxStockProfit
         
         // buy it for low (lose $2), sell it high (gain $10)
-
-
-        if (buyNum <= sellNum) {
+        
+        if (buyNum <sellNum) {
             let profit  = sellNum - buyNum
             maxStockProfit = Math.max(profit, maxStockProfit)
         } 
         
-        else if (buyNum > sellNum) {
-            buyNum = sellNum // buy comes first like this
+        else {
+            buyNum = sellNum  // buy comes first like this
         }
     }
     
