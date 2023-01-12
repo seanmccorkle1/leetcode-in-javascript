@@ -1,6 +1,3 @@
-
-
-
 var countPrimes = function (inputNum) {
 
     // this is the (inputNumber -= 1) part
@@ -22,7 +19,7 @@ var countPrimes = function (inputNum) {
         }
 
         // [2, 3, 5, 7, 11]
-        ++primeCount
+        primeCount += 1
 
         // mark every multiple of 2 up until 10, not including 10 itself
         // so [2,4,6,8]
@@ -35,25 +32,15 @@ var countPrimes = function (inputNum) {
         // 6 was already seen because its a multiple of 2
 
         // (let index = 0) only happens once, it doesnt refresh
-
-        let power = Math.pow(increment, 2)
         
-        while (power < inputNum){
+        var power = Math.pow(increment, 2)
+        
+        while (power <= inputNum){
             array[power] = 1
             power += increment
 
             array
         }
-
-        // for (let mult = Math.pow(increment, 2); mult < inputNum; mult += increment) {
-
-        //     increment
-        //     mult
-
-        //     array[mult] = 1
-
-        //     array
-        // }
     }
     array
 
