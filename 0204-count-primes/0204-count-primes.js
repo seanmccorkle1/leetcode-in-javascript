@@ -21,12 +21,11 @@ var countPrimes = function (inputNum) {
         
         // [2, 3, 5, 7, 11]
         primeCount += 1
-        
-        
+    
         // mark every multiple of 2 up until 10, not including 10 itself
         // so [2,4,6,8]
         // then mark every multiple of 3
-
+        
         // use mult += 2 to only mark the multiples of 2
         // mult++ would mark [2,3,4,5] without increasing primeCount
 
