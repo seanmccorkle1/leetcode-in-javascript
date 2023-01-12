@@ -1,22 +1,28 @@
-var countPrimes = function (inputNum) {
+/**
+ Many question are incorrectly labeled, but i think less than 10 minutes for easy, 20 minutes for medium, and 40 minutes for hard problems is a good strategy. How many depends on your schedule, but i think the number isn't really important. Learning from the question you've solved is more important.
+* 
+*/
+
+var countPrimes = function (num) {
 
     // this is the (inputNumber -= 1) part
-    const array = new Uint8Array(inputNum)
+    const array = new Uint8Array(num)
     let primeCount = 0
 
 
     // "strictly less than the input number"
 
     
-    for (let increment = 2; increment < inputNum; increment++) {
+    for (let index = 2; index < num; index++) {
         
-        increment
+        index
 
         // if its been seen before, its a multiple (ie. not a prime)
         // so dont increase primeCount
-
-        if (array[increment] == 1) {
-            continue // back to top
+        
+        // back to top, the number was already visited
+        if (array[index] == 1) {
+            continue 
         }
         
         // [2, 3, 5, 7, 11]
@@ -34,11 +40,11 @@ var countPrimes = function (inputNum) {
 
         // (let index = 0) only happens once, it doesnt refresh
         
-        var power = Math.pow(increment, 2)
+        var power = Math.pow(index, 2)
         
-        while (power < inputNum){
+        while (power < num){
             array[power] = 1   // mark the number as visited, "hot"
-            power += increment
+            power += index
 
             array
         }
