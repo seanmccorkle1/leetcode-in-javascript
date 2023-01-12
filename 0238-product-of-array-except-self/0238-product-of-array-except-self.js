@@ -48,10 +48,13 @@ var productExceptSelf = function (array) {
     let leftProduct = 1
 
     for (let index = 0; index < array.length; index++) {
-
+        
         leftArray[index] = leftProduct
-        leftProduct *= array[index]
 
+        // the real array[0] is 2  ([2, 2])
+        // but leftArray = [1, 2]
+
+        leftProduct *= array[index]
         leftArray
     }
 
@@ -77,9 +80,7 @@ var productExceptSelf = function (array) {
         // we can do the multiplication on the spot.
 
         rightArray
-        
-        // (24 x 1) and (12 x 1) for rightArray[0] and rightArray[1]
-        
+
         rightArray[backIndex] *= leftArray[backIndex]
 
         leftArray
@@ -91,5 +92,6 @@ var productExceptSelf = function (array) {
     return rightArray
 }
 
-console.log(productExceptSelf([1,2,3,4]),   [24, 12, 8, 6])
-// console.log(productExceptSelf([2, 2]), [2,2])
+console.log(productExceptSelf([2, 2]), [2,2])
+
+// console.log(productExceptSelf([1,2,3,4]),   [24, 12, 8, 6])
