@@ -64,7 +64,7 @@ var numberToWords = function (num) {
             continue
         }
 
-        if (num == 0) {
+        if (num <= 0) {
             break
         }
 
