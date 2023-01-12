@@ -5,28 +5,35 @@
 
 var romanToInt = function(string){
 
+    let sum = 0
+
     const letterObj = {
         "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000
     }
 
-    let sum = 0
+    // for (let index = 0; index < string.length; index++){
 
-    for (let index = 0; index < string.length; index++){
+    for (let index = 0; index < string.length - 1; index++){
 
-        let currValue = letterObj[string[index]]
-        let rightValue = letterObj[string[index + 1]]
+        let currLetterValue = letterObj[string[index]]
+        let rightLetterValue = letterObj[string[index + 1]]
 
-        if (currValue < rightValue){
-            sum -= currValue
+        // "IX" is (-1 + 10 = 9)
+
+        if (currLetterValue < rightLetterValue){
+            sum -= currLetterValue
         }
 
         // always add the last letter normally
-        else if (currValue >= rightValue || rightValue == undefined){
-            sum += currValue
+
+        else if (currLetterValue >= rightLetterValue){
+            sum += currLetterValue
         }
 
-        // letters[string[index]] < letters[string[index + 1]] ? sum -= letters[string[index]] : sum += letters[string[index]]
     }
+    let lastLetter = string.at(-1)
+    sum += letterObj[lastLetter]
+
     return sum
 }
 
