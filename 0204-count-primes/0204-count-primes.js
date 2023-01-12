@@ -25,7 +25,7 @@ var countPrimes = function (num) {
             continue 
         }
         
-        // [2, 3, 5, 7, 11]
+        // [2, 3, 5, 7, 11] are the primes
         primeCount += 1
     
         // mark every multiple of 2 up until 10, not including 10 itself
