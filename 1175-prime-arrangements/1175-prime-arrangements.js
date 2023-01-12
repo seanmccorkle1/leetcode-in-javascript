@@ -5,10 +5,15 @@
  * 
  */
 
-//Slight tangent from me, but out should be a key word
-//And if you don't put a return statement out will be returned
-//In strongly typed languages it works even betters
-//You wouldn't even need to initialize
+
+// The total number is equal to amountOfPrimes! * amountOfComposites!, so we go through and do that.
+// Keep track of the total and multiply by it each time we increment ends up reaching that value.
+
+// Slight tangent from me, but result should be a key word
+// And if you don't put a return statement result will be returned
+
+// In strongly typed languages it works even betters
+// You wouldn't even need to initialize
 
 // The highest value of n is 100, so all primes less than that
 // It is pretty easy to do a function that creates this set, this can be an exercise for the reader
@@ -19,48 +24,56 @@ var numPrimeArrangements = function (num) {
 
     const primeSet = new Set([2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97])
 
-    const mod = Math.pow(10, 9) + 7
+    const mod = (Math.pow(10, 9)) + 7
 
-    let primes = 0
-    let nonPrimes = 0
+    let primeCount = 0
 
-    let out = 1
+    // 1 is a non-prime and youre starting from index 2
+    let nonPrimeCount = 1
 
-    //If it is prime you multiply by the amount of primes 
-    //after incrementing that amount
+    let result = 1   // 1 because multiplying
 
-    //If it is composite you multiply by the amount of composites 
-    //after incrementing that amount
+    // If it is prime you multiply by the amount of primes 
+    // after incrementing that amount
 
-    //The result of that is primes! * composites!,
-    //Which is the number of permutations
+    // If it is composite you multiply by the amount of composites 
+    // after incrementing that amount
 
-    for (let index = 1; index <= num; index++) {
+    // The result of that is primes! * composites!,
+    // Which is the number of permutations
+
+    // [2, 3, 5, 7] are all prime
+
+    for (let index = 2; index <= num; index++) {
 
         index
+        result
 
         if (primeSet.has(index)) {
+            
+            result
+            primeCount += 1
+            result *= primeCount
 
-            primes += 1
-            out *= primes
-
-            // out *= ++primes
-        }         
+            // result *= ++primes
+        }
 
         else if (!primeSet.has(index)) {
-            nonPrimes += 1
-            out *= nonPrimes
-            // out *= ++nonPrimes
+            result
+            nonPrimeCount += 1
+            result *= nonPrimeCount
+
+            // result *= ++nonPrimes
         }
-        out
-        out %= mod
-        out
+        result
+        result %= mod
+        result
     }
-    
-    return out
+
+    return result
 }
 
-console.log(numPrimeArrangements(5), 12)
+console.log(numPrimeArrangements(5), 12, "[1,2,5,4,3] is a valid permutation, but [5,2,3,4,1] is not because the prime number 5 is at index 1")
 
 // console.log(numPrimeArrangements(1), 1)
 // console.log(numPrimeArrangements(2), 1)
