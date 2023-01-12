@@ -1,14 +1,22 @@
 /**
- * @param {number} num
- * @return {boolean}
+ * 
+ * @function
+ * @return
+ * 
  */
-var isPerfectSquare = function(num) {
 
-    // exp that is below 1 will always be a lower number
-    let sqrt = num ** .5
+
+var isPerfectSquare = function(num){
+    num
     
-    if (sqrt == parseInt(sqrt)){
+    const multiple = Math.pow(num, 0.5)
+
+    if (Number.isInteger(multiple)){
         return true
     }
-    else return false 
+    else return false
 }
+
+console.log(isPerfectSquare(15), false)
+console.log(isPerfectSquare(16), true)
+// console.log(isPerfectSquare(17), false)
