@@ -21,39 +21,34 @@ var numberToWords = function (num) {
 
     for (const [value, word] of wordMap) {
 
-        // const numIsTooSmall = (num - value) <= 0
+        value
+        word
 
-        // if (numIsTooSmall || num == 0) {
-        //     continue
-        // }
-
-        const multiplier = Math.floor(num / value)
+        const multiplier = Math.trunc(num / value)
 
         // if (multiplier == 0) {
         //     continue
         // }
-        
-        const check = num - value
-        
-        if (check <= -1) {
+
+        const negCheck = num - value
+
+        if (negCheck <= -1) {
             continue
         }
 
         if (num == 0){
-            continue
+            break
         }
 
         value
         multiplier
 
         num -= (value * multiplier)
-
         num
 
         if (multiplier == 1 && value >= 100) {
             resultArray.push("One", word)
             resultArray
-
             continue
         }
 
@@ -63,8 +58,8 @@ var numberToWords = function (num) {
             continue
         }
 
-        let s="asd"
-        s
+        var v = numberToWords(multiplier)
+        // word
 
         resultArray.push(numberToWords(multiplier), word)
         resultArray
@@ -74,7 +69,9 @@ var numberToWords = function (num) {
     return resultArray.join(" ")
 }
 
-console.log(numberToWords(123), "One Hundred Twenty Three")
+
+// console.log(numberToWords(123), "One Hundred Twenty Three")
+// console.log(numberToWords(223), "Two Hundred Twenty Three")
 
 // console.log(numberToWords(1000023), "One Million")
 // console.log(numberToWords(2000023), "Two Million")
