@@ -9,11 +9,11 @@
  */
 
 var intToRoman = function (num) {
+    //  descending order object
 
     let currString = ""
 
-    //  descending order object
-    
+            
     const letterObj = {
         "M": 1000,
         "CM": 900,
@@ -40,6 +40,10 @@ var intToRoman = function (num) {
         
         let letterNum = letterObj[letter]
 
+   // 1 == 1, so put "I" in the string
+  // thats why you use >=
+    
+        
         while (num >= letterNum) {
             currString += letter
             num -= letterNum
