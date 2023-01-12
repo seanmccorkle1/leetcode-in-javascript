@@ -48,7 +48,7 @@ var productExceptSelf = function (array) {
     let leftProduct = 1
 
     for (let index = 0; index < array.length; index++) {
-        
+
         leftArray[index] = leftProduct
 
         // the real array[0] is 2  ([2, 2])
@@ -59,11 +59,10 @@ var productExceptSelf = function (array) {
     }
 
     const rightArray = []
+
     let runningProduct = 1
 
     let backIndex = array.length - 1
-
-    // for (let backIndex = array.length - 1; backIndex >= 0; backIndex--) {
 
     // leftArray's element is one behind the backIndex
     // rightArray's lemeent is one ahead the backIndex
@@ -73,13 +72,14 @@ var productExceptSelf = function (array) {
         runningProduct
 
         rightArray[backIndex] = runningProduct
-
-        runningProduct *= array[backIndex]
-
-        // this additional step saves us from having another iteration.
-        // we can do the multiplication on the spot.
-
         rightArray
+
+        runningProduct *= array[backIndex]        
+
+        // every number is in the product except 4 for 6 (1x2x3)
+
+        // the back is where leftArray dominates
+        // the front is where rightArray dominates
 
         rightArray[backIndex] *= leftArray[backIndex]
 
@@ -92,6 +92,5 @@ var productExceptSelf = function (array) {
     return rightArray
 }
 
-console.log(productExceptSelf([2, 2]), [2,2])
-
-// console.log(productExceptSelf([1,2,3,4]),   [24, 12, 8, 6])
+console.log(productExceptSelf([1,2,3,4]),   [24, 12, 8, 6])
+// console.log(productExceptSelf([2, 2]), [2,2])
