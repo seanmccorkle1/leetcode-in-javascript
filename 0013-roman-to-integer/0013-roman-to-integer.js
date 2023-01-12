@@ -9,7 +9,7 @@ var romanToInt = function(string){
         "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000
     }
 
-    let romanSum = 0
+    let sum = 0
 
     for (let index = 0; index < string.length; index++){
 
@@ -17,17 +17,17 @@ var romanToInt = function(string){
         let rightValue = letterObj[string[index + 1]]
 
         if (currValue < rightValue){
-            romanSum -= currValue
-        }
-        
-        // always add the last letter normally
-        else if (currValue >= rightValue || rightValue == undefined){
-            romanSum += currValue
+            sum -= currValue
         }
 
-        // letters[string[index]] < letters[string[index + 1]] ? romanSum -= letters[string[index]] : romanSum += letters[string[index]]
+        // always add the last letter normally
+        else if (currValue >= rightValue || rightValue == undefined){
+            sum += currValue
+        }
+
+        // letters[string[index]] < letters[string[index + 1]] ? sum -= letters[string[index]] : sum += letters[string[index]]
     }
-    return romanSum
+    return sum
 }
 
 console.log(romanToInt("LVIII"), 58, "50 + 5 + 1 + 1 + 1 = 58")
