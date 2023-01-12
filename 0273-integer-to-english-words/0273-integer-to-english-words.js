@@ -1,11 +1,3 @@
-/**
- * 
- * @function
- * @return
- * 
- */
-
-
 var numberToWords = function (num) {
 
     const numsWithWordsArray = [
@@ -102,7 +94,7 @@ var numberToWords = function (num) {
 // console.log(numberToWords(123), "One Hundred Twenty Three")
 // console.log(numberToWords(223), "Two Hundred Twenty Three")
 
-// console.log(numberToWords(208), "Two Hundred Eight")
+console.log(numberToWords(208), "Two Hundred Eight")
 
 // console.log(numberToWords(1000023), "One Million")
 // console.log(numberToWords(2000023), "Two Million")
