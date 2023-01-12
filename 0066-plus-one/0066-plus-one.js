@@ -15,7 +15,9 @@ var plusOne = function(array) {
         }
     }
     // if all the numbers were 9, return this
-    return [1,...array]
+    
+    array.unshift(1)
+    return array
 }
 
 console.log(plusOne([1,2]), [1,3], "12 + 1 = 13")
