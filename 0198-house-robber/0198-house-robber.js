@@ -1,6 +1,5 @@
 var rob = function(inputArray) {
-
-    // [1, 1] no adjacent houses can be robbed, max is 1
+    
     if (inputArray.length == 1) {  
         return inputArray[0]
     }
@@ -47,13 +46,12 @@ var rob = function(inputArray) {
         // array = [2, 1, 3, 3]
 
     }    
-
+    
     array
-    // return array.at(-1) 
     return Math.max(...array)
 }
 
-console.log(rob([2, 1, 1, 2]), 4)
+console.log(rob([30, 15]), 30)
 
+// console.log(rob([2, 1, 1, 2]), 4)
 // console.log(rob([2, 7, 9, 3, 1]), 12, "2 + 9 + 1 = 12, move up 2 each time")
-// console.log(rob([2,1,1,2]), 4)
