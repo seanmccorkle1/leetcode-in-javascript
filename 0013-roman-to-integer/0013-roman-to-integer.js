@@ -1,11 +1,4 @@
-
-
-
-
 var romanToInt = function (string) {
-
-    let sum = 0
-
     const letterObj = {
         "I": 1,
         "V": 5,
@@ -16,26 +9,21 @@ var romanToInt = function (string) {
         "M": 1000
     }
 
-    for (let index = 0; index < string.length - 1; index++) {
+    let sum = 0
 
-        let leftLetterValue = letterObj[string[index]]
-        let rightLetterValue = letterObj[string[index + 1]]
+    for (let index = 0; index < string.length; index++) {
+        let currLetter = string[index]
+        let rightLetter=string[index + 1]
 
-        // "IX" is (-1 + 10 = 9)
+        const currValue = letterObj[currLetter]
+        const rightValue = letterObj[rightLetter]        
 
-        if (leftLetterValue < rightLetterValue) {
-            sum -= leftLetterValue
-        }
-        
-        // always add the last letter normally
-        else if (leftLetterValue >= rightLetterValue) {
-            sum += leftLetterValue
+        if (currValue < rightValue) {
+            sum -= currValue
         }
 
+        else  sum += currValue
     }
-
-    let lastLetter = string.at(-1)
-    sum += letterObj[lastLetter]
     return sum
 }
 
