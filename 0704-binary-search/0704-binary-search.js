@@ -15,15 +15,18 @@ var search = function(array, targetNum) {
             rightIndex = mid - 1
         } 
         
+        // cover all conditions
         else if (targetNum >= midNum) {
             leftIndex = mid 
         }
         
-    }
+    } // end of while loop
+    
     
     if (array[leftIndex] == targetNum){
         return leftIndex
     }
+    
     else return -1
 }
 
