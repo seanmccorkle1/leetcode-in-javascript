@@ -1,8 +1,8 @@
 var rob = function(inputArray) {
 
     // [1, 1] no adjacent houses can be robbed, max is 1
-    if (inputArray.length == 1) {  //  || inputArray.length == 2){
-        return Math.max(...inputArray) 
+    if (inputArray.length == 1) {  
+        return inputArray[0]
     }
     
     
