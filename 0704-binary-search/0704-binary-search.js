@@ -1,26 +1,30 @@
-var search = function(array, target) {
+var search = function(array, targetNum) {
 
-    let left = 0
-    let right = array.length-1
+    let leftIndex = 0
+    let rightIndex = array.length - 1
 
-    while (left < right) {
+    while (leftIndex < rightIndex) {
 
-        // let mid =  Math.floor(((right - left) + 1) / 2)
+        let distance = (rightIndex - leftIndex) + 1
+        let mid = Math.floor(distance / 2) + leftIndex
 
-        let distance = (right - left) + 1
-        let mid = Math.floor(distance / 2) + left
 
         const midNum = array[mid]
-
-        if (target < midNum) {
-            right = mid - 1
+        
+        if (targetNum < midNum) {
+            rightIndex = mid - 1
         } 
         
-        else if (target >= midNum) {
-            left = mid 
+        else if (targetNum >= midNum) {
+            leftIndex = mid 
         }
+        
     }
-    return array[left]==target ? left : -1
+    
+    if (array[leftIndex] == targetNum){
+        return leftIndex
+    }
+    else return -1
 }
 
-console.log(search([-1,0,3,5,9,12], 9), 4)
+console.log(search([-1, 0, 3, 5, 9, 12], 9), 4)
