@@ -5,7 +5,6 @@ var rob = function(inputArray) {
         return inputArray[0]
     }
     
-    
     // start [2,1,1,2] off as [2, 2]    
     // you have to skipMoney (inputArray[0]) or robMoney (take the current element) here
     
@@ -15,10 +14,12 @@ var rob = function(inputArray) {
     const array = new Array(inputArray.length)
     
     array[0] = inputArray[0]
+
+    // start as if you took the max of the 2 houses
     array[1] = Math.max(inputArray[0], inputArray[1])    
 
-    array
 
+    array
     
     for (let index = 2; index < inputArray.length; index++) {
         
@@ -41,12 +42,17 @@ var rob = function(inputArray) {
                 skipMoney)
 
         array[index] = maxMoney
+        array
+
+        // array = [2, 1, 3, 3]
+
     }    
+
     array
     return array.at(-1) 
 }
 
-// console.log(rob([2, 7, 9, 3, 1]), 12, "2 + 9 + 1 = 12, move up 2 each time")
-console.log(rob([7, 2, 9, 3, 1]),  17, "[7, 9, 1] 17 points max, start the array as [7, 7]")
+console.log(rob([2, 1, 1, 2]), 4)
 
+// console.log(rob([2, 7, 9, 3, 1]), 12, "2 + 9 + 1 = 12, move up 2 each time")
 // console.log(rob([2,1,1,2]), 4)
