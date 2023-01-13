@@ -49,7 +49,8 @@ var rob = function(inputArray) {
     }    
 
     array
-    return array.at(-1) 
+    // return array.at(-1) 
+    return Math.max(...array)
 }
 
 console.log(rob([2, 1, 1, 2]), 4)
