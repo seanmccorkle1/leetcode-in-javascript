@@ -1,7 +1,7 @@
 // the whole program can see priceArray now
 // by putting `let` here
 
-var priceArray=[]
+var priceArray;
 
 class StockSpanner {
 
@@ -9,9 +9,9 @@ class StockSpanner {
     // `priceArray` is only visible in the tiny constructor block
 
     // have to assign values inside the constructor
-
+    
     constructor() {
-        priceArray = []
+        priceArray = [] // construct the array
     }
 
     next(currentPrice) {
@@ -30,6 +30,9 @@ class StockSpanner {
 
         priceArray
 
+        // it has to be consecutive days leading up to the current day
+        // so starting it off at the current day is fine
+        
         while (backIndex >= 0) {
 
             const previousPrice = priceArray[backIndex]
