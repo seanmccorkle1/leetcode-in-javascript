@@ -1,4 +1,1 @@
-var findKthLargest = function(array, kthLargest) {
-    // xd
-    return array.sort((a,b) => b - a)[kthLargest - 1]
-}
+var findKthLargest = (array, kthLargest) => array.sort((a,b) => b - a).at(kthLargest - 1)
