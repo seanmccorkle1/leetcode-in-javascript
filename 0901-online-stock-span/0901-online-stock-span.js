@@ -1,7 +1,7 @@
 // the whole program can see priceArray now
 // by putting `let` here
 
-var priceArray;
+var priceArray=[]
 
 class StockSpanner {
 
@@ -55,11 +55,13 @@ class StockSpanner {
 const stockSpanObject = new StockSpanner()
 
 // [100,80,60,70,60,75,85]
-// console.log(stockSpanObject.next(100), 1, "no days to the left are less in [100,80,60,70,60,75,85]")
-// console.log(stockSpanObject.nextFn(80), 1)
-// console.log(stockSpanObject.nextFn(60), 1)
-// console.log(stockSpanObject.nextFn(70), 2)
 
-// console.log(stockSpanObject.nextFn(60), 1)
-// console.log(stockSpanObject.nextFn(75), 4)
-// console.log(stockSpanObject.nextFn(85), 6)
+// console.log(stockSpanObject.next(100), 1, "no days to the left are less in [100,80,60,70,60,75,85]")
+// console.log(stockSpanObject.next(80), 1)
+
+// console.log(stockSpanObject.next(60), 1)
+// console.log(stockSpanObject.next(70), 2)
+
+// console.log(stockSpanObject.next(60), 1)
+// console.log(stockSpanObject.next(75), 4)
+// console.log(stockSpanObject.next(85), 6)
