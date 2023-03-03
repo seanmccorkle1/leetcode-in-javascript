@@ -22,8 +22,9 @@ var search = function(array, targetNum) {
     } // end of while loop
     
     
+    // array[leftIndex] also works
     if (array[rightIndex] == targetNum){
-        return leftIndex
+        return rightIndex
     }
     
     else return -1
