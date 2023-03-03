@@ -23,7 +23,7 @@ var search = function(array, targetNum) {
     
     
     // array[leftIndex] also works
-    if (array[rightIndex] == targetNum){
+    if (array[leftIndex] == targetNum){
         return rightIndex
     }
     
