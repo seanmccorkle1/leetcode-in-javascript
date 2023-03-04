@@ -74,9 +74,8 @@ var findWinners = function (doubleArray) {
 
     // the for loop was (let playerKey in obj)
     // which went from 1-10
-
+    
     numLossesObj
-
     return twoSubarrays
 }
 
