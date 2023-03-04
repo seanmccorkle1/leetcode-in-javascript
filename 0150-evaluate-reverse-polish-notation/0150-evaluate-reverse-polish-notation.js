@@ -10,9 +10,6 @@
 var evalRPN = function (array) {
 
     const stack = []
-
-    let resultNum = 0
-
     const operatorObj = {
         "+": (num1, num2) => {
             return Number(num1) + Number(num2)
@@ -30,31 +27,31 @@ var evalRPN = function (array) {
             return Math.trunc(num1 / num2)
         }
     }
-
-    for (const element of array) {
+    
+    for (let element of array) {
 
         const elementIsOperator = typeof operatorObj[element] == "function"
 
         if (elementIsOperator) {
 
-            const num1 = stack.pop()
-            const num2 = stack.pop()
+            let rightNum = stack.pop()
+            let leftNum = stack.pop()
 
             var leftToRightArithmeticFn = operatorObj[element]
 
-            let arithmeticValue = leftToRightArithmeticFn(num2, num1)
+            let functionResult = leftToRightArithmeticFn(leftNum, rightNum)
 
-            stack.push(arithmeticValue)
-        } else if (!elementIsOperator) {
+            stack.push(functionResult)
+        }
+
+        else if (!elementIsOperator) {
+            
             stack.push(Number(element))
         }
     }
+    
     stack
-
-    // final math value
-    resultNum = stack.at(0)
-
-    return resultNum
+    return stack[0]
 }
 
 // console.log(evalRPN(["2", "1", "+", "3", "*"]), 9)
