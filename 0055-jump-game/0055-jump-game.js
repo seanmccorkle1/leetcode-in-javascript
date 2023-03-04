@@ -38,10 +38,12 @@ var canJump = function (array) {
 
         maxJump
         index
+        
+        // keep looping until index gets to where the max jump lands
+        // if index catches up to maxJump 
 
-        // if (maxJump <= index && currNum == 0) {
-            
-        if (index >= maxJump && currNum == 0) {
+        // if (index >= maxJump && currNum == 0) {
+        if (index >= maxJump) {
             return false
         }
 
