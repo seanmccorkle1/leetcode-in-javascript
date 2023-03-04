@@ -1,14 +1,2 @@
-var arraySign = function (array) {
+var arraySign =array=>array.reduce((sum,curr)=>sum*curr, 1) >= 1 ? 1 : array.reduce((sum,curr)=>sum*curr, 1) <= -1 ? -1 : 0
 
-    let product = array.reduce((a,b) => a*b, 1)
-    
-    if (product > 0){
-        return 1
-    }
-    else if (product < 0){
-        return -1
-    }
-    
-    // just use else in these 3+ if statements
-    return 0
-}
