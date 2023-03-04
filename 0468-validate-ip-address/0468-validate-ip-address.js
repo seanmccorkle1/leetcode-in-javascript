@@ -4,31 +4,19 @@
 
 var validIPAddress = function (IPString) {
 
-
-
     // the regex will look for 4 periods, but theres only 3 in the original string
     let IPV4StringWithPeriod = IPString + "."
     let IPV6StringWithColon = IPString + ":"
 
-
-
+    
     // 1st capturing group is for the {4} token
-
-
-
     // 2nd capturing group is to group all the | statements ON the "."
     // (10|243|145).(10|243|145).(10|243|145).(10|243|145).
 
-
-
     // ([0-9] | [10 - 99] | [100 - 199] | [200 - 249] | [250 - 255]) 
 
-
-
-    const IPV4Regex = /^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))\.){4}$/
-
-
-
+    
+    const IPV4Regex = /^(([0-9]|([1-9][0-9])|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))\.){4}$/
     const IPV6Regex = /^([a-fA-F0-9]{1,4}\:){8}$/
 
 
@@ -41,13 +29,13 @@ var validIPAddress = function (IPString) {
     if (IPV4Regex.test(IPV4StringWithPeriod) == true) {
         return "IPv4"
     }
+    
     if (IPV6Regex.test(IPV6StringWithColon) == true) {
         return "IPv6"
     }
+
     return "Neither"
 }
-
-
 
 console.log(validIPAddress("1e1.4.5.6"), "Neither", "match the whole string, dont start from inside the string")
 
@@ -59,10 +47,7 @@ console.log(validIPAddress("1e1.4.5.6"), "Neither", "match the whole string, don
 // console.log(validIPAddress("2001:F:85a3:0000:0000:8a2e:0370:7334"), "IPv6", "hex (a-f), 8 blocks, leading zeroes allowed")
 // console.log(validIPAddress("2002:G:85a3:0000:0000:8a2e:0370:7334"), "Neither", "G is not allowed in IPV6")
 
-
 // console.log(validIPAddress("1.1.1.1."), "Neither", "there should be no period at the end")
-
-
 
 
 // console.log(validIPAddress("192.168.167.166.165"), "Neither", "5 integers, you need exactly 4")
