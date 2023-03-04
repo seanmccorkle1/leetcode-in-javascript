@@ -1,16 +1,13 @@
 // ^ and $ means it only counts as a match if this regex matches the WHOLE string
 
-
 var validIPAddress = function (IPString) {
-
-
+    
     // the regex will look for 4 periods, but theres only 3 in the original string
-    let fixedIPV4String = IPString +"."
+    let fixedIPV4String = 
+    IPString +"."
     let fixedIPV6String = IPString +":"
 
-
     // 1st capturing group is for the {4} token
-
 
     // 2nd capturing group is to group all the | statements ON the "."
     // (10|243|145).(10|243|145).(10|243|145).(10|243|145).
@@ -20,8 +17,6 @@ var validIPAddress = function (IPString) {
 
 
     const IPV4Regex= /^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2([0-4][0-9]|5[0-5]))\.){4}$/
-
-
     const IPV6Regex = /^([a-fA-F0-9]{1,4}\:){8}$/
 
 
@@ -36,8 +31,7 @@ var validIPAddress = function (IPString) {
         return "IPv6"
     }
     
-    let neither = "neither"
-    return neither[0].toUpperCase() + neither.slice(1)
+    return "Neither"
 }
 
 
