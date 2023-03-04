@@ -1,10 +1,3 @@
-// Next capital one questions:
-
-// * Coin Change	35.5%	Medium	1.08	https://leetcode.com/problems/coin-change
-// * Add Two Numbers	33.9%	Medium	1.25	https://leetcode.com/problems/add-two-numbers
-// * Greatest Common Divisor of Strings	52.9%	Easy	0.12	https://leetcode.com/problems/greatest-common-divisor-of-strings
-
-
 
 var lengthOfLongestSubstring = function (string) {
 
@@ -24,9 +17,11 @@ var lengthOfLongestSubstring = function (string) {
 
         // if the object already has it, move left part of the window up
         // "left part of the window" is leftIndex
+
         obj
 
         const isRepeatingLetter = obj[letter] != undefined
+
 
         if (isRepeatingLetter) {
 
@@ -37,14 +32,12 @@ var lengthOfLongestSubstring = function (string) {
                     leftIndex)
         }
 
-        obj
-        obj[letter] = rightIndex
-
-
         leftIndex
         rightIndex
 
         obj
+
+        // obj[letter] = rightIndex
 
         // when rightIndex and leftIndex are both 0,
         // the longest substring is "n", which is length 1
@@ -53,6 +46,8 @@ var lengthOfLongestSubstring = function (string) {
             Math.max(
                 (rightIndex - leftIndex) + 1,
                 longestSubstringWithNoRepeats)
+
+        obj[letter] = rightIndex
 
         rightIndex++
     }
