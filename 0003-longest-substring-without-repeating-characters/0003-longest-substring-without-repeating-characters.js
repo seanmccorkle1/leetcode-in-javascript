@@ -1,4 +1,3 @@
-
 var lengthOfLongestSubstring = function (string) {
 
     const obj = {}
@@ -33,7 +32,7 @@ var lengthOfLongestSubstring = function (string) {
         obj
 
         // when rightIndex and leftIndex are both 0, its still "n", which is length 1
-
+        
         maxUniqueSubstringLength = 
         Math.max(
             (rightIndex - leftIndex) + 1, 
