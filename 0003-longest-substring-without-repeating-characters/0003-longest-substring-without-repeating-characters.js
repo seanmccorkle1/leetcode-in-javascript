@@ -30,8 +30,12 @@ var lengthOfLongestSubstring = function (string) {
 
         // obj[letter] + 1 to start leftIndex after the repeating letter
 
+        
         if (isRepeatingLetter) { 
 
+            letter
+            obj
+            
             leftIndex =
                 Math.max( 
                     obj[letter] + 1, 
@@ -47,7 +51,7 @@ var lengthOfLongestSubstring = function (string) {
         // the longest substring is "n", which is length 1
 
         // longest is same as Math.max()
-        
+
         longestSubstringWithNoRepeats =
             Math.max(
                 (rightIndex - leftIndex) + 1,
