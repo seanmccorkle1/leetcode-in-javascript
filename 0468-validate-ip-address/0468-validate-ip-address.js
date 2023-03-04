@@ -35,8 +35,9 @@ var validIPAddress = function (IPString) {
     if (IPV6Regex.test(fixedIPV6String) == true) {
         return "IPv6"
     }
+    
     let neither = "neither"
-    return neither[0].toUpperCase() + neither.slice(1).toLowerCase()
+    return neither[0].toUpperCase() + neither.slice(1)
 }
 
 
