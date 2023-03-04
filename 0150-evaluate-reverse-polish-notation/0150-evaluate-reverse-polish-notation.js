@@ -12,7 +12,7 @@ var evalRPN = function (array) {
     const stack = []
     const operatorObj = {
         "+": (num1, num2) => {
-            return Number(num1) + Number(num2)
+            return num1 + num2
         },
 
         "-": (num1, num2) => {
