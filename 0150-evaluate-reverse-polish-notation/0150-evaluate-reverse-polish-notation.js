@@ -12,7 +12,7 @@ var evalRPN = function (array) {
     const stack = []
     const operatorObj = {
         "+": (num1, num2) => {
-            return num1 + num2
+            return num1 +num2
         },
 
         "-": (num1, num2) => {
@@ -27,32 +27,39 @@ var evalRPN = function (array) {
             return Math.trunc(num1 / num2)
         }
     }
-    
+
+
     for (let element of array) {
 
         const elementIsOperator = typeof operatorObj[element] == "function"
 
+
         if (elementIsOperator) {
+
+            // [13, 5] should be 13 / 5
+            // right gets popped first
 
             let rightNum = stack.pop()
             let leftNum = stack.pop()
 
-            var leftToRightArithmeticFn = operatorObj[element]
+            let functionPointer = operatorObj[element]
 
-            let functionResult = leftToRightArithmeticFn(leftNum, rightNum)
+            let functionResult = functionPointer(leftNum, rightNum)
 
-            stack.push(functionResult)
+            // put the result back in the stack, 
+            //see the console log statement
+            
+            stack.push(functionResult) 
         }
 
         else if (!elementIsOperator) {
-            
             stack.push(Number(element))
         }
     }
-    
+
     stack
     return stack[0]
 }
 
-// console.log(evalRPN(["2", "1", "+", "3", "*"]), 9)
-console.log(evalRPN(["4", "13", "5", "/", "+"]), 6, "(4 + (13 / 5)) => (4 + 2) = 6", "/ applies to the most recent numbers 13 and 5, / is seen before + as it still goes left-to-right")
+// console.log(evalRPN(["2", "1", "+", "3", "*"]),  9)
+console.log(evalRPN(["4", "13", "5", "/", "+"]), 6, "[4, 2, +] => [6] => 6")
