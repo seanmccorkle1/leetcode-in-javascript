@@ -1,3 +1,10 @@
+// Next capital one questions:
+
+// * Coin Change	35.5%	Medium	1.08	https://leetcode.com/problems/coin-change
+// * Add Two Numbers	33.9%	Medium	1.25	https://leetcode.com/problems/add-two-numbers
+// * Greatest Common Divisor of Strings	52.9%	Easy	0.12	https://leetcode.com/problems/greatest-common-divisor-of-strings
+
+
 var canJump = function (array) {
 
     let maxJump = 0
@@ -5,34 +12,52 @@ var canJump = function (array) {
 
     let index = 0
 
+    lastIndex
+    array
+
     while (index < array.length) {
 
-        let num = array[index]
-
         index
-        index + array[index]
+        const currNum = array[index]
 
-        let jump = index + num
+        let currJump = index + currNum
 
-        maxJump = Math.max(maxJump, jump)
+        maxJump
+        currJump
+
+        maxJump = Math.max(currJump, maxJump)
         maxJump
 
         if (maxJump >= lastIndex) {
             return true
         }
 
-        // if index catches up to maxJump by looping through
-        // and the element (num) at that current index is 0,
-        // return false
+        // got a 0 and it didnt make it to the end
 
-        if (maxJump <= index && num == 0) {
+        currNum
+
+        maxJump
+        index
+
+        // if (maxJump <= index && currNum == 0) {
+            
+        if (index >= maxJump && currNum == 0) {
             return false
         }
 
         index += 1
     }
 
+    return false
 }
 
-// console.log(canJump([3, 0, 0, 0]), true, "true, you can getto the last element")
+
+// console.log(canJump([2, 3, 1, 1, 4]), true, "1 step to 3 and end at the last element")
+// console.log(canJump([2,3,1,0,4]), true)
+
+// console.log(canJump([3, 0, 0, 0]), true, "true, you can get to the last element")
+
 console.log(canJump([3, 0, 0, 0, 0]), false)
+// console.log(canJump([4, 0, 0, 0, 0]), true)
+
+// console.log(canJump([3,2,1,0,4]), false, "either 3 or 2 and 1 will get you to 0, where you cant jump")
