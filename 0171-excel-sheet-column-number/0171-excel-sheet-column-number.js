@@ -18,9 +18,12 @@ var titleToNumber = function (columnString) {
     // longer string length increases the total value exponentially
     let exponent = columnString.length - 1
 
-    // let index=  0
-    // while (exponent >= 0){
-    for (let index = 0; exponent >= 0; index++) {
+    let index=  0
+
+    while (exponent >= 0){
+        
+    
+    // for (let index = 0; exponent >= 0; index++) {
 
         const letter = columnString[index]
         const letterValue = letter.charCodeAt() - offset
@@ -49,6 +52,7 @@ var titleToNumber = function (columnString) {
 
         sum += totalValue
         exponent -= 1
+        index++
     }
 
     return sum
