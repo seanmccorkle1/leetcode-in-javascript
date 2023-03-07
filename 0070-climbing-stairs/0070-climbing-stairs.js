@@ -2,6 +2,7 @@ var climbStairs = function (num) {
 
     const array = []
     
+    // base cases
     array[1] = 1
     array[2] = 2
     array[3] = 3
@@ -26,7 +27,7 @@ var climbStairs = function (num) {
 
     array
     const numOfWaysToClimbStairs = array[num]
-    return numOfWaysToClimbStairs
+    return array.at(-1)
 }
 
 
