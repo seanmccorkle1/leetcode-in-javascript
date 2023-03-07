@@ -1,55 +1,37 @@
-/**
- * @param {number[]} nums
- * @param {number[]} queries
- * @return {number[]}
- */
+var answerQueries = function (inputArray, limitNums) {
 
-
-var answerQueries = function(inputArray, limitNums) {
-    inputArray.sort((a,b)=>a - b)
     const numCounts = []
-    const sumsReference = []
 
+    inputArray.sort((a, b) => a - b)
 
-    for (const limitNum of limitNums){
-        
+    for (const limitNum of limitNums) {
+
+        // reset 
         let sum = 0
         let numCount = 0
 
-        for (let num of inputArray) {
-            
-            const sumFitsInLimit = (sum + num) <= limitNum
-            
-            if (sumFitsInLimit) {
+
+        for (const num of inputArray) {
+
+            if ((sum + num) <= limitNum){
                 sum += num
-                numCount++   // add the number to the count
+                numCount++
             }
             
-            // only 1 numCount should be pushed per limitNum
-            // break to go straight to the next limitNum
+            else {
+                numCounts.push(numCount)
+                break
+            }
 
-            else if (!sumFitsInLimit){
-                // numCounts.push(numCount)
-                break 
+            if (numCount == inputArray.length){
+                numCounts.push(numCount)
             }
         }
-        sum
-        numCount
 
-        numCounts.push(numCount)
     }
 
-    numCounts
-    limitNums
-
-    // there should be one count in the array per limitNum
-
-    // if (numCounts.length != limitNums.length){
-    //     numCounts.push(numCount)
-    // }
-        
     return numCounts
 }
 
-
-console.log(answerQueries([4,5,2,1], [3,10,21]),    [2, 3, 4])
+console.log(answerQueries([4, 5, 2, 1], [3, 10, 21]), [2, 3, 4], 
+"2 + 1 is <= 3, 2 elements fit in, 3 nums fit in 10, all 4 numbers fit in 21.")
