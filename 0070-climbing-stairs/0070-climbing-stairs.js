@@ -1,42 +1,38 @@
-/**
- * 
- * @function
- * @return
- * 
- */
-
-
 var climbStairs = function (num) {
 
-    const array=[]
-    
-    // 0 ways to climb 0 stairs
-    array[0] = 0
+    const array = new Array(num).fill(0)
+
     array[1] = 1
     array[2] = 2
     array[3] = 3
-
-    array
     
-    // array = [, 1, 2, 3]
-    
-    // climbStairs(2), return 2
-    if (num <= 3) {
+    if (num <=3){
         return num
     }
+        
+    // 0 ways to climb 0 stairs
+    array
 
-    for (let index = 4; index <= num; index += 1) {
-        let oneBefore=array[index - 1]
-        let twoBefore=array[index - 2]
-        array[index] = oneBefore +  twoBefore
+    for (let index = 4; index <= num; index++) {
+
+        let oneBefore = array[index - 1]
+        let twoBefore = array[index - 2]
+
+        array[index] = oneBefore + twoBefore
+        array
     }
+
+    // last number is the number of ways to climb stairs
     
-    // last number is the number of ways to climb stairs    
-    
-    let numWaysToClimbStairs = array.at(-1)
-    return numWaysToClimbStairs
+    array
+    const numOfWaysToClimbStairs = array[num]
+    return array.at(-1)
 }
 
-console.log(climbStairs(4), 5, "5 ways to climb 4 steps, [[2, 2], [1,1,1,1], [2, 1, 1], [1, 2, 1], [1, 1, 2]")
+
+// console.log(climbStairs(4), 5, "5 ways to climb 4 steps, [[2, 2], [1,1,1,1], [2, 1, 1], [1, 2, 1], [1, 1, 2]")
+
+// console.log(climbStairs(8), 34)
 
 // console.log(climbStairs(2), 2, "two ways, [2] and [1, 1]")
+// console.log(climbStairs(3), 3, "[2, 1] [1, 2] [1, 1, 1]")
