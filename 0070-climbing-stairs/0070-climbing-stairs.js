@@ -24,9 +24,8 @@ var climbStairs = function (num) {
     }
 
     // last number is the number of ways to climb stairs
-
+    
     array
-    const numOfWaysToClimbStairs = array[num]
     return array.at(-1)
 }
 
