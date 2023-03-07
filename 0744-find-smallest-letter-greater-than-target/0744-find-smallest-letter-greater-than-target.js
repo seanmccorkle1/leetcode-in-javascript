@@ -1,19 +1,11 @@
-var nextGreatestLetter = function (letterArray, targetLetter) {
 
 
-    const filteredCharCodeArray = letterArray.map(letter=>letter.toLowerCase()).filter(letter => letter > targetLetter)
-    .map(letter => letter.charCodeAt())
+var nextGreatestLetter = (letterArray, targetLetter)=> {
+let n=Math.min(...letterArray.map(letter => letter.charCodeAt()).filter(charCode=>charCode > targetLetter.charCodeAt()))
 
-    // if its []
-    if (filteredCharCodeArray.length == 0){
-        return letterArray[0]
-    }
+return n == Infinity? letterArray[0]: String.fromCharCode(n)
 
-    let minCharCode = Math.min(...filteredCharCodeArray)
-    return String.fromCharCode(minCharCode)
 }
 
-console.log(nextGreatestLetter(["b", "c"], "a"), "b", "b is the smallest letter that is greater than `a`")
-console.log(nextGreatestLetter(["c", "b"], "a"), "b")
-
-// console.log(nextGreatestLetter(["x","y","y","y"], "z"),   "x", "return letterArray[0] since theres no letter greater than z")
+console.log(nextGreatestLetter(["c", "b"], "a"), "b", "the smallest letter thats greater than `a` in the array is `b`")
+console.log(nextGreatestLetter(["m", "c"], "z"), "x", "return letterArray[0] since theres no letter greater than z")
