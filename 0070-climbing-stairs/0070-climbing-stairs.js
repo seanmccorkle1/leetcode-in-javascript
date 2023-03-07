@@ -5,6 +5,10 @@ var climbStairs = function (num) {
     array[1] = 1
     array[2] = 2
     array[3] = 3
+    
+    if (num <=3){
+        return num
+    }
 
     // 0 ways to climb 0 stairs
     array
