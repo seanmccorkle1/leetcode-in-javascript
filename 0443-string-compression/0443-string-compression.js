@@ -75,14 +75,14 @@ var compress = function (array) {
 
         deleteCount = adjacentCount
 
-        if (adjacentCount >= 10) {
+        // if (adjacentCount >= 10) {
             // stringDigitArray = String(adjacentCount).split("")
-            array.splice(1, deleteCount - 1, ...String(adjacentCount))
-        }
+            array.splice(1, adjacentCount - 1, ...String(adjacentCount))
+        // }
     
-        else if (adjacentCount <= 9) {
-            array.splice(1, deleteCount - 1, ...String(adjacentCount))
-        }
+        // else if (adjacentCount <= 9) {
+        //     array.splice(1, deleteCount - 1, ...String(adjacentCount))
+        // }
     }
 
     adjacentCount
