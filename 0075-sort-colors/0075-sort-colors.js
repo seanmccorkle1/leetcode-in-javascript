@@ -31,7 +31,6 @@ var sortColors = function (array) {
             // index and leftIndex both go up by 1
             leftIndex++
             index++
-            continue
         }
 
         // Swap blue (2) to the right
@@ -51,12 +50,11 @@ var sortColors = function (array) {
             //rightIndex always goes down
             rightIndex--
 
-            continue
             // index stays at this position, but the loop still progresses
             // because the condition is index <= rightIndex
         }
 
-        index++
+        else index++
         // dont increment index on every loop, only if its 1
         // else if (num == 1) {
         //     index +=1
