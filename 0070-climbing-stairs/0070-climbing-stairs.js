@@ -1,6 +1,6 @@
 var climbStairs = function (num) {
 
-    const array = new Array(num)
+    const array = []
     
     array[1] = 1
     array[2] = 2
