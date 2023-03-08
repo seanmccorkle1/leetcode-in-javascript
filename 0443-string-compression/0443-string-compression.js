@@ -6,11 +6,10 @@ var compress = function (array) {
     let startDeleteIndex = 0
 
     // array[index+1] over array[index-1]
-
-    // "a" automatically counts as length 1, not 0
+    
+    // "a" automatically counts as 1 letter, not 0
     let adjacentCount = 1
-
-
+    
     for (let backIndex = array.length - 2; backIndex >= 0; backIndex--) {
 
         array
