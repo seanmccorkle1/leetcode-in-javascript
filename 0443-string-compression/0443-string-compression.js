@@ -13,7 +13,6 @@ var compress = function (array) {
 
     for (let backIndex = array.length - 2; backIndex >= 0; backIndex--) {
 
-
         array
 
         const leftNum = array[backIndex]
@@ -29,25 +28,23 @@ var compress = function (array) {
 
         // adjacentCount starts at 1 because a single letter "b" is already length 1, 
         // ["z"] instead of ["z", 1]
+
         else if (!numsAreEqualAndAdjacent) {
 
             // only if the letters are unequal and (count >= 2)
 
             if (adjacentCount >= 2) {
 
-
                 deleteCount = adjacentCount
                 startDeleteIndex = backIndex + 2
 
+            
                 // split to get the digits ["1", "2"] instead of ["12"]
-
 
                 if (adjacentCount >= 10) {
 
-
                     // stringDigitArray = String(adjacentCount).split("")
-                    array.splice(startDeleteIndex, deleteCount - 1, ...String(adjacentCount))
-
+                    array.splice(startDeleteIndex, deleteCount - 1, ...String(adjacentCount))                    
                     array
                 }
 
@@ -57,31 +54,29 @@ var compress = function (array) {
                     array.splice(startDeleteIndex, deleteCount - 1, String(adjacentCount))
                 }
 
+                // res
                 adjacentCount = 1
             }
         }
 
     }
-
-    // if it repeats on the last loop
-    // split to get the digits ["1", "2"] instead of ["12"]
-
-    adjacentCount
-
-    array
     
-    // dont count 1 letter as ["b", 1] 
+    // if the letters were equal on the final loop, the splice wont happen
+    adjacentCount
+    array
+
+    
     if (adjacentCount >= 2) {
 
         deleteCount = adjacentCount
 
         // if (adjacentCount >= 10) {
             // stringDigitArray = String(adjacentCount).split("")
-            array.splice(1, adjacentCount - 1, ...String(adjacentCount))
+            array.splice(1, deleteCount - 1, ...String(adjacentCount))
         // }
-    
+
         // else if (adjacentCount <= 9) {
-        //     array.splice(1, deleteCount - 1, ...String(adjacentCount))
+            // array.splice(1, deleteCount - 1, String(adjacentCount))
         // }
     }
 
