@@ -1,10 +1,9 @@
 
 var judgeSquareSum = function(num){
 
-    let squareRoot1= 1
+    let squareRoot1= 0
     let squareRoot2=Math.trunc(Math.sqrt(num))
-
-    if (squareRoot2**2 == num)return true
+    
     
     while (squareRoot1 <= squareRoot2){
 
