@@ -12,14 +12,18 @@
  */
 
 
-var isSymmetric = function(root) {
-    // Special case...
 
-        // Return the function recursively...
-    if (!root)
-        {return true}
+var isSymmetric = function(root) {
+
+    // Special case...
+    // Return the function recursively...
+    
+    if (!root) {
+        return true
+    }
     return isSame(root.left, root.right)
 }
+
 // A tree is called symmetric if the left subtree must be a mirror reflection of the right subtree...
 
 // If both root nodes are null pointers, return true...
