@@ -28,11 +28,15 @@ var isSymmetric = function(root) {
 // If root nodes haven't same value, return false...
 
 var isSame = function (leftroot, rightroot) {
+    
+    if ((!leftroot && rightroot) || (leftroot && !rightroot) || (leftroot && rightroot && leftroot.val != rightroot.val))
+        return false
 
-    if ((!leftroot && rightroot) || (leftroot && !rightroot) || (leftroot && rightroot && leftroot.val !== rightroot.val))
-        return false;
-    // Return true if the values of root nodes are same and left as well as right subtrees are symmetric...
-    if (leftroot && rightroot)
-        return isSame(leftroot.left, rightroot.right) && isSame(leftroot.right, rightroot.left);
+        // Return true if the values of root nodes are the same
+        // and left as well as right subtrees are symmetric...
+
+        if (leftroot && rightroot){
+        return isSame(leftroot.left, rightroot.right) && isSame(leftroot.right, rightroot.left)
+    }
     return true;
-};
+}
