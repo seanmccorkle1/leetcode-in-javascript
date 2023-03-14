@@ -20,9 +20,18 @@ var sumNumbers = function(root, sum = 0) {
     }
     
     // sum += root.val * 10
-    sum *= 10
+    if (sum == 0) {
         sum += root.val
-
+    }
+    
+    else {
+        sum *= 10
+        sum += root.val
+    }
+    
+    // sum *= 10
+    // sum += root.val
+    
     if (!root.left && !root.right) {
         return sum
     }
