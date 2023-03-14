@@ -3,8 +3,9 @@ var fourSum = function(array, targetNum) {
     array = array.sort((a, b) => a - b)
     const resultArray = []
     
+    
     for (let index = 0; index < array.length - 3; index += 1) {
-
+        
         index
         for (let index2 = index + 1; index2 < array.length - 2; index2 += 1) {
 
