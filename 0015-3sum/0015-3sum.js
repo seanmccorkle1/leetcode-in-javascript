@@ -7,7 +7,7 @@ var threeSum = function(array) {
 
     outerFrontIndexLoop:
 
-    for (let frontIndex = 0; frontIndex < array.length - 2; frontIndex += 1) {
+    for (let frontIndex = 0; frontIndex < array.length; frontIndex += 1) {
 
         frontIndex
         array
