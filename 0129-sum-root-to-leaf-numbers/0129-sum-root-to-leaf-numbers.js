@@ -32,6 +32,7 @@ var sumNumbers = function(root, sum = 0) {
     // sum *= 10
     // sum += root.val
     
+    // when the tree is done on both sides
     if (root.left == null && root.right == undefined) {
         return sum
     }
