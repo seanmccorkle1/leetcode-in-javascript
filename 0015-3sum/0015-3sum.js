@@ -89,7 +89,9 @@ var threeSum = function(array) {
                 midNum
                 rightNum
                 
-                threeSumArray.push([frontNum, midNum, rightNum])
+                const sumTo0Subarray = [frontNum, midNum, rightNum]
+                
+                threeSumArray.push(sumTo0Subarray)
                 threeSumArray
 
                 // continue to do midIndex += 1 and backIndex -= 1
