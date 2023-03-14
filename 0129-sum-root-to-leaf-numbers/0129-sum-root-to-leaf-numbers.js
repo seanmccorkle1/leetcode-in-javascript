@@ -37,7 +37,9 @@ var sumNumbers = function(root, sum = 0) {
         return sum
     }
     
-    return (sumNumbers(root.left, sum) + sumNumbers(root.right, sum))
+    let newSum=sumNumbers(root.left, sum) + sumNumbers(root.right, sum)
+    return newSum
+    // return sumNumbers(root.left, sum) + sumNumbers(root.right, sum)
 }
 
 console.log(sumNumbers([1,2,3]), 25,  "root node is 1, left node is 2 and right node is 3")
