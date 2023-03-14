@@ -1,8 +1,7 @@
 var fourSum = function(array, targetNum) {
     
-    array = array.sort((a, b) => a - b)
+    array.sort((a, b) => a - b)
     const resultArray = []
-    
     
     for (let index = 0; index < array.length - 3; index += 1) {
         
@@ -24,53 +23,54 @@ var fourSum = function(array, targetNum) {
                 backIndex
 
                 const sum = array[index] + array[index2] + array[index3] + array[backIndex]
+                const sumSubarray = [array[index], array[index2], array[index3],array[backIndex]] 
 
-                
-                if (sum === targetNum) {
+                if ( sum == targetNum) {
 
                     resultArray.push([array[index], array[index2], array[index3], array[backIndex]])
-
+                    
                     // at least two numbers have to be unique  
                     // use two while loops
                     
-                    while (array[index3] === array[index3 + 1]) {
-                        index3 += 1
+                    while (array[index3] == array[index3 + 1]) {
+                        index3++
                     }
 
-                    while (array[backIndex] === array[backIndex - 1]) {
-                        backIndex -= 1
+                    while (array[backIndex] == array[backIndex - 1]) {
+                        backIndex--
                     }
 
-                    index3 += 1
-                    backIndex -=1
+                    // increase and decrease both
+                    index3++
+                    backIndex--
                 }
 
+                // else just increase index3
                 else if (sum < targetNum) {
-                    index3 += 1
+                    index3++
                 }
-
+                
                 else if (sum > targetNum) {
-                    backIndex -= 1
+                    backIndex--
                 }
 
-            } // end while (index3 < backIndex)
+            }
 
 
             // check this on every loop
 
             while (array[index2] === array[index2 + 1]) {
-                index2 += 1
+                index2++
             }
         }
-
+        
         // in the `index` loop
         while (array[index] === array[index + 1]) {
-            index += 1
+            index++
         }
-    } // end first for loop
-    
+    } 
     return resultArray
 }
 
 
-console.log(fourSum([3, 5, 3, 1, 1], target = 8), [3, 5, 3])
+console.log(fourSum([3, 5, 3, 1, 1],  8), [3, 5, 3])
