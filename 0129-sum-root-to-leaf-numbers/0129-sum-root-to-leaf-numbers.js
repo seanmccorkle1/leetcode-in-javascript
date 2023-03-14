@@ -29,19 +29,15 @@ var sumNumbers = function(root, sum = 0) {
         sum += root.val
     }
     
-    // sum *= 10
-    // sum += root.val
-    
     // when the tree is done on both sides
     if (root.left == null && root.right == undefined) {
         return sum
     }
     
-    let newSum=sumNumbers(root.left, sum) 
-    newSum += sumNumbers(root.right, sum)
-
-    return newSum
-    // return sumNumbers(root.left, sum) + sumNumbers(root.right, sum)
+    let rootToLeavesSum = sumNumbers(root.left, sum) 
+    rootToLeavesSum += sumNumbers(root.right, sum)
+    
+    return rootToLeavesSum
 }
 
 console.log(sumNumbers([1,2,3]), 25,  "root node is 1, left node is 2 and right node is 3")
