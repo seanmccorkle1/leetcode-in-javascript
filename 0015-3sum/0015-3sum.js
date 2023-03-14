@@ -86,8 +86,6 @@ var threeSum = function(array) {
             if (threeSum == 0) {
 
                 const sumToZeroSubarray = [frontNum, midNum, rightNum]
-
-                let b=(sumToZeroSubarray.reduce((s,c)=>s+c) != 0) ? "WHAT" : ""
                 
                 threeSumArray.push(sumToZeroSubarray)
                 threeSumArray
