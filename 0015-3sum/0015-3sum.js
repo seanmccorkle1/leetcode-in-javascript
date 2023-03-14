@@ -1,6 +1,6 @@
 var threeSum = function(array) {
 
-    const indexArray = []
+    const threeSumArray = []
 
     // sort first
     array = array.sort((a, b) => a - b)
@@ -84,14 +84,13 @@ var threeSum = function(array) {
             let threeSum = frontNum + midNum + rightNum    
 
             if (threeSum === 0) {
-
+                
                 frontNum
                 midNum
                 rightNum
-
-                indexArray.push([frontNum, midNum, rightNum])
-
-                indexArray
+                
+                threeSumArray.push([frontNum, midNum, rightNum])
+                threeSumArray
 
                 // continue to do midIndex += 1 and backIndex -= 1
                 // as long as those values are duplicates
@@ -140,7 +139,7 @@ var threeSum = function(array) {
         } // end while, go back to the for loop
 	}
 
-    return indexArray
+    return threeSumArray
 }
 
 console.log(threeSum([-4, -3, -2, -1, -1, 0, 0, 1, 2, 3, 4]) ,"need [-4, 1, 3]")
