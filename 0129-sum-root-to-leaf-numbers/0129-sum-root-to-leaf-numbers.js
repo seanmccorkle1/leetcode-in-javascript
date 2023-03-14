@@ -37,7 +37,9 @@ var sumNumbers = function(root, sum = 0) {
         return sum
     }
     
-    let newSum=sumNumbers(root.left, sum) + sumNumbers(root.right, sum)
+    let newSum=sumNumbers(root.left, sum) 
+    newSum += sumNumbers(root.right, sum)
+
     return newSum
     // return sumNumbers(root.left, sum) + sumNumbers(root.right, sum)
 }
