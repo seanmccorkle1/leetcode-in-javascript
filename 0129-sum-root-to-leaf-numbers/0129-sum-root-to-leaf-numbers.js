@@ -32,7 +32,7 @@ var sumNumbers = function(root, sum = 0) {
     // sum *= 10
     // sum += root.val
     
-    if (!root.left && !root.right) {
+    if (root.left == null && root.right == undefined) {
         return sum
     }
     
