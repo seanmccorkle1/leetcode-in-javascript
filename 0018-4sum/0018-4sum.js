@@ -70,3 +70,6 @@ var fourSum = function(array, targetNum) {
     
     return resultArray
 }
+
+
+console.log(fourSum([3, 5, 3, 1, 1], target = 8), [3, 5, 3])
