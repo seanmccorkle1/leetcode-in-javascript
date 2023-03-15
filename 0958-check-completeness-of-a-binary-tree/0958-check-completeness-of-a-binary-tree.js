@@ -10,6 +10,8 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
+
+
 var isCompleteTree = function(root) {
     
     // Initialization
@@ -17,26 +19,26 @@ var isCompleteTree = function(root) {
     let prevNode = root;
     
     // Launch level-order traversal
-    while( traversal_queue.length ){
+    while (traversal_queue.length >= 1) {
         
-        let curNode = traversal_queue.shift();
+        let curNode = traversal_queue.shift()
         
-        if( curNode != null )
-        {
-            if( prevNode == null ){
-                // Empty in the middle means this is not a complete binary tree (not left-compact)
-                return false;
-            }    
+
+        if (curNode != null) {
             
-            traversal_queue.push( curNode.left );
-            traversal_queue.push( curNode.right );
+            // Empty in the middle means 
+            // this is not a complete binary tree (not left-compact)
+            
+            if (prevNode == null) {
+                return false
+            }
+            
+            traversal_queue.push(curNode.left)
+            traversal_queue.push(curNode.right)
         }
         
         // update previous node
-        prevNode = curNode;
-    }
-    
-    return true;
-};
-
-
+        prevNode = curNode
+    }    
+    return true
+}
