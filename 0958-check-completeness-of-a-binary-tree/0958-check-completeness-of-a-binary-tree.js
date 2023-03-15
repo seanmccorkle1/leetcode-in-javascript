@@ -16,29 +16,29 @@ var isCompleteTree = function(root) {
     
     // Initialization
     let traversal_queue = [root];
-    let prevNode = root;
+    let leftNode = root
     
     // Launch level-order traversal
     while (traversal_queue.length >= 1) {
         
-        let curNode = traversal_queue.shift()
+        let rightNode = traversal_queue.shift()
         
 
-        if (curNode != null) {
+        if (rightNode != null) {
             
             // Empty in the middle means 
             // this is not a complete binary tree (not left-compact)
             
-            if (prevNode == null) {
+            if (leftNode == null) {
                 return false
             }
             
-            traversal_queue.push(curNode.left)
-            traversal_queue.push(curNode.right)
+            traversal_queue.push(rightNode.left)
+            traversal_queue.push(rightNode.right)
         }
         
         // update previous node
-        prevNode = curNode
+        leftNode = rightNode
     }    
     return true
 }
