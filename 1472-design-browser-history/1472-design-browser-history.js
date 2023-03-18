@@ -12,36 +12,29 @@ var BrowserHistory = function(homepage) {
 }
 
 BrowserHistory.prototype.visit = function(url) {
+
     this.page.next = {
         url,
         back: this.page,
         next: null
     }
+
     this.page = this.page.next;
 }
 
 
-/** 
- * @param {number} steps
- * @return {string}
- */
-
 BrowserHistory.prototype.back = function(steps) {
-    while (this.page.back && steps != 0) {
 
-        this.page = this.page.back;
-        steps--;
+    while (this.page.back && steps != 0) {
+        this.page = this.page.back
+        steps--
     }
     return this.page.url
 }
 
 
-/** 
- * @param {number} steps
- * @return {string}
- */
-
 BrowserHistory.prototype.forward = function(steps) {
+
     while (this.page.next && steps !=0) {
         this.page = this.page.next;
         steps--;
@@ -49,6 +42,7 @@ BrowserHistory.prototype.forward = function(steps) {
     
     return this.page.url
 }
+
 
 /** 
  * Your BrowserHistory object will be instantiated and called as such:
