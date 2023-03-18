@@ -42,7 +42,7 @@ BrowserHistory.prototype.back = function(steps) {
  */
 
 BrowserHistory.prototype.forward = function(steps) {
-    while (this.page.next && steps) {
+    while (this.page.next && steps !=0) {
         this.page = this.page.next;
         steps--;
     }
