@@ -27,7 +27,7 @@ BrowserHistory.prototype.visit = function(url) {
  */
 
 BrowserHistory.prototype.back = function(steps) {
-    while (this.page.back && steps) {
+    while (this.page.back && steps != 0) {
 
         this.page = this.page.back;
         steps--;
