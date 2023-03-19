@@ -76,15 +76,18 @@ WordDictionary.prototype.search = function(word) {
                         out = rec(node.keys.get(val), word.substr(1))
                     }
                     
-                    else {
-                        out = out
-                    }
-                    // out = out || rec(node.keys.get(val), word.substr(1))
+                    // else {
+                    //     out = out
+                    // }
+
                 }
-                return out;
+                
+                return out
             }
+            
+            // If the node has encountered a word then the simple stuff
+
             else if (node.keys.has(word[0])){
-				// If the node has encountered a word then the simple stuff
                 return rec(node.keys.get(word[0]), word.substr(1));
             }
 
@@ -94,7 +97,8 @@ WordDictionary.prototype.search = function(word) {
                 return false
             }
         }
-		// If the word doesn't exist but it could have existed so just checking if the node is the end node and returning the result
+		// If the word doesn't exist, but it could have existed, 
+        // just check if the node is the end node and return the result
         else return node.isEnd();
     }
     
