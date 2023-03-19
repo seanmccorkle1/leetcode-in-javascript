@@ -54,7 +54,7 @@ WordDictionary.prototype.search = function(word) {
     function rec(node, word){
 	
 		// returns false if the node doesn't exist
-        if(!node) return false;
+        if(node ==undefined) return false;
 		
 		// if the word exist
         if(word){
