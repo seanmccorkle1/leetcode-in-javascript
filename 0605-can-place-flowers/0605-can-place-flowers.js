@@ -36,5 +36,8 @@
     }
     count
 
-    return count >= targetCount ? true : false
+    // return count >= targetCount ? true : false
+     if (count > targetCount || count == targetCount){
+         return true
+     }return false
 }
