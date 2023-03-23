@@ -3,11 +3,15 @@ var canPlaceFlowers = function (array, targetCount) {
      let count = 0
      
     for (let index = 0; index < array.length; index++) {
+
+        const currNum = array[index] 
         
         const numToTheRight = array[index + 1]
         const numToTheLeft = array[index - 1]
-
-        if (array[index] == 0) {
+        
+        const emptySpotFound = currNum !=1
+        
+        if (emptySpotFound) {
             
             if (array[index - 1] === 0 && array[index + 1] === 0) {
                 array[index] = 1
@@ -26,9 +30,7 @@ var canPlaceFlowers = function (array, targetCount) {
         
             
 //             if (index == 0) {
-                
-//                 const numToTheRight = array[index+1]
-
+            
 //                 // [0, 0] or 
                 
 //                 if (numToTheRight == 0 || index == array.length - 1) {
