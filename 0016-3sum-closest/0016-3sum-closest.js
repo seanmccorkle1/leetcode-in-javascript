@@ -27,15 +27,15 @@ var threeSumClosest = function (array, targetNum) {
 
             // -3 is just more negative so it whens the < condition
             // its not closer to the target
-
+            
             let localThreeSum = num1 + num2 + num3
 
             localThreeSum
             closestThreeSum
             targetNum
 
-            let currDistance = Math.abs(localThreeSum - targetNum)
-            let closestDistance = Math.abs(closestThreeSum - targetNum)
+            let currDistance = Math.abs(targetNum - localThreeSum)
+            let closestDistance = Math.abs(targetNum -closestThreeSum)
 
             currDistance
 
@@ -53,6 +53,7 @@ var threeSumClosest = function (array, targetNum) {
             else if (localThreeSum < targetNum) {
                 leftIndex++
             }
+
             else if (localThreeSum == targetNum){
                 return localThreeSum
             }
