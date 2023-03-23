@@ -56,6 +56,10 @@ var canPlaceFlowers = function (array, targetCount) {
      if (count > targetCount || count == targetCount){
          return true
      }
-     
-     else if (count < targetCount) {return false}
+    
+     else if (count < targetCount) {
+         return false
+     }
 }
+
+console.log(canPlaceFlowers([0], 1), true, "1 flower can be planted")
