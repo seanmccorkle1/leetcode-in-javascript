@@ -41,9 +41,15 @@ var threeSumClosest = function (array, targetNum) {
 
             closestDistance
             closestThreeSum
-
+            
             if (currDistance < closestDistance) {
+
                 closestThreeSum = localThreeSum
+                
+                if (localThreeSum == targetNum){
+                    return localThreeSum
+                }
+
             }
 
             if (localThreeSum > targetNum) {
@@ -53,10 +59,10 @@ var threeSumClosest = function (array, targetNum) {
             else if (localThreeSum < targetNum) {
                 leftIndex++
             }
-
-            else if (localThreeSum == targetNum){
-                return localThreeSum
-            }
+            
+            // else if (localThreeSum == targetNum){
+            //     return localThreeSum
+            // }
 
         }
     }
