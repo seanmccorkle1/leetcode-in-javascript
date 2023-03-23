@@ -10,32 +10,38 @@ var threeSumClosest = function (array, target) {
 
         let leftIndex = index + 1
         let rightIndex = array.length - 1
+    
+
+        index
+        leftIndex
+        rightIndex
 
         while (leftIndex < rightIndex) {
 
-            let localSum = array[index] + array[leftIndex] + array[rightIndex]
+            let localThreeSum = array[index] + array[leftIndex] + array[rightIndex]
 
-            localSum
+            localThreeSum
             closest
             target
 
-            let currDistance= Math.abs(localSum - target)
+            let currDistance= Math.abs(localThreeSum - target)
             let closestDistance= Math.abs(closest - target)
 
 
             closestDistance
             closest
 
-            
+
             if (currDistance < closestDistance) {
-                closest = localSum
+                closest = localThreeSum
             }
+
             
-            if (localSum > target) {
+            if (localThreeSum > target) {
                 rightIndex--
             } 
 
-            else if (localSum <= target) {
+            else if (localThreeSum <= target) {
                 leftIndex++
             }
         }
