@@ -2,12 +2,7 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
 
     let flowerCount = 0
 
-
     for (let index = 0; index < array.length; index++) {
-
-        if (flowerCount >=numOfFlowersToPlace){
-            return true
-        }
 
         const numToTheRight = array[index + 1]
         const numToTheLeft = array[index - 1]
@@ -36,7 +31,7 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
             }
 
             else if (index == array.length - 1) {
-
+                
                 if (numToTheLeft == 0) {
                     array[index] = 1
                     flowerCount++
@@ -44,8 +39,12 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
             }
         }
 
+        if (flowerCount >=numOfFlowersToPlace){
+            return true
+        }
     }
-
+    return false
+    
     flowerCount
     numOfFlowersToPlace
 
@@ -53,17 +52,11 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
 
     if (flowerCount > numOfFlowersToPlace || flowerCount == numOfFlowersToPlace) {
         return true
-    } 
-    
+    }
     else if (flowerCount < numOfFlowersToPlace) {
         return false
     }
 }
 
-console.log(canPlaceFlowers([1, 0, 0, 0, 0], 2), true, [1, 0, [1], 0, [1]], "the new 1's are the 2 flowers")
-
-// console.log(canPlaceFlowers([1, 0, 0, 0, 1], 20), false, "cant plant")
-
-// console.log(canPlaceFlowers([1,0,0,0,1], 1), true,"1 flower can be planted in the middle")
-
-// console.log(canPlaceFlowers([1, 0, 0, 0, 1], 2), false, "2 flowers cannot be planted")
+console.log(canPlaceFlowers([1, 0, 0, 0, 0], 2),  true,  [1, 0, [1], 0, [1]], "the new 1's are the 2 flowers")
+// console.log(canPlaceFlowers([1, 0, 0, 0, 1], 3), false, "3 new flowers cannot be planted here")
