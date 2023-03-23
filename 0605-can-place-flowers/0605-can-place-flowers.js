@@ -2,8 +2,6 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
     
     let flowerCount = 0
     
-    if (numOfFlowersToPlace==0)return true
-
     for (let index = 0; index < array.length; index++) {
         
         const numToTheRight = array[index + 1]
@@ -42,28 +40,18 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
             }
         }
         
-        if (flowerCount == numOfFlowersToPlace){
-            return true
-        }
-        
     }
     
     flowerCount
     numOfFlowersToPlace
-
+    
     array
-
-    // if (flowerCount > numOfFlowersToPlace || flowerCount == numOfFlowersToPlace) {
-    //     return true
-    // }    
     
-    //     if (flowerCount == numOfFlowersToPlace) {
-    //     return true
-    // }    
+    if (flowerCount > numOfFlowersToPlace || flowerCount == numOfFlowersToPlace) {
+        return true
+    }    
     
-    return false
-
-    
+    return false    
 }
 
 console.log(canPlaceFlowers([1, 0, 0, 0, 0], 2),  true,  [1, 0, [1], 0, [1]], "the new 1's are the 2 flowers")
