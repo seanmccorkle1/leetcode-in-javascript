@@ -1,5 +1,8 @@
 var canPlaceFlowers = function (array, numOfFlowersToPlace) {
-
+    
+    if (numOfFlowersToPlace==0){
+        return true
+    }
 
     let flowerCount = 0
 
