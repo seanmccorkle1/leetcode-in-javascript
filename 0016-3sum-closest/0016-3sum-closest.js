@@ -1,17 +1,16 @@
 var threeSumClosest = function (array, target) {
+
     // start it at "not close at all"
     let closest = Infinity
-
+    
     array = array.sort((a, b) => a - b)
     array
-
-
+    
     for (let index = 0; index < array.length - 2; index++) {
-
+        
         let leftIndex = index + 1
         let rightIndex = array.length - 1
-    
-
+        
         index
         leftIndex
         rightIndex
@@ -24,19 +23,18 @@ var threeSumClosest = function (array, target) {
             closest
             target
 
-            let currDistance= Math.abs(localThreeSum - target)
+            let localDistance= Math.abs(localThreeSum - target)
             let closestDistance= Math.abs(closest - target)
-
 
             closestDistance
             closest
 
 
-            if (currDistance < closestDistance) {
+            if (localDistance < closestDistance) {
                 closest = localThreeSum
             }
 
-            
+
             if (localThreeSum > target) {
                 rightIndex--
             } 
