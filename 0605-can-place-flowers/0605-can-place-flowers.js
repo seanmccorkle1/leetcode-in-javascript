@@ -30,13 +30,16 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
                 array[index] = 1
                 flowerCount++
             }
+            
+            else if (index == array.length - 1 && numToTheLeft == 0) {
 
-            else if (index == array.length - 1) {
-
-                if (numToTheLeft == 0) {
-                    array[index] = 1
-                    flowerCount++
-                }
+                array[index] = 1
+                flowerCount++
+                
+                // if (numToTheLeft == 0) {
+                //     array[index] = 1
+                //     flowerCount++
+                // }                
             }
         }
         
