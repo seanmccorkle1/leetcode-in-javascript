@@ -54,7 +54,7 @@ var threeSumClosest = function (array, targetNum) {
                 leftIndex++
             }
             else if (localThreeSum == targetNum){
-                return localThreeSum||targetNum
+                return localThreeSum
             }
 
         }
