@@ -25,6 +25,11 @@ var threeSumClosest = function (array, targetNum) {
             // its not closer to the target
 
             let localThreeSum =num1+num2+num3 
+            
+            // early return
+            if (localThreeSum == targetNum){
+                return targetNum
+            }
 
             localThreeSum
             closestThreeSum
@@ -49,12 +54,10 @@ var threeSumClosest = function (array, targetNum) {
             else if (localThreeSum < targetNum) {
                 leftIndex++
             }
-            else if (localThreeSum == targetNum){
-                return targetNum
-            }
+            
         }
     }
-
+    
     return closestThreeSum
 }
 
