@@ -41,18 +41,13 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
                 }
             }
         }
-
-        // not needed, but conditions that you want to check on every loop
-        // should be at the bottom
-
-        // one-time conditions should be at the top
-
+        
         if (flowerCount == numOfFlowersToPlace){
             return true
         }
-
+        
     }
-
+    
     flowerCount
     numOfFlowersToPlace
 
@@ -62,14 +57,12 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
     //     return true
     // }    
     
-        if (flowerCount == numOfFlowersToPlace) {
-        return true
-    }    
-
+    //     if (flowerCount == numOfFlowersToPlace) {
+    //     return true
+    // }    
     
-    else {
-        return false
-    }
+    return false
+
     
 }
 
