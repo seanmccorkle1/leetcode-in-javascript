@@ -1,9 +1,12 @@
 
 var addDigits = function (num) {
     
-    if (isNaN(num) || num == 0 || num == null) {
+    if (num==0){
         return 0
     }
+    // if (isNaN(num) || num == 0 || num == null) {
+    //     return 0
+    // }
     
     if (num <= 9) {
         return num
