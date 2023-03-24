@@ -19,9 +19,9 @@ var addDigits = function (num) {
 
     // 36 -> 3 + 6 = 9
     // return 9 
-
+    
     if (isDivisibleBy9) {
-        return 9
+        return 9 //otherwise (num % 9) would be 0
     }
     
     else if (!isDivisibleBy9) {
@@ -31,9 +31,6 @@ var addDigits = function (num) {
     
 }
 
-console.log(addDigits(38), 2, "38 is (3 + 8) = 11 -> 11 is (1 + 1) = 2, result is 2")
-
-// console.log(addDigits(32), 5, "32 is (3 + 2) = 5, return 5")
-
-// console.log(addDigits(0), 0)
-// console.log(addDigits(6), 6)
+console.log(addDigits(28), 1, "28 -> 10 -> 1")
+console.log(addDigits(27), 9, "2+7=9")
+console.log(addDigits(26), 8)
