@@ -10,21 +10,20 @@ class LRUCache {
         if (!this.cacheMap.has(key)) {
             return -1
         }
-        
-        // get the value of the eky before deleting the key
+
         const valueOfKey = this.cacheMap.get(key)
 
         this.cacheMap.delete(key)
-        
-        // update the key by setting it to the back
+
+        // update the key by setting (pushing) it to the back
         // since it was used by this function
-        
+
         this.cacheMap.set(key, valueOfKey)
-        
-        // return the same value, you didnt change anything
+        // this.cacheMap.get(key)
+
+        // return only the value of the key
         return valueOfKey
     }
-
     
     put(key, value) {
 
