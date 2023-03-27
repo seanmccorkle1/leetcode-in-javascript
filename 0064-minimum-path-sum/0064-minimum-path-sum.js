@@ -4,14 +4,12 @@ var minPathSum = function (grid) {
     const numOfRows = grid.length
     const numOfColumns = grid[0].length
 
-    // Calculate the distance travelled within the first column.
-
-    // This is because each square depends on the one above
-    // and on the one to the left. 
-
+    // Each square depends on the one above and on the one to the left. 
+    // whichever is smaller
+    
     // However there is nothing left of the first column so we can
-    //  calculate it by adding the current square to the square above it
-
+    //  calculate it by adding the square above it to the current square
+    
     grid
 
     // [ [ 1, 3, 1 ]
@@ -26,9 +24,10 @@ var minPathSum = function (grid) {
 
     firstColumn:
         for (let index = 1; index < numOfRows; index++) {
-
+            
+            // all the left cells are at grid[num][0]
             const cellAbove = grid[index - 1][0]
-
+            
             // if youre referencing a number instead of an array, 
             // you cant make it a veriable
 
