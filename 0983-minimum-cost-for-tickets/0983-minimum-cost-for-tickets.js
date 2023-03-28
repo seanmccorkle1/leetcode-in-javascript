@@ -68,7 +68,14 @@ var mincostTickets = function (daysArray, costArray) {
             }
             
             let sevenDayCost = dpCostArray[sevenIndex] + costArray[1]
+            
             // let sevenDayCost = dpCostArray[Math.max(index - 7, 0)] + costArray[1]
+            
+            let thirtyIndex = 
+                index - 30 <= -1 ?
+                0 : 
+                 index - 30  
+
             let thirtyDayCost = dpCostArray[Math.max(index - 30, 0)] + costArray[2]
 
 
