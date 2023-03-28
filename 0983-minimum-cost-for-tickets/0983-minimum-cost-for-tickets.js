@@ -61,7 +61,14 @@ var mincostTickets = function (daysArray, costArray) {
 
 
             // array[-6] is not valid
-            let sevenDayCost = dpCostArray[Math.max(index - 7, 0)] + costArray[1]
+            
+            let sevenIndex = index - 7
+            if (sevenIndex <= -1){
+                sevenIndex = 0
+            }
+            
+            let sevenDayCost = dpCostArray[sevenIndex] + costArray[1]
+            // let sevenDayCost = dpCostArray[Math.max(index - 7, 0)] + costArray[1]
             let thirtyDayCost = dpCostArray[Math.max(index - 30, 0)] + costArray[2]
 
 
@@ -83,12 +90,10 @@ var mincostTickets = function (daysArray, costArray) {
             const leftCost = dpCostArray[index - 1]
             dpCostArray[index] =leftCost
         }
-
-
+        
         dpCostArray
     }
-
-
+    
     dpCostArray
     
     return dpCostArray.at(-1)
