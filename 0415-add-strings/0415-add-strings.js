@@ -1,0 +1,1 @@
+var addStrings= (n1,n2)=>String(BigInt(n1)+BigInt(n2))
