@@ -42,9 +42,14 @@ var mincostTickets = function (daysArray, costArray) {
             //make the ranges touch each other (be continuous) or its not valid
 
             let oneDayCost = dpCostArray[index - 1] + costArray[0]
-
+            
             // array[-6] is not valid
             let sevenDayCost = dpCostArray[Math.max(index - 7, 0)] + costArray[1]
+            
+            
+            dpCostArray[Math.min(index + 7, 0)] + costArray[1]
+
+            
             let thirtyDayCost = dpCostArray[Math.max(index - 30, 0)] + costArray[2]
 
             const minCost = Math.min(oneDayCost, sevenDayCost, thirtyDayCost)
