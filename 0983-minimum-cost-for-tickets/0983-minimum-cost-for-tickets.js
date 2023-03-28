@@ -80,7 +80,8 @@ var mincostTickets = function (daysArray, costArray) {
 
 
         else if (!travelDaysSet.has(index)) {
-            dpCostArray[index] = dpCostArray[index - 1]
+            const leftCost = dpCostArray[index - 1]
+            dpCostArray[index] =leftCost
         }
 
 
