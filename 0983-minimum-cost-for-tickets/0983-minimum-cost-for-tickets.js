@@ -1,14 +1,18 @@
 var mincostTickets = function (daysArray, costArray) {
 
-    // index of ticket
+    // only use ... with [] syntax 
+    // [...string]
+
     const travelDaysSet = new Set(daysArray)
-    
+
     daysArray
     costArray
 
     const lastTravelDay = daysArray.at(-1)
+    
+    // compensate for starting at index 1
+    // add one to the end to keep the same range
 
-    // DP table, record for minimum cost of ticket to travel
     const dpCostArray = new Array(lastTravelDay + 1).fill(0)
 
     // solve min cost by DP
@@ -17,8 +21,8 @@ var mincostTickets = function (daysArray, costArray) {
     travelDaysSet
     costArray
 
-    // there is no day 0
-    // you have to pass the last day itself
+    // <= cause you have to pass the last day itself
+    // start at index 1 for [index - 1]
 
     for (let index = 1; index <= lastTravelDay; index++) {
 
@@ -67,5 +71,3 @@ var mincostTickets = function (daysArray, costArray) {
 }
 
 console.log(mincostTickets([1, 4, 6, 7, 8, 20], [2, 7, 15]), 11, "buy $2 one-day on day 1, $7 7-day on day 2 and $2 one-day on day 20, total is 7+2+2 = 11")
-
-// console.log(mincostTickets([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 30, 31], [2, 7, 15]), 17, "buy the 30-day pass for $15 which covers [1-30] and buy the $2 one-day pass for day 31, total is $15 + $2")
