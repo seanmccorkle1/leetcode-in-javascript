@@ -1,10 +1,8 @@
 var mincostTickets = function (daysArray, costArray) {
 
     // index of ticket
-    const [_1day, _7day, _30day] = [0, 1, 2]
-
     const travelDaysSet = new Set(daysArray)
-
+    
     daysArray
     costArray
 
@@ -64,7 +62,8 @@ var mincostTickets = function (daysArray, costArray) {
     }
 
     dpCostArray
-    return dpCostArray[lastTravelDay]
+    
+    return dpCostArray.at(-1)
 }
 
 console.log(mincostTickets([1, 4, 6, 7, 8, 20], [2, 7, 15]), 11, "buy $2 one-day on day 1, $7 7-day on day 2 and $2 one-day on day 20, total is 7+2+2 = 11")
