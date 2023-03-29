@@ -1,11 +1,12 @@
 var maxSatisfaction = function (array) {
 
-    let maxNum = 0
-    // let multiplierThatStartsFrom1= 0
-    // let currSumOfProducts = 0 
-    
+    let maxSum = 0
     array.sort((a, b) => a - b)
 
+    if (array.find(num => num >=1) == undefined){
+        return 0
+    }
+    
     for (let index = 0; index < array.length; index++) {
 
         // reset
@@ -19,33 +20,37 @@ var maxSatisfaction = function (array) {
 
             array
 
-            const currNum = array[index2]
-            let startFrom1Index = (index2 - index) + 1
+            let currNum = array[index2]
+            let multiplierThatStartsFrom1 = (index2 - index) + 1
 
-            const currProduct = currNum * startFrom1Index
+            const currProduct = currNum * multiplierThatStartsFrom1
 
             currSumOfProducts += currProduct
         }
 
         currSumOfProducts
-        maxNum
+        maxSum
 
-        if (currSumOfProducts > maxNum) {
-            maxNum = currSumOfProducts
+        if (currSumOfProducts > maxSum) {
+            maxSum = currSumOfProducts
 
-            // if theres no negatives, this will be the highest
+            // if theyre all 0 or more, this will be the highest
+            // 5x6 is higher than 5x5
 
             if (array[0] >= 0) {
-                return maxNum
+                return maxSum
             }
 
         }
     }
 
-    return maxNum
+    return maxSum
 }
+
+// console.log(maxSatisfaction([2, 3, 4]), 20, "early return this")
+console.log(maxSatisfaction([-5,-4,-2]), 0, "all negative numbers")
 
 // console.log(maxSatisfaction([2, 3, 4]), 20, "early return this")
 // console.log(maxSatisfaction([0, 2, 3, 4]), 29, "0x1 + 2x2 + 3x3 + 4x4 = (16 + 4  + 2) = 29, start from (Nx1) every time")
 
-console.log(maxSatisfaction([-8, -2, 2, 5]),   17, "-2x1 + 2x2 + 5x3 = (-2 + 4 + 15) = 17")
+// console.log(maxSatisfaction([-8, -2, 2, 5]),   17, "-2x1 + 2x2 + 5x3 = (-2 + 4 + 15) = 17")
