@@ -1,14 +1,40 @@
-var partitionString = function(s) {
-    let start_id = 0, end_id = 0, partition_count = 0;
-    while(end_id < s.length){
-        if(s.substring(start_id, end_id).includes(s[end_id]+"")){
-            partition_count++;
-            start_id = end_id;
+var partitionString = function (string) {
+
+    let leftIndex = 0
+    let rightIndex = 1
+    
+    const partitions = []
+    let numOfPartitions = 0
+
+    string.slice(leftIndex, rightIndex)
+
+    while (rightIndex < string.length) {
+
+        const currLetter = string[rightIndex]
+        let stringPartition = string.slice(leftIndex, rightIndex)
+
+        leftIndex
+        rightIndex
+
+        if (stringPartition.includes(currLetter)) {
+            partitions.push(stringPartition)
+
+            numOfPartitions++
+            leftIndex = rightIndex
         }
-        end_id++;
+        rightIndex++
     }
-    if(s.substring(start_id, end_id).includes(s[end_id-1]+"")){
-        partition_count++;
+
+    if (string.substring(leftIndex, rightIndex).includes(string[rightIndex - 1] + "")) {
+        numOfPartitions++
+
+        let stringPartition = string.slice(leftIndex, rightIndex)
+        partitions.push()
     }
-    return partition_count;
-};
+    partitions
+
+    return numOfPartitions
+}
+
+console.log(partitionString("newstring"), 2, "['newstri', 'ng']")
+// console.log(partitionString("sss"), 3, "[s,s,s]")
