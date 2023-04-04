@@ -4,10 +4,10 @@ var successfulPairs = function(spells, potions, successNum) {
 
     // binary search needs a sort
     potions.sort((a, b) => a - b)
-
+    
     spells
     potions
-
+    
     for (let index = 0; index < spells.length; index++) {
 
         let leftIndex = 0
@@ -18,10 +18,11 @@ var successfulPairs = function(spells, potions, successNum) {
         leftIndex
         rightIndex
         index
-
         
-        while (leftIndex <= rightIndex) {
+        const currSpell = spells[index]
 
+        while (leftIndex <= rightIndex) {
+            
             leftIndex
             rightIndex
 
@@ -30,7 +31,7 @@ var successfulPairs = function(spells, potions, successNum) {
             let midIndex=Math.floor( (rightIndex+leftIndex) / 2)
 
             // midIndex = ~~(leftIndex + (rightIndex - leftIndex) / 2)
-            const currSpellWithPotionNum = spells[index] * potions[midIndex]
+            const currSpellWithPotionNum = currSpell * potions[midIndex]
 
             if (currSpellWithPotionNum >= successNum) {
                 rightIndex = midIndex - 1
@@ -52,12 +53,3 @@ var successfulPairs = function(spells, potions, successNum) {
     }
     return successOfSpellsArray
 }
-
-// console.log(successfulPairs({
-//         spells: [5, 1, 3],
-//         potions: [1, 2, 3, 4, 5],
-//         successNum: 7
-//     }), [4, 0, 3],
-//     "spell 1 with all 5 potions had 4 successful potions, so 4 goes into the first position")
-
-// console.log(successfulPairs({spells:[5, 8, 12, 15], potions: [3, 2], successNum: 1}),    [2, 2, 2, 2], "[spell #1: 2 successful potions, spell #2: 2 successful potions")
