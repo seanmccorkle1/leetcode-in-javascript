@@ -2,8 +2,8 @@
 var partitionString = function (string) {
 
     let leftIndex = 0
-    let rightIndex = 0
-
+    let rightIndex = 1
+    
     let numOfPartitions = 0
     const partitions = []
 
