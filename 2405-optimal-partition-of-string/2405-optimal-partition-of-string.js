@@ -2,39 +2,50 @@ var partitionString = function (string) {
 
     let leftIndex = 0
     let rightIndex = 1
-    
-    const partitions = []
-    let numOfPartitions = 0
 
-    string.slice(leftIndex, rightIndex)
+    let numOfPartitions = 0
+    const partitions = []
+
 
     while (rightIndex < string.length) {
 
         const currLetter = string[rightIndex]
+
         let stringPartition = string.slice(leftIndex, rightIndex)
+        stringPartition
 
         leftIndex
         rightIndex
 
-        if (stringPartition.includes(currLetter)) {
+
+        const letterIsInPartition = stringPartition.includes(currLetter)
+
+        if (letterIsInPartition) {
+            stringPartition
+            currLetter
             partitions.push(stringPartition)
 
             numOfPartitions++
             leftIndex = rightIndex
         }
+
         rightIndex++
     }
 
+    string.slice(7, 9)
+    return numOfPartitions+=1
+
     if (string.substring(leftIndex, rightIndex).includes(string[rightIndex - 1] + "")) {
-        numOfPartitions++
-
+        numOfPartitions++        
         let stringPartition = string.slice(leftIndex, rightIndex)
-        partitions.push()
+        partitions.push(stringPartition)
     }
-    partitions
 
+    partitions
     return numOfPartitions
 }
 
 console.log(partitionString("newstring"), 2, "['newstri', 'ng']")
-// console.log(partitionString("sss"), 3, "[s,s,s]")
+console.log(partitionString("sss"), 3, "[s,s,s]")
+
+partitionString("abacaba")
