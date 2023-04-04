@@ -6,7 +6,6 @@ var partitionString = function (string) {
     let numOfPartitions = 0
     const partitions = []
 
-
     while (rightIndex < string.length) {
 
         const currLetter = string[rightIndex]
@@ -17,12 +16,13 @@ var partitionString = function (string) {
         leftIndex
         rightIndex
 
-
         const letterIsInPartition = stringPartition.includes(currLetter)
 
         if (letterIsInPartition) {
+
             stringPartition
             currLetter
+
             partitions.push(stringPartition)
 
             numOfPartitions++
@@ -32,20 +32,11 @@ var partitionString = function (string) {
         rightIndex++
     }
 
-    string.slice(7, 9)
-    return numOfPartitions+=1
-
-    if (string.substring(leftIndex, rightIndex).includes(string[rightIndex - 1] + "")) {
-        numOfPartitions++        
-        let stringPartition = string.slice(leftIndex, rightIndex)
-        partitions.push(stringPartition)
-    }
-
+    partitions.push(string.slice(leftIndex, rightIndex))    
     partitions
-    return numOfPartitions
+
+    return ++numOfPartitions
 }
 
 console.log(partitionString("newstring"), 2, "['newstri', 'ng']")
-console.log(partitionString("sss"), 3, "[s,s,s]")
-
-partitionString("abacaba")
+// console.log(partitionString("sss"), 3, "[s,s,s]")
