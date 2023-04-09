@@ -26,10 +26,10 @@ var threeSumClosest = function (array, targetNum) {
             const currThreeSum = num1 + num2+num3
             const currDistance = Math.abs(targetNum - currThreeSum)
 
-            // if (currDistance < closestDistanceToTargetNum){
-            //     closestDistanceToTargetNum = currDistance
-            //     closestThreeSum = currThreeSum
-            // }
+            if (currDistance < closestDistanceToTargetNum){
+                closestDistanceToTargetNum = currDistance
+                closestThreeSum = currThreeSum
+            }
 
             if (currThreeSum == targetNum) {
 
@@ -46,11 +46,6 @@ var threeSumClosest = function (array, targetNum) {
             else if (currThreeSum > targetNum){
                 rightIndex--
             }
-            if (currDistance < closestDistanceToTargetNum){
-                closestDistanceToTargetNum = currDistance
-                closestThreeSum = currThreeSum
-            }
-
 
         }
 
