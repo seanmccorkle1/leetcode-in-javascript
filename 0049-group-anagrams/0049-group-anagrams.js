@@ -22,12 +22,13 @@ var groupAnagrams = function(stringArray){
     }
     
     const doubleArray = Object.values(object)
-    
+    return doubleArray
     // use .sort() for alphabetical order, dont use a and b
-    // sort it on a lower level with map, otherwise it only compares the first string of each array
+
+    // sort it on a lower level with map, 
+    //otherwise it only compares the first string of each array
     
-    // ["bat"] is a, ["nat", "tan"] is b
-    // a and b represent the elements
+    // ["bat"] is a, ["nat", "tan"] is b    
     
     return doubleArray.map(subarray => subarray.sort()).sort((a,b) => a.length - b.length)
 }
