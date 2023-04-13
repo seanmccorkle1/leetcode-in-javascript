@@ -18,8 +18,7 @@ const validateStackSequences = function(pushed, popped) {
             
             stackIsntEmpty = (stack.length != 0) ? true : false
             
-            index += 1
-            currPopNum = popped[index]
+            currPopNum = popped[++index]
             
         }
     }
