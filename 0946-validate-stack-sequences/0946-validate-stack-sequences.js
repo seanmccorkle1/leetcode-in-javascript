@@ -11,10 +11,12 @@ const validateStackSequences = function(pushed, popped) {
         let currPopNum = popped[index] 
         var stackIsntEmpty = stack.length >= 1
         
-        while (stack.length >= 1 && stack.at(-1) == currPopNum) {
+        while (stackIsntEmpty && stack.at(-1) == currPopNum) {
             
             stack.pop()
             stack
+            
+            stackIsntEmpty = (stack.length != 0) ? true : false
             
             index += 1
             currPopNum = popped[index]
