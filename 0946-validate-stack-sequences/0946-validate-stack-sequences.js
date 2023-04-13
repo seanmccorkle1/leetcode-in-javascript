@@ -23,13 +23,15 @@ const validateStackSequences = function(pushed, popped) {
             
         }
     }
-    
+    popped
+
     pushed
     index
 
     if (pushed.length == index){
         return true
     }
+    
     else {
         return false
     }
@@ -37,3 +39,7 @@ const validateStackSequences = function(pushed, popped) {
 }
 
 console.log(validateStackSequences([1,2,3,4,5], [4,5,3,2,1]), true)
+
+console.log(validateStackSequences([1,2], [1,2]),  false, "1 cant be popped before 2 in poppedArray")
+
+console.log(validateStackSequences([1,2], [2,2]),  true, "1 cant be popped before 2 in poppedArray")
