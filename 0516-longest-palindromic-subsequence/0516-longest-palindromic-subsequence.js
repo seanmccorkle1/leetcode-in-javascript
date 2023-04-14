@@ -4,7 +4,9 @@ var longestPalindromeSubseq = function(string) {
     
 
     // Initialize a 2D array to store the length of the longest palindromic subsequence
-    
+
+    // always fill an empty array with 0 or ""
+
     const dp = new Array(string.length).fill(0).map((e) => new Array(string.length).fill(0))
     
       // Iterate over the substrings in reverse order to fill in the dp table bottom-up
