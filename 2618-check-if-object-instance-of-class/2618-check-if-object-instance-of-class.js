@@ -7,15 +7,11 @@
 var checkIfInstanceOf = function(obj, classFunction) {
     
     // if you get anything thats not a function in the classFunction parameter
+    // Object(undefined) still counts as type object
     
-    if (obj==null  || typeof classFunction != "function") {
+    if (obj==undefined || typeof classFunction != "function") {
         return false
-    }
-    
-    obj
-    Object(obj)
-    classFunction
-    
+    }    
     // Primitives are not objects and do not have properties or mehods, 
     // so the instanceof operator returns false when you use it with a primitive.
     
