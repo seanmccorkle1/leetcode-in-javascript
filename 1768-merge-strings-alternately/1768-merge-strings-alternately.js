@@ -1,10 +1,9 @@
 var mergeAlternately = (word1, word2) => {
-
-        const maxLength = Math.max(word1.length,word2.length)
-        
+    
         let currString = ''
+
         
-        for (let index = 0; index < maxLength; index++) {
+        for (let index = 0; index < Math.max(word1.length, word2.length); index++) {
             
             let word1Letter= word1[index] ?? ""
             let word2Letter = word2[index] ?? ""
