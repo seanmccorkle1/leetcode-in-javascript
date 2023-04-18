@@ -5,16 +5,9 @@ var mergeAlternately = (word1, word2) => {
         
         for (let index = 0; index < maxLength; index++) {
             
-            let word1Letter= word1[index]
-            let word2Letter = word2[index]
+            let word1Letter= word1[index] ?? ""
+            let word2Letter = word2[index] ?? ""
             
-            if (word1Letter==undefined) {
-                word1Letter = ""
-            }
-            if (word2Letter==undefined) {
-                word2Letter = ""
-            }
-
             let twoLetters = word1Letter + word2Letter
             string += twoLetters
             
@@ -22,8 +15,7 @@ var mergeAlternately = (word1, word2) => {
             // result += (a[i] ?? '') + (b[i] ?? '')
     
   }
-        
-    return string
     
+    return string
 }
 console.log(mergeAlternately("leet", "code"))
