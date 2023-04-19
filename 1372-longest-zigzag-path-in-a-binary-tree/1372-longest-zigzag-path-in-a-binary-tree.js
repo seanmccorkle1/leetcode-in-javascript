@@ -16,7 +16,8 @@ function longestZigZag(root) {
     let longest = 0;    
     const reverse = {left: 'right', right: 'left'};
 
-    const stack = [[root, 'left', 0]]; // can use 'right' as a second element too, won't matter
+    const stack = [[root, 'right', 0]]; // can use 'right' as a second element too, won't matter
+    
     while (stack.length) {
         const [node, nextDirection, depth] = stack.pop();
 
