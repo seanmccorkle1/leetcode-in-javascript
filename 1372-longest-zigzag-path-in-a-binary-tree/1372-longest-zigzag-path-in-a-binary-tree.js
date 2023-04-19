@@ -18,7 +18,7 @@ function longestZigZag(root) {
 
     const stack = [[root, 'right', 0]]; // can use 'right' as a second element too, won't matter
     
-    while (stack.length) {
+    while (stack.length != 0) {
         const [node, nextDirection, depth] = stack.pop();
 
         if (node[nextDirection])
