@@ -15,27 +15,25 @@
 
 var widthOfBinaryTree = function(root) {
     
+    const minPosArray = [0]
+    let maxWidth = 0
+    
     const callDFS = (node, level, pos) => {
         
         if (!node) {
             return
         }
         
-        if(minPos[level] ==null) {
-            minPos.push(pos)
+        if(minPosArray[level] ==undefined) {
+            minPosArray.push(pos)
         }
 
-        const diff = pos - minPos[level]
+        const diff = pos - minPosArray[level]
         maxWidth = Math.max(maxWidth, diff+1)
         
-        callDFS(node.left, level+1, diff*2)        
-        callDFS(node.right, level+1, diff*2+1)
+        callDFS(node.left, level+1, diff * 2)        
+        callDFS(node.right, level+1, diff*2 +1)
     }
-
-    const minPos = [0]
-    let maxWidth = 0
-
-    
     
     callDFS(root, 0, 0)
     return maxWidth
