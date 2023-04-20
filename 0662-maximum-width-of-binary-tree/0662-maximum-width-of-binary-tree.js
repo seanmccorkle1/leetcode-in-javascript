@@ -30,13 +30,14 @@ var widthOfBinaryTree = function(root) {
 
         const diff = pos - minPosArray[level]
         maxWidth = Math.max(maxWidth, diff+1)
-        
-        callDFS(node.left, level+1, diff * 2)        
+
+
+        callDFS(node.left, level+1, diff * 2)
         callDFS(node.right, level+1, diff*2 +1)
-        return
+        
+        // return isnt needed in a function
     }
     
     callDFS(root, 0, 0)
-    return maxWidth
-    
+    return maxWidth    
 }
