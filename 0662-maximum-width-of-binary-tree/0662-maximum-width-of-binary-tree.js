@@ -15,9 +15,11 @@
 
 var widthOfBinaryTree = function(root) {
     
-        const callDFS = (node, level, pos) => {
+    const callDFS = (node, level, pos) => {
         
-        if (node==undefined) return;
+        if (!node) {
+            return
+        }
         
         if(minPos[level] == undefined) {
             minPos.push(pos)
