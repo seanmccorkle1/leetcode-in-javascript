@@ -1,9 +1,12 @@
 var successfulPairs = function (spells, potions,successNum) {
 
+    
     const successOfSpellsArray = []
+    // new Array(spells.length)
 
-    // binary search needs a sort
     spells
+    
+    // binary search needs a sorted array
 
     potions.sort((a, b) => a - b)
 
@@ -20,45 +23,41 @@ var successfulPairs = function (spells, potions,successNum) {
 
         leftIndex
         rightIndex
-
-
+        
         spellIndex
 
         // <= to get -1 for rightIndex
-
+        
         while (leftIndex <= rightIndex) {
-
+            
             leftIndex
             rightIndex
-
-            let midIndex = Math.floor((rightIndex + leftIndex) / 2)
-
-            const currValueWithPotion = currSpell * potions[midIndex]
-
-            // binary search cuts the range in HALF, not increment/decrement
-            // equalling successNum counts as a win
-
-            if (currValueWithPotion >= successNum) {
+        
+            let midIndex = Math.floor((leftIndex + rightIndex) / 2)
+            let midPotion = potions[midIndex]
+            
+            let spellWithPotion = currSpell * midPotion
+            
+            // equalling successNum counts as a success
+            
+            if (spellWithPotion >= successNum) {
                 rightIndex = midIndex - 1
             } 
-
-            else if (currValueWithPotion < successNum) {
+            
+            else if (spellWithPotion < successNum) {
                 leftIndex = midIndex + 1
             }
         }
 
         potions.length
-        
+        leftIndex
+
+        // higher left index = worse efficacy        
         let currSpellEfficacy= potions.length - leftIndex
 
-        leftIndex
-        rightIndex
-
-        // higher right index = worse efficacy        
-        // let currSpellEfficacyValue = (potions.length - rightIndex) - 1
-
-        successOfSpellsArray[spellIndex] = currSpellEfficacy
-        successOfSpellsArray
+        
+        // successOfSpellsArray[spellIndex] = currSpellEfficacy
+        successOfSpellsArray.push(currSpellEfficacy)
     }
     return successOfSpellsArray
 }
