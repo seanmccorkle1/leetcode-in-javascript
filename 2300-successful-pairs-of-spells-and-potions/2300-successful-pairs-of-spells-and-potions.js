@@ -1,8 +1,6 @@
 var successfulPairs = function (spells, potions,successNum) {
 
-    
-    const successOfSpellsArray = []
-    // new Array(spells.length)
+    const spellEfficacies =new Array(spells.length)
 
     spells
     
@@ -49,17 +47,28 @@ var successfulPairs = function (spells, potions,successNum) {
             }
         }
 
+        if (leftIndex == potions.length){
+            spellEfficacies[spellIndex] = 0
+        }
+
+        else{
         potions.length
         leftIndex
 
+        potions.length
+        // potions[5]
+        // potions[5]
+
+        // potions[5 - 1
+        // potions[4]
+
         // higher left index = worse efficacy        
         let currSpellEfficacy= potions.length - leftIndex
-
         
-        // successOfSpellsArray[spellIndex] = currSpellEfficacy
-        successOfSpellsArray.push(currSpellEfficacy)
+        spellEfficacies[spellIndex] = currSpellEfficacy
+        }
     }
-    return successOfSpellsArray
+    return spellEfficacies
 }
 
 
