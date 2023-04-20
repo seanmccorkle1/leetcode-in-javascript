@@ -1,61 +1,72 @@
-var successfulPairs = function (spells,potions,successNum
-) {
+var successfulPairs = function (spells, potions,successNum) {
 
-    const successOfSpellsArray = new Array(spells.length)
-
+    const successOfSpellsArray = []
 
     // binary search needs a sort
+    spells
+
     potions.sort((a, b) => a - b)
-
-
 
     spells
     potions
 
+    for (let spellIndex = 0; spellIndex < spells.length; spellIndex++) {
 
-
-    for (let index = 0; index < spells.length; index++) {
-
-        let currSpell = spells[index]
-
+        // reset indexes on every new spell
         let leftIndex = 0
         let rightIndex = potions.length - 1
+
+        const currSpell = spells[spellIndex]
+
+        leftIndex
+        rightIndex
+
+
+        spellIndex
 
         // <= to get -1 for rightIndex
 
         while (leftIndex <= rightIndex) {
 
-            let midIndex = Math.trunc((leftIndex+rightIndex) / 2)
+            leftIndex
+            rightIndex
 
-            // binary search with > and <= conditions        
-            const spellValue = currSpell * potions[midIndex]
+            let midIndex = Math.floor((rightIndex + leftIndex) / 2)
 
-            if (spellValue >= successNum){
+            const currValueWithPotion = currSpell * potions[midIndex]
+
+            // binary search cuts the range in HALF, not increment/decrement
+            // equalling successNum counts as a win
+
+            if (currValueWithPotion >= successNum) {
                 rightIndex = midIndex - 1
-            }
+            } 
 
-            else if (spellValue < successNum) {
-                leftIndex = midIndex+1
+            else if (currValueWithPotion < successNum) {
+                leftIndex = midIndex + 1
             }
-
         }
-        index
+
+        potions.length
+        
+        let currSpellEfficacy= potions.length - leftIndex
 
         leftIndex
         rightIndex
 
-        successOfSpellsArray[index]= potions.length - rightIndex-1
+        // higher right index = worse efficacy        
+        // let currSpellEfficacyValue = (potions.length - rightIndex) - 1
+
+        successOfSpellsArray[spellIndex] = currSpellEfficacy
+        successOfSpellsArray
     }
     return successOfSpellsArray
 }
 
-// console.log(successfulPairs({
-//         spells: [5, 1, 3],
-//         potions: [1, 2, 3, 4, 5],
-//         successNum: 7
-//     }), [4, 0, 3],
-//     "spell 1 with all 5 potions had 4 successful potions, so 4 goes into the first position")
 
-// console.log(successfulPairs({spells:[5, 8, 12, 15], potions: [3, 2], successNum: 1}), [2, 2, 2, 2], "[spell #1: 2 successful potions, spell #2: 2 successful potions")
 
-// console.log(successfulPairs({spells:[3,1,2], potions: [8,5,8], successNum: 16}),   [2, 0 , 2])
+console.log(successfulPairs([5, 1, 3], [1, 2, 3, 4, 5],7), [4, 0, 3],
+"spell 1 with all 5 potions had 4 successful potions, so 4 goes into the first position")
+
+
+// console.log(successfulPairs({spells:[5, 8, 12, 15], potions: [3, 2], successNum: 1}),    [2, 2, 2, 2], "[spell #1: 2 successful potions, spell #2: 2 successful potions")
