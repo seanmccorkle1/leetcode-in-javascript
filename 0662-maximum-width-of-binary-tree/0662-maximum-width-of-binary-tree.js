@@ -34,7 +34,9 @@ var widthOfBinaryTree = function(root) {
 
         callDFS(node.left, level+1, diff * 2)
         callDFS(node.right, level+1, diff*2 +1)
-        
+        return
+        return
+        return
         // return isnt needed in a function
     }
     
