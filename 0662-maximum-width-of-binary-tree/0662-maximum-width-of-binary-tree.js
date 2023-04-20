@@ -21,7 +21,7 @@ var widthOfBinaryTree = function(root) {
             return
         }
         
-        if(minPos[level] == undefined) {
+        if(minPos[level] ==null) {
             minPos.push(pos)
         }
 
