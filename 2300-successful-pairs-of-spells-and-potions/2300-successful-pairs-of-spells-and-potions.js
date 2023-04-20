@@ -47,26 +47,14 @@ var successfulPairs = function (spells, potions,successNum) {
             }
         }
 
-        if (leftIndex == potions.length){
-            spellEfficacies[spellIndex] = 0
-        }
-
-        else{
         potions.length
         leftIndex
 
-        potions.length
-        // potions[5]
-        // potions[5]
-
-        // potions[5 - 1
-        // potions[4]
-
-        // higher left index = worse efficacy        
+        // higher left index = worse efficacy
+        // higher left index means it kept being  below successNum, ie fail
         let currSpellEfficacy= potions.length - leftIndex
         
         spellEfficacies[spellIndex] = currSpellEfficacy
-        }
     }
     return spellEfficacies
 }
