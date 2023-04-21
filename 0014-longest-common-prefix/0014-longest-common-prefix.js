@@ -1,8 +1,8 @@
 var longestCommonPrefix = function(array) {
 
-    if (array.length == 0){
-        return ""
-    }
+    // if (array.length == 0){
+    //     return ""
+    // }
 
     // as soon as it doesnt equal return it to force the prefix
 
