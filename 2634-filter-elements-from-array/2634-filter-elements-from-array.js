@@ -2,17 +2,17 @@
 
 var filter = function(array, fn) {
     
-    const newArray = []
-
+    const filteredArray = []
+    
     for (let index = 0; index < array.length; index++){
         
-        const num=array[index]
-       if (Boolean(fn(num, index))==true){ 
-           newArray.push(num)
+        const currNum = array[index]
+       if (Boolean(fn(currNum, index))==true){ 
+           filteredArray.push(currNum)
       }
    }
     
-    return newArray
+    return filteredArray
 }
 
 filter([0,8,20,30], greaterThan10 = num => num > 10)
