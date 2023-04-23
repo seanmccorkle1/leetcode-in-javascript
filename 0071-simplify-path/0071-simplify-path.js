@@ -36,12 +36,14 @@ var simplifyPath = function (pathString) {
     }
 
     stack
-    return "/" + stack.join("/")
+
+    pathString =  stack.join("/")
+    return "/" + pathString
 }
 
-// console.log(simplifyPath("/C:/users/../Program files"), "/C:/Program files", "at 'users', go up to C")
+console.log(simplifyPath("/C:/users/../Program files"), "/C:/Program files", "at 'users', go up to C")
 
-console.log(simplifyPath("/a/./b/../../c/"), "/c")
+// console.log(simplifyPath("/a/./b/../../c/"), "/c")
 
 // console.log(simplifyPath("/C:/users/./Program files"), "/C:/users/Program files")
 // console.log(simplifyPath("/home//foo/"), "/home/foo")
