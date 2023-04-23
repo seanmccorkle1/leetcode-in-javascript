@@ -1,36 +1,40 @@
-var simplifyPath = function (pathArray) {
+var simplifyPath = function (pathString) {
 
     const stack = []
-    
-    pathArray = pathArray.split('/')
 
-    
-    pathArray = pathArray.filter(element => element != ".")
-        .filter(element => element != "")
-    
-    pathArray    
+    // double slash becomes an empty string on the .split("/")
+    // one period just means "current directory", it doesnt do anything
 
-    
+    let pathArray = pathString.split('/')
+
+    pathArray = pathArray.filter(string => string.trim() != ".")
+    pathArray = pathArray.filter(string => string.trim() != "")
+
+    pathArray
+
     for (let index = 0; index < pathArray.length; index++) {
 
         const currDirectory = pathArray[index]
-        
-        // double slash becomes an empty string on the .split("/")
-        // one period just means "current directory", it doesnt do anything
-        
-        // remove the current directory and go up to the most recent one
-        // currString is an array element, not a letter
 
-        if (currDirectory == '..') {
+        // if its "..", pop (remove) the current directory from the stack a
+        // and go up to the most recent directory
+
+        // "most recent" == stack
+
+        const directoryIsDoublePeriod = currDirectory.trim() ==".."
+
+        if (directoryIsDoublePeriod) {
             stack
             stack.pop()
-            continue
         }
-        
-        stack.push(currDirectory)
+
+        else if (!directoryIsDoublePeriod)  {
+            stack.push(currDirectory)
+        }
+
         stack
     }
-    
+
     stack
     return "/" + stack.join("/")
 }
