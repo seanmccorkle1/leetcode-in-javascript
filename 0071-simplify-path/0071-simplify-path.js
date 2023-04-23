@@ -1,22 +1,17 @@
-var simplifyPath = function (path) {
+var simplifyPath = function (pathArray) {
 
     const stack = []
-
-    let pathArray = path.split('/')
-    pathArray.length
-
-    pathArray[0]
-    pathArray[0]
-
+    
+    pathArray = pathArray.split('/')
+    
     pathArray = pathArray.filter(element => element != ".").filter(element => element != "")
-    pathArray.length
-
-    pathArray
-    pathArray[0]
+    
+    pathArray    
+    
     for (let index = 0; index < pathArray.length; index++) {
 
         const currString = pathArray[index]
-
+        
         // double slash becomes an empty string on the .split("/")
         // one period just means "current directory", it doesnt do anything
         
@@ -42,7 +37,7 @@ var simplifyPath = function (path) {
             stack
         }
     }
-
+    
     stack
     return "/" + stack.join("/")
 }
