@@ -10,5 +10,5 @@ var map = function(array, mapFn) {
     return mappedArray
 }
 
-const plusIndexFn = (num, index)=> {return num + index}
-console.log(map([1,2,3], plusIndexFn),   [1,3,5])
+const mapFunction  = (num, index)=> {return num + index}
+console.log(map([1,2,3], mapFunction),   [1,3,5])
