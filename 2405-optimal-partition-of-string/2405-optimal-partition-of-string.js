@@ -6,12 +6,16 @@ var partitionString = function (string) {
     let numOfUniquePartitions = 0
 
     while (rightIndex < string.length) {
-
+        
         const currLetter = string[rightIndex]
         const currPartition = string.slice(leftIndex, rightIndex)
+        
+        
+        if (currPartition.includes(currLetter)) {
 
-        if (currPartition.includes(currLetter)){
-            leftIndex= rightIndex
+            // start the new string at the duplicate letter
+            leftIndex = rightIndex
+        
             numOfUniquePartitions+=1
         }
 
