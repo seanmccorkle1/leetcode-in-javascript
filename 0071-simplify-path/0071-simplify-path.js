@@ -4,7 +4,9 @@ var simplifyPath = function (pathArray) {
     
     pathArray = pathArray.split('/')
     
-    pathArray = pathArray.filter(element => element != ".").filter(element => element != "")
+    pathArray = pathArray.filter(element => element != ".")
+        .filter(element=> Boolean(element) == true)
+        //.filter(element => element != "")
     
     pathArray    
     
