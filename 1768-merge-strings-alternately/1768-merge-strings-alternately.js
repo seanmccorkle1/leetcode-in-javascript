@@ -15,16 +15,15 @@ const mergeAlternately = (word1, word2) => {
     }
 
     let remainingLetters =""
-
+    
     if (word1.length > word2.length){
         remainingLetters = word1.slice(index)
-
     }
-
-    else if (word2.length > word1.length){
+    
+    if (word2.length > word1.length){
         remainingLetters = word2.slice(index)
     }
-
+    
     return currString + remainingLetters
 }
 
