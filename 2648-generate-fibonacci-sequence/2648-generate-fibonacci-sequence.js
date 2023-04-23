@@ -14,8 +14,8 @@
 // therefore: term n is (n-1 + n- 2)
 
 
-var fibGenerator = function*() {
-
+// var fibGenerator = function*() {
+function* fibGenerator(){
     let leftNum = 0
     let rightNum = 1
 
