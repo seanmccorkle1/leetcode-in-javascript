@@ -15,16 +15,21 @@
 
 
 // var fibGenerator = function*() {
+
 function* fibGenerator(){
+    
     let leftNum = 0
     let rightNum = 1
-
+    
     while (true) {
+
+        // return 0 before it gets changed
+
         yield leftNum;
-
-        // leftNum goes up to rightNum
+        
+        // leftNum goes up a step to rightNum
         // rightNum goes up to the two-sum rightNum +leftNum
-
+        
         [leftNum,rightNum] = [rightNum,  leftNum+rightNum]
     }  
 }
@@ -32,8 +37,6 @@ function* fibGenerator(){
 const generatorObj = fibGenerator()
 
 fibGenerator()
-generatorObj
-generatorObj.next()
 
 generatorObj.next().value; // 0
 generatorObj.next().value; // 1
