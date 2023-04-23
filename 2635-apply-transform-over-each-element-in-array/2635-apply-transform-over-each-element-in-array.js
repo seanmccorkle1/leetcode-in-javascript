@@ -2,13 +2,15 @@ var map = function(array, mapFn) {
 
     const mappedArray = new Array(array.length)
     
-    for (let index = 0; index < array.length; index++) {    
-        
+    for (let index = 0; index < array.length; index++) {
+
+        // index just gets left out if "num" is the only argument
         const mappedNum = mapFn(array[index], index)
+
         mappedArray[index] = mappedNum
-  }    
+  }
     return mappedArray
 }
 
-const mapFunction  = (num, index)=> {return num + index}
+const mapFunction  = (num)=> {return num + 1}
 console.log(map([1,2,3], mapFunction),   [1,3,5])
