@@ -2,9 +2,10 @@ Array.prototype.groupBy = function(typeFn) {
     
     const obj = {}
     
-    for (const e of this) {     
+    let xd=this
+    for (const e of xd) {
         
-        // the key is String(e) or Array(e)        
+        // String(e) or Array(e)
         const key = typeFn(e)
         
         if (!obj[key]){
