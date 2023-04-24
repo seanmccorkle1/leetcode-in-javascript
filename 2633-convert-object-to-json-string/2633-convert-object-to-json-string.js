@@ -11,16 +11,16 @@ var jsonStringify = function(object) {
     
     // return the string value surrounded by double quotes.
   if (typeof object == 'string') {
-      // return `${object}`
       return `"${object}"`
-      // return '"' + object + '"'
   }
-    
-  if (typeof object == 'number' || typeof object === 'boolean') {
+
     // return its string representation.
-    return String(object);
-  }
-  if (Array.isArray(object)) {
+    if (typeof object == 'number' || typeof object === 'boolean') {
+        // return String(object);
+        return `${object}`
+    }
+    
+if (Array.isArray(object)) {
     // Recursively convert each item to a JSON string and join them with commas.
     const items = object.map(item => jsonStringify(item)).join(',');
     return '[' + items + ']';
