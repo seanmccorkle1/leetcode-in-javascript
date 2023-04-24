@@ -35,10 +35,31 @@ var jsonStringify = function (input) {
     // if (typeof input == "object") {
     
     if (String(input).includes("object")) {
-        const keys = Object.keys(input)
-        const items = keys.map(key => '"' + key + '":' + jsonStringify(input[key]))
         
-        return `{${items}}`
+        // let value;
+
+        
+        const fixedObj = Object.keys(input).map(key => {
+            
+            let value = input[key]
+            
+            if (typeof value == "number" || typeof value == "boolean") {
+                value = String(value)
+            } 
+            
+            else {
+                value = jsonStringify(value)
+            }
+            return `"${key}":${value}`
+        })
+        
+        return `{${fixedObj}}`
+        
+        // .map(key => '"' + key + '":' + jsonStringify(input[key]))
+
+        // const items = Object.keys(input).map(key => '"' + key + '":' + jsonStringify(input[key]))
+    
+        // return `{${items}}`
     }
 }
 
