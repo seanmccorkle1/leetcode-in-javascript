@@ -16,25 +16,23 @@ var jsonStringify = function (input) {
     
     // return its string representation.
     
-    if (typeof input == 'number') {
-        return String(input)
+    else if (typeof input == 'number') {
+        return input.toString()
     }
     
-    if (typeof input == 'boolean'){
+    else if (input ===true ||  input===false){
      return String(input)
     }
     
     // if its an array, go down until you get a primitive    
     
     
-    if (Array.isArray(input)) {
+    else if (Array.isArray(input)) {
         const array = input.map(item => jsonStringify(item))
         return `[${array}]`                
     }
     
-    // if (typeof input == "object") {
-    
-    if (String(input).includes("object")) {
+    else if (typeof input=="object") {
         
         // let value;
 
