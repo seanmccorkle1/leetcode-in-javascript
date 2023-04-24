@@ -8,8 +8,8 @@ function* inorderTraversal(array) {
     for (const element of array) {
         
         if (typeof element == "object") {
-            var functionPointer =inorderTraversal(element) 
-            yield* functionPointer
+            var genFunctionPointer =inorderTraversal(element) 
+            yield* genFunctionPointer
         } 
         
         else {
