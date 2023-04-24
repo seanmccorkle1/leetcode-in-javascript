@@ -11,8 +11,7 @@ var lastStoneWeight = function (array) {
         const difference =(highest-secondHighest)
         array.push(difference)
     }
-    
-    array
+    return Number(array.join(""))
     return array[0]
 }
 
