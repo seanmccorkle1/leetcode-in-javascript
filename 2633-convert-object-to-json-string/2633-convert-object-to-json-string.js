@@ -4,46 +4,47 @@
  */
 
 var jsonStringify = function (input) {
-
+    
     if (input == null) {
-        return 'null'
+        return "null"
     }
-
+    
     // return the string value surrounded by double quotes.
     if (typeof input == 'string') {
         return `"${input}"`
     }
-
+    
     // return its string representation.
-    if (typeof input == 'number' || typeof input === 'boolean') {
-        return input.toString()
+    
+    if (typeof input == 'number') {
+        return String(input)
     }
-
-    // Recursively convert each item to a JSON string and join them with commas.
-
+    
+    if (typeof input == 'boolean'){
+     return String(input)
+    }
+    
+    // if its an array, go down until you get a primitive    
+    
     if (Array.isArray(input)) {
-
         const array = input.map(item => jsonStringify(item))
-
-        return `[${array}]`
-        
-        let s=`[${array}]`
-
-        let s2=`[${array.join(",")}]`
-
-        s.length
-        s2.length
-
-        return `[${array.join(",")}]`
+        return `[${array}]`                
     }
-
-    // Recursively convert each value to a JSON string and pair it with the corresponding key.
-
+    
     if (typeof input === "object") {
+
+        Object.entries(input)
+
+        const fixed=Object.entries(input).map(subarray=> `"${subarray[0]}":${jsonStringify(input[subarray[0]])}`)
+        fixed
+        
+        return `{${fixed}}`
+
+        //.map(subarray)
 
         const keys = Object.keys(input)
         const items = keys.map(key => '"' + key + '":' + jsonStringify(input[key]))
-        
+
         // return '{' + items.join(',') + '}'
         return '{' + items + '}'
     }
