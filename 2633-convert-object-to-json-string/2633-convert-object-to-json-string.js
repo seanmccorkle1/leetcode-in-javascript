@@ -10,32 +10,34 @@ var jsonStringify = function (input) {
     }
     
     // return the string value surrounded by double quotes.
+    
     if (typeof input == 'string') {
         return `"${input}"`
     }
     
     // return its string representation.
-    
     else if (typeof input == 'number') {
         return input.toString()
     }
     
-    else if (input ===true ||  input===false){
-     return String(input)
+    else if (typeof input == "boolean"){
+        return String(input)
     }
     
     // if its an array, go down until you get a primitive    
     
-    
-    else if (Array.isArray(input)) {
+    if (Array.isArray(input)) {
         const array = input.map(item => jsonStringify(item))
         return `[${array}]`                
     }
     
     else if (typeof input=="object") {
-        
-        // let value;
 
+        
+        if (Array.isArray(input)) {
+            const array = input.map(item => jsonStringify(item))
+            return `[${array}]`                
+        }
         
         const fixedObj = Object.keys(input).map(key => {
             
