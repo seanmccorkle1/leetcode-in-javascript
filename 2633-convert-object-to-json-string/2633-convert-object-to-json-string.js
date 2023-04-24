@@ -26,27 +26,20 @@ var jsonStringify = function (input) {
     
     // if its an array, go down until you get a primitive    
     
+    
     if (Array.isArray(input)) {
         const array = input.map(item => jsonStringify(item))
         return `[${array}]`                
     }
     
-    if (typeof input === "object") {
+    // if (typeof input == "object") {
 
-        Object.entries(input)
-
-        const fixed=Object.entries(input).map(subarray=> `"${subarray[0]}":${jsonStringify(input[subarray[0]])}`)
-        fixed
-        
-        return `{${fixed}}`
-
-        //.map(subarray)
-
+    
+    if (String(input) =="[object Object]"){
         const keys = Object.keys(input)
         const items = keys.map(key => '"' + key + '":' + jsonStringify(input[key]))
-
-        // return '{' + items.join(',') + '}'
-        return '{' + items + '}'
+        
+        return `{${items}}`
     }
 }
 
