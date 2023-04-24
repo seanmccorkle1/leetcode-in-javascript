@@ -13,11 +13,10 @@ var jsonStringify = function(object) {
   if (typeof object == 'string') {
       return `"${object}"`
   }
-
+    
     // return its string representation.
     if (typeof object == 'number' || typeof object === 'boolean') {
-        // return String(object);
-        return `${object}`
+        return object.toString()
     }
     
 if (Array.isArray(object)) {
