@@ -1,20 +1,20 @@
-Array.prototype.groupBy = function(typeFn) {    
+Array.prototype.groupBy = function(capitalTypeFn) {
     
     const obj = {}
     
-    let xd=this
-    for (const e of xd) {
+    for (const element of this) {
         
         // String(e) or Array(e)
-        const key = typeFn(e)
+        const key = capitalTypeFn(element)
         
         if (!obj[key]){
             obj[key] = []
         }
         
-        let array=obj[key]
-        array.push(e)
+        let duplicateArray = obj[key]
+        duplicateArray.push(element)    
     }
+    
     return obj
 }
 
