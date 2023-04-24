@@ -1,19 +1,14 @@
-var lastStoneWeight = function (array) {
-    
+var lastStoneWeight = function (array) {    
     
     while (array.length != 1) {
         
-        let max1 = Math.max(...array)
-        array.splice(array.indexOf(max1), 1)
+        let highest = Math.max(...array)
+        array.splice(array.indexOf(highest), 1)
         
-        let max2 = Math.max(...array)
-        array.splice(array.indexOf(max2), 1)
+        let secondHighest = Math.max(...array)
+        array.splice(array.indexOf(secondHighest), 1)
         
-        const difference = Math.abs(max2 - max1)
-        
-        difference
-        array
-        
+        const difference =(highest-secondHighest)
         array.push(difference)
     }
     
