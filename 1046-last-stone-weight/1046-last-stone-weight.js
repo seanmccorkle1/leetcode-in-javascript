@@ -5,14 +5,16 @@ var lastStoneWeight = function (array) {
         let highest = Math.max(...array)
         array.splice(array.indexOf(highest), 1)
         
+        // first highest got deleted 
         let secondHighest = Math.max(...array)
+        
         array.splice(array.indexOf(secondHighest), 1)
         
-        const difference =(highest-secondHighest)
+        const difference = highest - secondHighest
         array.push(difference)
     }
-    return Number(array.join(""))
-    return array[0]
+    
+    return array.at(-1)
 }
 
 console.log(lastStoneWeight([7, 5, 20]),  8,  "smash [20,5,7] into [13,5], smash into [8]")
