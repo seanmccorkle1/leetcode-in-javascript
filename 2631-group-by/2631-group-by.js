@@ -1,7 +1,7 @@
 Array.prototype.groupBy = function(capitalTypeFn) {
     
     const obj = {}
-    
+
     for (const element of this) {
         
         // String(e) or Array(e)
@@ -11,8 +11,7 @@ Array.prototype.groupBy = function(capitalTypeFn) {
             obj[key] = []
         }
         
-        let duplicateArray = obj[key]
-        duplicateArray.push(element)    
+        obj[key].push(element)
     }
     
     return obj
