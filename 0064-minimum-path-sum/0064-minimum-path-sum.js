@@ -80,14 +80,13 @@ var minPathSum = function (grid) {
             
             rowIndex
             columnIndex
-
-
+            
             let topCell = grid[rowIndex - 1][columnIndex]
             let leftCell = grid[rowIndex][columnIndex - 1]
-
+            
             topCell
             leftCell
-
+            
             const currMinCell = Math.min(topCell, leftCell)
             
             // let v = grid[rowIndex][columnIndex]
@@ -102,14 +101,13 @@ var minPathSum = function (grid) {
     // [ 1, 4, 5 ]
     // [ 2, 7, 6 ]
     // [ 6, 8, 7 ]
-
-
+    
     // Return the distance bottom right corner
-    let bottomRightCell = grid[numOfRows - 1][numOfColumns - 1]
+    // let bottomRightCell = grid[numOfRows - 1][numOfColumns - 1]
+    
+    let bottomRightCell = grid.at(numOfRows - 1).at(numOfColumns - 1)
     return bottomRightCell
 }
-
-
 
 console.log(
     minPathSum([
