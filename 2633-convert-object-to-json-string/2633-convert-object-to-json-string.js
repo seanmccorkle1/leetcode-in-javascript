@@ -5,7 +5,7 @@
 
 var jsonStringify = function (input) {
 
-    if (input === null) {
+    if (input == null) {
         return 'null'
     }
 
