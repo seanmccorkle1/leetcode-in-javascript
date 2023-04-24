@@ -3,17 +3,16 @@
  * @return {Generator}
  */
 
-var inorderTraversal = function*(arr) {
-    
-    for (let element of arr) {
-    
+function* inorderTraversal(array) {    
+
+    for (const element of array) {
         
         if (typeof element == "object") {
             yield* inorderTraversal(element)
         } 
         
         else {
-            yield element;
+            yield element
         }
     }
 }
