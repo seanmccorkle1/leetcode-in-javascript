@@ -10,8 +10,9 @@ Array.prototype.groupBy = function(capitalTypeFn) {
         if (!obj[key]){
             obj[key] = []
         }
-        
-        obj[key].push(element)
+
+        let duplicateArray = obj[key]
+        duplicateArray.push(element)
     }
     
     return obj
