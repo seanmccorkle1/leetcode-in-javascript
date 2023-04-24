@@ -33,9 +33,8 @@ var jsonStringify = function (input) {
     }
     
     // if (typeof input == "object") {
-
     
-    if (String(input) =="[object Object]"){
+    if (String(input).includes("object")) {
         const keys = Object.keys(input)
         const items = keys.map(key => '"' + key + '":' + jsonStringify(input[key]))
         
