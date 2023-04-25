@@ -5,17 +5,17 @@ var SmallestInfiniteSet = function() {
 
 SmallestInfiniteSet.prototype.popSmallest = function() {       
     
-    let smallest = this.array.find(element => element != "cold")
-    
+    const smallestNum = this.array.find(element => element != "cold")   
+
     // "pop" it
-    this.array[smallest] = "cold"  
-    
-    return smallest
+    this.array[smallestNum] = "cold"
+
+    return smallestNum
 }
 
 SmallestInfiniteSet.prototype.addBack = function(numToAdd) {        
     this.array[numToAdd] = numToAdd
-    return "return"
+    return
 }
 
 const infiniteSetObj = new SmallestInfiniteSet()
