@@ -1,9 +1,10 @@
-var isSubsequence = function(smallString, bigString){ 
+var isSubsequence = function(subsequence, bigString){ 
     
-    if (smallString == ""){
+    if (subsequence == ""){
         return true
     }
-    if (smallString.length > bigString.length){
+    
+    if (subsequence.length > bigString.length){
         return false
     }
 
@@ -12,11 +13,11 @@ var isSubsequence = function(smallString, bigString){
     
     while (index2 < bigString.length){ 
 
-        if (smallString[index] == bigString[index2]){ 
+        if (subsequence[index] == bigString[index2]){ 
 
             index += 1
-
-            if (index == smallString.length ){
+            
+            if (index == subsequence.length){
                 return true
             }
             
