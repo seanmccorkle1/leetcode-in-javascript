@@ -1,9 +1,12 @@
 // "function Array."" wont work
 
 Array.prototype.last= function() {
-    const array=this
-
-    if (array.length == 0) {
+    
+    const array = this
+    
+    return typeof array.at(-1)=="number" ? array.at(-1) : -1
+    
+    if (array.length==0) {
         return -1
     } 
     
