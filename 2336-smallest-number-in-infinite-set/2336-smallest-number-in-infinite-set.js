@@ -11,11 +11,11 @@ SmallestInfiniteSet.prototype.popSmallest = function() {
     // let indexOfMin = this.array.findIndex(element=> typeof element == "number")
 
     let smallest= this.array.find(element=> typeof element == "number")
-
-    if (smallest == undefined) {
-        return
-    }
-
+    
+    // if (smallest == undefined) {
+    //     return
+    // }
+    
     // "pop" it
     this.array[smallest] = false
     return smallest
