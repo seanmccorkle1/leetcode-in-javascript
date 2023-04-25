@@ -4,12 +4,12 @@
  * @return {boolean}
  */
 
-var checkIfInstanceOf = function(obj, classFunction) {
+var checkIfInstanceOf = function(num, classFunction) {
     
     // if you get anything thats not a function in the classFunction parameter
     // Object(undefined) still counts as type object
     
-    if (obj==null || typeof classFunction !="function") {    
+    if (num ==null || typeof classFunction !="function") {    
         return false
     }
     
@@ -17,7 +17,7 @@ var checkIfInstanceOf = function(obj, classFunction) {
     // so the instanceof operator returns false when you use it with a primitive.
     
     // make the "object" consistent with what instanceof can take
-    return Object(obj) instanceof classFunction ? true:false
+    return Object(num) instanceof classFunction ? true:false
 }
 
 // console.log(checkIfInstanceOf(new Date(), Date), true)
