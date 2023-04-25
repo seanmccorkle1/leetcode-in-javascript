@@ -14,7 +14,8 @@ SmallestInfiniteSet.prototype.popSmallest = function() {
 }
 
 SmallestInfiniteSet.prototype.addBack = function(numToAdd) {        
-    this.array[numToAdd] = numToAdd
+    
+    this.array[numToAdd] =numToAdd
     return
 }
 
