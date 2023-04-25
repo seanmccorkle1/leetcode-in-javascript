@@ -3,7 +3,10 @@ var isSubsequence = function(subsequence, bigString){
     if (subsequence == ""){
         return true
     }
-    
+
+    if (subsequence == bigString) {
+        return true
+    }
     if (subsequence.length > bigString.length){
         return false
     }
@@ -30,7 +33,7 @@ var isSubsequence = function(subsequence, bigString){
 } 
 
 console.log(isSubsequence("letcod", "leetcode"), true) 
-console.log(isSubsequence("letcod", ""))
-console.log(isSubsequence("", "letcode")) 
 
-//console.log(isSubsequence("nqrstring", "newstring"), false) 
+// console.log(isSubsequence("string", ""), false)
+// console.log(isSubsequence("", "string"), true)
+// console.log(isSubsequence("nqrstring", "newstring"), false) 
