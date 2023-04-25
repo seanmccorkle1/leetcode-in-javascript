@@ -9,15 +9,13 @@ SmallestInfiniteSet.prototype.popSmallest = function() {
     // "pop" it
     this.array[smallest] = 0
     
-    return smallest||undefined
+    return smallest
 }
 
 SmallestInfiniteSet.prototype.addBack = function(numToAdd) {    
     
-    if (this.array.at(numToAdd) == 0) {
-        this.array[numToAdd] = numToAdd
-    }
-    
+    this.array[numToAdd] = numToAdd
+   
     return
 }
 
