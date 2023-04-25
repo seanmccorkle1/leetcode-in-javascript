@@ -2,20 +2,19 @@ var SmallestInfiniteSet = function() {
     this.array=Array.from({length: 1001}, (u, index) => index)    
 }
 
-SmallestInfiniteSet.prototype.popSmallest = function() {   
+SmallestInfiniteSet.prototype.popSmallest = function() {       
     
     let smallest = this.array.find(num => num !=0)
-    // "pop" it
     
+    // "pop" it
     this.array[smallest] = 0    
     
     return smallest
 }
 
-SmallestInfiniteSet.prototype.addBack = function(numToAdd) {    
-    
+SmallestInfiniteSet.prototype.addBack = function(numToAdd) {        
     this.array[numToAdd] = numToAdd
-    return
+    return "return"
 }
 
 const infiniteSetObj = new SmallestInfiniteSet()
