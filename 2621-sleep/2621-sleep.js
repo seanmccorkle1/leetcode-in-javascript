@@ -1,7 +1,8 @@
 
 
 async function sleep(millis) {
-    await new Promise(resolve => setTimeout(resolve, millis))
+    const p = new Promise(resolve => setTimeout(resolve, millis))
+    await p
 }
 
 let t = Date.now()
