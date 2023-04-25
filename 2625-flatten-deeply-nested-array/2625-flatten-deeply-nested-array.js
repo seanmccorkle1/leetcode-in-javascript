@@ -24,7 +24,7 @@ var flat = function (array, flattenDepth) {
             flattenedArray
         }
 
-        else if (Array.isArray) {
+        else if (typeof currElement == "number") {
             flattenedArray.push(currElement)
             flattenedArray
         }
