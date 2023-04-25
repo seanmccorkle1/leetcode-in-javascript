@@ -1,20 +1,25 @@
 var isSubsequence = function(subsequence, bigString){ 
     
-    if (subsequence == ""){
-        return true
+    if (subsequence==null || bigString==null){
+        return false
     }
-
-    if (subsequence == bigString) {
-        return true
-    }
+    
     if (subsequence.length > bigString.length){
         return false
     }
-
+    
+    if (subsequence == ""){
+        return true
+    }
+    
+    if (subsequence == bigString) {
+        return true
+    }
+    
     let index =0
     let index2 =0
     
-    while (index2 < bigString.length){ 
+    while (index2 < Math.max(bigString.length,subsequence.length)) { 
 
         if (subsequence[index] == bigString[index2]){ 
 
