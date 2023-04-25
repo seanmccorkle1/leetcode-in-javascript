@@ -1,10 +1,9 @@
 var secondHighest = function(string) {   
-
+    
     const r=/[\d]/g
-
-    let a= string.match(r)
-
-    if (a==null){
+    let a= string.match(r) ?? "no match"
+    
+    if (a=="no match"){
         return -1
     }
 
