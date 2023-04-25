@@ -1,14 +1,15 @@
-
-
 var isSubsequence = function(smallString, bigString){ 
-
+    
     if (smallString == ""){
         return true
+    }
+    if (smallString.length > bigString.length){
+        return false
     }
 
     let index =0
     let index2 =0
-
+    
     while (index2 < bigString.length){ 
 
         if (smallString[index] == bigString[index2]){ 
@@ -18,18 +19,12 @@ var isSubsequence = function(smallString, bigString){
             if (index == smallString.length ){
                 return true
             }
-
-        } 
-
+            
+        }
+        
         index2++ 
     }
-
-    // needs to hit all letters in str1 
     
-    // if (index == smallString.length ){
-    //     return true
-    // }
-
     return false
 } 
 
