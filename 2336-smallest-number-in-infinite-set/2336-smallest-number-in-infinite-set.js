@@ -1,13 +1,14 @@
-var SmallestInfiniteSet = function() {    
-    this.array=Array.from({length: 1001}, (u, index) => index)    
+var SmallestInfiniteSet = function() {
+    this.array=Array.from({length: 1000}, (u, index) => index+1)    
+    this.array.unshift("cold")
 }
 
 SmallestInfiniteSet.prototype.popSmallest = function() {       
     
-    let smallest = this.array.find(num => num !=0)
+    let smallest = this.array.find(element => element != "cold")
     
     // "pop" it
-    this.array[smallest] = 0    
+    this.array[smallest] = "cold"  
     
     return smallest
 }
