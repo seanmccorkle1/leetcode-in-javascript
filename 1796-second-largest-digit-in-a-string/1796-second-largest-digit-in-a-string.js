@@ -1,9 +1,10 @@
 var secondHighest = function(string) {   
-    
+
     const r=/[\d]/g
-    let a= string.match(r) ?? "no match"
-    
-    if (a=="no match"){
+
+    let a= string.match(r)
+
+    if (a==null){
         return -1
     }
 
@@ -14,14 +15,14 @@ var secondHighest = function(string) {
 
     a   
 
-    if (a.length <= 1){
-        return -1
-    }  
-    
+    a
     let secondHighest=a.at(-2)
-    return secondHighest
-    // return Number(a.at(-2))
-}
 
+    if (!secondHighest){
+        return -1
+    }
+
+    return Number(secondHighest)
+}
 console.log(secondHighest("dfa12321afd"),  2)
-secondHighest("dfa")
+secondHighest("dfa1")
