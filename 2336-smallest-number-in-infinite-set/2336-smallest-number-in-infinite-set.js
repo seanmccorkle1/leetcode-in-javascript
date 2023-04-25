@@ -4,10 +4,10 @@ var SmallestInfiniteSet = function() {
 
 SmallestInfiniteSet.prototype.popSmallest = function() {   
     
-    let smallest = this.array.find(num => num >= 1)
-    
+    let smallest = this.array.find(num => num !=0)
     // "pop" it
-    this.array[smallest] = 0
+    
+    this.array[smallest] = 0    
     
     return smallest
 }
@@ -15,7 +15,6 @@ SmallestInfiniteSet.prototype.popSmallest = function() {
 SmallestInfiniteSet.prototype.addBack = function(numToAdd) {    
     
     this.array[numToAdd] = numToAdd
-   
     return
 }
 
