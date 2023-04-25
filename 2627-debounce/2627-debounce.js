@@ -1,12 +1,14 @@
 
 var debounce = function(logFn, milliseconds) {
     
-    let timeout = null    
+    let timeout = null
+
     return (...args) => {
         
-        if (timeout!= null) {
+        if (timeout !== null) {
             clearTimeout(timeout)
         }
+        
         timeout = setTimeout(logFn, milliseconds, ...args)
     }
 }
