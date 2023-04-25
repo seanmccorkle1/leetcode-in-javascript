@@ -14,8 +14,9 @@ SmallestInfiniteSet.prototype.popSmallest = function() {
 }
 
 SmallestInfiniteSet.prototype.addBack = function(numToAdd) {        
-    
+    if (this.array.at(numToAdd) == "cold"){
     this.array[numToAdd] =numToAdd
+    }
     return
 }
 
