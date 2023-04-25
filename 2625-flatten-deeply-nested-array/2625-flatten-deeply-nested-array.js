@@ -1,7 +1,4 @@
-let flat=(a,d)=>a.flat(d)
-
-
-var flat2 = function (array, flattenDepth) {
+var flat = function (array, flattenDepth) {
 
     // if n is 0, no flattening is required, hence return the original array    
     if (flattenDepth == 0){
