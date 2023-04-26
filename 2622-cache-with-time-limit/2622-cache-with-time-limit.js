@@ -1,11 +1,12 @@
-// Using Map so we don't need a size variable
+// Use Map instead of an object for map.size
+
 const TimeLimitedCache = function () {
     this.cache = new Map();
 }
 
 // @return {boolean} if un-expired key already existed
 
-TimeLimitedCache.prototype.set = function (key, value, duration) {
+TimeLimitedCache.prototype.set = function (key, value, milliseconds) {
     
     let found = this.cache.has(key)    
     
@@ -20,7 +21,7 @@ TimeLimitedCache.prototype.set = function (key, value, duration) {
         valueKey: value, 
 
         // run the delete function after x milliseconds
-        timeoutFunction: setTimeout(() => this.cache.delete(key), duration)
+        timeoutFunction: setTimeout(() => this.cache.delete(key), milliseconds)
     })
     
     return found
@@ -35,10 +36,9 @@ TimeLimitedCache.prototype.get = function (key) {
     return this.cache.has(key) ? this.cache.get(key).valueKey : -1
 }
 
-// @return {number} count of non-expired keys
 
 TimeLimitedCache.prototype.count = function () {
-    return this.cache.size;
+    return this.cache.size
 }
 
 const obj = new TimeLimitedCache()
