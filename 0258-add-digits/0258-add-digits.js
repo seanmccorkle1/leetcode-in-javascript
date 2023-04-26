@@ -1,12 +1,6 @@
 var addDigits = function (num) {
     
-    if (num==0){
-        return 0
-    }
-    
     num
-    
-    // called a digital root
     
     // 27 -> 2 + 7 = 9
     // return 9
@@ -14,18 +8,21 @@ var addDigits = function (num) {
     // 36 -> 3 + 6 = 9
     // return 9 
     
-    // const isDivisibleBy9 =(num % 9) == 0
-    const isDivisibleBy9 = Number.isInteger(num /9)
+    // 0 is an integer, so addDigits(0) returns 9 without this
     
-    //otherwise (num % 9) would be 0
+    if (num==0){
+        return 0
+    }
+    
+    const isDivisibleBy9 = Number.isInteger(num /9)
     
     if (isDivisibleBy9) {
         return 9 
     }
     
     else if (!isDivisibleBy9) {
-        let remainderOn9 = num % 9
-        return remainderOn9
+        let remainderBelow9= num % 9
+        return remainderBelow9
     }
 }
 
