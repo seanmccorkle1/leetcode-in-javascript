@@ -57,9 +57,9 @@ var successfulPairs = function (spells, potions, successNum) {
         
         // higher left index = worse efficacy
         // higher left index means it kept being  below successNum, ie fail
-        let currSpellEfficacy = potions.length - leftIndex
         
-        spellEfficacies[spellIndex] = currSpellEfficacy
+        const spellEfficacy = potions.length - leftIndex
+        spellEfficacies[spellIndex] = spellEfficacy
     }
 
     return spellEfficacies
