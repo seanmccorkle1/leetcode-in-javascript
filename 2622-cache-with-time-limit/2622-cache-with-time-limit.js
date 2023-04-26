@@ -6,6 +6,9 @@ const TimeLimitedCache = function () {
 
 // @return {boolean} if un-expired key already existed
 
+// ConstructorFunction.prototype.name = function()
+// arrow functions arent allowed with prototypes
+
 TimeLimitedCache.prototype.set = function (key, value, milliseconds) {
     
     let found = this.cache.has(key)    
