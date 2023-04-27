@@ -27,17 +27,12 @@ var memoize = (sumFn) => {
 
 let callCount = 0
 
-var sumTwoFn = (num1, num2) =>{
+var sumTwoFn = function(num1, num2) {
     callCount+=1
     return num1+num2
 } 
 
 var memoizedFn = memoize(sumTwoFn)
-
-// var memoizedFn = memoize(function (a, b) {
-//     callCount += 1
-//     return a + b
-// })
 
 memoizedFn.length // 0 (any amount of arguments)
 
