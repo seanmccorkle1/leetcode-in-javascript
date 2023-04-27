@@ -5,14 +5,17 @@ var simplifyPath = function (pathString) {
     // double slash becomes an empty string on the .split("/")
     // one period just means "current directory", it doesnt do anything
     
+
+    // if (pathString[0] == "/"){
+    //     pathString = pathString.slice(1)
+    // }
+
+    
     pathString = pathString.replace(/[\/]+/g, "/")
     
-    if (pathString[0] == "/"){
-        pathString = pathString.slice(1)
-    }
-    
     // periods dont go in the result
-    const pathArray =pathString.split("/") .filter(pathElement => pathElement != ".").filter(e => e != "")
+    
+    const pathArray =pathString.split("/") .filter(directory => directory != "." && directory != "")
     
     pathArray
     
@@ -42,15 +45,18 @@ var simplifyPath = function (pathString) {
     
     stack
     
+    return "/"+stack.join("/")
+    
     let joinedPath = stack.join("/")
+    const firstLettersAlreadySlash = joinedPath[0]=="/"
     
     if (joinedPath[0] == "/"){
         return joinedPath
     }
-
+    
     else return "/" + joinedPath
     
-    return "/" + joinedPath
+    // return "/" + joinedPath
 }
 
 // console.log(simplifyPath("/C:/users/../Program files"), "/C:/Program files", "at 'users', go up to C")
