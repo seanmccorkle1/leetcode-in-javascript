@@ -1,23 +1,23 @@
 var simplifyPath = function (pathString) {
 
     const stack = []
-
+    
     // double slash becomes an empty string on the .split("/")
     // one period just means "current directory", it doesnt do anything
     
-    pathString = pathString.replace(/[/]+/g, "/")
+    pathString = pathString.replace(/[\/]+/g, "/")
     if (pathString[0] == "/"){
         pathString = pathString.slice(1)
     }
     
-    if (pathString.at(-1) == "/"){
-        pathString = pathString.slice(0, pathString.length-1)
-    }
+        // if (pathString.at(-1) == "/"){
+        //     pathString = pathString.slice(0, pathString.length-1)
+        // }
     
     let pathArray =pathString.split("/") 
-    pathArray = pathArray.filter(string => string.trim() != ".")
+    pathArray = pathArray.filter(pathElement => pathElement != ".")
     
-    // pathArray = pathArray.filter(string => string.trim() != "")
+    // pathArray = pathArray.filter(string => string != "")
     
     pathArray
 
@@ -46,8 +46,13 @@ var simplifyPath = function (pathString) {
     }
     
     stack
-
+    
     let joinedPath = stack.join("/")
+    
+    if (joinedPath.at(-1) == "/"){
+            joinedPath = joinedPath.slice(0, joinedPath.length-1)
+        }
+
     return "/" + joinedPath
 }
 
