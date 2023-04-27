@@ -5,7 +5,7 @@ var simplifyPath = function (pathString) {
     // double slash becomes an empty string on the .split("/")
     // one period just means "current directory", it doesnt do anything
     
-    pathString = pathString.replace(/[\/]+/g, "/")
+    // pathString = pathString.replace(/[\/]+/g, "/")
     
     // periods dont go in the result
     // it has to be both NOT a period and NOT an empty string
@@ -36,19 +36,16 @@ var simplifyPath = function (pathString) {
             stack.push(currDirectory)
             stack
         }
-
         stack
     }
     
     stack
+    
     let joinedPath = stack.join("/")
     return "/" + joinedPath
-    
 }
 
-// console.log(simplifyPath("/C:/users/../Program files"), "/C:/Program files", "at 'users', go up to C")
+console.log(simplifyPath("/C:/users/../seans"), "/C:/seans")
+// console.log(simplifyPath("/C:/users/./seans"), "/C:/users/seans")
 
-// console.log(simplifyPath("/a/./b/../../c/"), "/c")
-
-// console.log(simplifyPath("/C:/users/./Program files"), "/C:/users/Program files")
-console.log(simplifyPath("/home//foo/"), "/home/foo")
+// console.log(simplifyPath("/home//foo/"), "/home/foo")
