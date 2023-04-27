@@ -5,8 +5,6 @@ var simplifyPath = function (pathString) {
     // double slash becomes an empty string on the .split("/")
     // one period just means "current directory", it doesnt do anything
     
-    // pathString = pathString.replace(/[\/]+/g, "/")
-    
     // periods dont go in the result
     // it has to be both NOT a period and NOT an empty string
     
