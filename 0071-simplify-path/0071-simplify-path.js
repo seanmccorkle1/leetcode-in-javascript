@@ -6,21 +6,16 @@ var simplifyPath = function (pathString) {
     // one period just means "current directory", it doesnt do anything
     
     pathString = pathString.replace(/[\/]+/g, "/")
+    
     if (pathString[0] == "/"){
         pathString = pathString.slice(1)
     }
     
-        // if (pathString.at(-1) == "/"){
-        //     pathString = pathString.slice(0, pathString.length-1)
-        // }
-    
-    let pathArray =pathString.split("/") 
-    pathArray = pathArray.filter(pathElement => pathElement != ".")
-    
-    // pathArray = pathArray.filter(string => string != "")
+    // periods dont go in the result
+    const pathArray =pathString.split("/") .filter(pathElement => pathElement != ".").filter(e => e != "")
     
     pathArray
-
+    
     for (let index = 0; index < pathArray.length; index++) {
 
         const currDirectory = pathArray[index]
@@ -30,7 +25,7 @@ var simplifyPath = function (pathString) {
 
         // "most recent" == stack
 
-        const directoryIsDoublePeriod = currDirectory.trim() ==".."
+        const directoryIsDoublePeriod = currDirectory ==".."
         
         if (directoryIsDoublePeriod) {
             stack.pop()
@@ -49,10 +44,12 @@ var simplifyPath = function (pathString) {
     
     let joinedPath = stack.join("/")
     
-    if (joinedPath.at(-1) == "/"){
-            joinedPath = joinedPath.slice(0, joinedPath.length-1)
-        }
+    if (joinedPath[0] == "/"){
+        return joinedPath
+    }
 
+    else return "/" + joinedPath
+    
     return "/" + joinedPath
 }
 
