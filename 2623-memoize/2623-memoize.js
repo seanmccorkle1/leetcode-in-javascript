@@ -1,6 +1,6 @@
 
 
-var memoize = (sumFn) => {
+var memoize = sumFn => {
 
     const memo = {}
 
