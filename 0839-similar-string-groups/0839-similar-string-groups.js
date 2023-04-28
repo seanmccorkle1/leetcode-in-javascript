@@ -63,7 +63,6 @@ var isSimilar = function (word1, word2) {
     if (numOfDifferences <= 2){
         return true
     }
-    
     return false
 }
 
