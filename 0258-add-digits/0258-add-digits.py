@@ -6,9 +6,8 @@ class Solution:
         
         isDivisibleBy9 = num % 9 == 0
         
-        if isDivisibleBy9:
+        if (isDivisibleBy9):
             return 9
-
+        
         else:
             return num % 9
-    
