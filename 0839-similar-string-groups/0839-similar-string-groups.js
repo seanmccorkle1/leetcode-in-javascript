@@ -19,7 +19,7 @@ class DSU {
             return node
         }
         
-        const result= this.uv.get(node);
+        const result= this.uv.get(node)
         return this.find(result)
         // return this.find(this.uv.get(node))
     }
@@ -33,7 +33,7 @@ class DSU {
         // this.find(u);
         const getUnion = this.uv.get(this.find(u))
         
-        this.uv.set(foundValue, getUnion);        
+        this.uv.set(foundValue, getUnion)
 }
         getCount() {
         return [...this.uv.keys()].filter(key => key == this.uv.get(key)).length
@@ -52,7 +52,6 @@ var isSimilar = function (word1, word2) {
         }
         
         i++
-        continue;
     }
     
     if (diff <= 2){
