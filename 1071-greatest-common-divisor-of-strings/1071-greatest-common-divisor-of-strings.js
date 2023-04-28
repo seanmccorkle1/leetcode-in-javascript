@@ -1,5 +1,4 @@
-const gcdOfStrings = (string1, string2) => {
-
+var gcdOfStrings = function(string1, string2) {   
     let concat = string1+string2
     let reverseConcat = string2+string1
     
@@ -16,8 +15,9 @@ const gcdOfStrings = (string1, string2) => {
           return gcd(length2, length1 % length2) 
       }
   }
+  
   // (length2 == 0? a : gcd(b, a % b))
   
-  const endLength =gcd(string1.length, string2.length)
+  const endLength =gcd(string1.length, string2.length) 
   return string1.slice(0, endLength)
 }
