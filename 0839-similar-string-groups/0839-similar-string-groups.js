@@ -43,19 +43,24 @@ class DSU {
 
 var isSimilar = function (word1, word2) {
     
-    let diff = 0
-    let i = 0
+    let numOfDifferences = 0
+    let index = 0
     
-    while(i < word2.length) {
+    // word1 and word2 both work
+    
+    while (index < word2.length) {
         
-        if (word1[i] != word2[i]) {
-           diff += 1
+        let word1Letter= word1[index]
+        let word2Letter = word2[index]
+        
+        if (word1Letter != word2Letter) {
+           numOfDifferences += 1
         }
         
-        i++
+        index++
     }
     
-    if (diff <= 2){
+    if (numOfDifferences <= 2){
         return true
     }
     
