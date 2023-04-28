@@ -1,42 +1,47 @@
-// a disjoint set union (DSU) is a data structure that stores a collection of disjoint (non-overlapping) sets.
+// a disjoint set union (disjointSetMap) is a data structure that stores a collection of disjoint (non-overlapping) sets.
 
 // equivalently, this means it can partition a set into disjoint subsets
 
 class DSU {
     constructor() {
-        this.uv = new Map()
+        this.map = new Map()
     }
-    
+
     find(node) {
-        
-        if (!this.uv.has(node)) {
-            this.uv.set(node, node)
+
+        if (!this.map.has(node)) {
+
+            this.map.set(node, node)
+            this.map
         }
-        
-        const foundNode = this.uv.get(node)
-        
+
+        const foundNode = this.map.get(node)
+
         if (foundNode == node) {
             return node
         }
         
-        const result= this.uv.get(node)
+        const result= this.map.get(node)
         return this.find(result)
-        // return this.find(this.uv.get(node))
     }
-    
-            // count the number of parent nodes as parents are nodes where key and value is equal
+
+    // count the number of parent nodes as 
+    // parents are nodes where key and value is equal
 
     union(u, v) {
-    
-        const foundValue = this.find(v)
 
-        // this.find(u);
-        const getUnion = this.uv.get(this.find(u))
-        
-        this.uv.set(foundValue, getUnion)
-}
+        const foundValue = this.find(v)
+        const getUnion = this.map.get(this.find(u))
+
+        this.map.set(foundValue, getUnion)
+    }
+
         getCount() {
-        return [...this.uv.keys()].filter(key => key == this.uv.get(key)).length
+
+        
+        const filteredKeys = [...this.map.keys()]
+        return [...this.map.keys()].filter(key => key == this.map.get(key)).length
+
     }
 
 }
@@ -71,28 +76,31 @@ var isSimilar = function (word1, word2) {
 }
 
 var numSimilarGroups = function(A) {
+
+    // to make the identifier disjointSetMap actually do something, 
+    // you need parantheses
     
-    let dsu = new DSU();
-    
-    for (let i = 0; i < A.length; i++) {
-        
+    const disjointSetMap = new DSU()
+
+    for (let index = 0; index < A.length; index++) {
+
         let matchFound = false
-        
-        for (let j = i + 1; j < A.length; j++) {
-            
-            const stringsAreSimilar = isSimilar(A[i], A[j])
+
+        for (let fastIndex = index + 1; fastIndex < A.length; fastIndex++) {
+
+            const stringsAreSimilar = isSimilar(A[index], A[fastIndex])
 
             if (stringsAreSimilar) {
-                dsu.union(A[i], A[j])
+                disjointSetMap.union(A[index], A[fastIndex])
                 matchFound = true
             }   
         }
         
         if (!matchFound) {
-            dsu.union(A[i], A[i])
+            disjointSetMap.union(A[index], A[index])
         }
     }
     
-    dsu
-    return dsu.getCount()
+    disjointSetMap
+    return disjointSetMap.getCount()
 }
