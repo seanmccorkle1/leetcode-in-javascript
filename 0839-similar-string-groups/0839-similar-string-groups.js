@@ -52,7 +52,7 @@ var isSimilar = function (word1, word2) {
         }
         
         i++
-        // continue;
+        continue;
     }
     
     if (diff <= 2){
