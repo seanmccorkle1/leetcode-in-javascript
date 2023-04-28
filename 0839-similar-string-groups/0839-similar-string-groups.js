@@ -76,7 +76,7 @@ var isSimilar = function (word1, word2) {
 }
 
 var numSimilarGroups = function(A) {
-
+    
     // to make the identifier disjointSetMap actually do something, 
     // you need parantheses
     
