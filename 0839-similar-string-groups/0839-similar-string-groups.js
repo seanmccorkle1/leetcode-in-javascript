@@ -63,7 +63,10 @@ var isSimilar = function (word1, word2) {
     if (numOfDifferences <= 2){
         return true
     }
-    return false
+    else if (numOfDifferences >= 3){
+        return false
+    }
+
 }
 
 var numSimilarGroups = function(A) {
