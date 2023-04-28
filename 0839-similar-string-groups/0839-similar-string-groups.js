@@ -1,6 +1,6 @@
-// a disjoint set union (disjointSetMap) is a data structure that stores a collection of disjoint (non-overlapping) sets.
+// stringArray disjoint set union (disjointSetMap) is stringArray data structure that stores stringArray collection of disjoint (non-overlapping) sets.
 
-// equivalently, this means it can partition a set into disjoint subsets
+// equivalently, this means it can partition stringArray set into disjoint subsets
 
 class DSU {
     constructor() {
@@ -36,11 +36,13 @@ class DSU {
         this.map.set(foundValue, getUnion)
     }
 
-        getCount() {
+        getCount() {            
 
-        
-        const filteredKeys = [...this.map.keys()]
-        return [...this.map.keys()].filter(key => key == this.map.get(key)).length
+            const filteredKeys = [...this.map.keys()].filter(key => key == this.map.get(key))
+            let numOfParentNodes= filteredKeys.length
+            return numOfParentNodes
+            
+        // return [...this.map.keys()].filter(key => key == this.map.get(key)).length
 
     }
 
@@ -75,32 +77,34 @@ var isSimilar = function (word1, word2) {
 
 }
 
-var numSimilarGroups = function(A) {
+var numSimilarGroups = function(stringArray) {
     
     // to make the identifier disjointSetMap actually do something, 
     // you need parantheses
     
     const disjointSetMap = new DSU()
 
-    for (let index = 0; index < A.length; index++) {
+    for (let index = 0; index < stringArray.length; index++) {
 
         let matchFound = false
 
-        for (let fastIndex = index + 1; fastIndex < A.length; fastIndex++) {
+        for (let fastIndex = index + 1; fastIndex < stringArray.length; fastIndex++) {
 
-            const stringsAreSimilar = isSimilar(A[index], A[fastIndex])
+            const stringsAreSimilar = isSimilar(stringArray[index], stringArray[fastIndex])
 
             if (stringsAreSimilar) {
-                disjointSetMap.union(A[index], A[fastIndex])
+                disjointSetMap.union(stringArray[index], stringArray[fastIndex])
                 matchFound = true
             }   
         }
         
         if (!matchFound) {
-            disjointSetMap.union(A[index], A[index])
+            disjointSetMap.union(stringArray[index], stringArray[index])
         }
     }
     
     disjointSetMap
     return disjointSetMap.getCount()
 }
+
+console.log(numSimilarGroups(["tars","rats","arts","star"]), 2)
