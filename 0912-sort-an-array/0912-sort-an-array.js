@@ -1,8 +1,3 @@
-var sortArray = function(nums) {
-    if (nums.length < 2) return nums;
-    var mid   = Math.floor(nums.length/2);
-    var left  = nums.slice(0,mid);
-    var right = nums.slice(mid);
     
     function merge(left,right) {
         var result = [],lLen = left.length, rLen = right.length, l = 0, r = 0;
@@ -16,6 +11,13 @@ var sortArray = function(nums) {
         }  
         return result.concat(left.slice(l)).concat(right.slice(r));
     }
+
+var sortArray = function(nums) {
+    if (nums.length < 2) return nums;
+    var mid   = Math.floor(nums.length/2);
+    var left  = nums.slice(0,mid);
+    var right = nums.slice(mid);
+
 
    return merge(sortArray(left), sortArray(right));
 }
