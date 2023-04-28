@@ -40,12 +40,13 @@ class DSU {
     }
 
 }
+
 var isSimilar = function (word1, word2) {
     
     let diff = 0
     let i = 0
     
-    while(i < word1.length) {
+    while(i < word2.length) {
         
         if (word1[i] != word2[i]) {
            diff += 1
