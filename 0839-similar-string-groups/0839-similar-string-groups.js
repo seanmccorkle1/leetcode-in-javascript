@@ -80,15 +80,19 @@ var numSimilarGroups = function(A) {
         
         for (let j = i + 1; j < A.length; j++) {
             
-            if (isSimilar(A[i], A[j])) {
+            const stringsAreSimilar = isSimilar(A[i], A[j])
+
+            if (stringsAreSimilar) {
                 dsu.union(A[i], A[j])
                 matchFound = true
             }   
-        }        
+        }
+        
         if (!matchFound) {
-            dsu.union(A[i], A[i]);
+            dsu.union(A[i], A[i])
         }
     }
     
-    return dsu.getCount();
-};
+    dsu
+    return dsu.getCount()
+}
