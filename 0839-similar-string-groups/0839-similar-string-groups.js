@@ -77,12 +77,14 @@ var numSimilarGroups = function(A) {
     for (let i = 0; i < A.length; i++) {
         
         let matchFound = false
+        
         for (let j = i + 1; j < A.length; j++) {
+            
             if (isSimilar(A[i], A[j])) {
-                dsu.union(A[i], A[j]);
-                matchFound = true;
+                dsu.union(A[i], A[j])
+                matchFound = true
             }   
-        }
+        }        
         if (!matchFound) {
             dsu.union(A[i], A[i]);
         }
