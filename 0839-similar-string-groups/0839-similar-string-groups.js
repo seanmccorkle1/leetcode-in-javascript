@@ -59,6 +59,7 @@ var isSimilar = function (word1, word2) {
         
         index++
     }
+
     
     if (numOfDifferences <= 2){
         return true
@@ -74,7 +75,8 @@ var numSimilarGroups = function(A) {
     let dsu = new DSU();
     
     for (let i = 0; i < A.length; i++) {
-        let matchFound = false;
+        
+        let matchFound = false
         for (let j = i + 1; j < A.length; j++) {
             if (isSimilar(A[i], A[j])) {
                 dsu.union(A[i], A[j]);
