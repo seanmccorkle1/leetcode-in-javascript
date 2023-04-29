@@ -13,8 +13,10 @@ var convert = function(s, numRows) {
     let count = 0
     
     // prepare rows
+    // const empty = []
+    const rows = new Array(numRows).fill(">").map(e => [])
     
-    const rows = new Array(numRows).fill("?").map(e => [])
+    //.fill("?").map(e => [])
     
     // for (let i = 0; i < numRows; i++) rows[i] = [];
     // reverse the push flow when reaching turning points
