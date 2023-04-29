@@ -6,7 +6,7 @@ var convert = function(s, numRows) {
         return s
     }
     
-    let converted = ''
+    // let converted = ''
     let reverse = false
     
     let count = 0
