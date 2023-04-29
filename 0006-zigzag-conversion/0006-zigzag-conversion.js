@@ -21,6 +21,7 @@ var convert = function(s, numRows) {
         
         const currLetter = s[i]
         const currArray = rows[count]
+
         currArray.push(currLetter)
         
         reverse ? count -= 1 : count+=1
