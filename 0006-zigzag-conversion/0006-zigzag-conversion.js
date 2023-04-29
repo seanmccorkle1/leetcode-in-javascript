@@ -4,16 +4,19 @@ var convert = function(s, numRows) {
     if (numRows == 1 || s.length < numRows) {
         return s
     }
+
     
-    const rows = []
+    // const rows = []
     let converted = '';
 
     let reverse = false;
     let count = 0
-
+    
     // prepare rows
     
-    for (let i = 0; i < numRows; i++) rows[i] = [];
+    const rows = new Array(numRows).fill("?").map(e => [])
+    
+    // for (let i = 0; i < numRows; i++) rows[i] = [];
     // reverse the push flow when reaching turning points
     
     for (let i = 0; i < s.length; i++) {
