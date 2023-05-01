@@ -5,15 +5,16 @@ var decodeString = function(string) {
     
     const regex = /(\d+)\[([a-zA-Z]+)\]/g        
     const replaceFunction = (match,number,letter) => letter.repeat(number)
-
-          while (string.includes("]")){
-        
-        string
     
-        string.replace(regex, replaceFunction)
+    while (string.includes("]")){    
+        string
+
+        let shortened = string.replace(regex, replaceFunction)
+        string = shortened
+
         // string.replace(regex, (match,number,letter) => letter.repeat(number))
-        
-        string = string.replace(/(\d+)\[([a-zA-Z]+)\]/g, (match,number,letter) => letter.repeat(number) )
+
+        // string = string.replace(/(\d+)\[([a-zA-Z]+)\]/g, (match,number,letter) => letter.repeat(number) )
     }
     
     return string
