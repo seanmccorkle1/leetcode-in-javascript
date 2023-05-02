@@ -18,7 +18,11 @@ var maxSatisfaction = function (array) {
         // [3, 4]
         // [4]
         
-        for (let index2 = index; index2 < array.length; index2++) {
+        let index2 = index
+        
+        // for (let index2 = index; index2 < array.length; index2++) {
+        
+        while (index2 < array.length) {
             
             array
             
@@ -27,31 +31,19 @@ var maxSatisfaction = function (array) {
             
             const currProduct = currNum * multiplierThatStartsFrom1
             currSumOfProducts += currProduct
+
+            index2++
         }
 
         currSumOfProducts
         maxSum
-        
-        
         
         maxSum = Math.max(currSumOfProducts, maxSum)
         
         if (array.at(0) >= 0) {
             return maxSum
         }
-
-//         if (currSumOfProducts > maxSum) {
-//             maxSum = currSumOfProducts
             
-//             // if theyre all 0 or more, this will be the highest
-//             // 5x6 is higher than 5x5
-            
-//             if (array[0] >= 0) {
-//                 return maxSum
-//             }
-
-//         }
-        
     }
 
     return maxSum
