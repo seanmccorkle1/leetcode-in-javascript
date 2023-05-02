@@ -22,11 +22,11 @@ var maxSatisfaction = function (array) {
         
         // for (let index2 = index; index2 < array.length; index2++) {
         
+        array
+        
         while (index2 < array.length) {
             
-            array
-            
-            const currNum = array[index2]
+            let currNum = array[index2]
             let multiplierThatStartsFrom1 = (index2 - index) + 1
             
             const currProduct = currNum * multiplierThatStartsFrom1
