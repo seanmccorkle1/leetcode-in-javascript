@@ -3,18 +3,18 @@ var numberOfArithmeticSlices = function (array) {
     let consecutiveSliceCount = 0
     let totalSlices = 0
     
-    for (let index = 0; index < array.length; index++) {
+    
+    for (let index = 2; index < array.length; index++) {
         
         consecutiveSliceCount
         array
         
         // in [0,1,2], this compares [0, 1]
-        const difference1 = array[index + 1] - array[index]
+        const difference1 = array[index] - array[index - 1]
         
         // compares [1, 2]
-        const difference2 = array[index + 2] - array[index + 1] 
-
-
+        const difference2 = array[index - 1] - array[index - 2] 
+        
         // those 2 makes [0, 1, 2]
         // the count gets +2 at once if theyre consecutive
 
