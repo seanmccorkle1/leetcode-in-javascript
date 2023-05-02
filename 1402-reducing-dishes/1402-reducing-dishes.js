@@ -3,7 +3,7 @@ var maxSatisfaction = function (array) {
     let maxSum = 0
     array.sort((a, b) => a - b)
     
-    const arrayHasPositives = array.find(num => num >=1) ? true:false
+    const arrayHasPositives = array.find(num => num >=1) ?? false
     
     if (!arrayHasPositives) {
         return 0
@@ -13,37 +13,45 @@ var maxSatisfaction = function (array) {
 
         // reset
         let currSumOfProducts = 0
-
+        
         // [2, 3, 4]
         // [3, 4]
         // [4]
-
+        
         for (let index2 = index; index2 < array.length; index2++) {
-
+            
             array
-
-            let currNum = array[index2]
+            
+            const currNum = array[index2]
             let multiplierThatStartsFrom1 = (index2 - index) + 1
-
+            
             const currProduct = currNum * multiplierThatStartsFrom1
-
             currSumOfProducts += currProduct
         }
 
         currSumOfProducts
         maxSum
         
-        if (currSumOfProducts > maxSum) {
-            maxSum = currSumOfProducts
-            
-            // if theyre all 0 or more, this will be the highest
-            // 5x6 is higher than 5x5
-            
-            if (array[0] >= 0) {
-                return maxSum
-            }
-
+        
+        
+        maxSum = Math.max(currSumOfProducts, maxSum)
+        
+        if (array.at(0) >= 0) {
+            return maxSum
         }
+
+//         if (currSumOfProducts > maxSum) {
+//             maxSum = currSumOfProducts
+            
+//             // if theyre all 0 or more, this will be the highest
+//             // 5x6 is higher than 5x5
+            
+//             if (array[0] >= 0) {
+//                 return maxSum
+//             }
+
+//         }
+        
     }
 
     return maxSum
