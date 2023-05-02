@@ -18,7 +18,7 @@ var numberOfArithmeticSlices = function (array) {
         difference1
         difference2
         
-        const arithmeticSliceFound = Boolean(difference1 == difference2)
+        const arithmeticSliceFound = difference1 == difference2
         
         if (arithmeticSliceFound) {
             
