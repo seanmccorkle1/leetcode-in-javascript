@@ -31,7 +31,9 @@ var numberOfArithmeticSlices = function (array) {
         difference1
         difference2
         
-        if (difference1 == difference2) {
+        const arithmeticSliceFound = difference1 == difference2
+        
+        if (arithmeticSliceFound) {
             
             consecutiveSliceCount
             totalSlices
@@ -40,7 +42,7 @@ var numberOfArithmeticSlices = function (array) {
             totalSlices += consecutiveSliceCount
         }
         
-        else if (difference1 != difference2) {
+        else if (!arithmeticSliceFound) {
             consecutiveSliceCount = 0
         }
         
