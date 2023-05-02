@@ -7,28 +7,21 @@ var numberOfArithmeticSlices = function (array) {
         
         array
         
-        // in [0,1,2], this compares [0, 1]
         const difference1 = array[index] - array[index - 1]
         
-        // compares [1, 2]
         const difference2 = array[index - 1] - array[index - 2] 
         
-        // those 2 makes [0, 1, 2]
-        // the count gets +2 at once if theyre consecutive
-
-
-        // [0, 1, 2] - 1 slice
-        // [0,1,2,3] - 2 new slices  - [1,2,3] and [0,1,2,3]
-
-        //[+1, +2, +3, +4] for consecutiveSliceCount
-
+        // [0, 1, 2] - 1 slice        
+        // [0, 1, 2, 3] - the 3 adds two slices  
+        // [0,1,2] and [0,1,2,3]
+        
         difference1
         difference2
         
-        const arithmeticSliceFound = difference1 == difference2
+        const arithmeticSliceFound = Boolean(difference1 == difference2)
         
         if (arithmeticSliceFound) {
-
+            
             consecutiveSlices
             totalSlices
             
