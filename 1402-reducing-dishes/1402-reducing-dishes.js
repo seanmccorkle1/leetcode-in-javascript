@@ -2,8 +2,10 @@ var maxSatisfaction = function (array) {
 
     let maxSum = 0
     array.sort((a, b) => a - b)
+    
+    const arrayHasPositives = array.find(num => num >=1) ?? false
 
-    if (array.find(num => num >=1) == undefined){
+    if (!arrayHasPositives) {
         return 0
     }
     
@@ -30,13 +32,13 @@ var maxSatisfaction = function (array) {
 
         currSumOfProducts
         maxSum
-
+        
         if (currSumOfProducts > maxSum) {
             maxSum = currSumOfProducts
-
+            
             // if theyre all 0 or more, this will be the highest
             // 5x6 is higher than 5x5
-
+            
             if (array[0] >= 0) {
                 return maxSum
             }
@@ -47,8 +49,8 @@ var maxSatisfaction = function (array) {
     return maxSum
 }
 
-// console.log(maxSatisfaction([2, 3, 4]), 20, "early return this")
-console.log(maxSatisfaction([-5,-4,-2]), 0, "all negative numbers")
+console.log(maxSatisfaction([2, 3, 4]), 20, "early return this")
+// console.log(maxSatisfaction([-5,-4,-2]), 0, "all negative numbers")
 
 // console.log(maxSatisfaction([2, 3, 4]), 20, "early return this")
 // console.log(maxSatisfaction([0, 2, 3, 4]), 29, "0x1 + 2x2 + 3x3 + 4x4 = (16 + 4  + 2) = 29, start from (Nx1) every time")
