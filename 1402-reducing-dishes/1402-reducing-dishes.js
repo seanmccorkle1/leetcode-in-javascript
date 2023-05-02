@@ -3,8 +3,8 @@ var maxSatisfaction = function (array) {
     let maxSum = 0
     array.sort((a, b) => a - b)
     
-    const arrayHasPositives = array.find(num => num >=1) ?? false
-
+    const arrayHasPositives = array.find(num => num >=1) ? true:false
+    
     if (!arrayHasPositives) {
         return 0
     }
