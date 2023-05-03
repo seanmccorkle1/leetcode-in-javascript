@@ -8,5 +8,4 @@ var findDifference = function(nums1, nums2) {
     nums1.forEach(v=>{ans2.delete(v)});    
     
     return [[...ans1],[...ans2]]
-    
 }
