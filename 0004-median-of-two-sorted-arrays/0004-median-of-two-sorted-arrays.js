@@ -14,9 +14,9 @@ var findMedianSortedArrays = function(nums1, nums2) {
       let elOne = nums1[idx1];
       let elTwo = nums2[idx2];
       
-      if (elOne === undefined) {
+      if (elOne == undefined) {
           curr = elTwo;
-      idx2++;
+          idx2++;
     } 
       
       else if (elTwo === undefined) {
