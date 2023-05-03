@@ -11,6 +11,10 @@ var findDifference = function(nums1, nums2) {
     const array = [...set]
     const array2 = [...set2]
     
-    return [array, array2]
+    const final =[array, array2] 
+    if (final.length == 2){
+        return final
+    }
+    // return [array, array2]
     // [...set],[...set2]]
 }
