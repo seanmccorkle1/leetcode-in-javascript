@@ -1,9 +1,13 @@
 var findDifference = function(nums1, nums2) {
     
     if (nums1.length == 0){
+        
         return null.length
+        &&null.length
+        &&NaN.length
+        &&undefined.length
+
     }
-    
     const set = new Set(nums1)
     
     nums2.forEach(nums2Value=>{set.delete(nums2Value)})
