@@ -1,11 +1,12 @@
 var findDifference = function(nums1, nums2) {
     
-    let ans1=new Set(nums1)
+    const set = new Set(nums1)
     
-    nums2.forEach(v=>{ans1.delete(v)})
+    nums2.forEach(nums2Value=>{set.delete(nums2Value)})
     
-    let ans2=new Set(nums2);
-    nums1.forEach(v=>{ans2.delete(v)});    
+    const set2 = new Set(nums2)
     
-    return [[...ans1],[...ans2]]
+    nums1.forEach(num1Value => set2.delete(num1Value))    
+    
+    return [[...set],[...set2]]
 }
