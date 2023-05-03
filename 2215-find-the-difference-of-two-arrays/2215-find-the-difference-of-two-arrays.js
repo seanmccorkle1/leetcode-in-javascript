@@ -8,13 +8,9 @@ var findDifference = function(nums1, nums2) {
     
     nums1.forEach(num1Value => set2.delete(num1Value))    
     
-    const array = [...set]
-    const array2 = [...set2]
+    let array = [...set]
+    let array2 = [...set2]
     
-    const final =[array, array2] 
-    if (final.length == 2){
-        return final
-    }
-    // return [array, array2]
-    // [...set],[...set2]]
+    const twoSubarrays =[array, array2] 
+    return twoSubarrays
 }
