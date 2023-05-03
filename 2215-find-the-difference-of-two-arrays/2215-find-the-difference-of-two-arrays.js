@@ -11,6 +11,5 @@ var findDifference = function(nums1, nums2) {
     let array = [...set]
     let array2 = [...set2]
     
-    const twoSubarrays =[array, array2] 
-    return twoSubarrays
+    return [array, array2]
 }
