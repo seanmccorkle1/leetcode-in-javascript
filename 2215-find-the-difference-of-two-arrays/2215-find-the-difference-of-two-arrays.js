@@ -1,7 +1,7 @@
 var findDifference = function(nums1, nums2) {
     
     if (nums1.length == 0){
-        return "x"
+        return null.length
     }
     
     const set = new Set(nums1)
