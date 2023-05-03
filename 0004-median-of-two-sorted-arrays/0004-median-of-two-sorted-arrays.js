@@ -19,7 +19,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
           idx2++;
     } 
       
-      else if (elTwo === undefined) {
+      else if (elTwo == undefined) {
           curr = elOne;
           idx1++;
     } 
