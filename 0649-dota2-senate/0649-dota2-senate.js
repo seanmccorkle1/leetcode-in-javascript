@@ -7,7 +7,9 @@ var predictPartyVictory = function(senate) {
             q2.push(i);
         }
     }
-    while(q1.length>0 &&q2.length>0){
+
+
+    while(q1.length != 0 &&q2.length !=0){
         let v1=q1[0]
         q1.shift()
         let v2=q2.shift();
