@@ -1,15 +1,19 @@
 var findMedianSortedArrays = function(nums1, nums2) {
-  let totalLen = nums1.length + nums2.length;
-  let idx1 = 0;
-  let idx2 = 0;
-  let curr;
-  let last;
 
-  while (idx1 + idx2 <= totalLen/2) {
+    let totalLen = nums1.length + nums2.length
+    
+    let idx1 = 0
+    let idx2 = 0
+
+    let curr
+    let last = undefined
+
+    const half  =Math.floor(totalLen / 2)
+    while (idx1 + idx2 <= totalLen/2) {
       
-      if (typeof curr == "number") {
-          last = curr
-      }
+        if (typeof curr == "number") {
+            last = curr
+        }
       
       let elOne = nums1[idx1];
       let elTwo = nums2[idx2];
