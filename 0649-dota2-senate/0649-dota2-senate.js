@@ -1,23 +1,48 @@
 var predictPartyVictory = function(senate) {
-    var map={}, m=senate.length, q1=[], q2=[];
 
-    for(var i=0; i<m; i++){
-        if(senate.charAt(i) == 'R') q1.push(i)
-        else{
-            q2.push(i);
+    // senate = senate.map(e => e == "R" ? "Radiant" : "Dire")
+
+    senate = Array.from({length: senate.length}, (u, index) => senate[index] == "R" ? "Radiant" : "Dire")
+    const obj={}
+
+    const queue = []
+    const queue2=[]
+
+    for(let index=0; index < senate.length; index++){
+
+        const currString = senate[index]
+
+        if (currString == "Radiant") {
+            queue.push(index)
+        }
+        
+        else if (currString == "Dire"){
+            queue2.push(index)
         }
     }
 
 
-    while(q1.length != 0 &&q2.length !=0){
-        let v1=q1[0]
-        q1.shift()
-        let v2=q2.shift();
+    while(queue.length != 0 &&queue2.length !=0) {
+
+        let v1=queue[0]
+        queue.shift()
+        
+        let v2=queue2.shift()
+
+        if(v1<v2) {
+            queue.push(v1+senate.length)
+        }
+        else if (v1 >= v2) {
+            queue2.push(v2 + senate.length)
+        }
+    }
     
-        if(v1<v2) q1.push(v1+m)
-        else{
-            q2.push(v2+m);
-        }
+    if (queue.length> queue2.length){
+        return "Radiant"
     }
-    return q1.length> q2.length? "Radiant": "Dire"
-};
+    
+    else if (queue2.length> queue.length){
+        return "Dire"
+    }
+
+}
