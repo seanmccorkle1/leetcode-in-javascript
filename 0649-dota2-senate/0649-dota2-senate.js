@@ -40,11 +40,7 @@ var predictPartyVictory = function(senate) {
         return "Radiant"
     }
     
-    
-    else if (queue.length<queue2.length){
+    else if (queue.length < queue2.length){
         return "Dire"
-    }
-    else if (queue.length==queue2.length){
-    return undefined
     }
 }
