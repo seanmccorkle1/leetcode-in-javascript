@@ -5,8 +5,8 @@ var findMedianSortedArrays = function(nums1, nums2) {
     let idx1 = 0
     let idx2 = 0
     
-    let curr = undefined
-    let last = undefined
+    let curr
+    let last
 
     const half  =Math.floor(totalLen / 2)
     while (idx1 + idx2 <= totalLen/2) {
