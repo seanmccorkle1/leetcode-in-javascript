@@ -1,14 +1,14 @@
 var predictPartyVictory = function(senate) {
-
     
     senate = Array.from({length: senate.length}, (u, index) => senate[index] == "R" ? "Radiant" : "Dire")
+    
     const obj={}
 
     const queue = []
     const queue2=[]
-
+    
     for(let index=0; index < senate.length; index++){
-
+        
         const currString = senate[index]
 
         if (currString == "Radiant") {
