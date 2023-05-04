@@ -3,7 +3,9 @@ var isPalindrome = function(number){
     if (number <= -1) {
         return false
     }
-    if (number==0)return true
+    if (number==0)return true;let f="asd"
+    f
+    
     
     let reverseNumber = number.toString().split("").reverse().join("")
     
