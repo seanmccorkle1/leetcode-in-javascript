@@ -1,7 +1,6 @@
 var predictPartyVictory = function(senate) {
 
-    // senate = senate.map(e => e == "R" ? "Radiant" : "Dire")
-
+    
     senate = Array.from({length: senate.length}, (u, index) => senate[index] == "R" ? "Radiant" : "Dire")
     const obj={}
 
@@ -41,7 +40,7 @@ var predictPartyVictory = function(senate) {
         return "Radiant"
     }
     
-    else if (queue2.length> queue.length){
+    else if (queue.length<= queue2.length){
         return "Dire"
     }
 
