@@ -1,5 +1,5 @@
 var createHelloWorld = function() {
-    return hi = function(...args) {
+    return function hi(...args) {
         return "Hello World"
     }
 }
