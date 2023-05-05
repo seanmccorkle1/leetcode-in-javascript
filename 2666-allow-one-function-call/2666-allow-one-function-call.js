@@ -14,9 +14,6 @@ var once = function(fn) {
             return fn(...args)
         }
         
-        if (called) {
-            return undefined
-        }       
     }
 }
 
