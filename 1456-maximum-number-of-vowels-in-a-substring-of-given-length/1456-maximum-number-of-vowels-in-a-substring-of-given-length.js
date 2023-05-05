@@ -20,7 +20,11 @@ const maxVowels = (s, k) => {
         if (VOWEL.has(s[i + k])) {
             cur++
         }
-        cur > max && (max = cur);
-  }
+
+        // if (cur > max) {
+        //     max = cur
+        // }
+        max = Math.max(cur, max)
+    }
     return max
 }
