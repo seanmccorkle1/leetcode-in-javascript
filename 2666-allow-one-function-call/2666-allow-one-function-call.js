@@ -13,8 +13,9 @@ var once = function(fn) {
             called = true
             return fn(...args)
         }
+        
         if (called) {
-            "xd"
+            return undefined
         }       
     }
 }
