@@ -13,6 +13,6 @@ var average = function(salaries) {
     }
     
     avgSalary /= (salaries.length - 2)
-    return Number(avgSalary.toFixed(5))
+    return avgSalary
 }
 console.log(average([4000,3000,1000,2000], 2500.00000))
