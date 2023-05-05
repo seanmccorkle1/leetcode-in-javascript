@@ -16,11 +16,11 @@ var createCounter = function(init) {
     }
 
     function decrement() {
-        return --c
+        return c-=1
     }
-
-    function reset() {
-        c =i
+    
+    function reset() {        
+        c = i
         return i
     }
     const functionObj= {increment, decrement, reset}
