@@ -10,15 +10,10 @@ var createCounter = function(init) {
     let c = init
     // c = i = init
     
-    increment = () => {
-        return c+=1
-    }
+    increment = () => c+=1    
+    decrement = () =>c-=1
     
-    decrement = () =>{
-        return c-=1
-    }
-    
-    reset = ()=> {        
+    function reset() {        
         c = i
         return c
     }
