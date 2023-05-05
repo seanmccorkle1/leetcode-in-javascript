@@ -9,20 +9,20 @@ var createCounter = function(init) {
     
     let c = init
     // c = i = init
-
+    
     increment = () => {
         return c+=1
     }
     
-    
-    function decrement() {
+    decrement = () =>{
         return c-=1
     }
     
-    function reset() {        
+    reset = ()=> {        
         c = i
-        return i
+        return c
     }
+    
     const functionObj= {increment, decrement, reset}
     return functionObj
 }
