@@ -28,9 +28,8 @@ var createCounter = function(init) {
     return functionObj
 }
 
-/**
- * const counter = createCounter(5)
- * counter.increment(); // 6
- * counter.reset(); // 5
- * counter.decrement(); // 4
- */
+const counter = createCounter(5)
+
+counter.increment(); // 6
+counter.reset(); // 5
+counter.decrement(); // 4
