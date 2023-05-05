@@ -12,5 +12,7 @@ var average = function(salaries) {
     // salaries.length was changed
     
     let avg= salaries.reduce((sum, curr) => sum + curr, 0) / salaries.length
-    return Number(avg.toFixed(5))    
+    return avg.toFixed(5)
 }
+
+console.log(average([4000,3000,1000,2000], 2500.00000))
