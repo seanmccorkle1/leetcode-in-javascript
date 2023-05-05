@@ -5,7 +5,10 @@
 
 var createCounter = function(init) {
     
-    c = i = init
+    let i = init
+    
+    let c = init
+    // c = i = init
 
     function increment() {
         c++
