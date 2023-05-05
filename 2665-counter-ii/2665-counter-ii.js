@@ -24,9 +24,9 @@ var createCounter = function(init) {
         return i
         // return c = i
     }
-    return {increment, decrement, reset}
-};
-
+    const functionObj= {increment, decrement, reset}
+    return functionObj
+}
 
 /**
  * const counter = createCounter(5)
