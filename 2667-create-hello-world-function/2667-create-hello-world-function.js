@@ -1,8 +1,4 @@
-var createHelloWorld = function() {
-    return function hi(...args) {
-        return "Hello World"
-    }
-}
+var createHelloWorld =p=>() => "Hello World"
 
 const f = createHelloWorld()
 f(); // "Hello World"
