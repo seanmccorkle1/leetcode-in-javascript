@@ -10,11 +10,11 @@ var createCounter = function(init) {
     let c = init
     // c = i = init
 
-    function increment() {
-        c++
-        return c
+    increment = () => {
+        return c+=1
     }
-
+    
+    
     function decrement() {
         return c-=1
     }
