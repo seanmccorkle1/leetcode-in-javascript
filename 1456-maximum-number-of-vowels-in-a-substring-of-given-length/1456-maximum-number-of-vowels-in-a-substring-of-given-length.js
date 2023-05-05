@@ -5,13 +5,16 @@ const maxVowels = (s, k) => {
     let max = 0;
   
     for (let i = 0; i < k; ++i) {
-    VOWEL.has(s[i]) && ++max;
+        if (VOWEL.has(s[i])){
+            max++
+        }
+    // VOWEL.has(s[i]) && ++max;
   }
 
     for (let i = 0, cur = max; i < s.length - k; i++) {    
         VOWEL.has(s[i]) && --cur
         VOWEL.has(s[i + k]) && ++cur
-    cur > max && (max = cur);
+        cur > max && (max = cur);
   }
-  return max;
-};
+    return max
+}
