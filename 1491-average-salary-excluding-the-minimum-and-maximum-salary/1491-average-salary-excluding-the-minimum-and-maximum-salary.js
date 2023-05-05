@@ -1,23 +1,18 @@
 var average = function(salaries) {
     
-    salaries
-    
     let min = Math.min(...salaries)    
     let max = Math.max(...salaries)
     
-    let sum = 0
+    let avgSalary = 0
     
-    sum-=min
-    sum-=max
-
+    avgSalary-=min
+    avgSalary-=max
+    
     for (const salary of salaries){
-        sum += salary
+        avgSalary += salary
     }
     
-    sum = (sum /(salaries.length-2))
-
-    // sum /= (salaries.length-2)
-    return sum    
+    avgSalary /= (salaries.length - 2)
+    return avgSalary
 }
-
 console.log(average([4000,3000,1000,2000], 2500.00000))
