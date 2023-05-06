@@ -1,13 +1,8 @@
 const maxVowels = (string, k) => {
     
     let max = 0    
-    const r=/[aeiou]/
-    
-    const VOWEL = new Set(['a','e','i','o','u'])    
 
-    if (k == 1 &&string.match(r)) {
-        return 1
-    }
+    const VOWEL = new Set(['a','e','i','o','u'])        
     
     for (let index = 0;  index < k; index++) {
 
