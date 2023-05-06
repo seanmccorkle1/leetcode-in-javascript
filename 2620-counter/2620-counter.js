@@ -4,8 +4,7 @@
  */
 
 // the return value is a function
-var createCounter = num => () => num++
-
+var createCounter = num => () => {return num++}
 const counter = createCounter(10)
 
 counter() // 10
