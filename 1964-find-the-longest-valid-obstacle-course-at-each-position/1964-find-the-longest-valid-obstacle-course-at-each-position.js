@@ -8,8 +8,9 @@ var longestObstacleCourseAtEachPosition = function(obstacles) {
             lis.push(obstacles[i]);
             res[i] = lis.length;
         }
-        else
-        {
+        
+        else if (obstacles[i] < lis.at(-1) || lis.length == 0) {
+
             // find the upper bound
             var l = 0;
             var r = lis.length;
