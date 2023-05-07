@@ -12,8 +12,8 @@
  */
 
 var cloneGraph = function(node) {
-        const clone = root => {
-        
+    
+    const clone =root => {
         if (!map.has(root.val)) {
             map.set(root.val, new Node(root.val));
             map.get(root.val).neighbors = root.neighbors.map(clone);
