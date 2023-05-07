@@ -4,14 +4,14 @@ var createCounter = function(init) {
     let i = init
     
     increment = () => {return c+=1}
-    decrement = () =>c-=1
+    decrement = () =>{return --c}
     
     function reset() {        
         c = i
         return c
     }
     
-    const functionObj= {reset,increment, decrement}
+    const functionObj= {increment, decrement, reset}
     return functionObj
 }
 
