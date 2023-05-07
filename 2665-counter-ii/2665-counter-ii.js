@@ -4,7 +4,7 @@ var createCounter = function(init) {
     let i = init
     
     increment = () => {return c+=1}
-    decrement = () =>{c--;return c}
+    decrement = () =>c-=1
     
     function reset() {        
         c = i
