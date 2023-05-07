@@ -3,8 +3,8 @@ var createCounter = function(init) {
     let c = init
     let i = init
     
-    increment = () => {return c+=1}
-    decrement = () =>{return --c}
+    increment = () => {return c += 1}
+    decrement = () =>{return c -= 1}
     
     function reset() {        
         c = i
