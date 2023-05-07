@@ -11,7 +11,7 @@ var createCounter = function(init) {
         return c
     }
     
-    const functionObj= {increment, decrement, reset}
+    const functionObj= {reset,increment, decrement}
     return functionObj
 }
 
