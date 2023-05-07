@@ -13,21 +13,24 @@ var longestObstacleCourseAtEachPosition = function(obstacles) {
 
             // find the upper bound
             var l = 0;
-            var r = lis.length;
-            while(l<=r)
-            {
+            var r = lis.length
+
+            while(l<=r) {
                 var mid = Math.floor((l+r)/2);
-                if(lis[mid]<=obstacles[i])
-                {
-                    l = mid+1;
+                
+                if (lis[mid] <= obstacles[i]) {
+                    l = mid+1
                 }
-                else
-                {
-                    r = mid-1;
+                
+                else {
+                    r = mid-1
                 }
             }
-            lis[l] = obstacles[i];
-            res[i] = l+1;
+            
+
+            res[i] = l+1
+
+            lis[l] = obstacles[i]
         }
     }
     return res;
