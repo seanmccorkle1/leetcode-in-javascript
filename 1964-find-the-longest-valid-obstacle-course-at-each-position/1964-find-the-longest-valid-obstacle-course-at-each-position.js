@@ -22,15 +22,13 @@ var longestObstacleCourseAtEachPosition = function(obstacles) {
                     l = mid+1
                 }
                 
-                else {
+                else if (lis[mid] > obstacles[i] || true) {
                     r = mid-1
                 }
             }
             
-
-            res[i] = l+1
-
             lis[l] = obstacles[i]
+            res[i] = l+1
         }
     }
     return res;
