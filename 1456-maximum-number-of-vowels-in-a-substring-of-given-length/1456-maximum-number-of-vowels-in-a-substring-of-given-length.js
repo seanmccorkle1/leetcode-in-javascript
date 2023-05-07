@@ -1,27 +1,34 @@
-var maxVowels = function(s, k) {
+var maxVowels = function(string, maxSubstringLength) {
     
     const vowels = ['a', 'e', 'i', 'o', 'u']
 
-                    let maxCount = 0;
-    let start = 0; // the left edge of the window
-    let count = 0; // count of vowels for current substring
+    // the left edge of the window
+    let start = 0
+    
+    // count of vowels for the current substring    
+    let count = 0
+    
+    // return this
+    let maxCount = 0
     
     // expanding the right edge of the window one character at a time
-
-    for (let end = 0; end < s.length; end++) {
+    
+    for (let end = 0; end < string.length; end++) {
         
-        if (vowels.includes(s[end])) {
+        const currLetter = string[end]
+        
+        if (vowels.includes(currLetter)) {
             count++
         }
         
-        // if substring is longer than K, let's shrink the window by moving left edge
+        // if substring is longer than maxSubstringLength, let'string shrink the window by moving left edge
         
-        if (end - start + 1 > k) {
+        if (end - start + 1 > maxSubstringLength) {
             
             // reduce the current count by one 
             // if the character on the left edge is vowe
             
-            if (vowels.includes(s[start])) {
+            if (vowels.includes(string[start])) {
                 count--
             }
             
@@ -34,9 +41,9 @@ var maxVowels = function(s, k) {
         
         maxCount = Math.max(count, maxCount)
         
-        // if maxCount is equal to K, no need to check further, it is the max possible count
+        // if maxCount is equal to maxSubstringLength, no need to check further, it is the max possible count
         
-        if (maxCount == k) {
+        if (maxCount == maxSubstringLength) {
             return maxCount
         }
     }
