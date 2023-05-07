@@ -4,8 +4,7 @@ var longestObstacleCourseAtEachPosition = function(obstacles) {
     var res = new Array(n).fill(0);
     for(var i = 0; i<n; i++)
     {
-        if(lis.length>0 && obstacles[i] >= lis[lis.length-1])
-        {
+        if(lis.length != 0 && obstacles[i] >= lis.at(-1)) {
             lis.push(obstacles[i]);
             res[i] = lis.length;
         }
