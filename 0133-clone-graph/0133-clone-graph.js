@@ -21,10 +21,11 @@ var cloneGraph = function(node) {
         
         return map.get(root.val)
     }
-    if (node === null) {
-        return null
-    }    
-    const map = new Map();
+    
+    if (node == null) {
+        return undefined
+    }
+    const map = new Map()
     
 
     return clone(node)
