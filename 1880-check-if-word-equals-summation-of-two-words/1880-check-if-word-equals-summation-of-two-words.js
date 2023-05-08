@@ -17,9 +17,9 @@ var isSumEqual = function(firstWord, secondWord, targetWord) {
     
     for (let index=0; index < greaterLength; index++) {
         
-        let firstWordLetter = (firstWord[index] ?? "")
-        let secondWordLetter = (secondWord[index] ?? "")
-        let targetLetter = targetWord[index]
+        let firstWordLetter = firstWord[index] ?? ""
+        let secondWordLetter = secondWord[index] ?? ""
+        let targetLetter = targetWord[index] ?? ""
         
         let stringDigit1 = obj[firstWordLetter] ?? ""
         let stringDigit2 = obj[secondWordLetter] ?? ""
