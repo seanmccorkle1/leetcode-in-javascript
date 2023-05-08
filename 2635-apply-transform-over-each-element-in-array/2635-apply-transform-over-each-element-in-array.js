@@ -16,6 +16,6 @@ var map = function(array, mapFn) {
 }
 
 const mapFunction = (num, index)=> {return num + index}
-console.log(map([1,2,3], mapFunction),  [2,3,4])
+console.log(map([1,2,3], mapFunction),  [1,3,5])
 
-map([1,2,3], (num)=> {return num + 1})
+map([1,2,3], num=> {return num + 1})
