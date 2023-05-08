@@ -1,22 +1,24 @@
 var canPlaceFlowers = function (array, numOfFlowersToPlace) {
     
-    let flowerCount = 0
-    
+    // you can always place 0 flowers
+
     if (numOfFlowersToPlace == 0){
-        return true
+        return true 
     }
+    
+    let flowerCount = 0
     
     for (let index = 0; index < array.length; index++) {
         
-        const numToTheRight = array[index + 1]
         const numToTheLeft = array[index - 1]
-
+        const numToTheRight = array[index + 1]
         
         const indexIsAtTheFirst = index==0 
         const indexIsAtTheLast = index == array.length - 1
         const emptySpotFound = array[index] == 0
         
-        if (emptySpotFound) {
+        if (emptySpotFound) {            
+            
             if (numToTheLeft === 0 && numToTheRight ===0) {
                 array[index] = 1 // plant the flower
                 flowerCount++
@@ -45,15 +47,6 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
             return true
         }
     }
-    
-    flowerCount
-    numOfFlowersToPlace
-    
-    array
-    
-    // if (flowerCount > numOfFlowersToPlace || flowerCount == numOfFlowersToPlace) {
-    //     return true
-    // }    
     
     return false    
 }
