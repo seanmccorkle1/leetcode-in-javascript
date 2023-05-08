@@ -6,8 +6,8 @@ var map = function(array, mapFn) {
         
         // index just gets left out if "num" is the only argument
         
-        const num = array[index]
-        const numAfterFunction = mapFn(num, index)
+        let num = array[index]
+        let numAfterFunction = mapFn(num, index)
         
         mappedArray[index] = numAfterFunction
   }
