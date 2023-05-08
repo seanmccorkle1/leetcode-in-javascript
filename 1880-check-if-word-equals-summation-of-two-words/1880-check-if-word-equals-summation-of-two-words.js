@@ -7,8 +7,9 @@ var isSumEqual = function(firstWord, secondWord, targetWord) {
     let array = new Array(10).fill("a").map(e => [])
     array = array.map((subarray, index) => [String.fromCharCode(97+index), index])
 
-    const obj=array.reduce((sum, curr) => ({...sum, [curr[0]]: curr[1]}), {})
-    
+    const obj=array.reduce((sum, curr) => ({...sum, [curr[0]] : curr[1]}), {})
+
+    // const o = array.reduce((obj, curr) => ({...obj, [curr[0]]: curr[1]}),{})
     // const obj = {"a" : '0', "b" : '1', "c" : '2', "d" : '3', "e" : '4', "f" : '5', "g" : '6', "h" : '7', 'i' : '8', "j" : '9'}
       
       
