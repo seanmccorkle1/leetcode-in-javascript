@@ -6,40 +6,32 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
         
         const numToTheRight = array[index + 1]
         const numToTheLeft = array[index - 1]
-
-
-        const emptySpotFound = array[index] == 0
+        
+        const emptySpotFound = array[index] == 0 ?true:false
         const numIsAtTheFront = index==0 ? true : false
-
-
+        
         if (emptySpotFound) {
-
-            if (numToTheLeft == 0 && numToTheRight == 0) {
-                array[index] = 1 //plant
+            if (numToTheLeft === 0 && numToTheRight ===0) {
+                array[index] = 1 // plant the flower
                 flowerCount++
             }
-
+            
             // currNum is 0 in all of these
             else if (numIsAtTheFront && numToTheRight == 0) {
                 array[index] = 1
                 flowerCount++
             }
-
+            
             // for one-length arrays like [0]
+
             else if (numIsAtTheFront && array.length == 1) {
                 array[index] = 1
                 flowerCount++
             }
             
             else if (index == array.length - 1 && numToTheLeft == 0) {
-
                 array[index] = 1
                 flowerCount++
-                
-                // if (numToTheLeft == 0) {
-                //     array[index] = 1
-                //     flowerCount++
-                // }                
             }
         }
         
