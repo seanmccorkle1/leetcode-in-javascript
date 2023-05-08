@@ -46,7 +46,14 @@ var isSumEqual = function(firstWord, secondWord, targetWord) {
     //     target += obj[char]
     // }
     
-    return parseInt(first) + parseInt(second) === parseInt(target)
+    let twoWordSum = Number(first) + Number(second)
+    const targetSum = Number(target)
+
+    if (twoWordSum == targetSum){
+        return true
+    }
+    return false
+    
 }
 
 isSumEqual("acb", "cba", "cdb")
