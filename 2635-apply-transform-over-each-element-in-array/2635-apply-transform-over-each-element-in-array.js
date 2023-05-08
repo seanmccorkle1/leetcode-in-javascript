@@ -2,7 +2,9 @@ var map = function(array, mapFn) {
 
     const mappedArray = new Array(array.length)
     
-    for (let index = 0; index < array.length; index++) {
+    const arrayLength = mappedArray.length
+    
+    for (let index = 0; index < arrayLength; index++) {
 
         // index just gets left out if "num" is the only argument
         const mappedNum = mapFn(array[index], index)
