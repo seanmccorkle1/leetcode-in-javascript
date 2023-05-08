@@ -56,4 +56,4 @@ var isSumEqual = function(firstWord, secondWord, targetWord) {
     
 }
 
-isSumEqual("acb", "cba", "cdb")
+console.log(isSumEqual("acb", "cba", "cdb"), true)
