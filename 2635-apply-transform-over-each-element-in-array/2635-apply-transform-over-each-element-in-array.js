@@ -4,10 +4,12 @@ var map = function(array, mapFn) {
     
     for (let index = 0; index < array.length; index++) {
         
-        let num = array[index]
+        const num = array[index]
         
-        // index just gets left out if "num" is the only argument        
-        let numAfterFunction = mapFn(num, index)
+        // index still goes in the callback if its just callback(num) 
+        // but it doesnt do anything
+        
+        const numAfterFunction = mapFn(num, index)
         
         mappedArray[index] = numAfterFunction
   }
