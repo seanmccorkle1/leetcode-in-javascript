@@ -6,7 +6,7 @@ var map = function(array, mapFn) {
         
         const num = array[index]
         
-        // index still goes in the callback if its just callback(num) 
+        // `index` still goes in the callback if its just callbackFn(num) 
         // but it doesnt do anything
         
         const numAfterFunction = mapFn(num, index)
