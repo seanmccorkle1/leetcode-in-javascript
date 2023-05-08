@@ -4,9 +4,9 @@ var map = function(array, mapFn) {
     
     for (let index = 0; index < array.length; index++) {
         
-        // index just gets left out if "num" is the only argument
-        
         let num = array[index]
+        
+        // index just gets left out if "num" is the only argument        
         let numAfterFunction = mapFn(num, index)
         
         mappedArray[index] = numAfterFunction
