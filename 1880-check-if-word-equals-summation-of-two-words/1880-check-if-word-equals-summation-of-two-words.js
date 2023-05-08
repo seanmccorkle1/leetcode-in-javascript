@@ -8,16 +8,18 @@ var isSumEqual = function(firstWord, secondWord, targetWord) {
     let first = ""
     let second = ""
     let target = ""
+    
     firstWord = firstWord.toLowerCase()
     secondWord=secondWord.toLowerCase()
     targetWord=targetWord.toLowerCase()
+    
     const greaterLength= Math.max(firstWord.length, secondWord.length, targetWord.length)
     
     for (let index=0; index < greaterLength; index++) {
         
         let firstWordLetter = (firstWord[index] ?? "")
         let secondWordLetter = (secondWord[index] ?? "")
-        let targetLetter = targetWord[index] ?? ""
+        let targetLetter = targetWord[index]
         
         let stringDigit1 = obj[firstWordLetter] ?? ""
         let stringDigit2 = obj[secondWordLetter] ?? ""
