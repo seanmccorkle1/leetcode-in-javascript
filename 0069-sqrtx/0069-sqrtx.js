@@ -1,4 +1,3 @@
-
 var mySqrt = function(num) {
     
     if (num == 0){
@@ -11,7 +10,10 @@ var mySqrt = function(num) {
         increment += 1
     }
     
-    return increment -1
+    // do one extra iteration with (pow <= num)
+    // then cancel it with increment - 1
+    
+    return increment - 1
 }
 
 console.log(mySqrt(8), 2, "the square root is 2.8, truncate it to 2")
