@@ -2,39 +2,48 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
     
     let flowerCount = 0
     
+    if (numOfFlowersToPlace == 0){
+        return true
+    }
+    
     for (let index = 0; index < array.length; index++) {
         
         const numToTheRight = array[index + 1]
         const numToTheLeft = array[index - 1]
+
         
-        const emptySpotFound = array[index] == 0 ?true:false
-        const numIsAtTheFront = index==0 ? true : false
+        const indexIsAtTheFirst = index==0 
+        const indexIsAtTheLast = index == array.length - 1
+        const emptySpotFound = array[index] == 0
         
         if (emptySpotFound) {
             if (numToTheLeft === 0 && numToTheRight ===0) {
                 array[index] = 1 // plant the flower
                 flowerCount++
             }
-            
             // currNum is 0 in all of these
-            else if (numIsAtTheFront && numToTheRight == 0) {
+
+            else if (indexIsAtTheFirst && numToTheRight == 0) {
                 array[index] = 1
                 flowerCount++
             }
             
             // for one-length arrays like [0]
 
-            else if (numIsAtTheFront && array.length == 1) {
+            else if (indexIsAtTheFirst && array.length == 1) {
                 array[index] = 1
                 flowerCount++
             }
             
-            else if (index == array.length - 1 && numToTheLeft == 0) {
+            else if (indexIsAtTheLast && numToTheLeft == 0) {
                 array[index] = 1
                 flowerCount++
             }
         }
         
+        if (flowerCount == numOfFlowersToPlace){
+            return true
+        }
     }
     
     flowerCount
@@ -42,9 +51,9 @@ var canPlaceFlowers = function (array, numOfFlowersToPlace) {
     
     array
     
-    if (flowerCount > numOfFlowersToPlace || flowerCount == numOfFlowersToPlace) {
-        return true
-    }    
+    // if (flowerCount > numOfFlowersToPlace || flowerCount == numOfFlowersToPlace) {
+    //     return true
+    // }    
     
     return false    
 }
