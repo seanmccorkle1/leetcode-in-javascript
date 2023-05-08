@@ -1,13 +1,9 @@
 var diagonalSum = function(matrix) {
-
-    // side length
-    // midIndex point index
-    let midIndex = Math.floor(matrix.length / 2)
-
-    // sum of diagonal element
-    let diagonalSum = 0
+    
     let backIndex = matrix.length - 1
-
+    
+    let diagonalSum = 0
+    
     for (let index = 0; index < matrix.length; index++) {
 
         const primaryDiagonalValue = matrix[index][index]
@@ -20,16 +16,21 @@ var diagonalSum = function(matrix) {
     }
 
     const matrixIsOdd = (matrix.length % 2 == 1) ? true : undefined ?? ""
-
     
-    // remove the center element (repeated)
-    // for the "odd side-length" case
+    // if its an odd-length matrix, 
+    // 5 was repeated as [5, 5]
+    // remove it once to just get 5
+    
+    // let midIndex = Math.floor(matrix.length / 2)
+    
+    let midIndex = matrix.length / 2 -.5
 
-    if (matrixIsOdd){        
-        diagonalSum -= matrix[midIndex][midIndex];
+    if (matrixIsOdd) {
+        const midValue = matrix[midIndex][midIndex]
+        diagonalSum -= midValue
     }
-
-    return diagonalSum;
+    
+    return diagonalSum
 }
 
 console.log(diagonalSum(
