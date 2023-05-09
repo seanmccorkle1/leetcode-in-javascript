@@ -1,15 +1,19 @@
-var filter = function(array, inputtedFn) {
+var filter = function(array, passedFn) {
     
     const filteredArray = []
     
     for (let index = 0; index < array.length; index++){
         
-        const currNum = array[index]
+        const num = array[index]
         
-        const filterFunctionBoolean = inputtedFn(currNum, index)
+        const returnValue = passedFn(num, index)
         
-        if (filterFunctionBoolean != false){ 
-            filteredArray.push(currNum)
+        // the filter callbacks literally return false
+        // dont push those numbers
+
+        const valueIsTruthy = Boolean(returnValue) === true
+        if (valueIsTruthy) { 
+            filteredArray.push(num)
         }
    }
     
