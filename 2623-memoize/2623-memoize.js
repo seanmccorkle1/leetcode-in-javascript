@@ -1,14 +1,12 @@
-
-
-var memoize = sumFn => {
-
+var memoize = (sumFn) => {
+    
     const memo = {}
-
-    return (...args) =>{
-
-        let argsAsString = args.join()
-        const memoAlreadyHasArguments = (memo[argsAsString] !== undefined) ? true : false
+    
+    return function xd(...args) {
         
+        let argsAsString = args.join(",")
+        const memoAlreadyHasArguments = (memo[argsAsString] !== undefined)
+    
         if (memoAlreadyHasArguments){
             let cachedReturnValue= memo[argsAsString]
             return  cachedReturnValue
@@ -27,12 +25,12 @@ var memoize = sumFn => {
 
 let callCount = 0
 
-function sumTwo(num1, num2) {
+var sumTwoFn = function(num1, num2) {
     callCount+=1
     return num1+num2
 } 
 
-var memoizedFn = memoize(sumTwo)
+var memoizedFn = memoize(sumTwoFn)
 
 memoizedFn.length // 0 (any amount of arguments)
 
