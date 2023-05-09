@@ -17,7 +17,8 @@ var spiralOrder = function(matrix) {
             }
             
             // reverse is destructive
-            subarray.reverse()
+            
+            if (subarray.length >= 2) {subarray.reverse()}
     }
         
         matrix.reverse()
@@ -39,4 +40,3 @@ console.log(
     [1,2,3],
     [4,5,6],
     [7,8,9]]), [1,2,3,6,9,8,7,4,5])
-
