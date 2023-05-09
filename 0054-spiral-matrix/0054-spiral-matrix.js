@@ -1,9 +1,11 @@
 var spiralOrder = function(matrix) {
     
     const array = []
+
     if (matrix.every(subarray => subarray.length == 1)){
-        return matrix.flat(10)
+        return matrix
     }
+    
     while (matrix.length != 0) {
         
         const currFirstRow = matrix.shift()
