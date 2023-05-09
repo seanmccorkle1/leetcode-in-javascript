@@ -1,24 +1,27 @@
 var spiralOrder = function(matrix) {
+    
     const array = []
-
-    while(matrix.length){
-        const firstArray = matrix.shift()        
-        array.push(...firstArray) // array.push(...[1,2]) to keep it a single array 
+    
+    while (matrix.length != 0) {
         
+        const firstArray = matrix.shift()        
+        
+        // array.push(...[1,2]) to keep it a single array 
+        array.push(...firstArray)
 
-        for(const subarray of matrix){    
-
+        for (let subarray of matrix){    
+            
             // pop modifies the subarrays
             let pop = subarray.pop()
 
             if (pop !== undefined){
                 array.push(pop)
             }
-
+            
             // reverse is destructive
-            subarray.reverse()   
+            subarray = subarray.reverse()   
     }
-    
+        
         matrix.reverse()
   }
   return array
