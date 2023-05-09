@@ -1,7 +1,9 @@
 var spiralOrder = function(matrix) {
     
     const array = []
-    
+    if (matrix.every(subarray => subarray.length == 1)){
+        return matrix.flat(10)
+    }
     while (matrix.length != 0) {
         
         const currFirstRow = matrix.shift()
@@ -18,7 +20,7 @@ var spiralOrder = function(matrix) {
             
             // reverse is destructive
             
-            if (subarray.length >= 2) {subarray.reverse()}
+            subarray.reverse()
     }
         
         matrix.reverse()
