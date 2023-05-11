@@ -1,88 +1,88 @@
 var generateMatrix = function(num) {
     
-    const array = new Array(num).fill(0).map((zero) => new Array(num).fill(0))
+    const spiralMatrix = new Array(num).fill(0).map((zero) => new Array(num).fill(0))
 
     let increment = 0
     const numOfMatrixElements = num * num
 
-    let left = 0
-    let right = num - 1
+    let leftIndex = 0
+    let rightIndex = num - 1
+    
+    // the topIndex row of the matrix is the first subarray, matrix[0]
+    let topIndex = 0
+    let bottomIndex = num -1
     
     // kind of a "gapped" ordering 
     // first doing ascending order and second doing descending order
     
-    // LR 
-    // TB
-    // RL
-    // BT
-    
-    // the top row of the matrix is the first subarray, matrix[0]
-    let top = 0
-    let bottom = num -1
+    // left-right  (asc)
+    // top-botom (asc)
+    // right-left (desc)
+    // bottom-top (desc)
     
     while (increment < numOfMatrixElements) {
         
-        // going left
-        // chained to the top
+        // going leftIndex
+        // chained to the topIndex
 
-        for (let leftToRightIndex = left; leftToRightIndex <= right; leftToRightIndex++) {
+        for (let leftToRightIndex = leftIndex; leftToRightIndex <= rightIndex; leftToRightIndex++) {
 
             increment += 1
 
-            //array[0][1]
-            //array[0][2]
+            //spiralMatrix[0][1]
+            //spiralMatrix[0][2]
 
-            array[top][leftToRightIndex] = increment
-            array
+            spiralMatrix[topIndex][leftToRightIndex] = increment
+            spiralMatrix
         }
         
         // go down 1
-        top += 1
+        topIndex += 1
         
         // going down
-        // chained to the right
+        // chained to the rightIndex
         
-        top
-        bottom
+        topIndex
+        bottomIndex
 
-        for (let topToBottomIndex = top; topToBottomIndex <= bottom; topToBottomIndex++) {
+        for (let topToBottomIndex = topIndex; topToBottomIndex <= bottomIndex; topToBottomIndex++) {
 
             increment += 1
 
-            array[topToBottomIndex][right] = increment
-            array
+            spiralMatrix[topToBottomIndex][rightIndex] = increment
+            spiralMatrix
         }
         
-        right -=1
+        rightIndex -=1
         
-        // right-to-left
-        // chained to the bottom
+        // rightIndex-to-leftIndex
+        // chained to the bottomIndex
 
-        for (let rightToLeftIndex = right; rightToLeftIndex >= left; rightToLeftIndex--) {
+        for (let rightToLeftIndex = rightIndex; rightToLeftIndex >= leftIndex; rightToLeftIndex--) {
 
             increment += 1
 
-            array[bottom][rightToLeftIndex] = increment
-            array
+            spiralMatrix[bottomIndex][rightToLeftIndex] = increment
+            spiralMatrix
         }
 
-        bottom -= 1
+        bottomIndex -= 1
 
         // going up
-        // chained to the left 
+        // chained to the leftIndex 
 
-        for (let bottomToTopIndex = bottom; bottomToTopIndex >= top; bottomToTopIndex--) {
+        for (let bottomToTopIndex = bottomIndex; bottomToTopIndex >= topIndex; bottomToTopIndex--) {
 
             increment += 1
             
-            array[bottomToTopIndex][left] = increment
-            array
+            spiralMatrix[bottomToTopIndex][leftIndex] = increment
+            spiralMatrix
         }
         
-        left += 1
+        leftIndex += 1
     }
     
-    return array
+    return spiralMatrix
 }
 
 console.log(generateMatrix(3),  
