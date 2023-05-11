@@ -5,7 +5,8 @@ var maxUncrossedLines = function(nums1, nums2) {
     nums1 = [ -1 ].concat(nums1);
     nums2 = [ -1 ].concat(nums2);
     
-    let [h, w] = [ nums1.length, nums2.length ];
+    let h= nums1.length 
+    let w =nums2.length
     
     let dp = new Array( h ).fill( 0 ).map( () => new Array( w ).fill(0))
     
