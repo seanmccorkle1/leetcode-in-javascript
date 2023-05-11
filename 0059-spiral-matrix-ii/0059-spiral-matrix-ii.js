@@ -15,6 +15,7 @@ var generateMatrix = function(num) {
 
     while (increment < numOfMatrixElements) {
 
+
         // going left
         // chained to the top
 
@@ -28,13 +29,13 @@ var generateMatrix = function(num) {
             array[top][leftToRightIndex] = increment
             array
         }
-
-        // go down one
+        
+        // go down 1
         top += 1
-
+        
         // going down
         // chained to the right
-
+        
         top
         bottom
 
@@ -71,8 +72,8 @@ var generateMatrix = function(num) {
             array[bottomToTopIndex][left] = increment
             array
         }
+                left += 1
 
-        left += 1
     }
     
     return array    
