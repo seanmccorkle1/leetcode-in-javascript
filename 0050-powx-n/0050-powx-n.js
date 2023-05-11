@@ -1,4 +1,16 @@
-const recursivePower = (x, exponent) =>{
+var myPow = function (num, exp) {
+    
+    const absExp = Math.abs(exp)
+    const poweredNum = recursivePower(num, absExp)
+    
+    if (exp <= -1) {
+        return Math.abs(1/poweredNum) // abs not needed
+    }
+    
+    return poweredNum
+}
+
+var recursivePower = (x, exponent) =>{
     
     if (exponent == 0) {
         return 1
@@ -24,16 +36,4 @@ const recursivePower = (x, exponent) =>{
         return pow * x
         
     }
-}
-
-var myPow = function (num, exp) {
-    
-    const absExp = Math.abs(exp)
-    const poweredNum = recursivePower(num, absExp)
-    
-    if (exp <= -1) {
-        return Math.abs(1/poweredNum) // abs not needed
-    }
-    
-    return poweredNum
 }
