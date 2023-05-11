@@ -1,60 +1,81 @@
-var generateMatrix = function(n) {
+var generateMatrix = function(num) {
     
-    let output = new Array(n).fill(0).map((zero) => new Array(n).fill(0))
-    
-    if (n == 1){
-        return [[1]]
-    }
-    
-    let count = 0
-    let size = n * n
-    
+    const array = new Array(num).fill(0).map((zero) => new Array(num).fill(0))
+
+    let increment = 0
+    const numOfMatrixElements = num * num
+
     let left = 0
-    let right = n - 1
-    
+    let right = num - 1
+
+        
+    // the top row of the matrix is the first subarray, matrix[0] 
     let top = 0
-    let bottom = n -1
-    
-    while (count < size){
-        
-        //going left
-        
-        for(let i = left; i <= right; i++){
-            count++;
-            output[top][i] = count
+    let bottom = num -1
+
+    while (increment < numOfMatrixElements) {
+
+        // going left
+        // chained to the top
+
+        for (let leftToRightIndex = left; leftToRightIndex <= right; leftToRightIndex++) {
+
+            increment += 1
+
+            //array[0][1]
+            //array[0][2]
+
+            array[top][leftToRightIndex] = increment
+            array
         }
-        
-        top++
-        
+
+        // go down one
+        top += 1
+
         // going down
+        // chained to the right
+
+        top
+        bottom
+
+        for (let topToBottomIndex = top; topToBottomIndex <= bottom; topToBottomIndex++) {
+
+            increment += 1
+
+            array[topToBottomIndex][right] = increment
+            array
+        }
         
-        for(let i = top; i <= bottom; i++) {
-            count++
-            output[i][right] = count
+        right -=1
+        
+        // right-to-left
+        // chained to the bottom
+
+        for (let rightToLeftIndex = right; rightToLeftIndex >= left; rightToLeftIndex--) {
+
+            increment += 1
+
+            array[bottom][rightToLeftIndex] = increment
+            array
         }
 
-        right--
+        bottom -= 1
 
-        //going left
-        
-        for (let i = right; i >= left; i--){
-            count++
-            output[bottom][i] = count
+        // going up
+        // chained to the left 
+
+        for (let bottomToTopIndex = bottom; bottomToTopIndex >= top; bottomToTopIndex--) {
+
+            increment += 1
+
+            array[bottomToTopIndex][left] = increment
+            array
         }
-        
-        bottom--
-        
-        //going up
-        
-        for(let i = bottom; i >= top; i--) {
-            count++
-            output[i][left] = count
-        }
-        
-        left++
+
+        left += 1
     }
     
-    return output    
+    return array    
 }
 
 console.log(generateMatrix(3),  
