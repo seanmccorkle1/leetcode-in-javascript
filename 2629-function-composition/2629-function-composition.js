@@ -1,10 +1,8 @@
 
-
-
 var compose = function(functions) {
-
-    functions
-    return argNum => functions.reduceRight((sum, currFunction)=> currFunction(sum), argNum)
+    
+    return (initNum) => functions.reduceRight((accumulator, currFunction)=> currFunction(accumulator), initNum)
+    
 }
 
 const fn = compose([num=>num + 1, num => num*2])
