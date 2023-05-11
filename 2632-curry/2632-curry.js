@@ -16,7 +16,7 @@ var curry = function (fn) {
             return fn(...curriedArgsArray)
         } 
 
-        else {
+        else if (curriedArgsArray.length < fn.length) {
             return function (...newArgs) {
                 return curried(...curriedArgsArray, ...newArgs)
             }
