@@ -1,9 +1,12 @@
 
 
-var compose = function(functions) {
+var compose = function(functionArray) {
     
-    return (initNum) => functions.reduceRight((accumulator, currFunction)=> currFunction(accumulator), initNum)
+    return function (initNum) {
+        return functionArray.reduceRight((accumulator, currFunction)=> currFunction(accumulator), initNum)
+    }
 }
 
 const fn = compose([num=>num + 1, num => num*2])
-fn(4)
+
+console.log(fn(4),  9, "right-to-left")
