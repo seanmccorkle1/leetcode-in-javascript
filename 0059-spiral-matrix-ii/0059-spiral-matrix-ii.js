@@ -7,15 +7,21 @@ var generateMatrix = function(num) {
 
     let left = 0
     let right = num - 1
-
-        
-    // the top row of the matrix is the first subarray, matrix[0] 
+    
+    // kind of a "gapped" ordering 
+    // first doing ascending order and second doing descending order
+    
+    // LR 
+    // TB
+    // RL
+    // BT
+    
+    // the top row of the matrix is the first subarray, matrix[0]
     let top = 0
     let bottom = num -1
-
+    
     while (increment < numOfMatrixElements) {
-
-
+        
         // going left
         // chained to the top
 
@@ -68,15 +74,15 @@ var generateMatrix = function(num) {
         for (let bottomToTopIndex = bottom; bottomToTopIndex >= top; bottomToTopIndex--) {
 
             increment += 1
-
+            
             array[bottomToTopIndex][left] = increment
             array
         }
-                left += 1
-
+        
+        left += 1
     }
     
-    return array    
+    return array
 }
 
 console.log(generateMatrix(3),  
