@@ -1,35 +1,39 @@
-function helper(x, exponent) {
-    if (exponent === 0) return 1
-    if (x === 0) return 0
+const recursivePower = (x, exponent) =>{
     
-    if ((exponent % 2) == 0) {
+    if (exponent == 0) {
+        return 1
+    }
+    
+    if (x == 0) {
+        return 0
+    }
+    
+    const exponentIsEven = (exponent % 2) == 0
+
+    if (exponentIsEven) {
         
-        const returnValue = helper(x, exponent / 2) 
+        const returnValue = recursivePower(x, exponent / 2) 
         return Math.pow(returnValue, 2)
   }
-    else if ((exponent % 2) ==1){
-              // x * helper(x, (n - 1) / 2) ** 2
+
+    else if (!exponentIsEven) {
         
         exponent = (exponent - 1) / 2
-        // const oddExpValue = helper (x, (exponent - 1) / 2)
-
-        const oddExpValue= Math.pow(helper(x, exponent), 2)
-        return oddExpValue * x
+        
+        const pow = Math.pow(recursivePower(x, exponent), 2)
+        return pow * x
         
     }
 }
 
-
-var myPow = function (x, exp) {    
+var myPow = function (num, exp) {
     
     const absExp = Math.abs(exp)
-    const res = helper(x, absExp)
-
+    const poweredNum = recursivePower(num, absExp)
+    
     if (exp <= -1) {
-        return 1/res
+        return 1 / poweredNum
     }
     
-    return res
-    
-    // return n < 0 ? 1 / res : res
+    return poweredNum
 }
