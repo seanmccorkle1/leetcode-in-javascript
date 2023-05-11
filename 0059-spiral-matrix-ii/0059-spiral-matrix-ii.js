@@ -1,6 +1,6 @@
-var generateMatrix = function(num) {
+var generateMatrix = function (num) {
     
-    const spiralMatrix = new Array(num).fill(0).map((zero) => new Array(num).fill(0))
+    const spiralMatrix = new Array(num).fill(0).map(element => new Array(num).fill())
 
     let increment = 0
     const numOfMatrixElements = num * num
