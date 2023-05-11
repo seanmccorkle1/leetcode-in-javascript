@@ -32,7 +32,7 @@ var myPow = function (num, exp) {
     const poweredNum = recursivePower(num, absExp)
     
     if (exp <= -1) {
-        return 1 / poweredNum
+        return Math.abs( 1 / poweredNum)
     }
     
     return poweredNum
