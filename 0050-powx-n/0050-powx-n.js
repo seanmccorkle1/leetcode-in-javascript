@@ -20,11 +20,16 @@ function helper(x, exponent) {
 }
 
 
-var myPow = function (x, n) {    
-        const res = helper(x, Math.abs(n))
-        if (n <= -1){
-            return 1/res
-        }
+var myPow = function (x, exp) {    
+    
+    const absExp = Math.abs(exp)
+    const res = helper(x, absExp)
+
+    if (exp <= -1) {
+        return 1/res
+    }
+    
     return res
-        // return n < 0 ? 1 / res : res
+    
+    // return n < 0 ? 1 / res : res
 }
