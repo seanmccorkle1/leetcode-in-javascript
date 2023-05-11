@@ -22,5 +22,9 @@ function helper(x, exponent) {
 
 var myPow = function (x, n) {    
         const res = helper(x, Math.abs(n))
-        return n < 0 ? 1 / res : res
+        if (n <= -1){
+            return 1/res
+        }
+    return res
+        // return n < 0 ? 1 / res : res
 }
