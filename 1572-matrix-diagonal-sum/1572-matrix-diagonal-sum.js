@@ -13,14 +13,15 @@ var diagonalSum = function(matrix) {
     }
     
     for (let index=0; index<  matrix.length; index++){
+        
         let primaryDiagonalValue =  matrix[index][index]
         let secondary = matrix[backIndex][index]
 
-        
+        backIndex--
+
         diagonalSum+=primaryDiagonalValue
         diagonalSum+=secondary
         
-        backIndex--
     }
     return diagonalSum
 }
