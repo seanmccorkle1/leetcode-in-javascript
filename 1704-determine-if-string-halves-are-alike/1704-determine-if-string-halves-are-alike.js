@@ -4,13 +4,11 @@ var halvesAreAlike = function (string) {
     let otherCount = 0
     
     let half = string.length / 2
-    if (string.length%2==1){
-        return false
-    }
     
     for (let index = 0; index < string.length; index++) {
         
         const letter = string[index]
+        
         const vowelRegex = /[aeiou]/gi
         const letterIsAVowel = vowelRegex.test(letter) ? true : false
         
@@ -27,7 +25,7 @@ var halvesAreAlike = function (string) {
     
     count
     otherCount
-
+    
     if (count==otherCount) {
         return true
     }
