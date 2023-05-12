@@ -2,31 +2,33 @@ var halvesAreAlike = function (string) {
 
 
     let count = 0
+    let otherCount = 0
+    
     let half = string.length / 2
     // let containsVowel = /[aeiou]/gi.test(string)
     
     for (let index = 0; index < string.length; index++) {
-
+        
         const letter = string[index]
         const containsVowel = /[aeiou]/gi.test(letter)
-
+        
         if (index < half && containsVowel) {
             count++
         }
-
-
+        
         // without >= it would be false for both 2 < 2 and 2 > 2
         else if (index >= half && containsVowel) {
-            count--
+            // count--
+            otherCount++
         }
-        else {count}
+        
     }
     count
-
-
-    if (count == 0) {
-        return true
-    }
+    if (count==otherCount){return true}
+    // if (count == 0) {
+    //     return true
+    // }
+    
     else return false
 }
 
