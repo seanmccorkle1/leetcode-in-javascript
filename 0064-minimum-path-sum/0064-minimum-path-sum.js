@@ -106,7 +106,12 @@ var minPathSum = function (grid) {
     
     // Return the distance bottom right corner
     
-    let bottomRightCell = grid.flat(2).at(-1)    
+    while (typeof grid.at(-1) != "number"){
+        grid = grid.flat(1)
+    }
+    
+    let bottomRightCell = grid.at(-1)
+
     return bottomRightCell
 }
 
