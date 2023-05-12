@@ -25,14 +25,15 @@ var generateMatrix = function (num) {
         // going leftIndex
         // chained to the topIndex
 
-        for (let leftToRightIndex = leftIndex; leftToRightIndex <= rightIndex; leftToRightIndex++) {
+        
+        for (let localLeftIndex = leftIndex; localLeftIndex <= rightIndex; localLeftIndex++) {
 
             increment += 1
 
             //spiralMatrix[0][1]
             //spiralMatrix[0][2]
 
-            spiralMatrix[topIndex][leftToRightIndex] = increment
+            spiralMatrix[topIndex][localLeftIndex] = increment
             spiralMatrix
         }
         
@@ -45,11 +46,11 @@ var generateMatrix = function (num) {
         topIndex
         bottomIndex
 
-        for (let topToBottomIndex = topIndex; topToBottomIndex <= bottomIndex; topToBottomIndex++) {
+        for (let localTopIndex = topIndex; localTopIndex <= bottomIndex; localTopIndex++) {
 
             increment += 1
 
-            spiralMatrix[topToBottomIndex][rightIndex] = increment
+            spiralMatrix[localTopIndex][rightIndex] = increment
             spiralMatrix
         }
         
@@ -58,11 +59,11 @@ var generateMatrix = function (num) {
         // rightIndex-to-leftIndex
         // chained to the bottomIndex
 
-        for (let rightToLeftIndex = rightIndex; rightToLeftIndex >= leftIndex; rightToLeftIndex--) {
+        for (let localRightIndex = rightIndex; localRightIndex >= leftIndex; localRightIndex--) {
 
             increment += 1
 
-            spiralMatrix[bottomIndex][rightToLeftIndex] = increment
+            spiralMatrix[bottomIndex][localRightIndex] = increment
             spiralMatrix
         }
 
@@ -71,11 +72,11 @@ var generateMatrix = function (num) {
         // going up
         // chained to the leftIndex 
 
-        for (let bottomToTopIndex = bottomIndex; bottomToTopIndex >= topIndex; bottomToTopIndex--) {
+        for (let localBottomIndex = bottomIndex; localBottomIndex >= topIndex; localBottomIndex--) {
 
             increment += 1
             
-            spiralMatrix[bottomToTopIndex][leftIndex] = increment
+            spiralMatrix[localBottomIndex][leftIndex] = increment
             spiralMatrix
         }
         
