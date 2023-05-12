@@ -7,10 +7,12 @@ var halvesAreAlike = function (string) {
     if (string.length%2==1){
         return false
     }
+    
     for (let index = 0; index < string.length; index++) {
         
         const letter = string[index]
-        const letterIsAVowel = /[aeiou]/gi.test(letter)
+        const vowelRegex = /[aeiou]/gi
+        const letterIsAVowel = vowelRegex.test(letter) ? true : false
         
         if (index < half && letterIsAVowel) {
             count++
@@ -22,13 +24,15 @@ var halvesAreAlike = function (string) {
         }
         
     }
-    count
-    if (count==otherCount){return true}
-    // if (count == 0) {
-    //     return true
-    // }
     
-    else return false
+    count
+    otherCount
+
+    if (count==otherCount) {
+        return true
+    }
+    
+    return false
 }
 
 // console.log(xd("book"), true, "bo, ok, both have 1 vowel")
