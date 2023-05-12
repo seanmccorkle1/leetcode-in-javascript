@@ -1,6 +1,10 @@
-
 var threeConsecutiveOdds = function(inputArray) {
 
+    // dont even have to do array.filter
+    if (inputArray.length <= 2){
+        return false
+    }
+    
     const oddNums = inputArray.filter(num => num%2==1)
     
     if (oddNums.length <= 2) {
