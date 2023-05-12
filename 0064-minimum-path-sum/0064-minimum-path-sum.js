@@ -48,8 +48,7 @@ var minPathSum = function (grid) {
     // [ 1, 3, 1 ]
     // [ 1, 4, 5 ]
     
-    // left-to-right
-    firstRow:
+    // left-to-right on the first row
     
         for (let index = 1; index < numOfColumns; index++) {
             
@@ -72,8 +71,11 @@ var minPathSum = function (grid) {
     // [ 6, 2, 1 ]
     
     for (let rowIndex = 1; rowIndex < numOfRows; rowIndex++) {
+
+        let columnIndex = 1
+        while (columnIndex <numOfColumns){
         
-        for (let columnIndex = 1; columnIndex< numOfColumns; columnIndex++) {
+        // for (let columnIndex = 1; columnIndex< numOfColumns; columnIndex++) {
             
             // The distance to the grid at i,j is equal to itself plus the minimum
             // of the two grid spaces (one above, one to the left)
@@ -94,6 +96,8 @@ var minPathSum = function (grid) {
 
             grid[rowIndex][columnIndex]
             grid[rowIndex][columnIndex] += currMinCell
+
+            columnIndex++
         }
     }
 
@@ -104,10 +108,7 @@ var minPathSum = function (grid) {
     
     // Return the distance bottom right corner
     
-    // let bottomRightCell = grid[numOfRows - 1][numOfColumns - 1]    
-    let bottomRightCell = grid.flat(10).at(-1)
-    // [numOfRows - 1][numOfColumns - 1]
-
+    let bottomRightCell = grid.flat(10).at(-1)    
     return bottomRightCell
 }
 
