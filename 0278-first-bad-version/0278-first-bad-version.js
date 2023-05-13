@@ -1,27 +1,30 @@
 var solution = function(isBadVersion) {
     
-    return function(n) {
-        
-        let start = 1
+    return function xd(num) {
 
-        // n isnt an index
-        let end = n 
-        
-        while(start < end){
+        // num isnt an index, 
+        // so use [1, num] as left and right bounds
+
+        let leftBound = 1
+        let rightBound = num
+
+        while(leftBound < rightBound){
             
-            let mid = Math.floor(start + (end - start) / 2)
+            // let midIndex = Math.floor(leftBound + (rightBound - leftBound) / 2)
             
+            let midIndex = Math.floor((leftBound + rightBound) / 2)
+
             // go down to the FIRST bad version
             
-            if (isBadVersion(mid)){
-                end = mid
+            if (isBadVersion(midIndex)){
+                rightBound = midIndex
            }
-            
+
             // if its a good version, go right to the first bad version
-            else{
-                start = mid + 1
+            else {
+                leftBound = midIndex + 1
            }
        }
-       return start
+       return leftBound
     }
 }
