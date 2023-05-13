@@ -3,7 +3,7 @@ var reverse = function (number) {
     const max = Math.pow(2, 31) - 1
     const min = Math.pow(2,31) * -1
     
-    let reversedNum;
+    let reversedNum = 0
     
     if (number <= -1) {
         
