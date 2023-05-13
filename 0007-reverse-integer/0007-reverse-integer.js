@@ -17,15 +17,13 @@ var reverse = function (number) {
         return reversedNum
     }
     
-    else if (number >= 0) {                
+    reversedNum= Number(number.toString().split("").reverse().join(""))
         
-        reversedNum= Number(number.toString().split("").reverse().join(""))
-        
-        if (reversedNum > max) {
+    if (reversedNum > max) {
             return 0
-        }
-        
-        return reversedNum
     }
+    
+    return reversedNum
 }
+
 console.log(reverse(123),  321)
