@@ -1,4 +1,4 @@
-var solution = function(isBadVersion) {
+function solution(isBadVersion) {
     
     return function(num) {
         
@@ -8,7 +8,7 @@ var solution = function(isBadVersion) {
         let leftBound = 1
         let rightBound = num
         
-        while(leftBound < rightBound){
+        while (leftBound < rightBound){
             
             let midIndex = Math.floor((leftBound + rightBound) / 2)
             
@@ -25,7 +25,17 @@ var solution = function(isBadVersion) {
                 leftBound = midIndex + 1
            }
        }
-       // return leftBound
-        return rightBound
+        
+        // both returns work, but only if the binary search is correct        
+        return leftBound                
     }
 }
+
+// Input: num = 5, "bad" = 4
+// Output: 4
+
+// call isBadVersion(3) -> false
+// call isBadVersion(5) -> true
+// call isBadVersion(4) -> true
+
+// 4 must be the first bad version.
