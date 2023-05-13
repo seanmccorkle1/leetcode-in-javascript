@@ -3,7 +3,9 @@ var solution = function(isBadVersion) {
     return function(n) {
         
         let start = 1
-        let end = n
+
+        // n isnt an index
+        let end = n 
         
         while(start < end){
             
