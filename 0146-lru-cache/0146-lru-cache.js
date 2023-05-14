@@ -6,20 +6,18 @@ class LRUCache {
     }
 
     get(key) {
-
+        
         if (!this.cacheMap.has(key)) {
             return -1
         }
         
         const valueOfKey = this.cacheMap.get(key)
         this.cacheMap.delete(key)
-
+        
         // update the key by setting (pushing) it to the back
         // since it was used by this function
         
-        this.cacheMap.set(key, valueOfKey)
-        
-        // return the value
+        this.cacheMap.set(key, valueOfKey)        
         return valueOfKey
     }
     
