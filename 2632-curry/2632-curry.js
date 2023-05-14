@@ -5,12 +5,12 @@
 
 var curry = function (fn) {
 
-    return function curried(...curriedArgsArray) {
+    return function curryPointer(...curriedArgsArray) {
 
         curriedArgsArray
 
         fn
-        curried
+        
 
         if (fn.length == curriedArgsArray.length) {
             return fn(...curriedArgsArray)
@@ -18,7 +18,7 @@ var curry = function (fn) {
 
         else if (curriedArgsArray.length < fn.length) {
             return function (...newArgs) {
-                return curried(...curriedArgsArray, ...newArgs)
+                return curryPointer(...curriedArgsArray, ...newArgs)
             }
         }
     }
