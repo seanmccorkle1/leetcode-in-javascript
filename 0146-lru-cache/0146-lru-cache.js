@@ -23,8 +23,8 @@ class LRUCache {
         return valueOfKey
     }
     
-    put(key, value) {
-
+    put = (key, value) =>{
+        
         if (this.cacheMap.has(key)) {
             this.cacheMap.delete(key)
         }
