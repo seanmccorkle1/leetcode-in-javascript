@@ -10,18 +10,16 @@ class LRUCache {
         if (!this.cacheMap.has(key)) {
             return -1
         }
-
+        
         const valueOfKey = this.cacheMap.get(key)
-
         this.cacheMap.delete(key)
 
         // update the key by setting (pushing) it to the back
         // since it was used by this function
-
+        
         this.cacheMap.set(key, valueOfKey)
-        // this.cacheMap.get(key)
-
-        // return only the value of the key
+        
+        // return the value
         return valueOfKey
     }
     
@@ -30,20 +28,14 @@ class LRUCache {
         if (this.cacheMap.has(key)) {
             this.cacheMap.delete(key)
         }
-
+        
         this.cacheMap.set(key, value)
-
-        // keys().next().value returns first item's key
-
-        key
-
-        // check for exceeding the capacity after setting the new number
-
-        // the least recently updated will be at the start
-        // because new values get pushed to the end
-
-        // so you only need one next() function to find it
-
+        
+        // check the capacity AFTER putting the key in the map
+        
+        // the least recently updated will be at cacheMap[0]
+        // because newer values get pushed to the end
+        
         if (this.cacheMap.size > this.cacheCapacity) {
 
             this.cacheMap
@@ -53,7 +45,6 @@ class LRUCache {
         }
     }
 }
-
 
 const lRUCache = new LRUCache(2)
 
