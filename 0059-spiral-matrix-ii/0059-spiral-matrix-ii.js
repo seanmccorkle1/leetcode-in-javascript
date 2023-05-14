@@ -21,8 +21,10 @@ var generateMatrix = function (num) {
 
         let localLeftIndex = leftIndex
 
-        while (localLeftIndex <= rightIndex) {
+        // left-to-right, row doesnt change
+        // chained to the top ROW
 
+        while (localLeftIndex <= rightIndex) {
             counter += 1
             spiralMatrix[topIndex][localLeftIndex] = counter
 
@@ -30,11 +32,11 @@ var generateMatrix = function (num) {
             localLeftIndex++
         }
 
-        topIndex += 1        
+        topIndex += 1
         let localTopIndex = topIndex
 
-        // change the row (changing variable is the 1st access specifier) 
-        // anchor to the right ELEMENT, (ie. unchanging variable goes on the 2nd access specifier (element specifier))
+        // top-to-bottom, row changes
+        // chained to the right ELEMENT (2nd access specifier)
 
         while (localTopIndex <= bottomIndex) {
 
@@ -45,8 +47,11 @@ var generateMatrix = function (num) {
             localTopIndex++
         }
 
-        rightIndex -= 1        
+        rightIndex -= 1
         let localRightIndex = rightIndex
+
+        // right-to-left, row doesnt change
+        // chained to the bottom ROW
 
         while (localRightIndex >= leftIndex) {
             counter += 1
@@ -61,15 +66,18 @@ var generateMatrix = function (num) {
 
         counter
 
-        while (localBottomIndex >= topIndex){
+        // bottom-to-top, row changes
+        // chained to the left ELEMENT
+        
+        while (localBottomIndex >= topIndex) {
 
             counter += 1
             spiralMatrix[localBottomIndex][leftIndex] = counter
-            
+
             localBottomIndex--
         }
 
-        leftIndex+= 1
+        leftIndex += 1
     }
 
     return spiralMatrix
