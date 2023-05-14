@@ -40,8 +40,8 @@ class LRUCache {
 
             this.cacheMap
 
-            const keyToDelete = this.cacheMap.keys().next().value
-            this.cacheMap.delete(keyToDelete)
+            const leastRecentKey = this.cacheMap.keys().next().value
+            this.cacheMap.delete(leastRecentKey)
         }
     }
 }
