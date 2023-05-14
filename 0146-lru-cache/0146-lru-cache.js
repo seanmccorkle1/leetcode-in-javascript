@@ -11,7 +11,9 @@ class LRUCache {
             return -1
         }
         
+        // store the value right before you delete it
         const valueOfKey = this.cacheMap.get(key)
+        
         this.cacheMap.delete(key)
         
         // update the key by setting (pushing) it to the back
