@@ -1,92 +1,84 @@
 var generateMatrix = function (num) {
-    
-    const spiralMatrix = new Array(num).fill(0).map(element => new Array(num).fill())
 
-    let increment = 0
+    const spiralMatrix = new Array(num).fill(0).map((zero) => new Array(num).fill(0))
+
+    spiralMatrix
+
+    let counter = 0
     const numOfMatrixElements = num * num
 
     let leftIndex = 0
     let rightIndex = num - 1
-    
-    // the topIndex row of the matrix is the first subarray, matrix[0]
+
+    // the top row of the matrix is the first subarray, matrix[0]
     let topIndex = 0
-    let bottomIndex = num -1
-    
-    // kind of a "gapped" ordering 
-    // first doing ascending order and second doing descending order
-    
-    // left-right  (asc)
-    // top-botom (asc)
-    // right-left (desc)
-    // bottom-top (desc)
-    
-    while (increment < numOfMatrixElements) {
-        
-        // going leftIndex
-        // chained to the topIndex
+    let bottomIndex = num - 1
 
-        
-        for (let localLeftIndex = leftIndex; localLeftIndex <= rightIndex; localLeftIndex++) {
+    while (counter < numOfMatrixElements) {
 
-            increment += 1
+        // do many small increments of 1 
+        // than one  big counter of 4
 
-            //spiralMatrix[0][1]
-            //spiralMatrix[0][2]
+        let localLeftIndex = leftIndex
 
-            spiralMatrix[topIndex][localLeftIndex] = increment
+        while (localLeftIndex <= rightIndex) {
+
+            counter += 1
+            spiralMatrix[topIndex][localLeftIndex] = counter
+
             spiralMatrix
+            localLeftIndex++
         }
-        
-        // go down 1
-        topIndex += 1
-        
-        // going down
-        // chained to the rightIndex
-        
-        topIndex
-        bottomIndex
 
-        for (let localTopIndex = topIndex; localTopIndex <= bottomIndex; localTopIndex++) {
+        topIndex += 1        
+        let localTopIndex = topIndex
 
-            increment += 1
+        // change the row (changing variable is the 1st access specifier) 
+        // anchor to the right ELEMENT, (ie. unchanging variable goes on the 2nd access specifier (element specifier))
 
-            spiralMatrix[localTopIndex][rightIndex] = increment
+        while (localTopIndex <= bottomIndex) {
+
+            counter += 1
+            spiralMatrix[localTopIndex][rightIndex] = counter
+
             spiralMatrix
+            localTopIndex++
         }
-        
-        rightIndex -=1
-        
-        // rightIndex-to-leftIndex
-        // chained to the bottomIndex
 
-        for (let localRightIndex = rightIndex; localRightIndex >= leftIndex; localRightIndex--) {
+        rightIndex -= 1        
+        let localRightIndex = rightIndex
 
-            increment += 1
+        while (localRightIndex >= leftIndex) {
+            counter += 1
+            spiralMatrix[bottomIndex][localRightIndex] = counter
 
-            spiralMatrix[bottomIndex][localRightIndex] = increment
             spiralMatrix
+            localRightIndex--
         }
 
         bottomIndex -= 1
+        let localBottomIndex = bottomIndex
 
-        // going up
-        // chained to the leftIndex 
+        counter
 
-        for (let localBottomIndex = bottomIndex; localBottomIndex >= topIndex; localBottomIndex--) {
+        while (localBottomIndex >= topIndex){
 
-            increment += 1
+            counter += 1
+            spiralMatrix[localBottomIndex][leftIndex] = counter
             
-            spiralMatrix[localBottomIndex][leftIndex] = increment
-            spiralMatrix
+            localBottomIndex--
         }
-        
-        leftIndex += 1
+
+        leftIndex+= 1
     }
-    
+
     return spiralMatrix
+
 }
 
-console.log(generateMatrix(3),  
-            [[1,2,3],
-             [8,9,4],
-             [7,6,5]])
+console.log(generateMatrix(3),
+    [
+        [1, 2, 3],
+        [8, 9, 4],
+        [7, 6, 5]
+    ])
