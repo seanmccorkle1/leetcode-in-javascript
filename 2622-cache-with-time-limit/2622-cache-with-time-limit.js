@@ -11,6 +11,7 @@ const TimeLimitedCache = function () {
 
 TimeLimitedCache.prototype.set = function (key, value, milliseconds) {
     
+
     let found = this.cache.has(key)    
     
     // Both the value and duration should be overwritten if the key already exists.
