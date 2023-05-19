@@ -18,7 +18,7 @@ var isBipartite = function(graph) {
             
             for (let neighbour of graph[current]) {
                 
-                if (!colors.has(neighbour)) {
+                if (colors.has(neighbour) === false) {
                     colors.set(neighbour, !colors.get(current))
                     stack.push(neighbour)
                     continue
