@@ -11,14 +11,14 @@ var isBipartite = function(graph) {
         
         colors.set(i, true)
         stack.push(i)
-
-        while (stack.length > 0) {
+        
+        while (stack.length != 0) {
             
             let current = stack.pop()
             
             for (let neighbour of graph[current]) {
                 
-                if (colors.has(neighbour) === false) {
+                if (!colors.has(neighbour)) {
                     colors.set(neighbour, !colors.get(current))
                     stack.push(neighbour)
                     continue
@@ -33,3 +33,4 @@ var isBipartite = function(graph) {
     
     return true
 }
+
