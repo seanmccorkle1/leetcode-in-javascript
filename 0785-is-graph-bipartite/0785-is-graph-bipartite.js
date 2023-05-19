@@ -9,23 +9,27 @@ var isBipartite = function(graph) {
             continue
         }
         
-        colors.set(i, true);
-        stack.push(i);
+        colors.set(i, true)
+        stack.push(i)
 
         while (stack.length > 0) {
-            let current = stack.pop();
-
+            
+            let current = stack.pop()
+            
             for (let neighbour of graph[current]) {
+                
                 if (!colors.has(neighbour)) {
-                    colors.set(neighbour, !colors.get(current));
-                    stack.push(neighbour);
-                    continue;
+                    colors.set(neighbour, !colors.get(current))
+                    stack.push(neighbour)
+                    continue
                 }
                 
-                if (colors.get(neighbour) === colors.get(current)) return false;
+                if (colors.get(neighbour) == colors.get(current)) {
+                    return false
+                }
             }
         }
     }
     
     return true
-};
+}
