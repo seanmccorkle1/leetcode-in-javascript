@@ -38,14 +38,17 @@ var calcEquation = function(equations, values, queries) {
         const seen = new Set()
 
         const val = dfs(adjList, src, src, dest, 1, seen)
+        if (Boolean(val) == true){
+            res.push(val)
+        }
         
-        if (val == false) {
+        else if (val == false) {
             res.push(-1)
         } 
         
-        else {
-            res.push(val)
-        }
+        // else {
+        //     res.push(val)
+        // }
     }
     
     return res
@@ -90,9 +93,6 @@ var dfs = function(adjList, src, curr, dest, quotient, seen) {
             return val
         }
         
-        // if (val != false) {
-        //     return val
-        // }
     }
     
     // We only return false if we've searched all neighbors and there's no path to destination
