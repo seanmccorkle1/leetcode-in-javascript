@@ -73,21 +73,20 @@ var dfs = function(adjList, src, curr, dest, quotient, seen) {
     }
     
     seen.add(curr)
-    
     const neighbors = adjList.get(curr)
     
     for (let i = 0; i < neighbors.length; i++) {
+        
         if (seen.has(neighbors[i][0])) {
             continue
         }
-
-        const val = dfs(adjList, src, neighbors[i][0], dest, quotient * neighbors[i][1], seen);
+        
+        const val = dfs(adjList, src, neighbors[i][0], dest, quotient * neighbors[i][1], seen)
         
         // if any value was found we return because
         // the only other cases would be having a cycle, or reaching our destination or path.
         
-        
-        if (typeof val == "number"){
+        if (Boolean(val) == true) {
             return val
         }
         
