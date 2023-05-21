@@ -15,7 +15,7 @@ var areDeeplyEqual = function(o1, o2) {
     // If number of keys are same, then at a different key in objects would mean at least
     // 1 value against the key of o2 will be undefined
     for (const key in o1) {
-        if (!areDeeplyEqual(o1[key], o2[key])) return false;
+        if (areDeeplyEqual(o1[key], o2[key])== false) return false;
     }
 
     // All checks passed
