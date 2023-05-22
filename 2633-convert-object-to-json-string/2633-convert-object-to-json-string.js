@@ -38,7 +38,7 @@ var jsonStringify = function (input) {
             const array = input.map(item => jsonStringify(item))
             return `[${array}]`                
         }
-        
+    
         const fixedObj = Object.keys(input).map(key => {
             
             let value = input[key]
