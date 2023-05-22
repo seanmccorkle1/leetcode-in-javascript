@@ -12,8 +12,10 @@ var jsonStringify = function (input) {
     // return the string value surrounded by double quotes.
     
     if (typeof input == 'string') {
-        return `"${input}"`
+        return '"' + input + '"'
+        return ` "${input}" `
     }
+
     
     // return its string representation.
     else if (typeof input == 'number') {
