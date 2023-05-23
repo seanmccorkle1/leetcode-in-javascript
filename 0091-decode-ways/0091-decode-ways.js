@@ -18,7 +18,7 @@ var numDecodings = function (stringnum) {
         }
         
         let twoDigits = Number(stringnum.slice(index - 2, index))
-
+                               
         if (twoDigits >= 10 && twoDigits <= 26) {
             array[index] += array[index - 2]
         }
