@@ -12,15 +12,15 @@ var numDecodings = function (stringnum) {
     }
     
     // its not a direct "map" like the spells and potions problem,
-    // which is why its length + 1
-    
-    // also its a DP problem 
+    // also its a DP problem that uses array.at(-1) at the end
+    // which is why its length + 1    
+
     const array = new Array(stringnum.length + 1).fill(0)
     
-    // "A is the lowest unit and starts at 1, 0 isnt valid"
-    
+    // "A is the lowest unit and starts at 1, 0 isnt valid"    
     array[0] = 1
     array[1] = 1
+
     
     // index IS slice's endIndex, so using < would mean the last letter gets cut off
     
@@ -41,7 +41,9 @@ var numDecodings = function (stringnum) {
     }
     
     console.log(array)
-    return array.at(-1)
+    
+    let numOfWaysToDecodeAsLetters = array.at(-1)
+    return numOfWaysToDecodeAsLetters
 }
 
 console.log(numDecodings("12"), 2, '"12" could be decoded as "AB" (1 2) or "L" (12)')
