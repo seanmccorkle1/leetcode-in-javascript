@@ -1,3 +1,10 @@
+// e.g. '110'
+
+// array = 
+// [1, 1, 0, 0]
+// [1, 1, 2, 0]
+// [1, 1, 2, 1]
+
 var numDecodings = function (stringnum) {
     
     if (stringnum[0] === '0') {
@@ -6,6 +13,7 @@ var numDecodings = function (stringnum) {
     
     const array = new Array(stringnum.length + 1).fill(0)
     
+    // fibonacci without the 0
     array[0] = 1
     array[1] = 1
     
