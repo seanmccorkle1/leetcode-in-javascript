@@ -42,8 +42,8 @@ var numDecodings = function (stringnum) {
     
     console.log(array)
     
-    let numOfWaysToDecodeAsLetters = array.at(-1)
-    return numOfWaysToDecodeAsLetters
+    let numOfWaysToRepresentNumAsLetters = array.at(-1)
+    return numOfWaysToRepresentNumAsLetters
 }
 
 console.log(numDecodings("12"), 2, '"12" could be decoded as "AB" (1 2) or "L" (12)')
