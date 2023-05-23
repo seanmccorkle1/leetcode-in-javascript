@@ -11,15 +11,15 @@ var numDecodings = function (stringnum) {
     
     for (let index = 2; index <= stringnum.length; index++) {
 
-        let singleDigit = Number(stringnum.slice(index - 1, index))
+        let singleDigitNum = Number(stringnum.slice(index - 1, index))
 
-        if (singleDigit != 0) {
+        if (singleDigitNum != 0) {
             array[index] += array[index - 1]
         }
         
-        let twoDigits = Number(stringnum.slice(index - 2, index))
+        let twoDigitNum = Number(stringnum.slice(index - 2, index))
                                
-        if (twoDigits >= 10 && twoDigits <= 26) {
+        if (twoDigitNum >= 10 && twoDigitNum <= 26) {
             array[index] += array[index - 2]
         }
     }
