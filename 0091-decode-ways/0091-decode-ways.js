@@ -13,7 +13,8 @@ var numDecodings = function (stringnum) {
     
     const array = new Array(stringnum.length + 1).fill(0)
     
-    // fibonacci without the 0
+    // "A is the lowest unit and starts at 1, 0 isnt valid"
+    
     array[0] = 1
     array[1] = 1
     
@@ -23,6 +24,7 @@ var numDecodings = function (stringnum) {
 
         let singleDigitNum = Number(stringnum.slice(index - 1, index))
 
+        // A is the lowest and starts at 1, 0 isnt valid
         if (singleDigitNum != 0) {
             array[index] += array[index - 1]
         }
@@ -40,4 +42,5 @@ var numDecodings = function (stringnum) {
 
 console.log(numDecodings("12"), 2, '"12" could be decoded as "AB" (1 2) or "L" (12)')
 
+// console.log(numDecodings("110"), 1,"110 can only be represented as AK, A [1], K [10]")
 // console.log(numDecodings("05"),  0, "starting with a 0 is invalid, ending with a 0 (eg. 20) is fine")
