@@ -5,6 +5,7 @@
 // [1, 1, 2, 0]
 // [1, 1, 2, 1]
 
+
 var numDecodings = function (stringnum) {
 
     if (stringnum[0] == '0') {
@@ -17,7 +18,9 @@ var numDecodings = function (stringnum) {
     
     const array = new Array(stringnum.length + 1).fill(0)
     
-    // "A is the lowest unit and starts at 1, 0 isnt valid"    
+    // "A = 1 is the minimal unit
+    // 0 isnt valid for this problem
+    
     array[0] = 1
     array[1] = 1
     
