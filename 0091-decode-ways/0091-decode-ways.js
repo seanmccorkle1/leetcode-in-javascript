@@ -6,11 +6,15 @@
 // [1, 1, 2, 1]
 
 var numDecodings = function (stringnum) {
-    
+
     if (stringnum[0] === '0') {
         return 0
     }
     
+    // its not a direct "map" like the spells and potions problem,
+    // which is why its length + 1
+    
+    // also its a DP problem 
     const array = new Array(stringnum.length + 1).fill(0)
     
     // "A is the lowest unit and starts at 1, 0 isnt valid"
