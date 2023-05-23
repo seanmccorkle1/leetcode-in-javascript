@@ -29,8 +29,9 @@ var numDecodings = function (stringnum) {
         let singleDigitNum = Number(stringnum.slice(index - 1, index))
 
         // A is the lowest and starts at 1, 0 isnt valid
+        
         if (singleDigitNum != 0) {
-            array[index] =array[index - 1]
+            array[index] += array[index - 1]
         }
         
         let twoDigitNum = Number(stringnum.slice(index - 2, index))
