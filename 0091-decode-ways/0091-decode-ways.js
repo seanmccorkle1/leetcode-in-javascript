@@ -9,6 +9,8 @@ var numDecodings = function (stringnum) {
     array[0] = 1
     array[1] = 1
     
+    // index IS slice's endIndex, so using < would mean the last letter gets cut off
+    
     for (let index = 2; index <= stringnum.length; index++) {
 
         let singleDigitNum = Number(stringnum.slice(index - 1, index))
@@ -23,7 +25,7 @@ var numDecodings = function (stringnum) {
             array[index] += array[index - 2]
         }
     }
-
+    
     console.log(array)
     return array.at(-1)
 }
