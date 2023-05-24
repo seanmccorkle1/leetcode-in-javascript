@@ -15,7 +15,9 @@ var maxScore = function(nums1, nums2, k) {
         else
             break
     let j = n-k
-    let res = -Infinity
+    let res = -3e5
+    // 0-Infinity
+    
     while(j>=0){
         const [v,i] = nums2[j]
         s += nums1[i]
@@ -25,7 +27,6 @@ var maxScore = function(nums1, nums2, k) {
         j -= 1
         
     }
-    return res
-    
 
-};
+    return res
+}
