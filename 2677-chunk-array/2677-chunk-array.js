@@ -12,7 +12,7 @@ var chunk = function(array, size) {
         let chunk = array.splice(0, size)
         chunkedArray.push(chunk)
     }
-    chunkedArray.slice(1)
+    
     return chunkedArray
 }
 
