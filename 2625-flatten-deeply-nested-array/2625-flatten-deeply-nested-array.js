@@ -13,7 +13,8 @@ var flat = function (array, flattenDepth) {
 
         // recursively call the function for this array
         // and push the flattened array to the answer array
-
+        
+        
         if (Array.isArray(currElement) &&flattenDepth >= 1) {
             
             const subarray = array[index]
@@ -23,14 +24,16 @@ var flat = function (array, flattenDepth) {
 
             flattenedArray
         }
-
+        
+        // if flattenDepth is 0, the if condition caught it before this
+        
         else if (typeof currElement == "number") {
             flattenedArray.push(currElement)
             flattenedArray
         }
     }
     
-    return flattenedArray
+    return flattenedArray.flat(0)
 }
 
 // console.log(flat([1, 2, 3, [4, 5, 6], [7, 8, [9, 10, 11], 12], [13, 14, 15]], 0))
