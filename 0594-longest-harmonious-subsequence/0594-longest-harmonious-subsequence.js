@@ -9,9 +9,7 @@ var findLHS = function(array) {
     }
   
   console.log(obj)
-
-
-  
+    
   for (let num in obj){
       
       num = Number(num)
