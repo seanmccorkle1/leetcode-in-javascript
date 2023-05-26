@@ -9,11 +9,10 @@ var findLHS = function(array) {
     }
   
   console.log(obj)
-
-  
-  for (let num in obj){
+    
+  for (let stringnum in obj){
       
-      num = Number(num)
+      let num = Number(stringnum)
       const nextElementIsHarmonious = obj[num + 1] ? true : false
       
       console.log(nextElementIsHarmonious)
