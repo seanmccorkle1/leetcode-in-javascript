@@ -19,8 +19,8 @@ var findLHS = function(array) {
       
       
       if (nextElementIsHarmonious) {
-        let frequencyOfNum1 = obj[num]
-        let frequencyOfNum2 = obj[num + 1]
+        let frequencyOfNum1 = obj[num] ?? 0
+        let frequencyOfNum2 = obj[num + 1] ?? 0
         
         let combinedFrequencies = frequencyOfNum1 +frequencyOfNum2
         
