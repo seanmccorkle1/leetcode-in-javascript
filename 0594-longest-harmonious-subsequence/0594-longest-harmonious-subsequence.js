@@ -7,23 +7,21 @@ var findLHS = function(array) {
       let frequency = ~~obj[num]
       obj[num] = frequency + 1
     }
-  
-  console.log(obj)
     
-  for (let num in obj){
-      
-      num = Number(num)
+    console.log(obj)
+    
+    for (const subarray of Object.entries(obj)) {
+
+      let num = Number(subarray[0])
       let num2= num + 1
       
-      const nextElementIsHarmonious = obj[num + 1] ? true : false
+      let frequencyOfNum1 = obj[num]
+      let frequencyOfNum2 = obj[num2]
       
-      console.log(nextElementIsHarmonious)
+      const numPlusOneExists = obj[num2] !== "undefined" ? true : false
       
-      if (nextElementIsHarmonious) {
-          
-          let frequencyOfNum1 = obj[num]
-          let frequencyOfNum2 = obj[num + 1]
-          
+      if (numPlusOneExists) {
+                    
           let harmoniousSubsequence = array.filter(e => e == num2 || e == num)
           console.log(harmoniousSubsequence)
           let combinedFrequencies = frequencyOfNum1 +frequencyOfNum2
@@ -31,7 +29,6 @@ var findLHS = function(array) {
           if (combinedFrequencies > longestSubsequenceThatDiffersBy1){
             longestSubsequenceThatDiffersBy1 = combinedFrequencies  
           }
-//           longestSubsequenceThatDiffersBy1 = Math.max(combinedFrequencies, longestSubsequenceThatDiffersBy1)
           
           console.log(`longest: ${longestSubsequenceThatDiffersBy1}`)
       }
