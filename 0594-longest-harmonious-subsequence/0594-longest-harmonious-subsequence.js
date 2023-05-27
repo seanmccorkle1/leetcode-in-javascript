@@ -9,18 +9,12 @@ var findLHS = function(array) {
     
     console.log(obj)
     
-    for (const subarray of Object.entries(obj)) {
-
-      let num = Number(subarray[0])
+    for (let stringKey in obj) {
+        
+      let num = Number(stringKey)
       let num2= num + 1
       
-    //   let frequencyOfNum1 = obj[num]
-    //   let frequencyOfNum2 = obj[num2]
-
       const numPlusOneExists = obj[num2] !== undefined ? true : false
-      console.log(`num2: ${num2}`)
-      
-      console.log(obj[2])
       
       if (numPlusOneExists) {
                     
