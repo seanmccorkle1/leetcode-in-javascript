@@ -1,19 +1,17 @@
 var exist = function(board, word) {
 
-    let result = false
-    
-    
-    const check = (r, c, index) => {
-        
-        const fullStringNotFoundYet = result == false
-        
-        if (fullStringNotFoundYet) {
-            
-            // out of boundary
-            if (r <= -1 || c <=-1 || r >= board.length || c >= board[0].length) {
+    let result = false;
+
+    var check = function(r, c, index) {
+
+        if (!result) {
+
+            // if its out of bounds, go back
+
+            if (r < 0 || c < 0 || r >= board.length || c >= board[0].length) {
                 return
-            }
-            
+            } 
+
             // if its the wrong character:
             if (board[r][c] != word[index]) {
                 return
@@ -21,7 +19,7 @@ var exist = function(board, word) {
 
             if (index == word.length - 1) { // got to the end means we found a correct path
                 result = true
-                // return
+                return
             }
 
             // mark our path so we dont go back and forth
@@ -30,17 +28,19 @@ var exist = function(board, word) {
 			// try all directions
 
             check(r + 1, c, index + 1)
-            check(r -1, c, index + 1)
+            check(r - 1, c, index + 1)
+
             check(r, c + 1, index + 1)
             check(r, c - 1, index + 1)
 
-            board[r][c] = word[index] // reset our board , very important
+            // reset our board, very important
+            board[r][c] = word[index] 
         }
     }
 
-    for (let index=0; index < board.length; index++) {
+    for (let index = 0; index < board.length; index++) {
 
-        for (let nestedIndex=0; nestedIndex < board[0].length; nestedIndex++) {
+        for (let nestedIndex = 0; nestedIndex < board[0].length; nestedIndex++) {
 
             if (board[index][nestedIndex] == word[0]) {
 
