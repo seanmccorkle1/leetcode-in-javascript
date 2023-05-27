@@ -14,13 +14,14 @@ var findLHS = function(array) {
       let num = Number(stringKey)
       let num2= num + 1
       
-      const numPlusOneExists = obj[num2] !== undefined ? true : false
+      const harmoniousPairFound = obj[num2] !== undefined ? true : false
       
-      if (numPlusOneExists) {
+      if (harmoniousPairFound) {
                     
           let harmoniousSubsequence = array.filter(n => n == num || n == num2)
+
           console.log(harmoniousSubsequence)
-          
+
           if (harmoniousSubsequence.length > longestSubsequenceThatDiffersBy1){
             longestSubsequenceThatDiffersBy1 = harmoniousSubsequence.length  
           }
