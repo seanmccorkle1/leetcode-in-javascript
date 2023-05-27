@@ -21,7 +21,7 @@ var exist = function(board, word) {
 
             if (index == word.length - 1) { // got to the end means we found a correct path
                 result = true
-                return
+                // return
             }
 
             // mark our path so we dont go back and forth
