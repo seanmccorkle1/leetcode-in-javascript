@@ -20,9 +20,6 @@ var findLHS = function(array) {
                     
           let harmoniousSubsequence = array.filter(n => n == num || n == num2)
           console.log(harmoniousSubsequence)
-
-
-        //   let combinedFrequencies = frequencyOfNum1 +frequencyOfNum2
           
           if (harmoniousSubsequence.length > longestSubsequenceThatDiffersBy1){
             longestSubsequenceThatDiffersBy1 = harmoniousSubsequence.length  
@@ -36,5 +33,6 @@ var findLHS = function(array) {
   return longestSubsequenceThatDiffersBy1
 }
 
-console.log(findLHS([1,1,1,1]))
-// console.log(findLHS([1,3,2,2,5,2,3,7]),  5, "the longest harmonious subsequence is [3,2,2,2,3]")
+console.log(findLHS([1,3,2,2,5,2,3,7]),  5, "the longest harmonious subsequence is [3,2,2,2,3]")
+
+// console.log(findLHS([1,1,1,1]), 0, "need 2 distinct numbers")
