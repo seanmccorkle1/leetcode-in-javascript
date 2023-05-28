@@ -49,9 +49,9 @@ var exist = function(board, word) {
         for (let nestedIndex = 0; nestedIndex < board[0].length; nestedIndex++) {
 
             if (board[index][nestedIndex] == word[0]) {
-
+                
                 check(index, nestedIndex, 0)
-
+                
                 if (fullWordFound) {
                     return fullWordFound
                 }
