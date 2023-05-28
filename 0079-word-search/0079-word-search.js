@@ -1,8 +1,14 @@
+/**
+
+This problem involves a lot of repetitive work like checking up, down, left, and right for lots of characters, so use a recursive inner function to simplify the code.
+*/
+
+
 var exist = function(board, word) {
-
-    let result = false;
-
-    var check = function(r, c, index) {
+    
+    let result = false
+    
+    const check = (r, c, index) => {
 
         if (!result) {
 
@@ -60,4 +66,5 @@ console.log(
     exist(
         [["A","B","C","E"],
         ["S","F","C","S"],
-        ["A","D","E","E"]], "ABCCED"),  true)
+        ["A","D","E","E"]], "ABCCED"), 
+        true)
