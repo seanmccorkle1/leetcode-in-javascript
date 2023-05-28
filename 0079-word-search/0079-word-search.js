@@ -52,7 +52,7 @@ var exist = function(board, word) {
 
                 check(index, nestedIndex, 0)
 
-                if (flag) {
+                if (flag == true) {
                     return flag
                 }
             }
