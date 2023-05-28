@@ -6,11 +6,11 @@ This problem involves a lot of repetitive work like checking up, down, left, and
 
 var exist = function(board, word) {
     
-    let result = false
+    let fullWordFound = false
     
     const check = (r, c, index) => {
 
-        if (!result) {
+        if (!fullWordFound) {
 
             // if its out of bounds, go back
 
@@ -24,7 +24,7 @@ var exist = function(board, word) {
             }
 
             if (index == word.length - 1) { // got to the end means we found a correct path
-                result = true
+                fullWordFound = true
                 return
             }
 
@@ -52,14 +52,14 @@ var exist = function(board, word) {
 
                 check(index, nestedIndex, 0)
 
-                if (result) {
-                    return result
+                if (fullWordFound) {
+                    return fullWordFound
                 }
             }
         }
     }
 
-    return result
+    return fullWordFound
 }
 
 console.log(
