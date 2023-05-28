@@ -1,22 +1,22 @@
 Array.prototype.groupBy = function(capitalTypeFn) {
     
-    const obj = {}
+    const groupByObj = {}
 
     for (const element of this) {
         
         // String(e) or Array(e)
-        const key = capitalTypeFn(element)
+        const currKey= capitalTypeFn(element)
         
-        if (!obj[key]){
-            obj[key] = []
-        }
-
-        let duplicateArray = obj[key]
+        groupByObj[currKey]
+        if (!groupByObj[currKey]){
+            groupByObj[currKey] = []
+        }        
+        let duplicateArray = groupByObj[currKey]
         duplicateArray.push(element)
     }
     
-    return obj
+    return groupByObj
 }
 
-const a=[1,2,3]
-a.groupBy(String) // {"1":[1],"2":[2],"3":[3]}
+const hi=[1,2,3]
+hi.groupBy(String) // {"1":[1],"2":[2],"3":[3]}
