@@ -17,6 +17,7 @@ var checkIfInstanceOf = function(num, classFunction) {
     // so the instanceof operator returns false when you use it with a primitive.
     
     // make the "object" consistent with what instanceof can take
+    
     return Object(num) instanceof classFunction ? true:false
 }
 
