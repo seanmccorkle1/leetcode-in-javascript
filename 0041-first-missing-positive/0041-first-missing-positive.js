@@ -84,15 +84,15 @@ var firstMissingPositive = function (array) {
     for (let index = 0; index < array.length; index++) {
 
         const currNum = array[index]
-
+        
         // ignore (continue on) negative numbers and 0
         if (index + 1 == currNum) {
             continue
         }
-
+        
         // if the next increment isnt found, there's a missing num
         // the out-of-place number could be like -80, so use the indexes as a guide
-
+        
         else if (index + 1 != currNum) {
             let firstMissingNum =index + 1
             return firstMissingNum
@@ -108,17 +108,13 @@ var firstMissingPositive = function (array) {
 }
 
 // console.log(firstMissingPositive([-4]), 1)
-
 console.log(firstMissingPositive([1, 1]), 2, "should be [1, 2]")
 
 // console.log(firstMissingPositive([3, 4, -1, 1]), 2, "[-1, 1, [2], 3, 4]")
-
 // console.log(firstMissingPositive([1,2,0]),  3, "[0, 1, 2] is missing 3")
 
 // console.log(firstMissingPositive([3, 1, 2, 4]), 5, "sorted is [1,2,3,4], so 5 is the next missing positive. n = 4 and array ends on 4, so it uses the other return statement")
 
-
 // console.log(firstMissingPositive([2, 7, 8, 9, 11]), 1)
 // console.log(firstMissingPositive([1, 7, 8, 9, 11]), 2)
-
 // console.log(firstMissingPositive([2, 1, 4]), 3, "[1, 2, missing, 4]")
