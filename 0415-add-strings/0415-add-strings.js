@@ -17,29 +17,14 @@ var addStrings = function (stringnum1, stringnum2) {
     
     // keep the loop going as long as one of these is true
     
-    while (stringnum1BackIndex >= 0 || stringnum2BackIndex >= 0 || carry >= 1) {
+    while (carry >= 1 || stringnum1BackIndex >= 0 || stringnum2BackIndex >= 0) {
         
-        stringnum1
-
-        let digit1 = stringnum1[stringnum1BackIndex] ?? 0
-        
+        let digit1 = stringnum1[stringnum1BackIndex] ?? 0    
         digit1=Number(digit1)
-        digit1
-
-        // if (!digit1) {
-        //     digit1 = 0
-        // }
-
-        stringnum2
-
+        
         let digit2 = stringnum2[stringnum2BackIndex] ?? 0
-
         digit2 = Number(digit2)
-        // if its NaN
-        // if (!digit2) {
-        //     digit2 = 0
-        // }
-
+        
         digit1
         digit2
         carry
