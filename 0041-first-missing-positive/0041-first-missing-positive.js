@@ -104,7 +104,9 @@ var firstMissingPositive = function (array) {
     // if they were all sorted in incremental order like [1,2,3,4,5], it gets here
     // the array is [1,2,...,n], and the missing number is n+1
 
-    return array.length + 1
+    if (array.at(-1) == array.length) {
+        return array.length + 1
+    }
 }
 
 // console.log(firstMissingPositive([-4]), 1)
