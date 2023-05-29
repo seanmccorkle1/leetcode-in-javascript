@@ -1,8 +1,3 @@
-/**
- * @param {number[]} nums
- * @return {number}
- */
-
 var findTheArrayConcVal = function(nums) {
     
     const array=[]
@@ -10,16 +5,15 @@ var findTheArrayConcVal = function(nums) {
     
     while (nums.length != 0) {
         
-        let firstNum=nums.length ? nums.shift() : ""
-        let lastNum=nums.length ? nums.pop() : ""
+        let first =nums.length ? String(nums.shift()) : ""
+        let last=nums.length ? String(nums.pop()) : ""
         
-        let concatString = String(firstNum) + String(lastNum)
+        let concatString = first+last
         realSum += Number(concatString)
     }
     
     return realSum
 }
-    
 
 // [7, 52, 2, 4] 
 // "74"
