@@ -19,6 +19,9 @@ var addStrings = function (stringnum1, stringnum2) {
     
     while (carry >= 1 || stringnum1BackIndex >= 0 || stringnum2BackIndex >= 0) {
         
+        // (NaN ?? 0) evaluates to NaN cause its weird
+        // so do the Number() conversion after the ?? statement
+        
         let digit1 = stringnum1[stringnum1BackIndex] ?? 0    
         digit1=Number(digit1)
         
