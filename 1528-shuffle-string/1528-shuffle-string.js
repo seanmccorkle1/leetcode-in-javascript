@@ -1,16 +1,16 @@
 function restoreString(str, indexArray){
 
-    let emptyCharArray = new Array(indexArray.length);
+    const shuffledArray = new Array(indexArray.length);
     
     for (let i = 0; i < indexArray.length; i++){
         
         const currLetter = str[i] 
         let newIndex = indexArray[i]
         
-        emptyCharArray[newIndex] = currLetter
+        shuffledArray[newIndex] = currLetter
   }
     
-    let shuffledString = emptyCharArray.join("")
+    let shuffledString = shuffledArray.join("")
     return shuffledString
 }
 
