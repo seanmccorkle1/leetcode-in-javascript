@@ -14,5 +14,5 @@ MyHashSet.prototype.remove = function(key) {
 }
 
 MyHashSet.prototype.contains = function (key) {    
-    return this.hashSet[key] !== undefined
+    return this.hashSet.hasOwnProperty(key)
 }
