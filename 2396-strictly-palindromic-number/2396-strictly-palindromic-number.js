@@ -1,2 +1,2 @@
  
-const isStrictlyPalindromic =num=>{return false}
+const isStrictlyPalindromic =(num) =>false
