@@ -1,7 +1,3 @@
-// Use the inherent `this` object as the hash map
-
-// this.hash_map = {}
-
 var MyHashSet = function() {
     this.hashSet= {}
 }
