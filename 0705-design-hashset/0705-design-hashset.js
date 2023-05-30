@@ -3,7 +3,7 @@ var MyHashSet = function() {
 }
 
 MyHashSet.prototype.add = function(key) {
-    this.hashSet[key] = "asd"
+    this.hashSet[key] = 0
 }
 
 // explicit reference for objects (including arrays)
