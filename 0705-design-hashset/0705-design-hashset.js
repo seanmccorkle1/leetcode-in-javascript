@@ -16,7 +16,7 @@ MyHashSet.prototype.add = function(key) {
     // Linear Space | To the size of the input key
     // You can access objects using array notation
 
-    this[key] = 0
+    this[key] = "asd"
 }
 
 MyHashSet.prototype.remove = function(key) {
