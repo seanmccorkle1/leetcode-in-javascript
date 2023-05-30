@@ -10,8 +10,9 @@ var filter = function(array, passedFn) {
         
         // the filter callbacks literally return false
         // dont push those numbers
-
+        
         const valueIsTruthy = Boolean(returnValue) === true
+        
         if (valueIsTruthy) { 
             filteredArray.push(num)
         }
