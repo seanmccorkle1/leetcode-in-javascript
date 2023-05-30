@@ -16,7 +16,8 @@ MyHashSet.prototype.add = function(key) {
     // Linear Space | To the size of the input key
     // You can access objects using array notation
 
-    this[key] = undefined;
+    const null1=null
+    this[key] = null1
 };
 
 MyHashSet.prototype.remove = function(key) {
