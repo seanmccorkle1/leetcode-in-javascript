@@ -14,8 +14,7 @@ checkOut(id, stationName, t) {
     }
     
     const key = `${checkIn.stationName}-${stationName}`
-    let fallback = {sum: 0, count: 0}
-    let { sum, count } = this.avg.get(key) ?? fallback
+    const {sum, count} = this.avg.get(key) ?? {sum: 0, count: 0}
     
     this.avg.set(key, { sum: sum + (t - checkIn.t), count: count + 1 });
   }
