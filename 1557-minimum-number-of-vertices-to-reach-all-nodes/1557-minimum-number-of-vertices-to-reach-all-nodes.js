@@ -1,23 +1,16 @@
 var findSmallestSetOfVertices = function(num, edges) {
-    
     const rootNodes = []
-    const indegrees = new Array(num).fill(0)
+    const nodeIndegrees = new Array(num).fill(0)
     
-    for (let [fromNode, toNode] of edges){
-        indegrees[toNode]++
+    for (let [fromNode, toNode] of edges) {
+        nodeIndegrees[toNode]++
     }
     
-    edges
-    indegrees
-    
-    for (let index=0; index < indegrees.length; index++) {
+    for (let index=0; index< nodeIndegrees.length; index++){
         
-        let currNodesIndegree = indegrees[index]
-        const nodeIsARoot = (currNodesIndegree === 0) ? true : false
+        let nodeIndegree = nodeIndegrees[index]
         
-        // then its required to hit every point because its a minimal node
-        
-        if (nodeIsARoot) {
+        if (nodeIndegree == 0) {
             rootNodes.push(index)
         }
     }
@@ -25,4 +18,4 @@ var findSmallestSetOfVertices = function(num, edges) {
     return rootNodes
 }
 
-console.log(findSmallestSetOfVertices(6,  [[0,1],[0,2],[2,5],[3,4],[4,2]]),  [0, 3])
+console.log(findSmallestSetOfVertices(6, [[0,1],[0,2],[2,5],[3,4],[4,2]]), [0, 3], "see image")
