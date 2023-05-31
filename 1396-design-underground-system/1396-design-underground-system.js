@@ -8,12 +8,8 @@ class UndergroundSystem {
   }
 
 checkOut(id, stationName, t) {
-    const checkIn = this.customer.get(id);
     
-    if (!checkIn) {
-        return
-        // throw new Error(`Customer ${id} didn't checked in`)
-    }
+    const checkIn = this.customer.get(id);    
     
     const key = `${checkIn.stationName}-${stationName}`
     const {sum, count} = this.avg.get(key) ?? {sum: 0, count: 0}
