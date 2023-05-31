@@ -12,9 +12,10 @@ checkOut(id, stationName, t) {
     if (!checkIn) {
         throw new Error(`Customer ${id} didn't checked in`)
     }
-
+    
     const key = `${checkIn.stationName}-${stationName}`
-    let { sum, count } = this.avg.get(key) ?? { sum: 0, count: 0 }
+    let fallback = {sum: 0, count: 0}
+    let { sum, count } = this.avg.get(key) ?? fallback
     
     this.avg.set(key, { sum: sum + (t - checkIn.t), count: count + 1 });
   }
