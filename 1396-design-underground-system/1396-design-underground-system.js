@@ -26,6 +26,7 @@ checkOut(id, stationName, t) {
 const obj = new UndergroundSystem()
 
 obj.checkIn(123,"asd",60)
+obj.checkIn()
 // obj.checkOut(id,stationName,t)
 
 // let param_3 = obj.getAverageTime(startStation,endStation)
