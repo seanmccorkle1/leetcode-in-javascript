@@ -15,26 +15,35 @@ var generateMatrix = function (num) {
 
     let topIndex = 0
     let bottomIndex = num - 1
-
+    
+    
+    let increment = 1
+    
     // use < with 0
     // use <= with 1
-    let increment = 1
-
+    
     while (increment <= numOfMatrixElements) {
 
         let refreshedLeftIndex = leftIndex
 
+        
+        // horizontal
+        // make the FIRST access specifier static 
+        
         while (refreshedLeftIndex <= rightIndex) {
+            
             spiralMatrix[topIndex][refreshedLeftIndex] = increment
-
+            
             refreshedLeftIndex++
             increment+=1
         }
         
         topIndex += 1
         let refreshedTopIndex = topIndex
-
-
+        
+        // vertical
+        // make the SECOND access specifier static
+        
         while (refreshedTopIndex  <= bottomIndex){
 
             spiralMatrix[refreshedTopIndex][rightIndex] = increment
