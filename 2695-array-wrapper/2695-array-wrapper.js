@@ -2,8 +2,11 @@ var ArrayWrapper = function(nums) {
     this.array = nums
 }
 
+// when obj1 is used as a NUMBER, it takes this form (the sum of the elements)
+
 ArrayWrapper.prototype.valueOf = function() {
-  return this.array.reduce((sum, num) => sum + num,0)
+    let objAsSum = this.array.reduce((sum, num) => sum + num,0)
+    return objAsSum 
 }
 
 ArrayWrapper.prototype.toString = function() {
