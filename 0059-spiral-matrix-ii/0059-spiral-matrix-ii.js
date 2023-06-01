@@ -4,7 +4,7 @@ var generateMatrix = function (num) {
 
     spiralMatrix
 
-    let elementCount = 0
+    let increment = 0
     const numOfMatrixElements = num * num
     
     // left:top
@@ -18,11 +18,11 @@ var generateMatrix = function (num) {
     
     // use < with 0
     // use <= with 1
-    
-    while (elementCount < numOfMatrixElements) {
+
+    while (increment < numOfMatrixElements) {
         
         // do many small increments of 1 
-        // than one  big elementCount of 4
+        // than one  big increment of 4
 
         let refreshedLeftIndex = leftIndex
 
@@ -30,8 +30,8 @@ var generateMatrix = function (num) {
         // chained to the top ROW
 
         while (refreshedLeftIndex <= rightIndex) {
-            elementCount += 1
-            spiralMatrix[topIndex][refreshedLeftIndex] = elementCount
+            increment += 1
+            spiralMatrix[topIndex][refreshedLeftIndex] = increment
 
             spiralMatrix
             refreshedLeftIndex++
@@ -45,8 +45,8 @@ var generateMatrix = function (num) {
 
         while (refreshedTopIndex <= bottomIndex) {
 
-            elementCount += 1
-            spiralMatrix[refreshedTopIndex][rightIndex] = elementCount
+            increment += 1
+            spiralMatrix[refreshedTopIndex][rightIndex] = increment
 
             spiralMatrix
             refreshedTopIndex++
@@ -59,8 +59,8 @@ var generateMatrix = function (num) {
         // chained to the bottom ROW
 
         while (refreshedRightIndex >= leftIndex) {
-            elementCount += 1
-            spiralMatrix[bottomIndex][refreshedRightIndex] = elementCount
+            increment += 1
+            spiralMatrix[bottomIndex][refreshedRightIndex] = increment
 
             spiralMatrix
             refreshedRightIndex--
@@ -69,15 +69,15 @@ var generateMatrix = function (num) {
         bottomIndex -= 1
         let refreshedBottomIndex = bottomIndex
 
-        elementCount
+        increment
 
         // bottom-to-top, row changes
         // chained to the left ELEMENT
         
         while (refreshedBottomIndex >= topIndex) {
 
-            elementCount += 1
-            spiralMatrix[refreshedBottomIndex][leftIndex] = elementCount
+            increment += 1
+            spiralMatrix[refreshedBottomIndex][leftIndex] = increment
 
             refreshedBottomIndex--
         }
