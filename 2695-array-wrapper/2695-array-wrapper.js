@@ -7,8 +7,8 @@ ArrayWrapper.prototype.valueOf = function() {
 }
 
 ArrayWrapper.prototype.toString = function() {
-    let joined= this.array.join(",")
-    return `[${joined}]`
+    let stringWithCommas= this.array.join(",")
+    return `[${stringWithCommas}]`
 }
 
 /**
