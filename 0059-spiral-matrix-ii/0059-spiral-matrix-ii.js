@@ -6,75 +6,81 @@ var generateMatrix = function (num) {
 
     let counter = 0
     const numOfMatrixElements = num * num
-
+    
+    // left:top
+    // right:bottom
+    
     let leftIndex = 0
     let rightIndex = num - 1
-
-    // the top row of the matrix is the first subarray, matrix[0]
+    
     let topIndex = 0
     let bottomIndex = num - 1
+    
+    // use < with 0
+    // use <= with 1
+
 
     while (counter < numOfMatrixElements) {
-
+        
         // do many small increments of 1 
         // than one  big counter of 4
 
-        let localLeftIndex = leftIndex
+        let refreshedLeftIndex = leftIndex
 
         // left-to-right, row doesnt change
         // chained to the top ROW
 
-        while (localLeftIndex <= rightIndex) {
+        while (refreshedLeftIndex <= rightIndex) {
             counter += 1
-            spiralMatrix[topIndex][localLeftIndex] = counter
+            spiralMatrix[topIndex][refreshedLeftIndex] = counter
 
             spiralMatrix
-            localLeftIndex++
+            refreshedLeftIndex++
         }
 
         topIndex += 1
-        let localTopIndex = topIndex
+        let refreshedTopIndex = topIndex
 
         // top-to-bottom, row changes
         // chained to the right ELEMENT (2nd access specifier)
 
-        while (localTopIndex <= bottomIndex) {
+        while (refreshedTopIndex <= bottomIndex) {
 
             counter += 1
-            spiralMatrix[localTopIndex][rightIndex] = counter
+            spiralMatrix[refreshedTopIndex][rightIndex] = counter
 
             spiralMatrix
-            localTopIndex++
+            refreshedTopIndex++
         }
 
         rightIndex -= 1
-        let localRightIndex = rightIndex
+        let refreshedRightIndex = rightIndex
 
         // right-to-left, row doesnt change
         // chained to the bottom ROW
 
-        while (localRightIndex >= leftIndex) {
+        while (refreshedRightIndex >= leftIndex) {
             counter += 1
-            spiralMatrix[bottomIndex][localRightIndex] = counter
+            spiralMatrix[bottomIndex][refreshedRightIndex] = counter
 
             spiralMatrix
-            localRightIndex--
+            refreshedRightIndex--
         }
 
         bottomIndex -= 1
-        let localBottomIndex = bottomIndex
+        let refreshedBottomIndex = bottomIndex
 
         counter
 
         // bottom-to-top, row changes
         // chained to the left ELEMENT
         
-        while (localBottomIndex >= topIndex) {
+        while (refreshedBottomIndex >= topIndex) {
 
             counter += 1
-            spiralMatrix[localBottomIndex][leftIndex] = counter
+            spiralMatrix[refreshedBottomIndex][leftIndex] = counter
 
-            localBottomIndex--
+            refreshedBottomIndex--
         }
 
         leftIndex += 1
