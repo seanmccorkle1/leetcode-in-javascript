@@ -26,7 +26,9 @@ function* fibGenerator(){
         
         yield leftNum;
         let higher = leftNum + rightNum;
-        [leftNum,rightNum] = [rightNum,  higher]
+        leftNum = rightNum
+        rightNum = higher
+        // [leftNum,rightNum] = [rightNum,  higher]
     }  
 }
 
