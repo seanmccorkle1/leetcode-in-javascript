@@ -5,21 +5,13 @@ const trimMean =(array)=> {
     
     array.sort((a,b) => a - b)
     
-    let counter=0
     let fivePercentAsInteger = array.length * .05
     
-    return array.slice(0 + fivePercentAsInteger, array.length - fivePercentAsInteger).reduce((sum,curr)=>sum+curr,0) / (array.length*.9)
+    const arrayWithoutOutliers= array.slice(0 + fivePercentAsInteger, array.length - fivePercentAsInteger)
     
-    while (counter < amountToDelete){
-        
-        array.pop()
-        array.shift()
-        
-        counter++
-    }
-
-    let newSum = array.reduce((sum,num) => sum+num, 0)
-    return newSum / array.length
+    let sumWithoutOutliers= arrayWithoutOutliers.reduce((sum,curr)=>sum+curr,0) 
+    
+    return sumWithoutOutliers / (array.length * .9)
 }
 
 console.log(
