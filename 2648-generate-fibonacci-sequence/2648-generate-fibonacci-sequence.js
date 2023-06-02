@@ -1,7 +1,6 @@
 /**
  * @return {Generator<number>}
  */
-
 // initialise first 2 sequence numbers
 // initialise a loop so that function can return values indefinitely when called
 
@@ -13,23 +12,15 @@
 
 // therefore: term n is (n-1 + n- 2)
 
-
-// var fibGenerator = function*() {
-
 function* fibGenerator(){
     
     let leftNum = 0
     let rightNum = 1
     
+    // return 0 before it gets changed
+    
     while (true) {
-
-        // return 0 before it gets changed
-
         yield leftNum;
-        
-        // leftNum goes up a step to rightNum
-        // rightNum goes up to the two-sum rightNum +leftNum
-        
         [leftNum,rightNum] = [rightNum,  leftNum+rightNum]
     }  
 }
