@@ -1,30 +1,22 @@
+// 20 elements, remove 1 number from both ends
+// 40 elements, remove 2 numbers 
+
 const trimMean =(array)=> {
+    
     array.sort((a,b) => a - b)
     
-    // array = array.slice(1, array.length-1)
-    
-    // 20 elements, remove 1 number from both ends
-    // 40 elements, remove 2 numbers 
-    
-    let amountToDelete = array.length * .05
     let counter=0
+    let amountToDelete = array.length * .05
     
     while (counter < amountToDelete){
         
         array.pop()
         array.shift()
+        
         counter++
     }
-    return array.reduce((sum,currNum)=>sum+currNum,0) /array.length
-    
-    let sum = array.reduce((sum,num) =>sum + num,0) / array.length
-    console.log(sum)
 
-    
-    array = array.filter(num => num < topFiveAnchor)
-    array = array.filter(num => num > bottomFiveAnchor)
-    
-    let newSum = array.reduce((sum,num) =>sum+num,0)
+    let newSum = array.reduce((sum,num) => sum+num, 0)
     return newSum / array.length
 }
 
