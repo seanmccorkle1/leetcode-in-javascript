@@ -7,10 +7,8 @@ const trimMean =(array)=> {
     
     let fivePercentAsInteger = array.length * .05
     
-    const arrayWithoutOutliers= array.slice(0 + fivePercentAsInteger, array.length - fivePercentAsInteger)
-    
-    let sumWithoutOutliers= arrayWithoutOutliers.reduce((sum,curr)=>sum+curr,0) 
-    
+    let sumWithoutOutliers = array.slice(0 + fivePercentAsInteger, array.length - fivePercentAsInteger).reduce((sum,num) => sum+num, 0)
+        
     return sumWithoutOutliers / (array.length * .9)
 }
 
