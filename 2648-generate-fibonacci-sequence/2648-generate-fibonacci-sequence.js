@@ -24,9 +24,9 @@ function* fibGenerator(){
         // need a semiclon before statements that start with []
         // or it tries to do leftNum[0,1]
         
-        yield leftNum;   
-        
-        [leftNum,rightNum] = [rightNum,  leftNum+rightNum]
+        yield leftNum;
+        let higher = leftNum + rightNum;
+        [leftNum,rightNum] = [rightNum,  higher]
     }  
 }
 
