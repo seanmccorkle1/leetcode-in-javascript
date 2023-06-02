@@ -6,7 +6,9 @@ const trimMean =(array)=> {
     array.sort((a,b) => a - b)
     
     let counter=0
-    let amountToDelete = array.length * .05
+    let fivePercentAsInteger = array.length * .05
+    
+    return array.slice(0 + fivePercentAsInteger, array.length - fivePercentAsInteger).reduce((sum,curr)=>sum+curr,0) / (array.length*.9)
     
     while (counter < amountToDelete){
         
