@@ -20,7 +20,12 @@ function* fibGenerator(){
     // return 0 before it gets changed
     
     while (true) {
-        yield leftNum;
+        
+        // need a semiclon before statements that start with []
+        // or it tries to do leftNum[0,1]
+        
+        yield leftNum;   
+        
         [leftNum,rightNum] = [rightNum,  leftNum+rightNum]
     }  
 }
