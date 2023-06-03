@@ -6,5 +6,7 @@
 var minPartitions = function(stringnum) {
     const digitArray = stringnum.split("")
     let highestDigit = Math.max(...digitArray)
-    return highestDigit
+    
+    return String(highestDigit)
+    return Number(highestDigit)
 }
