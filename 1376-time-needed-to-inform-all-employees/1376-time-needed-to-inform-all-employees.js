@@ -25,8 +25,9 @@ var numOfMinutes = function(n, headID, manager, informTime) {
 
         const visited = manager[id] == "✔"
 
-        if (visited) {            
-            return informTime[id]
+        if (visited) {
+            let precomputedTimeToInform=  informTime[id]
+            return precomputedTimeToInform
         }
 
         else if (!visited) {
