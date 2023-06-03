@@ -1,8 +1,2 @@
-/**
- * @param {string[]} operations
- * @return {number}
- */
-var finalValueAfterOperations = function(operations) {
-    return operations.filter(s => s.includes("+")).length - operations.filter(s => s.includes("-")).length
+const finalValueAfterOperations = (array)=>array.reduce((count,curr) => curr[1] == "+" ? ++count : --count,0)
     
-}
