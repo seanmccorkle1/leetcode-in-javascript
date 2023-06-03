@@ -7,7 +7,7 @@ ParkingSystem.prototype.addCar = function(carType) {
     let numOfSpaces=  this.count[carType - 1]
     
     if (numOfSpaces >= 1){
-        this.count[carType - 1] -= 1
+        this.count[carType - 1] -= 1 // space is now taken
         return true
     }
     
