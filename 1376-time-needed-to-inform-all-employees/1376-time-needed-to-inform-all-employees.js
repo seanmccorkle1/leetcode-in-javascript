@@ -15,6 +15,9 @@ O(numOfEmployees * depthOfTree)
 
 var numOfMinutes = function(n, headID, manager, informTime) {
 
+    if (n == 1){
+        return 0
+    }
     manager = manager.map(n => n == -1 ? "✔" : n)
 
     const timeFromEmployeeToHead = (id) => {
@@ -42,12 +45,10 @@ var numOfMinutes = function(n, headID, manager, informTime) {
     manager
     informTime
 
-    if (manager.some(e => e != "✔")){
-        return false
-    }
-
     return Math.max(...informTime)
 }
 
 // console.log(numOfMinutes(6, 2, [2,2,-1,2,2,2], [0,0,1,0,0,0]), 1)
-console.log(numOfMinutes(6, 2, [2,2,-1,2,2,2], [0,0,1,0,0,6]), 7, "1 + 6")
+// console.log(numOfMinutes(6, 2, [2,2,-1,2,2,2], [0,0,1,0,0,6]), 7, "1 + 6")
+
+console.log(numOfMinutes(11, 0, [-1,0,0,1,1,2,2,3,3,4,4], [1,1,1,1,1,1,1,0,0,0,0,]), 3, "3 minutes")
