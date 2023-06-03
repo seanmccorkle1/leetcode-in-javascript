@@ -1,2 +1,2 @@
-const finalValueAfterOperations = (array)=>array.reduce((count,curr) => curr[1] == "+" ? ++count : --count,0)
+const finalValueAfterOperations = (array)=>array.reduce((count, string) => string[1] == "+" ? ++count : --count,0)
     
