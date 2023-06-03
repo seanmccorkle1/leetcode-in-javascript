@@ -18,8 +18,12 @@ var numOfMinutes = function(n, headID, manager, informTime) {
     if (n == 1){
         return 0
     }
-    manager = manager.map(n => n == -1 ? "✔" : n)
 
+    if (manager.filter(n => n== -1).length >= 2){
+        return 0
+    }
+    manager = manager.map(n => n == -1 ? "✔" : n)
+    
     const timeFromEmployeeToHead = (id) => {
 
         manager
