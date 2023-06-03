@@ -12,26 +12,30 @@ O(numOfEmployees * depthOfTree)
 */
 
 
-
 var numOfMinutes = function(n, headID, manager, informTime) {
 
-    if (n == 1){
-        return 0
-    }
-
-    if (manager.filter(n => n== -1).length !=1){
-        return 0
-    }
-    
     manager = manager.map(n => n == -1 ? "✔" : n)
-    
+
     const timeFromEmployeeToHead = (id) => {
+
+        id
 
         manager
         informTime
 
-        if (manager[id] != "✔") {
-            informTime[id] += timeFromEmployeeToHead(manager[id])
+        const visited = manager[id] == "✔"
+
+        if (visited) {            
+            return informTime[id]
+        }
+
+        else if (!visited) {
+
+            let time=~~timeFromEmployeeToHead(manager[id])
+            informTime[id] += time
+
+            informTime
+
             manager[id] = "✔"
         }
 
@@ -42,18 +46,20 @@ var numOfMinutes = function(n, headID, manager, informTime) {
         timeFromEmployeeToHead(index)
     }
 
-    // manager.forEach((_, index) => timeFromEmployeeToHead(index))
-
     n
     headID
 
     manager
     informTime
 
-    return Math.max(...informTime)
+    let timeUntilFullGraphIsReady = Math.max(...informTime) 
+    return timeUntilFullGraphIsReady 
 }
+
+console.log(numOfMinutes(8, 0, [-1,5,0,6,7,0,0,0], [89,0,0,0,0,523,241,519]), 612)
+
 
 // console.log(numOfMinutes(6, 2, [2,2,-1,2,2,2], [0,0,1,0,0,0]), 1)
 // console.log(numOfMinutes(6, 2, [2,2,-1,2,2,2], [0,0,1,0,0,6]), 7, "1 + 6")
 
-console.log(numOfMinutes(11, 0, [-1,0,0,1,1,2,2,3,3,4,4], [1,1,1,1,1,1,1,0,0,0,0,]), 3, "3 minutes")
+// console.log(numOfMinutes(11, 0, [-1,0,0,1,1,2,2,3,3,4,4], [1,1,1,1,1,1,1,0,0,0,0,]), 3, "3 minutes")
