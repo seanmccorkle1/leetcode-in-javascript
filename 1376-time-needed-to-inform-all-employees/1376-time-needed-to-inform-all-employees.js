@@ -57,9 +57,4 @@ var numOfMinutes = function(n, headID, manager, informTime) {
 }
 
 console.log(numOfMinutes(8, 0, [-1,5,0,6,7,0,0,0], [89,0,0,0,0,523,241,519]), 612)
-
-
 // console.log(numOfMinutes(6, 2, [2,2,-1,2,2,2], [0,0,1,0,0,0]), 1)
-// console.log(numOfMinutes(6, 2, [2,2,-1,2,2,2], [0,0,1,0,0,6]), 7, "1 + 6")
-
-// console.log(numOfMinutes(11, 0, [-1,0,0,1,1,2,2,3,3,4,4], [1,1,1,1,1,1,1,0,0,0,0,]), 3, "3 minutes")
