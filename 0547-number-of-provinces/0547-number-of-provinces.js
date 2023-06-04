@@ -1,22 +1,28 @@
-function findCircleNum(M) {
+var findCircleNum = function(M) {
+
     // visited set
-    const visited = new Set();
+    const visited = new Set()
+    
     // friend circles count
-    let circles = 0;
-	
+    let circles = 0
+    
     // iterate thru matrix
+    
     for (let i = 0; i < M.length; i++) {
         // check if this friend has been visited before
+        
         if (!visited.has(i)) {
+            
             // start dfs for this friend
-            dfs(i);
+            dfs(i)
+            
             // this is another friend circle
-            circles++;
+            circles++
         }
     }
-	
-    return circles;
-	
+    
+    return circles
+    
     // helper method to do dfs traversal thru M
     function dfs(i) {
         // go thru this friend's friends
