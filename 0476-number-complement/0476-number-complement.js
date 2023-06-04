@@ -7,8 +7,8 @@ var findComplement = function(num) {
     // the pattern is (binaryString, 2) not (binaryString, 10)
     // keep the arguments consistent
     
-    return parseInt(complementBitstring, 2)
-    
+    let complementAsDecimal=  parseInt(complementBitstring, 2)
+    return complementAsDecimal
 }
 
 console.log(findComplement(5), 2, "010 (complement) is 2")
