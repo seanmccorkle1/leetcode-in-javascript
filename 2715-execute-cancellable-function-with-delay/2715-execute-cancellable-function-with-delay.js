@@ -1,9 +1,9 @@
 var cancellable = function(fn, args, t) {
 
-    let timeoutId
+    // let timeoutId
     const cancelFn = () =>  clearTimeout(timeoutId);
     
-    timeoutId = setTimeout(() => fn(...args), t);
+    var timeoutId = setTimeout(() => fn(...args), t);
     return cancelFn;  
 }
 
