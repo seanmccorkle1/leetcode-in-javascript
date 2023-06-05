@@ -11,7 +11,7 @@ var countPoints = function(rings) {
           rings.includes(`G${rod}`) && rings.includes(`B${rod}`)
         
         if (ringWithAllColorsFound) {
-            count++
+            count+=1
         }         
     } 
     
