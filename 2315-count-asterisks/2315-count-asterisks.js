@@ -6,7 +6,9 @@ var countAsterisks = function(s) {
     let count = 0
     
     if (s[0].includes("*")){
-        count += s[0].match(/[\*]/g).length
+        s[0]  = s[0].replace(/[^\*]/g, "")
+        count += s[0].length
+        // count += s[0].match(/[\*]/g).length
     }
     
     while (index < s.length){
