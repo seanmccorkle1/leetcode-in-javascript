@@ -1,6 +1,5 @@
 var countPoints = function(rings) {
-
-    let rods = '0123456789'
+    
     let count = 0
     
     // looping over the variable, rods
