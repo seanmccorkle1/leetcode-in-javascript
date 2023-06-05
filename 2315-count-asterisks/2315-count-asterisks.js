@@ -5,13 +5,9 @@ var countAsterisks = function(s) {
     let index = 0
     let count = 0
     
-    // if (s[0].includes("*")){
-    //     s[0]  = s[0].replace(/[^\*]/g, "")
-    //     count += s[0].length
-    // }
+    // start from evens, [0-1], [2-3], [4-5]
+    // [[0-1], [1-2], [2-3], [3-4]]
     
-    
-    // 2 and 2
     while (index < s.length){
         
         let string = s[index]
