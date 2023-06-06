@@ -20,17 +20,13 @@ var equalFrequency = function(string) {
     
    frequencyArray
    valueArray
-
-
+   
     let slice = valueArray.slice(0, valueArray.length - 1)
-
+    
     if ((valueArray.at(-1) - 1 == valueArray.at(-2)) && new Set(slice).size == 1){
         return true
     }
-    
-    // if (valueArray.at(0) + 1 == valueArray.at(1) &&  new Set(valueArray.slice(1)).size == 1){
-    //     return true
-    //     }         
+
     
    if (frequencyArray.length == 1 && frequencyArray[0] == 1){
        return true
@@ -43,15 +39,7 @@ var equalFrequency = function(string) {
     if (valueArray[0] == 1 && new Set(valueArray.slice(1)).size == 1) {
         return true
     }
-
-    // if (frequencyArray.length == 2 && frequencyArray[0] +1 == frequencyArray[1]){
-    //     return true
-    // }
-     
-   // if (frequencyArray.length == 2 && Math.max(...frequencyArray) - 1 == Math.min(...frequencyArray)) {
-   //     return true
-   // }
-        
+    
     return false
 }
 
