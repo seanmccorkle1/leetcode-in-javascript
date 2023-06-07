@@ -5,7 +5,7 @@ var pivotInteger = function (num) {
     }
 
     // instead of initializing both to 0,
-    // initialize it to [1, allNums] for [leftSum, rightSum]
+    // initialize it to [1, sumOfAll] for [leftSum, rightSum]
     
     let leftSum = 1
     let rightSum = Array.from({length: num}, (u, index) => ++index).reduce((sum, num) => sum + num, 0)
