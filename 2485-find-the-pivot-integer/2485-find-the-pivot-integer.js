@@ -1,13 +1,13 @@
 var pivotInteger = function (num) {
-
-
-    let leftSum = 1
-    let rightSum = Array.from({length: num}, (u, index) => ++index).reduce((sum, num) => sum + num, 0)
-
+    
     if (num == 1) {
         return 1
     }
-
+    
+    let leftSum = 1
+    
+    let rightSum = Array.from({length: num}, (u, index) => ++index).reduce((sum, num) => sum + num, 0)
+    
     leftSum
     rightSum
 
@@ -21,8 +21,6 @@ var pivotInteger = function (num) {
 
         leftSum += index
         rightSum -= (index - 1)
-
-        // rightSum -= ((num - index) + 1)
 
         if (leftSum == rightSum) {
             return index
