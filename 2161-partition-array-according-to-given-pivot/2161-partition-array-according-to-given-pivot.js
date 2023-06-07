@@ -22,7 +22,8 @@ var pivotArray = function(array, pivot) {
         
     }
     
-    return smallerArray.concat(equalArray).concat(greaterArray)
+    return [...smallerArray,...equalArray,...greaterArray]
+    // return smallerArray.concat(equalArray).concat(greaterArray)
     // return smallerArray.concat(equalArray, greaterArray)
 }
 
