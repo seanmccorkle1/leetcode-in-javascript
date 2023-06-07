@@ -3,7 +3,7 @@ var findGCD = function(array) {
     
     let divisor = array[0]
     
-    while (divisor >= 0){
+    while (divisor >= 1){
 
         if (array[0] % divisor == 0 && array.at(-1) % divisor == 0){
             return divisor
@@ -11,5 +11,5 @@ var findGCD = function(array) {
         
         divisor--
     }
-    return divisor
+    // return divisor
 }
