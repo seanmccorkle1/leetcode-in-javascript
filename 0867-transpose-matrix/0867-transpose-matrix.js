@@ -4,7 +4,9 @@ var transpose = function(matrix) {
     
     const firstRow=matrix[0]
 
+    // firstRow and matrix both have 3 elements (n x n)
     // nested map function
+    
     return firstRow.map((n, index) => matrix.map(row => row[index]))
 }
 
