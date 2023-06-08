@@ -1,10 +1,12 @@
 var checkStraightLine = function(coords) {
     
-   for (let i=0; i < coords.length - 2; i++){
+    /// DONT check the second-to-last
+
+    for (let index = 0; index < coords.length - 2; index++){
        
-       let [x1,y1]=coords[i]
-       let [x2,y2]=coords[i+1]
-       let [x3,y3]=coords[i+2]
+       let [x1,y1]=coords[index]
+       let [x2,y2]=coords[index+1]
+       let [x3,y3]=coords[index+2]
        
        if (!x3){
            break
