@@ -12,7 +12,10 @@ var checkStraightLine = function(coords) {
            break
        }
        
-       let area=Math.abs(0.5 * ((x1*y2 + x2*y3 + x3*y1)-(y1*x2 + y2*x3 + y3*x1)))
+       let area=
+           Math.abs(0.5 * 
+                         ((x1*y2 + x2*y3 + x3*y1) - 
+                          (y1*x2 + y2*x3 + y3*x1)))
        
        const lineNotStraight = (area != 0) ? true : false
 
