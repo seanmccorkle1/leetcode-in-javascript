@@ -1,14 +1,26 @@
 var checkStraightLine = function(coords) {
-    const n = coords.length;
     
-    for (let i = 0; i < n - 2; i++) {
-        const area = Math.abs(1/2 * (
-            (coords[i][0] * coords[i + 1][1] + coords[i + 1][0] * coords[i + 2][1] + coords[i + 2][0] * coords[i][1]) -
-            (coords[i][1] * coords[i + 1][0] + coords[i + 1][1] * coords[i + 2][0] + coords[i + 2][1] * coords[i][0])
-        ));
+    for (let index = 0; index < coords.length - 2; index++) {
         
-        if (area > 0) return false;
+        let num1 = coords[index][0] * coords[index + 1][1] + 
+            coords[index + 1][0] * coords[index + 2][1] +
+            coords[index + 2][0] * coords[index][1]
+        
+        let num2 = coords[index][1] * coords[index + 1][0] + 
+            coords[index + 1][1] * coords[index + 2][0] + 
+            coords[index + 2][1] * coords[index][0]
+        
+        const area = 0.5 * (num1 - num2)     
+        
+        const notAStraightLine =  (area != 0) ? true : false
+        
+        if (notAStraightLine) {
+            return false
+        }
     }
     
-    return true;
-};
+    return true
+}
+
+console.log(checkStraightLine([[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]), true)
+// console.log(checkStraightLine( [[1,1],[2,2],[3,4],[4,5],[5,6],[7,7]]), false)
