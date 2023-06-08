@@ -9,6 +9,7 @@ var isBoomerang = function(points) {
     
     let sum =( x1Difference * y2Difference) - (x2Difference *y1Difference)
     
+    // if its straight, its NOT a boomerang
     if (sum == 0){
         return false
     }
