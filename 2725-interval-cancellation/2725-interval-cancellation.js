@@ -1,23 +1,12 @@
-/**
- * @param {Function} fn
- * @param {Array} args
- * @param {number} t
- * @return {Function}
- */
-
 var cancellable = function(fn, args, t) {
     
     fn(...args)
     
     let id = setInterval(() => {fn(...args)}, t)
-
-    // const cancelFn = () => clearInterval(id)
-    // return cancelFn
     
-        return () => clearInterval(id)
+    const cancelFn = () => clearInterval(id)
+    return cancelFn    
 }
-
-
 
 /**
  *  const result = []
