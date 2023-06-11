@@ -2,7 +2,7 @@ class SnapshotArray {
 
     constructor(length) {
         
-        this.elements = Array(length).fill(null).map(e => new Map());   // max O(n + s)
+        this.elements = new Array(length).fill(null).map(e => new Map());   // max O(n + s)
         
         this.snapId = -1
     }
@@ -27,12 +27,17 @@ class SnapshotArray {
         let mid
 
         while(left <= right) {
+            
             mid = left + Math.floor((right - left) / 2);
-            if(element[mid] <= snap_id) {
+
+            if (element[mid] <= snap_id) {
                 id = element[mid];
                 left = mid + 1;
-            } else {
-                right = mid - 1;
+                // break
+            }
+            
+            else {
+                right = mid - 1
             }
         }
         return id === -1 ? 0 : this.elements[index].get(id);
