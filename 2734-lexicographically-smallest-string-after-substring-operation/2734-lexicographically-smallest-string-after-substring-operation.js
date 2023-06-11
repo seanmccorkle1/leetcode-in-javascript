@@ -1,6 +1,7 @@
 var smallestString = function (string) {
-
+    
     let index = 0
+    const array = [...string]
 
     while (string[index] == "a"){
         ++index
@@ -12,8 +13,7 @@ var smallestString = function (string) {
     if (everyLetterIsA) {
         return string.slice(0, string.length - 1) + "z"
     }
-
-    const array = [...string]
+    
     
     while (index < array.length) {
 
