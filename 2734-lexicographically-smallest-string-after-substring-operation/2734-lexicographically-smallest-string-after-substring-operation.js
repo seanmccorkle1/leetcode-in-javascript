@@ -5,10 +5,16 @@ var smallestString = function (string) {
     while (string[index] == "a"){
         ++index
     }
+    
+    const everyLetterIsA = index == string.length ? true: false
+
+
+    if (everyLetterIsA) {
+        return string.slice(0, string.length - 1) + "z"
+    }
 
     const array = [...string]
-
-
+    
     while (index < array.length) {
 
         const letter = array[index]
@@ -19,12 +25,6 @@ var smallestString = function (string) {
 
         array[index] = String.fromCharCode(letter.charCodeAt() - 1)
         index++
-    }
-
-    const everyLetterIsA = array.join("") == string
-
-    if (everyLetterIsA) {
-        return string.slice(0, string.length - 1) + "z"
     }
 
     return array.join("")
