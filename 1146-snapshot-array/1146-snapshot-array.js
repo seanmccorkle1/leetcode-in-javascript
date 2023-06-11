@@ -45,10 +45,9 @@ class SnapshotArray {
         if (id == -1) {
             return 0
         }
-
+        
         let map=this.mapArray[index]
         return map.get(id)
-        // return this.mapArray[index].get(id)
     }
 }
 
