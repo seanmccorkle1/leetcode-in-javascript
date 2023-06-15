@@ -2,9 +2,9 @@ var equalPairs = function (matrix) {
 
     matrix
 
-    if (matrix.length == 1) {
-        return 1
-    }
+    // if (matrix.length == 1) {
+    //     return 1
+    // }
 
     const rowArray = matrix.map(row => row.join())
     const columnArray = matrix[0].map((col, i) => matrix.map(row => row[i]).join())
