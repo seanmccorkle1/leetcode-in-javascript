@@ -1,28 +1,22 @@
 var equalPairs = function (matrix) {
-
+    
     matrix
+    
+    const rowArray = matrix.map(row => row.join(","))
 
-    // if (matrix.length == 1) {
-    //     return 1
-    // }
-
-    const rowArray = matrix.map(row => row.join())
-    const columnArray = matrix[0].map((col, i) => matrix.map(row => row[i]).join())
-
+    const columnArray = matrix[0].map((col, i) => 
+                                      matrix.map(row => row[i]).join(","))
+    
     rowArray
     columnArray
-
-    // let array = rowArray.concat(columnArray)
-    // array = array.filter(string => array.indexOf(string) != array.lastIndexOf(string))
-
-
+    
     let count = 0
+    
+    for (let rowString of rowArray) {
+        
+        for (let columnString of columnArray) {
 
-    for (let row of rowArray) {
-
-        for (let column of columnArray) {
-
-            if (row == column) {
+            if (rowString == columnString) {
                 ++count
             }
 
