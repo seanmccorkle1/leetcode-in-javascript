@@ -4,8 +4,9 @@ var equalPairs = function (matrix) {
     
     const rowArray = matrix.map(row => row.join(","))
 
-    const columnArray = matrix[0].map((col, i) => 
-                                      matrix.map(row => row[i]).join(","))
+    // each row becomes a scalar integer
+    const columnArray = matrix[0].map((col, index) => 
+                                      matrix.map(row => row[index]).join(","))
     
     rowArray
     columnArray
