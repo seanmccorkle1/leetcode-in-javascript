@@ -1,15 +1,11 @@
-
-
 var countDigits = function(num) {
 
-    
-    const array = [...String(num)]
-    
     let count=0
+    const array = [...String(num)].map(d => Number(d))
     
     for (let digit of array){
         
-        digit = Number(digit)
+        // digit = Number(digit)
         
         if ((num % digit) == 0){
            ++count
