@@ -7,11 +7,10 @@ var largestAltitude =function(gain) {
         
         let currGain = gain[index]
         previous += currGain
-    
-        biggest =Math.max(previous, biggest)
-        // if (previous > biggest) {
-        //     biggest = previous
-        // }
+        
+        if (previous > biggest) {
+            biggest = previous
+        }
     }
     
     return biggest
