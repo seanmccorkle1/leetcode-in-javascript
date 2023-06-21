@@ -14,7 +14,7 @@ var evenOddBit = function (num) {
     while (evenIndex >= 0){
 
         if (bitstring[evenIndex] == 1){
-            evenArray.push(bitstring[evenIndex])
+            evenArray.push("hot")
         }
 
         evenIndex -= 2
@@ -25,31 +25,17 @@ var evenOddBit = function (num) {
     while (oddIndex >= 0){
 
         if (bitstring[oddIndex] == 1){
-            oddArray.push(bitstring[oddIndex])
+            oddArray.push("hot")
         }
 
         oddIndex -= 2
     }
 
     evenArray
-    oddArray    
-
-
+    oddArray
+    
     return [evenArray.length, oddArray.length]
-
-    for (let index=bitstring.length - 1; index >= 0; index--) {
-
-        const bit = bitstring[index]
-
-        if (index %2==0 && bit == 1){
-            array[0]++
-        }
-
-        else if (index %2 == 1 && bit == 1){
-            array[1]++
-        }
-    }
-    return array
+    
 }
 
 console.log(evenOddBit(2), [0, 1])
