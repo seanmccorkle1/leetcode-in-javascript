@@ -7,8 +7,8 @@ var maximizeSum = function(array, k) {
     let increment = 0
 
     while (k >= 1){
-
-        sum += max + increment
+        
+        sum += (max + increment)
         
         increment++
         k--
