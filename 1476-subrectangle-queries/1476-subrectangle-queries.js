@@ -4,11 +4,24 @@ var SubrectangleQueries = function(rectangle) {
 
 SubrectangleQueries.prototype.updateSubrectangle = function(row1, col1, row2, col2, newValue) {
     
-    for (let i=row1;i<=row2;i++){
-        for (let j=col1;j<=col2;j++){
-            this.rec[i][j] = newValue
+    let index = row1
+    
+    while (index <= row2){
+        let columnIndex = col1
+        while (columnIndex <= col2){
+            
+            this.rec[index][columnIndex] = newValue
+            columnIndex++
         }
-    }   
+        
+        index++
+    }
+//     for (let i=row1; i<=row2; i++){
+        
+//         for (let j=col1;j<=col2;j++){
+//             this.rec[i][j] = newValue
+//         }
+//     }   
 }
 
 SubrectangleQueries.prototype.getValue = function(row, col) {
