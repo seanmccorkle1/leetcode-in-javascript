@@ -1,10 +1,9 @@
 var maxProfit = function(P, F) {
     
-    let len = P.length
     let buying = 0
     let selling = -P[0]
     
-    for (let i = 1; i < len; i++) {        
+    for (let i = 1; i < P.length; i++) {        
         
         const currPrice = P[i]
         
