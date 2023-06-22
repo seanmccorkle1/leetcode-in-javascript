@@ -9,10 +9,9 @@ var maxProfit = function(priceArray, fee) {
         
         let buyPrice = currPrice + selling
         buyPrice -= fee
-
-        selling = Math.max(maxProfit - currPrice, selling)
+        
         maxProfit = Math.max(buyPrice, maxProfit)
-
+        selling = Math.max(maxProfit - currPrice, selling)
     }
 
     return maxProfit
