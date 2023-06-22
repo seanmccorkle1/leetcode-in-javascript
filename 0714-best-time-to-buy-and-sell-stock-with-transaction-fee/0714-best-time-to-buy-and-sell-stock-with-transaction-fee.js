@@ -1,7 +1,8 @@
 var maxProfit = function(priceArray, fee) {
 
     let maxProfit = 0
-    let selling = -(priceArray[0])
+    let first =priceArray[0]
+    let selling = -first
 
     for (let index = 1; index < priceArray.length; index++) {
 
