@@ -11,7 +11,9 @@ var maxProfit = function(priceArray, fee) {
         buyPrice -= fee
         
         maxProfit = Math.max(buyPrice, maxProfit)
-        selling = Math.max(maxProfit - currPrice, selling)
+        
+        // keep it as close to -1 as possible
+        selling = Math.max(maxProfit - currPrice, selling ,-1e6)
     }
 
     return maxProfit
