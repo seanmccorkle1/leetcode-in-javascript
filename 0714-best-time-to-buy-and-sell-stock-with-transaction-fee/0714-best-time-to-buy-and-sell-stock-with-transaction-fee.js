@@ -6,7 +6,7 @@ var maxProfit = function(priceArray, fee) {
     for (let index = 1; index < priceArray.length; index++) {
 
         const currPrice = priceArray[index]
-
+        
         let buyPrice = currPrice + selling
         buyPrice -= fee
 
