@@ -3,10 +3,10 @@ var decode = function (encoded, first) {
     
     for (let index = 0; index < encoded.length; index++){
         
-        let num = out[index]
+        let currNum = out[index]
         let encodedNum = encoded[index]
         
-        let xorNum =  num ^ encodedNum
+        let xorNum =  currNum ^ encodedNum
         out.push(xorNum)
     }
     
