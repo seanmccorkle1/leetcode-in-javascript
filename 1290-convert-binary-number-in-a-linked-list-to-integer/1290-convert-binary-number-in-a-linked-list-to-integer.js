@@ -6,19 +6,15 @@
  * }
  */
 
+var getDecimalValue = function(head) {
 
-/**
- * @param {ListNode} head
- * @return {number}
- */
+    let sum = 0
 
-const getDecimalValue = head => {
-  let val = 0;
-  while (head) {
-    // val = (val << 1) | head.val;
-      val <<= 1
-      val|=head.val
-    head = head.next;
-  }
-  return val;
-};
+    while (head) {
+        sum <<= 1
+        sum |= head.val
+        
+        head = head.next
+    }
+    return sum
+}
