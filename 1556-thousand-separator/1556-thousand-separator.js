@@ -3,7 +3,7 @@ var thousandSeparator = function(num) {
 
     num = String(num)
 
-    if (num <= 99){
+    if (num <= 999){
         return String(num)
     }
     
