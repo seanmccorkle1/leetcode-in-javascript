@@ -1,24 +1,29 @@
 var makeSmallestPalindrome = function (string) {
-
-    let currString = ""
+    
+    if (string.length == 1) {
+        return string
+    }
+    let palindromeString = ""
 
     for (let index = 0; index < string.length; index++) {
 
         let backIndex = (string.length - index) - 1
 
-        let firstLetter = string[index]
-        let lastLetter = string[backIndex]
+        let currLetter = string[index]
+        let backLetter = string[backIndex]
 
-        if (firstLetter != lastLetter) {
+        if (currLetter != backLetter) {
 
-            if (firstLetter.charCodeAt() > lastLetter.charCodeAt()) {
-                firstLetter = lastLetter
+            if (currLetter.charCodeAt() > backLetter.charCodeAt()) {
+                currLetter = backLetter
             }
 
         }
 
-        currString += firstLetter
+        palindromeString += currLetter
     }
-    return currString
+
+    return palindromeString
 }
-makeSmallestPalindrome("abcd") // "abba"
+
+makeSmallestPalindrome("abcd") // "abba")
