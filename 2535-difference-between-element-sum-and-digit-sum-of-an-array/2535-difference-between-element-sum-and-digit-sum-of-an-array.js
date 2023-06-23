@@ -1,0 +1,1 @@
+const differenceOfSum = (array)=>Math.abs(array.reduce((sum,curr)=> sum+ curr,0) - array.join("").split("").reduce((sum,curr)=>sum+Number(curr),0))
