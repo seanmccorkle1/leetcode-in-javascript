@@ -1,7 +1,9 @@
 var flipAndInvertImage = function(A) {
-		for(let row in A) {
-			A[row] = A[row].reverse();
-			A[row] = A[row].map(x => x^1);
+    
+    for (let row in A) {
+        A[row].reverse()
+        A[row] = A[row].map(bit => bit ^ 1)
 		}
-	return A;
-};
+    
+    return A;
+}
