@@ -2,11 +2,15 @@ var isPowerOfTwo = function(num) {
     
     if (num <=0) {
         return false
-    }
+    } 
+    
+    let log = Math.log2(num)
+
+    return Number.isInteger(log) ? true : false
     
     num
     num - 1
-
+    
     let bitwise = (num) & (num - 1) 
     
     if (bitwise == 0) {
