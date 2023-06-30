@@ -40,8 +40,7 @@ var myPow = function (num, exp) {
     if (exp <= -1) {
         return 1/poweredNum
     }
-
-    return Number(poweredNum.toFixed(5))
+    
     return poweredNum
 }
 
