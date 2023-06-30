@@ -1,5 +1,5 @@
 var myPow = function (num, exp) {
-
+    
     num
     exp
 
@@ -39,7 +39,6 @@ var myPow = function (num, exp) {
     }
     
     return Number(poweredNum.toFixed(5))
-    return poweredNum
 }
 
 console.log(myPow(2.00000, 10), 1024)
