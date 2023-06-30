@@ -1,11 +1,11 @@
 var myPow = function (num, exp) {
-    
+
     num
     exp
 
-    const recursivePower = (x, exponent) => {
+    const recursivePower = (num, exponent) => {
 
-        if (x == 0) {
+        if (num == 0) {
             return 0
         }
 
@@ -17,7 +17,7 @@ var myPow = function (num, exp) {
 
         if (exponentIsEven) {
 
-            const returnValue = recursivePower(x, exponent / 2)
+            const returnValue = recursivePower(num, exponent / 2)
             return Math.pow(returnValue, 2)
         }
 
@@ -25,20 +25,24 @@ var myPow = function (num, exp) {
 
             exponent = (exponent - 1) / 2
 
-            const pow = Math.pow(recursivePower(x, exponent), 2)
+            const pow = Math.pow(recursivePower(num, exponent), 2)
 
-            return x * pow
+            num
+            pow
+
+            return num * pow
         }
     }
-
+    
     const absExp = Math.abs(exp)
     const poweredNum = recursivePower(num, absExp)
-    
+
     if (exp <= -1) {
         return 1/poweredNum
     }
-    
+
     return Number(poweredNum.toFixed(5))
+    return poweredNum
 }
 
 console.log(myPow(2.00000, 10), 1024)
