@@ -9,9 +9,9 @@ var isPowerOfTwo = function(num) {
 
     let bitwise = (num) & (num - 1) 
     
-        if (bitwise == 0) {
-            return true
-        }
+    if (bitwise == 0) {
+        return true
+    }
     return false
 }
 
