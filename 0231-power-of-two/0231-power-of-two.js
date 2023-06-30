@@ -4,18 +4,17 @@ var isPowerOfTwo = function(num) {
         return false
     } 
     
-    let log = Math.log2(num)
-
-    return Number.isInteger(log) ? true : false
-    
     num
     num - 1
     
     let bitwise = (num) & (num - 1) 
     
+    // if it was the one condition where all bits evaluate to 0 
+    
     if (bitwise == 0) {
         return true
     }
+    
     return false
 }
 
