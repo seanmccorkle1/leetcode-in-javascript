@@ -34,6 +34,8 @@ var myPow = function (num, exp) {
     if (exp <= -1) {
         return Math.abs(1/poweredNum) // abs not needed
     }
-
+    
     return poweredNum
 }
+
+myPow(2.00000, 10) // 1024
