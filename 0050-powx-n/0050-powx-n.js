@@ -27,7 +27,8 @@ var myPow = function (num, exp) {
             exponent = (exponent - 1) / 2
             
             const pow = Math.pow(recursivePower(x, exponent), 2)
-            return pow * x
+
+            return x * pow
         }
     }
     
