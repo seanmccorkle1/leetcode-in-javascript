@@ -31,22 +31,19 @@ var setZeroes = function (matrix) {
 
         let [x, y] = zeroCoordinateArray[index]
         
-        matrix[0].length
-        matrix.length
-
-        // update row
-        // go right on the rows elements and use "x"
+        // update a fixed row with varying columns
         // use number of elements in a subarray (matrix[0])
+        // because youre going through the row 
         
-        for (let rowIndex = 0; rowIndex < matrix[0].length; rowIndex++) {
-            matrix[x][rowIndex] = 0
+        for (let columnIndex = 0; columnIndex < matrix[0].length; columnIndex++) {
+            matrix[x][columnIndex] = 0
         }
         
-        // update column
+        // update a fixed column with varying rows
         // go down the matrix subarrays, use matrix.length
         
-        for (let columnIndex = 0; columnIndex < matrix.length; columnIndex++) {
-            matrix[columnIndex][y] = 0
+        for (let rowIndex = 0; rowIndex < matrix.length; rowIndex++) {
+            matrix[rowIndex][y] = 0
         }
     }
 
