@@ -30,7 +30,14 @@ var setZeroes = function (matrix) {
     for (let index = 0; index < zeroCoordinateArray.length; index++) {
 
         let [x, y] = zeroCoordinateArray[index]
+
+                // update a fixed column with varying rows
+        // go down the matrix subarrays, use matrix.length
         
+        for (let rowIndex = 0; rowIndex < matrix.length; rowIndex++) {
+            matrix[rowIndex][y] = 0
+        }
+
         // update a fixed row with varying columns
         // use number of elements in a subarray (matrix[0])
         // because youre going through the row 
@@ -39,12 +46,6 @@ var setZeroes = function (matrix) {
             matrix[x][columnIndex] = 0
         }
         
-        // update a fixed column with varying rows
-        // go down the matrix subarrays, use matrix.length
-        
-        for (let rowIndex = 0; rowIndex < matrix.length; rowIndex++) {
-            matrix[rowIndex][y] = 0
-        }
     }
 
 }
