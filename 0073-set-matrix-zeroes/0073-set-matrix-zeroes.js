@@ -50,7 +50,7 @@ var setZeroes = function (matrix) {
             matrix[columnIndex][y] = 0
         }
     }
-    return matrix
+
 }
 
 console.log(
