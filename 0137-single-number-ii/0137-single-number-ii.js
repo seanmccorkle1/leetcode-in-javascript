@@ -1,5 +1,9 @@
 var singleNumber = function (array) {
     
+    if (array.length == 1){
+        return array[0]
+    }
+    
     array.sort((a, b) => a - b)
     let threeIndex = 0
     
@@ -11,12 +15,9 @@ var singleNumber = function (array) {
         if (leftNum != rightNum){
             return leftNum
         }
-
+        
         threeIndex += 3
-    }
-// for (let i = 0; i < nums.length; i += 3) {
-//         if (nums[i] !== nums[i + 1]) {
-//             return nums[i];
-//         }
-//     }
+    }    
 }
+
+console.log(singleNumber([0,1,0,1,0,1,99]), 99)
