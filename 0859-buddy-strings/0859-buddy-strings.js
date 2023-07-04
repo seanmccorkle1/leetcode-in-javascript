@@ -31,7 +31,8 @@ var buddyStrings = function (string, goalString) {
         string
         set
 
-        const duplicateLettersExist = string.length != [...new Set(string)].length ? true : false
+//        const duplicateLettersExist = string.length != [...new Set(string)].length ? true : false
+        const duplicateLettersExist = string.length != new Set(string).size ? true : false
 
         if (duplicateLettersExist) {
             return true
