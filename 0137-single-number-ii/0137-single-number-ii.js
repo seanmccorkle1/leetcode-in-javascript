@@ -1,9 +1,5 @@
 var singleNumber = function (array) {
     
-    if (array.join("").length == 1){
-        return array[0]
-    }
-    
     if (array.length == 1){
         return array[0]
     }
