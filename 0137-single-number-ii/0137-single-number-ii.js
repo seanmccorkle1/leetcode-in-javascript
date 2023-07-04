@@ -12,7 +12,7 @@ var singleNumber = function (array) {
         const leftNum = array[threeIndex]
         const rightNum = array[threeIndex + 1]
         
-        if (leftNum != rightNum){
+        if (leftNum != rightNum || rightNum === undefined){
             return leftNum
         }
         
