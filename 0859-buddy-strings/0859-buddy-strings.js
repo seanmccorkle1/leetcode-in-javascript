@@ -30,20 +30,13 @@ var buddyStrings = function (string, goalString) {
 
         string
         set
-
-//        const duplicateLettersExist = string.length != [...new Set(string)].length ? true : false
         const duplicateLettersExist = string.length != new Set(string).size ? true : false
-
+        
         if (duplicateLettersExist) {
             return true
         }
-
+        
         return false
-
-        // if (string.length != new Set(string).size) {
-        //     return true
-        // }
-
     }
 
     let [index, index2] = twoIndexArray
