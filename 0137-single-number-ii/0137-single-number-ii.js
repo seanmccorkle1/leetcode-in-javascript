@@ -18,6 +18,7 @@ var singleNumber = function (array) {
         
         threeIndex += 3
     }    
+    return threeIndex
 }
 
 console.log(singleNumber([0,1,0,1,0,1,99]), 99)
