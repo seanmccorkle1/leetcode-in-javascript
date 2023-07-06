@@ -35,12 +35,10 @@ var minSubArrayLen = function (targetNum, array) {
 
     left
     right
-
+    
     // if the sum was never greater
-
+    
     if (minArrayLength == Infinity) {
-        
-    // if (sum < targetNum){
         return 0
     }
     
