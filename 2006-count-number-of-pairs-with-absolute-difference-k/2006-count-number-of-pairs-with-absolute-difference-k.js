@@ -18,7 +18,7 @@ var countKDifference = function (array, k) {
         let difference = num - k
         // if there are three 2s in the array, go up by three
         
-        let frequencyOfDifference = obj[difference] ??null
+        let frequencyOfDifference = obj[difference] ?? undefined
         pairCount += frequencyOfDifference ?? 0
     }
             
