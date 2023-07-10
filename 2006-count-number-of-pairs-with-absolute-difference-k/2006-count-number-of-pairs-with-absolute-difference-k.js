@@ -21,9 +21,9 @@ var countKDifference = function (array, k) {
         const differenceExists = obj[difference] ? true:  false
         let frequencyOfDifference = obj[difference]
         
-        if (differenceExists) {
-            pairCount += frequencyOfDifference
-        }
+        // if (differenceExists) {
+            pairCount += frequencyOfDifference??0
+        // }
     }
 
     return pairCount
