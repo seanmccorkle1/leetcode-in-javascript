@@ -14,7 +14,7 @@
 
 
 
-function findTarget(root, parent, target){
+const findTarget = function(root, parent, target){
   if(!root) return null
   root.parent = parent
 
@@ -24,7 +24,7 @@ function findTarget(root, parent, target){
   return findTarget(root.left, root, target) || findTarget(root.right, root, target)    
 }
 
-function findAllKApart(root, k, res){
+const findAllKApart = function(root, k, res){
     
     if(!root || root.visited) return res
 
@@ -40,7 +40,7 @@ function findAllKApart(root, k, res){
   return res
 }
 
-var distanceK = function(root, target, K) {
+const distanceK = function(root, target, K) {
   if(!root) return []
   const node = findTarget(root, null, target)  
   const res = []
