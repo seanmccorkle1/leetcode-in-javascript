@@ -6,6 +6,10 @@ var longestSubarray = function(array) {
     let skip = 0
     let max = 1
 
+    if (array.length == 1){
+        return 0
+    }
+    
     while (rightIndex < array.length){
 
         const currBit = array[rightIndex]
