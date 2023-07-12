@@ -1,42 +1,47 @@
-var longestSubarray = function(array) {
+var longestSubarray = function (array) {
 
     let leftIndex = 0
     let rightIndex = 0
 
-    let skip = 0
+    let zeroCount = 0
     let max = 1
 
+    // you have to delete exactly one
     if (array.length == 1){
         return 0
     }
     
-    while (rightIndex < array.length){
+    while (rightIndex < array.length) {
 
         const currBit = array[rightIndex]
 
         if (currBit == 0) {
-            ++skip
+            ++zeroCount
         }
 
-        while (skip == 2){
+        if (zeroCount == 2) {
+            
+            while (zeroCount == 2) {
 
-            let leftBit = array[leftIndex]
+                let leftBit = array[leftIndex]
 
-            if (leftBit == 0) {
-                --skip
+                if (leftBit == 0) {
+                    --zeroCount
+                }
+
+                leftIndex++
             }
-
-            leftIndex++
         }
 
-        max = Math.max(max, (rightIndex - leftIndex) + 1)
+        max = Math.max((rightIndex - leftIndex) + 1, max)
         rightIndex++
     }
 
-    // least value of max is 1 which means --> all elements are zero
+    // lowest value of max is 1, but it should be 0
+    // for eg. []
 
     max
-    return max - 1 
+    return max - 1
 }
 
 console.log(longestSubarray([1, 1, 0, 1]), 3)
