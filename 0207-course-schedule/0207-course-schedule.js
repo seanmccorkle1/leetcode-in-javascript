@@ -6,15 +6,18 @@ var canFinish = function(numCourses, prerequisites) {
     
   for (const [e, v] of prerequisites) {
     // build graph map
-
+      
       if (graph.has(v)) {
-      graph.get(v).push(e);
-    } 
-      else if(!graph.has(v)) {
-      graph.set(v, [e]);
-    }
-    // build indegree array
-    indegree[e]++;
+          graph.get(v).push(e)
+      } 
+      
+      // if its NOT in the graph
+      else {
+          graph.set(v, [e])
+      }
+      
+      // build indegree array
+      indegree[e]++;
   }
 
   for (let i = 0; i < indegree.length; i++) {
