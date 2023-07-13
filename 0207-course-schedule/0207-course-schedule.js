@@ -3,12 +3,14 @@ var canFinish = function(numCourses, prerequisites) {
   const queue = [];
   const graph = new Map();
   const indegree = Array(numCourses).fill(0);
-
+    
   for (const [e, v] of prerequisites) {
     // build graph map
-    if (graph.has(v)) {
+
+      if (graph.has(v)) {
       graph.get(v).push(e);
-    } else {
+    } 
+      else if(!graph.has(v)) {
       graph.set(v, [e]);
     }
     // build indegree array
@@ -16,9 +18,9 @@ var canFinish = function(numCourses, prerequisites) {
   }
 
   for (let i = 0; i < indegree.length; i++) {
-    if (indegree[i] === 0) queue.push(i);
+    if (indegree[i] === 0) queue.push(i)
   }
-
+    
   while (queue.length) {
     const v = queue.shift();
     if (graph.has(v)) {
