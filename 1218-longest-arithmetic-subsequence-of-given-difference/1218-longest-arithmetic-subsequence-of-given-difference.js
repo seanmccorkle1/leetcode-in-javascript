@@ -4,12 +4,12 @@ var longestSubsequence = function(array, targetDifference) {
     let max = 0
 
     for (const num of array) {
-
+        
         const diff = num - targetDifference
-        const len = (map.get(diff) ?? 0) + 1
-
-        map.set(num, len)
-        max = Math.max(len, max)
+        const subsequenceLength = (map.get(diff) ?? 0) + 1
+                     
+        map.set(num, subsequenceLength)
+        max = Math.max(subsequenceLength, max)
     }
 
     return max
