@@ -9,11 +9,14 @@ var eraseOverlapIntervals = function (array) {
     for (let index = 1; index < array.length; index++) {
         
         const currInterval = array[index]
+
+        let a =prevInterval[1]
+        let b =currInterval[0]
         
-        if (currInterval[0] < prevInterval[1]) {
+        if (b < a) {
             removeCount++
         }
-
+        
         else {
             prevInterval = array[index]
         }
