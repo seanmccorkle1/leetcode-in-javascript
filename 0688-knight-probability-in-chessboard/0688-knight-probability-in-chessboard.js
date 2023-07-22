@@ -18,7 +18,8 @@ var knightProbability = function(N, K, r, c) {
         let prob = 0;
         
         for (const [dirX, dirY] of dirs) {
-            prob += 1/8 * findProbs(k - 1, r + dirX, c + dirY)
+            let n = findProbs(k - 1, r + dirX, c + dirY)
+            prob += 1/8 * n
         }
         
         memo.set(key, prob);
