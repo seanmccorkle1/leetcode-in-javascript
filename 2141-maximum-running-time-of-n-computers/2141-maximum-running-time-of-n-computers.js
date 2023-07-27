@@ -16,7 +16,7 @@ var maxRunTime = function(n, batteries) {
             i++
         } 
         
-        else if (cur == average_truncated || cur < average_truncated) {
+        else if (cur <= average_truncated) {
             return average_truncated
         }
         
