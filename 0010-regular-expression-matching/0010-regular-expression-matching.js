@@ -23,7 +23,7 @@ var isMatch = function (string, patternString) {
     const catchall = patternString[0] == "."
     const stringExists = Boolean(string)
     
-    const firstLetterMatches = (lettersMatch || catchall) && stringExists
+    const firstLetterMatches = lettersMatch || catchall && stringExists
     
     // Track when the next character * is next in line in the patternString
 
