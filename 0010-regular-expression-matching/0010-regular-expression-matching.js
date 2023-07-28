@@ -5,50 +5,57 @@ var isMatch = function (string, patternString) {
     // returns true when string and patternString are empty
     // returns false when string contains chars with empty patternString
 
-    if (patternString == "" && string == "") {
-        return true
-    }
-
-    if (patternString == "" && string != "") {
-        return false
-    }
-    
     patternString
     string
 
-    const firstLetterOfSliceMatches  = (patternString[0] == string[0]) || (patternString[0] == ".")
+    if (patternString == "" && string == "") {
+        return true
+    }
+    
+    if (patternString.replace(/\*/g, "") == "" && string != "") {
+        return false
+    }
+
+    patternString
+    string
+
+    const firstLetterOfSliceMatches = (patternString[0] == string[0]) || (patternString[0] == ".")
     const firstLetterMatches = firstLetterOfSliceMatches && Boolean(string)
 
     // Track when the next character * is next in line in the patternString
 
     // if next patternString match (after *) is fine with current string, then proceed with it (s, p+2).  That's because the current patternString may be skipped.
-    // Otherwise check firstLetterMatches. That's because if we want to proceed with the current patternString, we must be sure that the current patternString char matches the char
 
+    // Otherwise check firstLetterMatches. That's because if we want to proceed with the current patternString, we must be sure that the current patternString char matches the char
 
     // If firstLetterMatches is true, then do the recursion with next char and current patternString (s+1, p).
     // That's because current char matches the patternString char.
 
-    if (patternString[1] === '*') {
+    const asteriskCondition = patternString[1] === "*"
+
+    if (asteriskCondition ) {
         return (isMatch(string, patternString.slice(2)) ||
             (firstLetterMatches && isMatch(string.slice(1), patternString)))
     }
 
-    // now we know for sure that we need to do 2 simple actions
-	// check the current patternString and string chars
-	// if so, then can proceed with next string and patternString chars (s+1, p+1)
+    // normal case
 
-        if (firstLetterMatches) {
-            let bool = isMatch(string.slice(1), patternString.slice(1))
-            return bool
-        }
+    // check the current patternString and string chars
+    // if so, then can proceed with next string and patternString chars (s+1, p+1)
 
-        // fell through
-        return false
+    if (firstLetterMatches) {
+        let bool = isMatch(string.slice(1), patternString.slice(1))
+        return bool
+    }
 
-        // return firstLetterMatches ? isMatch(string.slice(1), patternString.slice(1)) : false;
+    // fell through
+    return false
 }
 
-console.log(isMatch("asd", "c*asd"), true)
-// console.log(isMatch("asd", "sd"), false)
+// console.log(isMatch("asd", "c*asd"), true)
+// console.log(isMatch("asd", "c*sd"), false)
 
+console.log(isMatch("asd", "c***asd"), true)
+
+// console.log(isMatch("aa", "a*"), true)
 // console.log(isMatch("asd", ".*"), true)
