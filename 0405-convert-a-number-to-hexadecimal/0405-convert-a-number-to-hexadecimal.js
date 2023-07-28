@@ -1,6 +1,6 @@
 var toHex = function (num) {
 
-    var currString = ""
+    let currString = ""
     const array = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
 
     if (num == 0) {
@@ -26,7 +26,6 @@ var toHex = function (num) {
 }
 
 console.log(toHex(255), "ff")
-
 // console.log(toHex(256), "100")
 
 // console.log(toHex(-1), "ffffff")
