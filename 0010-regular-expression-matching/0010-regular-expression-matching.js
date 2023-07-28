@@ -16,9 +16,9 @@ var isMatch = function (string, patternString) {
         return false
     }
     
-    if (string == "" && patternString.length >= 1 && string.length >= 3){
-        return false
-    }
+    // if (string == "" && patternString.length >= 1 && string.length >= 3){
+    //     return false
+    // }
     
     
     patternString
