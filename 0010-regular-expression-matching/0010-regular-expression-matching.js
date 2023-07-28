@@ -14,15 +14,7 @@ var isMatch = function (string, patternString) {
     
     if (patternString == "" && string != "") {
         return false
-    }
-    
-    if (string == "" && patternString.replace(/\*/g, "") == "" &&string.length >= 3){
-        return true
-    }
-    if (string == "" && patternString.replace(/\*/g, "") != "" && string.length>=3){
-        return false
-    }
-    
+    }    
     
     patternString
     string
