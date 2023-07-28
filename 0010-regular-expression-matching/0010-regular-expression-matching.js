@@ -18,9 +18,12 @@ var isMatch = function (string, patternString) {
     
     patternString
     string
-
-    const firstLetterOfSliceMatches = (patternString[0] == string[0]) || (patternString[0] == ".")
-    const firstLetterMatches = firstLetterOfSliceMatches && string != ""
+    
+    const lettersMatch =  patternString[0] == string[0]
+    const catchall = patternString[0] == "."
+    const stringExists = Boolean(string)
+    
+    const firstLetterMatches = (lettersMatch || catchall) && stringExists
     
     // Track when the next character * is next in line in the patternString
 
@@ -37,7 +40,7 @@ var isMatch = function (string, patternString) {
         return (isMatch(string, patternString.slice(2)) ||
             (firstLetterMatches && isMatch(string.slice(1), patternString)))
     }
-
+    
     // normal case
 
     // check the current patternString and string chars
