@@ -15,14 +15,18 @@ var isMatch = function (string, patternString) {
     if (patternString == "" && string != "") {
         return false
     }
-
+    
+    if (string == "" && patternString.length >= 1 && string.length >= 3){
+        return false
+    }
+    
+    
     patternString
     string
 
     const firstLetterOfSliceMatches = (patternString[0] == string[0]) || (patternString[0] == ".")
     const firstLetterMatches = firstLetterOfSliceMatches && string != ""
-    // Boolean(string)
-
+    
     // Track when the next character * is next in line in the patternString
 
     // if next patternString match (after *) is fine with current string, then proceed with it (s, p+2).  That's because the current patternString may be skipped.
@@ -56,7 +60,8 @@ var isMatch = function (string, patternString) {
 // console.log(isMatch("asd", "c*asd"), true)
 // console.log(isMatch("asd", "c*sd"), false)
 
-console.log(isMatch("asd", "c***asd"), true)
+// console.log(isMatch("asd", "c***asd"), true)
 
-// console.log(isMatch("aa", "a*"), true)
+console.log(isMatch("aa", "a*"), true)
+
 // console.log(isMatch("asd", ".*"), true)
