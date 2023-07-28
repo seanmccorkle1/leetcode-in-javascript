@@ -7,7 +7,7 @@ var isMatch = function (string, patternString) {
 
     patternString
     string
-
+    
     if (patternString == "" && string == "") {
         return true
     }
@@ -20,7 +20,8 @@ var isMatch = function (string, patternString) {
     string
 
     const firstLetterOfSliceMatches = (patternString[0] == string[0]) || (patternString[0] == ".")
-    const firstLetterMatches = firstLetterOfSliceMatches && Boolean(string)
+    const firstLetterMatches = firstLetterOfSliceMatches && string != ""
+    // Boolean(string)
 
     // Track when the next character * is next in line in the patternString
 
