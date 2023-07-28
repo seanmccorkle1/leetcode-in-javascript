@@ -6,7 +6,7 @@ var toHex = function (num) {
     if (num == 0) {
         return "0"
     }
-
+    
     if (num <= -1) {
         num += Math.pow(2, 32)
     }
@@ -25,11 +25,8 @@ var toHex = function (num) {
     return currString
 }
 
-254 % 16
+console.log(toHex(255), "ff")
 
-console.log(toHex(254), "ff")
-
-// console.log(toHex(255), "ff")
 // console.log(toHex(256), "100")
 
 // console.log(toHex(-1), "ffffff")
