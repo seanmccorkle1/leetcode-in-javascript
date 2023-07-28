@@ -13,9 +13,9 @@ var isMatch = function (string, patternString) {
         return false
     }
 
-    if (patternString.includes(".*") && !patternString.includes("\.*")){
-        return true
-    }
+    // if (patternString.includes(".*") && !patternString.includes("\.*")){
+    //     return true
+    // }
 
     patternString
     string
