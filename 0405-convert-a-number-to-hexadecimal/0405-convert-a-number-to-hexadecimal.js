@@ -6,7 +6,9 @@ var toHex = function (num) {
     if (num == 0) {
         return "0"
     }
-    
+    if (Number.isInteger(num) == false){
+        return 
+    }
     if (num <= -1) {
         num += Math.pow(2, 32)
     }
