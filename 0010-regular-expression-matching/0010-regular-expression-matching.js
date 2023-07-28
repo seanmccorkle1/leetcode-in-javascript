@@ -12,7 +12,7 @@ var isMatch = function (string, patternString) {
         return true
     }
     
-    if (patternString.replace(/\*/g, "") == "" && string != "") {
+    if (patternString == "" && string != "") {
         return false
     }
 
