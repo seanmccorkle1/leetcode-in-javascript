@@ -5,18 +5,14 @@ var isMatch = function (string, patternString) {
     // returns true when string and patternString are empty
     // returns false when string contains chars with empty patternString
 
-    if (patternString.trim() == "" && string.trim() == "") {
+    if (patternString == "" && string == "") {
         return true
     }
 
-    if (patternString.trim() == "" && string.trim() != "") {
+    if (patternString == "" && string != "") {
         return false
     }
-
-    // if (patternString.includes(".*") && !patternString.includes("\.*")){
-    //     return true
-    // }
-
+    
     patternString
     string
 
