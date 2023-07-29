@@ -1,4 +1,12 @@
-    const recur = (A, B, memo = new Map()) => {
+
+var soupServings = function(N) {
+
+    if(N >= 5000) return 1
+    
+    return recur(N, N)
+}
+
+    var recur = (A, B, memo = new Map()) => {
         if(A <= 0 && B <= 0) return 0.5
         if(A <= 0) return 1
         if(B <= 0) return 0
@@ -17,9 +25,3 @@
         return r
     }
     
-var soupServings = function(N) {
-    if(N >= 5000) return 1
-    
-
-    return recur(N, N)
-}
