@@ -1,8 +1,8 @@
 
 #AS means ALIAS
 
-SELECT DISTINCT author_id 
-AS id   
+select distinct author_id 
+as id   
 from Views 
 where author_id = viewer_id 
-ORDER BY id
+order by id
