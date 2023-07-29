@@ -6,7 +6,7 @@ var soupServings = function(N) {
     return recur(N, N)
 }
 
-    var recur = (A, B, memo = new Map()) => {
+const recur = (A, B, memo = new Map()) => {
         if(A <= 0 && B <= 0) return 0.5
         if(A <= 0) return 1
         if(B <= 0) return 0
