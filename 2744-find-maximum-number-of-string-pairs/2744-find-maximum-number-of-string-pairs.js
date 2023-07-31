@@ -4,18 +4,21 @@ var maximumNumberOfStringPairs = function (words) {
 
     for (let index = 0; index < words.length - 1; index++) {
 
-        const normalWord = words[index]
+        let normalWord = words[index]
+        
+        let rightIndex = index + 1
+        
+        while (rightIndex < words.length){
 
-        for (let j = index + 1; j < words.length; j++) {
-            
-            let reversedWord = words[j].split("").reverse().join("")
+            let reversedWord = words[rightIndex].split("").reverse().join("")
             
             if (normalWord == reversedWord) {
                 pairCount++
                 break // only need 1 pair (1 match)
             }
-        }
+            
+            rightIndex++
+        }    
     }
     return pairCount
 }
-
