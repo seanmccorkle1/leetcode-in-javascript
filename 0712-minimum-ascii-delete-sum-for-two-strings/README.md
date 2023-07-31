@@ -12,11 +12,11 @@ At the end, both strings are equal, and 115 + 116 = 231 is the minimum sum possi
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> s1 = "delete", s2 = "<em class="Highlight ht3b9ffa4e-af42-4d3f-b009-38cfee0be140" highlight="true" match="leet*" loopnumber="442803727" style="font-style: inherit;">leet</em>"
+<pre><strong>Input:</strong> s1 = "delete", s2 = "<em class="Highlight ht3b9ffa4e-af42-4d3f-b009-38cfee0be140" highlight="true" match="leet*" loopnumber="423021968" style="font-style: inherit;">leet</em>"
 <strong>Output:</strong> 403
 <strong>Explanation:</strong> Deleting "dee" from "delete" to turn the string into "let",
 adds 100[d] + 101[e] + 101[e] to the sum.
-Deleting "e" from "<em class="Highlight ht3b9ffa4e-af42-4d3f-b009-38cfee0be140" highlight="true" match="leet*" loopnumber="442803727" style="font-style: inherit;">leet</em>" adds 101[e] to the sum.
+Deleting "e" from "<em class="Highlight ht3b9ffa4e-af42-4d3f-b009-38cfee0be140" highlight="true" match="leet*" loopnumber="423021968" style="font-style: inherit;">leet</em>" adds 101[e] to the sum.
 At the end, both strings are equal to "let", and the answer is 100+101+101+101 = 403.
 If instead we turned both strings into "lee" or "eet", we would get answers of 433 or 417, which are higher.
 </pre>
