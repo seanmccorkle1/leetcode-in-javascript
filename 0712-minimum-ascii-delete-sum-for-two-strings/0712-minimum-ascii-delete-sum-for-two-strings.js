@@ -16,8 +16,11 @@ var minimumDeleteSum = function(s1, s2) {
         }
         
         const memostr = `${i}, ${j}`
-        if (memostr in memo) return memo[memostr]
-
+        if (memostr in memo) {
+            let e = memo[memostr]
+            return e
+        }
+        
         if (s1[i] === s2[j]) return memo[memostr] = dfs(i + 1, j + 1)
 
         const s1code = getCharCode(s1[i])
