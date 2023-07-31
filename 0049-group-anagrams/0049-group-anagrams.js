@@ -1,5 +1,5 @@
 var groupAnagrams = function(stringArray){
-
+    
     // take a normal array and return a double array = use an object
     const object = {}
     
@@ -7,16 +7,19 @@ var groupAnagrams = function(stringArray){
         
         let anagramString = originalString.split("").sort().join("")
         const anagramArray = object[anagramString]
-    
-        object        
         
-        if (!anagramArray) { 
-            object[anagramString] = [originalString] // so you can push into the array
-        }
+        // group it ON the anagram
+        // means make the anagram the key
         
-        else {
-            anagramArray.push(originalString)
-        }        
+        anagramArray ? anagramArray.push(originalString) : object[anagramString]   = [originalString]
+        
+//         if (!anagramArray) { 
+//             object[anagramString] = [originalString] // so you can push into the array
+//         }
+        
+//         else {
+//             anagramArray.push(originalString)
+//         }
         
         object
     }
