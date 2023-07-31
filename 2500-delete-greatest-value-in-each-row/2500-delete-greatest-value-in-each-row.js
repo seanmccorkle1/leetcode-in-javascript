@@ -9,6 +9,8 @@ var deleteGreatestValue = function (grid) {
     grid[0]
 
     let firstRow = grid[0]
+    
+    // you can alter array variables with pop()
 
     while (firstRow.length != 0) {
 
@@ -24,7 +26,7 @@ var deleteGreatestValue = function (grid) {
         let greatestOfTwo = Math.max(...currColumn)
         sum += greatestOfTwo
     }
-    
+
     return sum
 }
 
