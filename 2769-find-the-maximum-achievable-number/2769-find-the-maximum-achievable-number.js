@@ -1,14 +1,10 @@
 
 var theMaximumAchievableX = function(num, t) {
-    if (t ==1){
-        return num + 2
-    }
-    if (num == 1){
-        return (t*2) + 1
-    }
-
-    // if (num == t){
-    //     return Math.pow(num, t)
+    // if (t ==1){
+    //     return num + 2
+    // }
+    // if (num == 1){
+    //     return (t*2) + 1
     // }
     
     return num +( t * 2 )
