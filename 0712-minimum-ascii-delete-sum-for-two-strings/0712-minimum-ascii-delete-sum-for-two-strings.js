@@ -7,9 +7,14 @@ var minimumDeleteSum = function(s1, s2) {
         
         if (i >= s1.length && j >= s2.length) return 0
         
-        if (i == s1.length && j < s2.length) return getCharCode(s2.slice(j))
-        if (j ==s2.length) return getCharCode(s1.slice(i))
-
+        if (i == s1.length && j < s2.length) {
+            return getCharCode(s2.slice(j))
+        }
+        
+        if (j ==s2.length && i < s1.length) {
+            return getCharCode(s1.slice(i))
+        }
+        
         const memostr = `${i}, ${j}`
         if (memostr in memo) return memo[memostr]
 
