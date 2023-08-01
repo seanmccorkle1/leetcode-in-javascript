@@ -1,6 +1,10 @@
 var combine = function (n, k) {
-
+    
     const array = []
+    
+    if (k== 1) {
+        return new Array(n).fill("f").map((z, index) => [++index])
+    } 
 
     //-----------------------------------
     const findCombination = (startNum, currCombo) => {
