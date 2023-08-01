@@ -7,14 +7,15 @@ var numIdenticalPairs = function (array) {
         
         let frequency = obj[number]
         const valueExists = obj[number] ? true : false
-
+        
         obj
         
         if (valueExists) {
-            count += frequency
             
             // increment frequency
             obj[number] += 1 
+                        count += frequency            
+
         }
         
         else if (!valueExists) {
