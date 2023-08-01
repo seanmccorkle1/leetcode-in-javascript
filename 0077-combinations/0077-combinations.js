@@ -28,9 +28,8 @@ var combine = function (n, k) {
 
             currCombo.push(index)
             currCombo
-            
-            findCombination(index + 1, currCombo)
-
+                        
+            findCombination(start = index + 1, currCombo)
 
             currCombo
 
@@ -48,7 +47,7 @@ var combine = function (n, k) {
     //-----------------------------------
 
     findCombination(startNum = 1, currCombo = [])
-
+    
     return array
 }
 
