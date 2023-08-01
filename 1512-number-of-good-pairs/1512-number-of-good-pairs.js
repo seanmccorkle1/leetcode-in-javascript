@@ -14,7 +14,7 @@ var numIdenticalPairs = function (array) {
             
             count += obj[number] 
             
-            // increment frequency
+            // increment comes last
             obj[number] += 1 
             
         }
