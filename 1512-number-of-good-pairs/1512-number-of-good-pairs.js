@@ -5,17 +5,18 @@ var numIdenticalPairs = function (array) {
     
     for (let number of array){
         
-        let frequency = obj[number]
+        // let frequency = obj[number]
         const valueExists = obj[number] ? true : false
         
         obj
         
         if (valueExists) {
             
+            count += obj[number] 
+            
             // increment frequency
             obj[number] += 1 
-                        count += frequency            
-
+            
         }
         
         else if (!valueExists) {
