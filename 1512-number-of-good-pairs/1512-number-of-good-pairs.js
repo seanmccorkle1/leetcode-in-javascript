@@ -1,20 +1,15 @@
-
-
 var numIdenticalPairs = function (array) {
-
+    
     const obj = {}
     let count = 0
-
+    
     for (let number of array){
-
+        
         const valueExists = obj[number] ? true : false
-        const frequency = obj[number]
-
+        let frequency = obj[number]
+        
         if (valueExists) {
-
             count += frequency
-
-            // update the data structure after the counter
             obj[number] += 1 
 
             obj
@@ -25,7 +20,7 @@ var numIdenticalPairs = function (array) {
             obj
         }
     }
-
+    
     obj
     return count
 }
