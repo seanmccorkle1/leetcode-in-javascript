@@ -15,20 +15,22 @@ var search = function(nums, target) {
     // Check if the left side is sorted
       
       if (nums[left] <= nums[mid]) {
-          
+
+          // target is in the left
           if (nums[left] <= target && target <= nums[mid]) {
-        // target is in the left
-              right = mid - 1;
-              
-      }
+              right = mid - 1;    
+          }
+          
           // target is in the right
-          else if(true == 1) {
+          
+          else {
               left = mid + 1;
           }
-    } 
-    
+      } 
+      
     // Otherwise, the right side is sorted
-    else {
+
+      else if (nums[left] > nums[mid]) {
       if (nums[mid] <= target && target <= nums[right]) {
         // target is in the right
         left = mid + 1;
