@@ -18,7 +18,5 @@ const good = function (nums, p, maxDiff){
             i++;
         }
     }
-   
-    return n>=p ? true : n < p ? false : "asd"
+    return n>=p ? true : n < p ? false : "end"
 }
-    
