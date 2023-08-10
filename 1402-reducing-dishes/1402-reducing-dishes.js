@@ -9,20 +9,16 @@ var maxSatisfaction = function (array) {
         return 0
     }
     
-    for (let index = 0; index < array.length; index++) {
+    // [2, 3, 4]
+    // [3, 4]
+    // [4]
 
-        // reset
+    array
+    
+    for (let index = 0; index < array.length; index++) {
+        
         let currSumOfProducts = 0
-        
-        // [2, 3, 4]
-        // [3, 4]
-        // [4]
-        
         let index2 = index
-        
-        // for (let index2 = index; index2 < array.length; index2++) {
-        
-        array
         
         while (index2 < array.length) {
             
@@ -40,9 +36,12 @@ var maxSatisfaction = function (array) {
         
         maxSum = Math.max(currSumOfProducts, maxSum)
         
-        if (array.at(0) >= 0) {
+        let first = array.at(0)
+
+        if (first >= 0) {
             return maxSum
         }
+
             
     }
 
