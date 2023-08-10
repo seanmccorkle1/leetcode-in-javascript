@@ -31,7 +31,7 @@ var search = function(nums, target) {
             }
         } 
         
-        else if (nums[start] == nums[mid]){
+        else if (nums[start] == nums[mid] ?? 0){
             start += 1;
         }
     }
