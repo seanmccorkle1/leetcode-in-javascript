@@ -21,17 +21,17 @@ var search = function(nums, target) {
             }            
         }
         
-        else if (nums[start] > nums[mid]) {            
+        else if (nums[start] > nums[mid]) {
+            
             if (nums[end] >= target && nums[mid] < target) {
                 start = mid + 1;
-            } 
-
+            }            
             else {
                 end = mid - 1;
             }
         } 
         
-        else {
+        else if (nums[start] == nums[mid]){
             start += 1;
         }
     }
