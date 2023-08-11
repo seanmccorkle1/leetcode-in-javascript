@@ -1,6 +1,6 @@
 var change = function(amount, coins) {
     
-    let dp = new Array(amount + 1).fill(0)
+    const dp = new Array(amount + 1).fill(0)
     dp[0] = 1
     
     for (let i=0; i<coins.length;i++) { // iterate the types of coin
@@ -22,3 +22,4 @@ var change = function(amount, coins) {
     
     return dp[amount]
 }
+
