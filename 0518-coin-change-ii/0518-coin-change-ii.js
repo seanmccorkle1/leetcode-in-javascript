@@ -14,8 +14,8 @@ var change = function(amount, coins) {
             // dp[j - coins[i]] is is the combinations for using the current coin
             
             if (j >= coins[i]) {
-                // dp[j] = dp[j] + dp[j - coins[i]];
-                dp[j] += dp[j - coins[i]]
+                let value = dp[j - coins[i]]
+                dp[j] += value
             }
         }
     }
