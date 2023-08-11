@@ -19,7 +19,7 @@ var findSpecialInteger = function (array) {
 
     }
 
-    return -1
+    // return -1
 }
 
 // [1, 1] [2, 2] [3, 3] [3, 3]
