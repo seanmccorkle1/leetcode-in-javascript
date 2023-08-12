@@ -1,24 +1,35 @@
-  const gcd = (length1, length2) => {
-      
-      if (length2 == 0){
-          return length1
-      }
-      else {
-          return gcd(length2, length1 % length2) 
-      }
-  }
+const gcd = (string1Length, string2Length) => {
 
-var gcdOfStrings = function(string1, string2) {   
+    if (string2Length == 0) {
+        return string1Length
+    } 
 
-    let concat = string1+string2
-    let reverseConcat = string2+string1
-    
-    if (concat != reverseConcat ) {
+    else if (string2Length != 0) {
+        let mod = string1Length % string2Length
+        return gcd(string2Length, mod) // swap
+    }
+}
+
+var gcdOfStrings = function (string1, string2) {
+
+    if (string1 == string2) {
+        return string1
+    }
+
+    let concat = string1 + string2
+    let backwardsConcat = string2 + string1
+
+    if (concat != backwardsConcat) {
         return ""
     }
-      
-  // (length2 == 0? a : gcd(b, a % b))
-  
-  const endLength =gcd(string1.length, string2.length) 
-  return string1.slice(0, endLength)
+
+    string1.length
+    string2.length
+
+    let endLength = gcd(string1.length, string2.length)
+    return string1.slice(0, endLength)
+    
 }
+
+console.log(gcdOfStrings("ABCABC", "ABC"), "ABC")
+// console.log(gcdOfStrings("ASD", "XYZ"), "")
