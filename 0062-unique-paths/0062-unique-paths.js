@@ -1,43 +1,29 @@
-var uniquePaths = function (numOfRows, numOfCols) {
+var factorial = function (num) {
 
-    numOfRows
-    numOfCols
-
-    const array = new Array(numOfRows).fill(new Array(numOfCols).fill(1))
-
-    //  [[ 1, 1, 1, 1, 1, 1, 1 ],
-    //   [ 1, 1, 1, 1, 1, 1, 1 ],
-    //   [ 1, 1, 1, 1, 1, 1, 1 ]]
-
-    // avoid array[-1][-1]
-    for (let rowIndex = 1; rowIndex < numOfRows; rowIndex++) {
-
-        for (let colIndex = 1; colIndex < numOfCols; colIndex++) {
-
-            rowIndex
-            colIndex
-
-            let topCell = array[rowIndex - 1][colIndex]
-            let leftCell = array[rowIndex][colIndex - 1]
-
-            // unique paths to the end =
-            // number of paths reached up to to one step left +
-            // number of paths reached up to to one step up
-
-            let bothWays = topCell + leftCell
-            
-            array
-
-            // overwrite to get 2 on the first loop instead of 3
-            array[rowIndex][colIndex] = bothWays
-        }
-
-        array
+    if (num == 0 || num == 1) {
+        return 1
     }
 
-    array
-    return array[0][numOfCols-1]
-    // return array[numOfRows - 1][numOfCols - 1]
+    return num * factorial(num - 1)
+}
+
+// From start to destination, we need (m-1) ↓ moves and (n-1) → moves
+// Thus, the number of unique paths is the number of permutations of (m-1) ↓ and (n-1) →
+
+// Number of unique paths = ( m-1 + n-1 ) ! / (m-1)! * (n-1)!
+
+var uniquePaths = function (numOfRows, numOfCols) {
+
+    let numerator = factorial(numOfRows - 1 + numOfCols - 1)
+    let denom = factorial(numOfRows - 1) * factorial(numOfCols - 1)
+
+    let numOfUniquePaths = numerator / denom
+
+    return numOfUniquePaths
+
+    // let pathCount = factorial( m-1 + n-1 ) / ( factorial( m-1 ) * factorial( n-1 ) )
+    // return pathCount
 }
 
 uniquePaths(3, 7) // 28
+// uniquePaths(3, 8) // 36
