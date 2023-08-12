@@ -14,16 +14,25 @@ var factorial = function (num) {
 
 var uniquePaths = function (numOfRows, numOfCols) {
 
-    let numerator = factorial(numOfRows - 1 + numOfCols - 1)
-    let denom = factorial(numOfRows - 1) * factorial(numOfCols - 1)
+    numOfRows
+    numOfCols
 
+    let big = (numOfRows - 1) + (numOfCols - 1) 
+
+    big
+    let numerator = factorial(big)
+
+    let x = factorial(numOfRows - 1)
+    let y = factorial(numOfCols - 1)
+
+    let denom = x*y
+
+    numerator
+    denom
+    
+    // there wont be a decimal number of paths
     let numOfUniquePaths = numerator / denom
-
     return numOfUniquePaths
-
-    // let pathCount = factorial( m-1 + n-1 ) / ( factorial( m-1 ) * factorial( n-1 ) )
-    // return pathCount
 }
 
 uniquePaths(3, 7) // 28
-// uniquePaths(3, 8) // 36
