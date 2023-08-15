@@ -5,6 +5,7 @@
  *     this.next = (next===undefined ? null : next)
  * }
  */
+
 /**
  * @param {ListNode} head
  * @param {number} x
@@ -12,13 +13,21 @@
  */
 
 var partition = function(head, x) {
+    
+    let fdum = new ListNode(0), bdum = new ListNode(0)
+    
+    let front = fdum
+    let back = bdum
+    let curr = head
 
-    let fdum = new ListNode(0), bdum = new ListNode(0),
-        
-        front = fdum, back = bdum, curr = head
     while (curr) {
-        if (curr.val < x)front.next = curr, front = curr
-        else back.next = curr, back = curr
+        
+        if (curr.val < x){
+            front.next = curr
+            front = curr
+        }
+        
+        else if (curr.val >= x) {back.next = curr, back = curr}
         curr = curr.next
     }
     front.next = bdum.next, back.next = null
