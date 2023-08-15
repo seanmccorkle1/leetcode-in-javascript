@@ -27,9 +27,15 @@ var partition = function(head, x) {
             front = curr
         }
         
-        else if (curr.val >= x) {back.next = curr, back = curr}
+        else if (curr.val >= x) {
+            back.next = curr, back = curr
+        }
+        
         curr = curr.next
     }
-    front.next = bdum.next, back.next = null
+    
+    front.next = bdum.next
+    back.next = null
     return fdum.next
-};
+}
+
