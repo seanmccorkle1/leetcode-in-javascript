@@ -31,9 +31,14 @@ class UnionFind {
     }
 }
 
+
 var findCriticalAndPseudoCriticalEdges = function(n, edges) {
-    let criticalEdges = [], psuedoCriticalEdges = [], map = new Map();
+
+    let criticalEdges = []
+    const psuedoCriticalEdges = []
     
+    const map = new Map()
+
     edges.forEach((edge, i) => map.set(edge, i));
     
     edges.sort((a, b) => a[2] - b[2]);
