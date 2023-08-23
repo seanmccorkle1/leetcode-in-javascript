@@ -14,14 +14,18 @@ var reorganizeString = function(S) {
     pq.sort((a,b)=>b[1]-a[1]);
     
     let res = "";    
+
     while (pq.length != 0) {
+    
         let lastChar = res[res.length - 1];
         let first = pq.shift();
-
+        
         if(lastChar != first[0]) {
             res+=first[0];
             if (first[1]!=1) pq.push([first[0], first[1]-1]);
-        } else {
+        } 
+        
+        else if(lastChar == first[0]) {
             let second = pq.shift();
             if (second == null) return "";
             res+=second[0];
