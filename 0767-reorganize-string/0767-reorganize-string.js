@@ -40,7 +40,8 @@ var reorganizeString = function(S) {
                 pq.push([second[0], second[1]-1])
             }
         }
-
+        
+        // highest at the front
         pq.sort((a,b)=>b[1]-a[1])
     }
     
