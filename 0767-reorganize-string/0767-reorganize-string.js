@@ -26,13 +26,23 @@ var reorganizeString = function(S) {
         } 
         
         else if(lastChar == first[0]) {
+
             let second = pq.shift();
-            if (second == null) return "";
+            
+            if (second == null) {
+                return ""
+            }
+
             res+=second[0];
             pq.push(first);
-            if (second[1]!=1) pq.push([second[0], second[1]-1]);
+            
+            if (second[1]!=1) {
+                pq.push([second[0], second[1]-1])
+            }
         }
-        pq.sort((a,b)=>b[1]-a[1]);
+
+        pq.sort((a,b)=>b[1]-a[1])
     }
-    return res;
+    
+    return res
 }
