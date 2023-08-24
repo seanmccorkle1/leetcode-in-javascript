@@ -1,9 +1,11 @@
 // The constraints of the input parameters are:
+
 // 1 <= words.length <= 300
 // 1 <= words[i].length <= 20
 // words[i] consists of only English letters and symbols.
 // 1 <= maxWidth <= 100
 // words[i].length <= maxWidth
+
 
 var fullJustify = function(words, maxWidth) {
     
@@ -15,45 +17,54 @@ var fullJustify = function(words, maxWidth) {
     // Greedy pack each line
     // when that fails add the line to the result with the added padding
     // and start a new line
+    
     words.forEach(word => {
+        
         // Check if the word fits in the current line
         // A word fits if theres enough room for the word and
         // a space between it and the word to the left
+        
         if (word.length <= (width - buf.length)) {
             buf.push(word);
             width -= word.length;
-        } else {
-            // The word did not fit on the line, send this line for padding
-            addWordToResult(res, buf.slice(), maxWidth);
+        } 
+        
+        else {
             
+            // The word did not fit on the line, send this line for padding
+            addWordToResult(res, buf.slice(), maxWidth)
+
             // Start a new line with the current word
-            buf = [word];
+            buf = [word]
+            
             // reset the current line width
-            width = maxWidth - word.length;
+            width = maxWidth - word.length
         }
-    });
+    })
     
     // This is the final lines processing
     // According the rules this should only be left justified
     // so add all padding to the right not between the words
+    
     if (buf.length) {
-        let str = buf.join(' ');
-        str += ' '.repeat(maxWidth - str.length);
-        res.push(str);
+        let str = buf.join(' ')
+        str += ' '.repeat(maxWidth - str.length)
+        res.push(str)
     }
     
-    return res;
-};
+    return res
+}
 
 // Max words are on each line now pad them with spaces
 
-//
 function addWordToResult(res, buf, maxWidth) {
+
     // How many spaces are needed
     let spaces = maxWidth - buf.reduce((acc, cur) => cur.length + acc, 0);
     
     // If there is only one word on the line
     // then just add the padding to the end and return
+    
     if (buf.length === 1) {
         buf[0] += ' '.repeat(spaces);
         res.push(buf[0]);
@@ -73,7 +84,7 @@ function addWordToResult(res, buf, maxWidth) {
     // evenly looping back to the beginning of the buffer
     
     while (spaces  > 0) {
-        buf[index] += ' ';
+        buf[index] += ' '
         index = (index + 1) % end
         spaces--
     }
