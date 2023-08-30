@@ -1,23 +1,37 @@
-var bestClosingTime = function(customers) {
-    
-    let max = 0
-    let balance = 0
-    let answer = 0
-    
-    for (var i = 0;i < customers.length;i++){
-        
-        if(customers[i] === "Y"){
-            balance++
+var bestClosingTime = function(array) {
+
+    let currentBalance = 0
+    let maxBalance = 0
+
+    let closingHour = 0
+
+    for (var index = 0; index < array.length;index++){
+
+        if (array[index] == "Y"){
+            ++currentBalance
         }
-        
-        else if (customers[i] != "Y") {
-            balance--
+
+        else if (array[index] == "N") {
+            --currentBalance
         }
-        
-        if(balance > max){
-            max = balance;
-            answer = i + 1
+
+        if (currentBalance > maxBalance){
+
+            // this updates the condition above
+            maxBalance = currentBalance
+
+            // only jump the closing time when the YN balance is positive
+            // "YN balance is positive" means more money
+
+            closingHour = index + 1
         }
     }
-    return answer;
-};
+    
+    maxBalance
+    return closingHour
+}
+
+bestClosingTime("YYNY") // 2
+
+// bestClosingTime("NNNN") // 0  | closing at the 0th hour is best
+// bestClosingTime("YYYY") // 4 | dont close
