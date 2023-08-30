@@ -4,11 +4,11 @@ class Solution {
         int currentBalance = 0;
         int maxBalance = 0;
         int closingHour = 0;
-            
+
         for (int index = 0; index < string.length(); index++) {
         
             if (string.charAt(index) == 'Y') {
-                currentBalance++;
+                ++currentBalance;
             } 
             
             else if (string.charAt(index) == 'N') {
