@@ -1,17 +1,17 @@
-var bestClosingTime = function(array) {
+var bestClosingTime = function(string) {
 
     let currentBalance = 0
     let maxBalance = 0
-
+    
     let closingHour = 0
 
-    for (var index = 0; index < array.length;index++){
+    for (var index = 0; index < string.length;index++){
 
-        if (array[index] == "Y"){
+        if (string[index] == "Y"){
             ++currentBalance
         }
 
-        else if (array[index] == "N") {
+        else if (string[index] == "N") {
             --currentBalance
         }
 
@@ -19,7 +19,7 @@ var bestClosingTime = function(array) {
 
             // this updates the condition above
             maxBalance = currentBalance
-
+            
             // only jump the closing time when the YN balance is positive
             // "YN balance is positive" means more money
 
