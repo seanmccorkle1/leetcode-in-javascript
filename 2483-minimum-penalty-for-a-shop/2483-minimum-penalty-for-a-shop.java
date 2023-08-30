@@ -1,17 +1,17 @@
 class Solution {
-    public int bestClosingTime(String array) {
+    public int bestClosingTime(String string) {
         
         int currentBalance = 0;
         int maxBalance = 0;
         int closingHour = 0;
             
-        for (int index = 0; index < array.length(); index++) {
+        for (int index = 0; index < string.length(); index++) {
         
-            if (array.charAt(index) == 'Y') {
+            if (string.charAt(index) == 'Y') {
                 currentBalance++;
             } 
             
-            else if (array.charAt(index) == 'N') {
+            else if (string.charAt(index) == 'N') {
                 currentBalance--;
             }
             
