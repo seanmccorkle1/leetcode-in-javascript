@@ -1,5 +1,6 @@
 var minTaps = function(n, ranges) {
     
+    // null will mess up Math.min() and Math.max
     const dp = new Array(n + 1).fill(1e6);
     dp[0] = 0
     
