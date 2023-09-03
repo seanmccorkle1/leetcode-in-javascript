@@ -1,9 +1,12 @@
-var factorial = function (num) {
+// uniquePaths is below
 
+const factorial = (num) => {
+    
     if (num == 0 || num == 1) {
         return 1
     }
-
+    
+    // recursiveFn(x - 1)
     return num * factorial(num - 1)
 }
 
@@ -16,23 +19,23 @@ var uniquePaths = function (numOfRows, numOfCols) {
 
     numOfRows
     numOfCols
-
-    let big = (numOfRows - 1) + (numOfCols - 1) 
-
-    big
-    let numerator = factorial(big)
-
-    let x = factorial(numOfRows - 1)
-    let y = factorial(numOfCols - 1)
-
-    let denom = x*y
+    
+    let adjustedRowsAndCols = (numOfRows - 1) + (numOfCols - 1)  
+    
+    let numerator = factorial(adjustedRowsAndCols)
+    
+    let denominatorNum1 = factorial(numOfRows - 1)
+    let denominatorNum2 = factorial(numOfCols - 1)
+    
+    let denominator = denominatorNum1*denominatorNum2
 
     numerator
-    denom
+    denominator
     
-    // there wont be a decimal number of paths
-    let numOfUniquePaths = numerator / denom
+    // there wont be a decimal number when it comes to factorials
+    let numOfUniquePaths = numerator / denominator
     return numOfUniquePaths
 }
 
-uniquePaths(3, 7) // 28
+
+uniquePaths(3, 7) // 28 | 28 unique paths
