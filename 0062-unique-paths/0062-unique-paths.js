@@ -36,7 +36,6 @@ var uniquePaths = function (numOfRows, numOfCols) {
     //~~ messes the results up
     
     let numOfUniquePaths = numerator / denominator
-    
     return numOfUniquePaths
 }
 
