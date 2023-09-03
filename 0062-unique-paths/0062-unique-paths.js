@@ -27,13 +27,16 @@ var uniquePaths = function (numOfRows, numOfCols) {
     let denominatorNum1 = factorial(numOfRows - 1)
     let denominatorNum2 = factorial(numOfCols - 1)
     
-    let denominator = denominatorNum1*denominatorNum2
+    let denominator = denominatorNum1 * denominatorNum2
 
     numerator
     denominator
     
-    // there wont be a decimal number when it comes to factorials
+    //  factorials are always integers, 
+    //~~ messes the results up
+    
     let numOfUniquePaths = numerator / denominator
+    
     return numOfUniquePaths
 }
 
