@@ -20,9 +20,7 @@ var splitListToParts = function(root, k) {
     
     // count the # of nodes
     while (curr != null) {
-
         curr = curr.next;
-
         n++;
     }
     
@@ -33,11 +31,12 @@ var splitListToParts = function(root, k) {
     let tail = root;
     
     for (let i = 0; head != null; i++) {
+
         let m = width;
         
         if (rem > 0) {
-            m += 1;
-            rem--;
+            m++
+            rem--
         }
         
         let tail = head;
@@ -47,7 +46,8 @@ var splitListToParts = function(root, k) {
         }
         
         const next = tail.next;
-        tail.next = null;
+        tail.next = null
+        
         res[i] = head;
         head = next;
     }
