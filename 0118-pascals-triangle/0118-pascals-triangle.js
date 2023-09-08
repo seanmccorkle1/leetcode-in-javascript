@@ -17,18 +17,16 @@ var generate = function(numRows) {
 
         const rowArray = [1] 
 
-        let index2 = 1
+        let numIndex = 1
+        
+        while (numIndex < index) {
 
-
-        nestedLoop:        
-        while (index2 < index) {
-
-            let leftNumber = doubleArray[index - 1][index2 - 1]  
-            let rightNumber = doubleArray[index - 1][index2]
+            let leftNumber = doubleArray[index - 1][numIndex - 1]  
+            let rightNumber = doubleArray[index - 1][numIndex]
 
             rowArray.push(leftNumber + rightNumber) 
             
-            index2++
+            numIndex++
     }
 
     // need [x, 1] at the end 
