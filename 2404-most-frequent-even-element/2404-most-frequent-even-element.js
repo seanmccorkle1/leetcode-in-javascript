@@ -18,7 +18,7 @@ var mostFrequentEven = function(array) {
     console.log(array)
     console.log(obj)    
     
-    console.log( array.sort((a,b) => (obj[b] - obj[a]) || a - b))
+    array.sort((a,b) => obj[b] - obj[a] || a - b)
     return array[0]
 }
 
