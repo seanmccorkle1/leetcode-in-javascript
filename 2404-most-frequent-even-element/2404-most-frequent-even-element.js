@@ -25,5 +25,5 @@ var mostFrequentEven = function(array) {
 }
 
 
-// mostFrequentEven([0,1,4,4,2,2,1])  // 2
+// mostFrequentEven([0,1,4,4,2,2,1])  // 2  | 2 is lower
 // mostFrequentEven ([29,47,21,41,13,37,25,7]) // -1
