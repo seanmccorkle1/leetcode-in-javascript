@@ -18,11 +18,12 @@ var mostFrequentEven = function(array) {
     console.log(array)
     console.log(obj)    
     
-    array.sort((a,b) => obj[b] - obj[a] || a - b)
+    // modifies
+    array.sort((a,b) => (obj[b] - obj[a]) || (a - b) )
+    
     return array[0]
 }
 
-mostFrequentEven([8154,9139,8194,3346,5450,9190,133,8239,4606,8671,8412,6290]) // 3346
 
-// mostFrequentEven([0,1,2,2,4,4,1])  // 2
+// mostFrequentEven([0,1,4,4,2,2,1])  // 2
 // mostFrequentEven ([29,47,21,41,13,37,25,7]) // -1
