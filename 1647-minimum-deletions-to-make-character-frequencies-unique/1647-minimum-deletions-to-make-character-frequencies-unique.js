@@ -1,6 +1,6 @@
 var minDeletions = function(s) {
     
-    const arr = Array(26).fill(0)
+    const arr = new Array(26).fill(0)
     let res = 0
     
     for(let i=0;i<s.length; i++){
@@ -8,6 +8,7 @@ var minDeletions = function(s) {
         arr[index]++
     }
     
+    // allowed with const
     arr.sort((a,b)=>b - a)
     
     for (let i=1; i<26; i++){
