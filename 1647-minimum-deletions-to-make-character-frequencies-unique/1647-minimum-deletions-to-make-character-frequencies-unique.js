@@ -8,9 +8,9 @@ var minDeletions = function(s) {
         arr[index]++
     }
     
-    // arr.sort((a,b)=>b-a)
-    arr.sort((a,b) => a - b).reverse()
-    for(let i=1; i<26; i++){
+    arr.sort((a,b)=>b - a)
+    
+    for (let i=1; i<26; i++){
 
         while(arr[i] && arr[i] >= arr[i-1]){
             arr[i]--
