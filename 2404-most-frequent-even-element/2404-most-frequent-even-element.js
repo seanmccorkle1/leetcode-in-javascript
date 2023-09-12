@@ -18,7 +18,10 @@ var mostFrequentEven = function(array) {
     console.log(array)
     console.log(obj)    
     
-    // modifies
+    
+    // sort by descending frequency
+    // then, if its tied, the lower number should come first
+    
     array.sort((a,b) => (obj[b] - obj[a]) || (a - b) )
     
     return array[0]
