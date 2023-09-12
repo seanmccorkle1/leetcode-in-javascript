@@ -1,20 +1,20 @@
 var minDeletions = function(s) {
-    const cnt = {};
-    let deletions = 0;
-    const used_frequencies = new Set();
+    let arr = Array(26).fill(0)
+    let res = 0
     
-    for (const c of s) {
-        cnt[c] = (cnt[c] || 0) + 1;
+    for(let i=0;i<s.length; i++){
+        let index = s[i].charCodeAt(0) - 'a'.charCodeAt(0)
+        arr[index]++
     }
     
-    for (const freq of Object.values(cnt)) {
-        let f = freq;
-        while (f > 0 && used_frequencies.has(f)) {
-            f--;
-            deletions++;
+    arr.sort((a,b)=>b-a)
+    
+    for(let i=1; i<26; i++){
+        while(arr[i] && arr[i] >= arr[i-1]){
+            arr[i]--
+            res++
         }
-        used_frequencies.add(f);
     }
     
-    return deletions;
-}
+    return res
+};
