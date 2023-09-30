@@ -1,6 +1,6 @@
 var find132pattern = function (array) {
 
-    let rightNum = -Infinity
+    let rightNum;
 
     // Initialise a empty stack...
     const stack = []
@@ -17,8 +17,8 @@ var find132pattern = function (array) {
         // If leftNum is greater than the top element of stack,
         // then pop the element
 
-        stack
         leftNum
+        rightNum
 
         // mutually exclusive with the while condition
         if (leftNum < rightNum) {
@@ -40,8 +40,6 @@ var find132pattern = function (array) {
 
         leftNum
         rightNum
-
-
     }
 
     // If the condition is not satisfied, return false.
