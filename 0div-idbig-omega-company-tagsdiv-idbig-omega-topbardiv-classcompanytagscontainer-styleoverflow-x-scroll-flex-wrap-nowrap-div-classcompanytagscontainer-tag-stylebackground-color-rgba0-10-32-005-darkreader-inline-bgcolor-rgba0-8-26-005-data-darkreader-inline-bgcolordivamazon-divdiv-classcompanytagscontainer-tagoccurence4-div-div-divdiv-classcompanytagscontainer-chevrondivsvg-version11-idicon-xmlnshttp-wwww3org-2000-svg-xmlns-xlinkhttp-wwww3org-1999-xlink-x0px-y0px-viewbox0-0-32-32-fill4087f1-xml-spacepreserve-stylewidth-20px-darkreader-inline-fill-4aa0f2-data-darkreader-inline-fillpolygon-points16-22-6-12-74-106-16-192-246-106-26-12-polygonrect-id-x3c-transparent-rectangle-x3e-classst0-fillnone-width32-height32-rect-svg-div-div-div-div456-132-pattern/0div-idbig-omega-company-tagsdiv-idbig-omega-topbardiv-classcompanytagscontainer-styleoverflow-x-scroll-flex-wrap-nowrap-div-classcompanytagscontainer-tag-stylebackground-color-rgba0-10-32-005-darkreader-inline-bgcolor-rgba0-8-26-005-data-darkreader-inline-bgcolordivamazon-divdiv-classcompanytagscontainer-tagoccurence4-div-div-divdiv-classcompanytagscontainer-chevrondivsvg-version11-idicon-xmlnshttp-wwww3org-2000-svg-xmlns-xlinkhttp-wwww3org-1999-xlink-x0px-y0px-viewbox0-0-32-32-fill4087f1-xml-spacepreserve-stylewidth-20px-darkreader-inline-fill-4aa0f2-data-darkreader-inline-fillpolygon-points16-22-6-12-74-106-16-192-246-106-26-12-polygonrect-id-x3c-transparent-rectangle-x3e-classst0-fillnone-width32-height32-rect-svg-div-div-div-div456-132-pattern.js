@@ -25,9 +25,8 @@ var find132pattern = function (array) {
             return true
         }
 
-
         leftNum
-            stack
+        stack
 
         while (
             leftNum > stack.at(-1)) {
@@ -46,6 +45,6 @@ var find132pattern = function (array) {
     return false
 }
 
-find132pattern([-1,3,2,0])
+find132pattern([-1, 3, 2, 0])
 // find132pattern([3, 1, 4, 2]) // true
 // find132pattern([1,2,3]) // false
