@@ -12,27 +12,33 @@ var find132pattern = function (array) {
 
     for (let index = array.length - 1; index >= 0; index--) {
 
-        let currNum = array[index]
+        let leftNum = array[index]
 
-        // If currNum is greater than the top element of stack,
+        // If leftNum is greater than the top element of stack,
         // then pop the element
 
         stack
-        currNum
+        leftNum
 
-        if (currNum < rightNum) {
+        // mutually exclusive with the while condition
+        if (leftNum < rightNum) {
             return true
         }
 
-        while
-        (currNum > stack.at(-1)) {
 
+        leftNum
+            stack
+
+        while (
+            leftNum > stack.at(-1)) {
+
+            // this is the right one for now
             rightNum = stack.pop()
         }
 
-        stack.push(currNum)
+        stack.push(leftNum)
 
-        currNum
+        leftNum
         rightNum
 
 
@@ -42,5 +48,6 @@ var find132pattern = function (array) {
     return false
 }
 
+find132pattern([-1,3,2,0])
 // find132pattern([3, 1, 4, 2]) // true
-find132pattern([1,2,3]) // false
+// find132pattern([1,2,3]) // false
