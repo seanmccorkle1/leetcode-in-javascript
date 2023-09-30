@@ -28,6 +28,8 @@ var find132pattern = function (array) {
         leftNum
         stack
 
+        rightNum
+
         while (
             leftNum > stack.at(-1)) {
 
