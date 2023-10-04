@@ -12,6 +12,7 @@ var numIdenticalPairs = function (array) {
 
 
     for (let number of array) {
+
         const valueExists = obj[number] ? true : false
 
         obj
@@ -20,7 +21,7 @@ var numIdenticalPairs = function (array) {
         if (valueExists) {
 
             let numOfPairs = obj[number]
-
+            
             // early += on count
             count += numOfPairs
 
@@ -31,7 +32,6 @@ var numIdenticalPairs = function (array) {
             obj[number] = 1
         }
     }
-
     obj
     return count
 }
