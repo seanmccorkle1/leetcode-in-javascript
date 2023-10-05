@@ -3,6 +3,10 @@ var majorityElement = function(array){
     const returnArray= []
     const object = {}
 
+    if (array.length <= 2){
+        return [...new Set(array)]
+    }
+    
     for (let index = 0; index < array.length; index++){
 
         const number = array[index]
@@ -22,7 +26,7 @@ var majorityElement = function(array){
         
         let threshold = array.length / 3
         
-        if (frequency > threshold){
+        if (frequency > threshold) {
             returnArray.push(stringnum)
         }
     }
