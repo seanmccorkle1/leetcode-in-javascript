@@ -1,4 +1,5 @@
 var majorityElement = function(array){
+
     const returnArray= []
     const object = {}
 
@@ -19,7 +20,9 @@ var majorityElement = function(array){
         stringnum
         frequency
         
-        if (frequency > array.length / 3){
+        let threshold = array.length / 3
+        
+        if (frequency > threshold){
             returnArray.push(stringnum)
         }
     }
