@@ -20,15 +20,17 @@ var majorityElement = function(array){
     
     for (let [stringnum, frequency] of Object.entries(object)){
         
-        stringnum
+        stringnum 
         frequency
         
         let threshold = array.length / 3
-        
+
+        let num = Number(stringnum)
+
         if (frequency > threshold) {
-            returnArray.push(stringnum)
+            returnArray.push(num)
         }
     }
     
-    return returnArray.map(stringnum=>Number(stringnum))
+    return returnArray
 }
