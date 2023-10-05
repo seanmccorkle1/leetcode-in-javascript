@@ -17,10 +17,9 @@ var majorityElement = function(array){
     }
     
     object
-    Object.keys(object)
-
+    
     for (let [stringnum, frequency] of Object.entries(object)){
-
+        
         stringnum
         frequency
         
@@ -31,5 +30,5 @@ var majorityElement = function(array){
         }
     }
     
-    return returnArray
+    return returnArray.map(stringnum=>Number(stringnum))
 }
