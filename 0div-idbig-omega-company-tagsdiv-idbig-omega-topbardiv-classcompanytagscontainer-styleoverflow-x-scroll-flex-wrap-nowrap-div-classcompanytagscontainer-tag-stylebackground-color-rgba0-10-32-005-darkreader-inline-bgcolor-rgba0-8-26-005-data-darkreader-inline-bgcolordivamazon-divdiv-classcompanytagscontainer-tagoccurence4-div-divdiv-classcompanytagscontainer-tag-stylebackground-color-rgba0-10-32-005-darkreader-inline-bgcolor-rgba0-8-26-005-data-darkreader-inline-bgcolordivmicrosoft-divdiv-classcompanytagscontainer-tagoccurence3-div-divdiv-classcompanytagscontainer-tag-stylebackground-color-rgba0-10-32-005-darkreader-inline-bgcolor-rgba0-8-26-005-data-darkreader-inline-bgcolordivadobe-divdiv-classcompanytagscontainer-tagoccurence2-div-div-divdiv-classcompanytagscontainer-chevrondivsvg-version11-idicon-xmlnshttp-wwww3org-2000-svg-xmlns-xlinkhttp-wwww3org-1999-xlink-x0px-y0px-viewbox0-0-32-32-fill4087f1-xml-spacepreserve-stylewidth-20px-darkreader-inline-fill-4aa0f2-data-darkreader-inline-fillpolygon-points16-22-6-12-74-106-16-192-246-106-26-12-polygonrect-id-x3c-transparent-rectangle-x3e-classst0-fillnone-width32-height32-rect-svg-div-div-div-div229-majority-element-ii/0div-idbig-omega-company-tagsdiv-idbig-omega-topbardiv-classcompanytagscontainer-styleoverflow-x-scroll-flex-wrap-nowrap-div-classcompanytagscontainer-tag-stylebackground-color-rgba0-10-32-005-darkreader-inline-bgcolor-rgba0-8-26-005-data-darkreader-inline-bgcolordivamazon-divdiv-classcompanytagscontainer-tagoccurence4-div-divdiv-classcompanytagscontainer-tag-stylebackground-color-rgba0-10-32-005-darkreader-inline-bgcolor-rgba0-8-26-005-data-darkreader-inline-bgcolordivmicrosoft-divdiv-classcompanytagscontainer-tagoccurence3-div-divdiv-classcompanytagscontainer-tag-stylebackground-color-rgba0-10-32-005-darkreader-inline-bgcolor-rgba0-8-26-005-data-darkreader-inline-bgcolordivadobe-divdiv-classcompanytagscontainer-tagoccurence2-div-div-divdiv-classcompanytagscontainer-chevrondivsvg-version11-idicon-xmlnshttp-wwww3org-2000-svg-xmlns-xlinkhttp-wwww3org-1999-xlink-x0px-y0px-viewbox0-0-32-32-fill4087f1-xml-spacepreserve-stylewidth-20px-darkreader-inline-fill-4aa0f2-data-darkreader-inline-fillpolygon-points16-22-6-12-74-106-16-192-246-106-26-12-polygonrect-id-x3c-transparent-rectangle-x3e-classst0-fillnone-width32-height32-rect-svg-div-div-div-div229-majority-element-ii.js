@@ -4,7 +4,7 @@ var majorityElement = function(array){
     const object = {}
 
     if (array.length <= 2){
-        return [...new Set(array)]
+        return [...new Set(array)] // return uniques
     }
     
     for (let index = 0; index < array.length; index++){
