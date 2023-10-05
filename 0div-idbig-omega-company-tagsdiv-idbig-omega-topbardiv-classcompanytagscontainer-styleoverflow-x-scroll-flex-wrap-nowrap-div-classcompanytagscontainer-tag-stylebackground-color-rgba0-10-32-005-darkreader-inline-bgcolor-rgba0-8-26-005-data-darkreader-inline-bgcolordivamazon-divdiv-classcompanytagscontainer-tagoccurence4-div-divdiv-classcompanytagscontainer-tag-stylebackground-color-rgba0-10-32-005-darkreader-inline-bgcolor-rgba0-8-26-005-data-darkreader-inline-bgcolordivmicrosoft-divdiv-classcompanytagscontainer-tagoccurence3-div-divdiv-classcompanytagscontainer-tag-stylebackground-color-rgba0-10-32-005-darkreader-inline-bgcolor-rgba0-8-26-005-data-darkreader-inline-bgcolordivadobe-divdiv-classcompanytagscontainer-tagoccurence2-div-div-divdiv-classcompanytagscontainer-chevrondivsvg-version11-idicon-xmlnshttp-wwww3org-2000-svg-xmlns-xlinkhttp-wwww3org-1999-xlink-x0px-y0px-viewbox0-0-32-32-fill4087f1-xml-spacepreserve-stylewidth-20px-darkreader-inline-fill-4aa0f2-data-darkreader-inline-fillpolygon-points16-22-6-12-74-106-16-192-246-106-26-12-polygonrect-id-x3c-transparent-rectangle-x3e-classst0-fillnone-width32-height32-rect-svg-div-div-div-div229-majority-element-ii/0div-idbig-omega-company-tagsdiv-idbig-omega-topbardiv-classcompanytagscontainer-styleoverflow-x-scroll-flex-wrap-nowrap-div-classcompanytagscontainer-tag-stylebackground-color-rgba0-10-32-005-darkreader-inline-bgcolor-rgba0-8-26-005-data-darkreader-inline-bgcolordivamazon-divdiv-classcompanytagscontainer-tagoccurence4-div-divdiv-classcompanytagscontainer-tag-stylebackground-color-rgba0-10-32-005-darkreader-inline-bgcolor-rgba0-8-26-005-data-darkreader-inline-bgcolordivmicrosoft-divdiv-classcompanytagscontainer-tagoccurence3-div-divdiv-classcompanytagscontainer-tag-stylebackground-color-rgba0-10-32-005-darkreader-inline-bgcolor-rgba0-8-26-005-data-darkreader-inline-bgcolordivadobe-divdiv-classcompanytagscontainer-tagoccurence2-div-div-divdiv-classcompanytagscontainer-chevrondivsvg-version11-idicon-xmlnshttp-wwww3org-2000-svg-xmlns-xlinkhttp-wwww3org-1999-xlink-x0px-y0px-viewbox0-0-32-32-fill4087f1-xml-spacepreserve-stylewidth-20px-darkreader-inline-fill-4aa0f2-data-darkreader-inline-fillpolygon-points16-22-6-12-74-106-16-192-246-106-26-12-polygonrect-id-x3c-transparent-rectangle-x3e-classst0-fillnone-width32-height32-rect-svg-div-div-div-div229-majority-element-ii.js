@@ -9,7 +9,7 @@ var majorityElement = function(array){
     
     for (let index = 0; index < array.length; index++){
 
-        const number = array[index]
+        let number = array[index]
         
         object[number]
         ? object[number] += 1 
