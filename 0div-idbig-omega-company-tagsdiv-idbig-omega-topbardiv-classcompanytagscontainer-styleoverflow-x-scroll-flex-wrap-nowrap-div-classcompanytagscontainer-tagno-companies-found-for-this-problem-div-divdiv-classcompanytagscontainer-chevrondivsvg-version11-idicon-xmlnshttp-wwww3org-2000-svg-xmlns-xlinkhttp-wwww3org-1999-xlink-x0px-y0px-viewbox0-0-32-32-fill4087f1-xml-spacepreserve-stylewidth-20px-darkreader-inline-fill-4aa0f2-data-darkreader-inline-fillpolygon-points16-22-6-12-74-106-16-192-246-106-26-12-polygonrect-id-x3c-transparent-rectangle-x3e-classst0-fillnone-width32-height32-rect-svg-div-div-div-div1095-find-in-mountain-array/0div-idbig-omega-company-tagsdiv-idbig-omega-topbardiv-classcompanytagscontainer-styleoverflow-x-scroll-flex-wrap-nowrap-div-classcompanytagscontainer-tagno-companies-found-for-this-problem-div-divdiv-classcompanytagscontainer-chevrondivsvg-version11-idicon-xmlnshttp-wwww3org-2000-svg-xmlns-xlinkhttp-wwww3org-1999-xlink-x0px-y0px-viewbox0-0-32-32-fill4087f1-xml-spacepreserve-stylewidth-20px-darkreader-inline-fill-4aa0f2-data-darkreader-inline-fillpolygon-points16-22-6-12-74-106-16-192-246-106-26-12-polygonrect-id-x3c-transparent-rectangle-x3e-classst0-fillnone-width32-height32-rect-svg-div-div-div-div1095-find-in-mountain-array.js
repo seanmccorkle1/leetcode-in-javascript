@@ -5,7 +5,7 @@ var binarySearch = function(left, right, condition) {
         if (condition(mid)) {
             right = mid;
         } 
-        else {
+        else if (!condition(mid)){
             left = mid + 1;
         }
     }
