@@ -2,16 +2,18 @@ var minCostClimbingStairs = function (array) {
     
     array
     
+    // start at the 3rd, 
+    // get 1st, 2nd, 3rd on the first loop
     for (index = 2; index < array.length; index++) {
 
         const currCost = array[index]
-
+        
         let oneStepBeforeCost = array[index - 1]
         let twoStepsBeforeCost = array[index - 2]
-
+        
         // 1 or 2 steps, whichever one has a lower cost
         const minCostOfLastTwo = Math.min(oneStepBeforeCost, twoStepsBeforeCost)
-
+        
         // prefix sum thing
 
         // [10, 15, 20, 2000] becomes
@@ -20,14 +22,14 @@ var minCostClimbingStairs = function (array) {
 
         currCost
         minCostOfLastTwo
-
+        
         array[index] = currCost + minCostOfLastTwo
 
         array
     }
 
     // take 1 step from the last, or 2 steps for the second-to-last
-    array    
+    array
     return Math.min(array.at(-1), array.at(-2))
 }
 
