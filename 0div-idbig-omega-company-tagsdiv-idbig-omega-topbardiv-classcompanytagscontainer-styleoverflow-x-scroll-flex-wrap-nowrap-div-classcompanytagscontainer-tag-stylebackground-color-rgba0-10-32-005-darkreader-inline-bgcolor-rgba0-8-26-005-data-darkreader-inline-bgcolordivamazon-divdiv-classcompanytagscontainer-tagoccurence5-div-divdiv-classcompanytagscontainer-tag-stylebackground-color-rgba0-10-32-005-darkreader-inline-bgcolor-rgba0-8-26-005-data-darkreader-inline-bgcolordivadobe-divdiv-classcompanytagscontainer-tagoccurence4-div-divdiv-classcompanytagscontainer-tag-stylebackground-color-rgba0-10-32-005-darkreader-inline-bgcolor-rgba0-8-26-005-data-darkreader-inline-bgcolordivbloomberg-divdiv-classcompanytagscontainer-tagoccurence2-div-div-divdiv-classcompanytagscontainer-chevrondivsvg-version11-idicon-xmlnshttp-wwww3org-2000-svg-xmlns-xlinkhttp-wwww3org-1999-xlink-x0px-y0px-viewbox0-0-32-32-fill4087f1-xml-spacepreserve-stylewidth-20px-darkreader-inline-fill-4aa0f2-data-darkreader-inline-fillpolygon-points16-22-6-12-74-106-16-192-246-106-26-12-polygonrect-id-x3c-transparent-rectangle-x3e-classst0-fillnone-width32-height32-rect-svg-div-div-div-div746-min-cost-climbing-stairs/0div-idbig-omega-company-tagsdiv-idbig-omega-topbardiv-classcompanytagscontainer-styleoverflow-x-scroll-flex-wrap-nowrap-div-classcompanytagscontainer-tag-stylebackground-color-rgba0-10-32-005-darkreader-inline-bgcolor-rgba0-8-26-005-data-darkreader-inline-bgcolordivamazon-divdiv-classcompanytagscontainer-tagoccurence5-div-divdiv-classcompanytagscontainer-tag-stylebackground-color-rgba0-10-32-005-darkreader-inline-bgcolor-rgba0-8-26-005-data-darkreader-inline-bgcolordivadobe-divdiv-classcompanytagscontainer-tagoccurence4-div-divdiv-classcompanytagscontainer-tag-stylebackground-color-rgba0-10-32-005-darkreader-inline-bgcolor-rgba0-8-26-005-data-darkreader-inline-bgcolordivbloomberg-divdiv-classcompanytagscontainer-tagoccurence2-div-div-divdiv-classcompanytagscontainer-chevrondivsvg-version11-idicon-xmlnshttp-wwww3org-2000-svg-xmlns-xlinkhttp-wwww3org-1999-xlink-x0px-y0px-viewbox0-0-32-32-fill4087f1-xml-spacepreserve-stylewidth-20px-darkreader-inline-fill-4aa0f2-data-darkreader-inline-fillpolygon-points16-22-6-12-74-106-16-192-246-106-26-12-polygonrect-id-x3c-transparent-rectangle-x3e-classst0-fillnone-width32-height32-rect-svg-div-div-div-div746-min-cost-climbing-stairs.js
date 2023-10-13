@@ -23,8 +23,9 @@ var minCostClimbingStairs = function (array) {
         currCost
         minCostOfLastTwo
         
-        array[index] = currCost + minCostOfLastTwo
-
+        // array[index] = currCost + minCostOfLastTwo
+        
+        array[index]+=minCostOfLastTwo
         array
     }
 
