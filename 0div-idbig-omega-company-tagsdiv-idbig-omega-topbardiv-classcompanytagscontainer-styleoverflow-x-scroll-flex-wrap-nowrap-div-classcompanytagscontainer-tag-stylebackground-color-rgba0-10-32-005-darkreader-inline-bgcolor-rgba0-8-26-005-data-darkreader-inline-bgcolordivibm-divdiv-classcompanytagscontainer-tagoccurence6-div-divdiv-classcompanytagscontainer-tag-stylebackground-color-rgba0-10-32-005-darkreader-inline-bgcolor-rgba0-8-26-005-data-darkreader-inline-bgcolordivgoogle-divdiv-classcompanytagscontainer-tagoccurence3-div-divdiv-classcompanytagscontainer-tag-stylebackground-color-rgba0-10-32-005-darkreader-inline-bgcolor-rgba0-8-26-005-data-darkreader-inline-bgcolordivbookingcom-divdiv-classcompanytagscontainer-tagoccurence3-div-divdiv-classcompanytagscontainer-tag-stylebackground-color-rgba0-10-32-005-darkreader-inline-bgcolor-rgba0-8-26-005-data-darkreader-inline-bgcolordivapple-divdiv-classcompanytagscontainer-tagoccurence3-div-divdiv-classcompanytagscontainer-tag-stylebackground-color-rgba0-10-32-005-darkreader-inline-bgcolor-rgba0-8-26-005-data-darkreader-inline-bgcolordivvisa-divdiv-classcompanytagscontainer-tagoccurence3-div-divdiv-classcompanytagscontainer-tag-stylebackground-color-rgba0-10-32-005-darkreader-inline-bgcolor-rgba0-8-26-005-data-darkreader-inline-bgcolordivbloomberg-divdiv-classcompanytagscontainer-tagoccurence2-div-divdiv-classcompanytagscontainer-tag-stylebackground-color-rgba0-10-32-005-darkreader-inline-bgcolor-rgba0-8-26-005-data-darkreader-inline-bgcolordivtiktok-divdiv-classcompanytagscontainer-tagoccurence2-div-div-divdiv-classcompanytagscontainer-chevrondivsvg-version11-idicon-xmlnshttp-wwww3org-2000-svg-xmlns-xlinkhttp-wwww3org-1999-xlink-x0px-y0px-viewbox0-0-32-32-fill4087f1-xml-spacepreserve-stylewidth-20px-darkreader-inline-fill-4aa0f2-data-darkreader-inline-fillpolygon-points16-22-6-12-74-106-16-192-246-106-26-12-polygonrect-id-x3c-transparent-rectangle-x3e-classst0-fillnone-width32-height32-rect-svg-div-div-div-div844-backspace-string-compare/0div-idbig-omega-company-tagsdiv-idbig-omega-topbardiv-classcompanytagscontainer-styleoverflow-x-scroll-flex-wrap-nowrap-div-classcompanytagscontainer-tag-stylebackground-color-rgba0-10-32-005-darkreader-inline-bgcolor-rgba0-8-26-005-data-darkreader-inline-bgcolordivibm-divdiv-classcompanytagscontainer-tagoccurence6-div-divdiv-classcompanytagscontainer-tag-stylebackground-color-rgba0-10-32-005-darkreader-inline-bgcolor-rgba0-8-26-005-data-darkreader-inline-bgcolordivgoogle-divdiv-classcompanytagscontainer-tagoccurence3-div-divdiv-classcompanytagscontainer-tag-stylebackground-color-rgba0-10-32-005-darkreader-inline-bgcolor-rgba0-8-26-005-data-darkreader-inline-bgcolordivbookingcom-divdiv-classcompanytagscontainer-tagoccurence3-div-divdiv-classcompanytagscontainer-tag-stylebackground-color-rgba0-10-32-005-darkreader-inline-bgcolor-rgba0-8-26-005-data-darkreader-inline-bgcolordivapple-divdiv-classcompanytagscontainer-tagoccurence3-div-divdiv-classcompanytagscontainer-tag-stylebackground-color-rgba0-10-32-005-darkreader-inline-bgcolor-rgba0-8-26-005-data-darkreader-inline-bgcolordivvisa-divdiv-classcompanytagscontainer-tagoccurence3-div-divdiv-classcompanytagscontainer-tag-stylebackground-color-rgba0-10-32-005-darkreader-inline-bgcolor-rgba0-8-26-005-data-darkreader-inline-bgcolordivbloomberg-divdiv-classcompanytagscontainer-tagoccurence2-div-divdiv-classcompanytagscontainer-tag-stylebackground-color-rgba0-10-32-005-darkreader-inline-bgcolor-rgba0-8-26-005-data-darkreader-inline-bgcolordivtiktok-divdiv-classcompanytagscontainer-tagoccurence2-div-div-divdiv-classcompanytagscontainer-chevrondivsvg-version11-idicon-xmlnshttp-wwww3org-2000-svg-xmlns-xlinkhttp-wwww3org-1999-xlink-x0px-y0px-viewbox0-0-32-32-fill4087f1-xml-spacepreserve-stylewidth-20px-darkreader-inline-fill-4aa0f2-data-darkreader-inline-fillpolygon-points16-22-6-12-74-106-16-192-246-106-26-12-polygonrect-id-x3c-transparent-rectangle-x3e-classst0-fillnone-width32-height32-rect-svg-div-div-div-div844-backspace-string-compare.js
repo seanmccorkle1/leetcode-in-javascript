@@ -22,8 +22,8 @@ const recursive = (str) => {
                 stack.push(letter);
             }
         }
-        return stack.join(""); 
-    }
-
+    let passBack = stack.join("")
+    return passBack
+}
 console.log(backspaceCompare("ab#c", "ad#c"), "both become ac" , true,
 backspaceCompare("ab##","c#d#"), true)
