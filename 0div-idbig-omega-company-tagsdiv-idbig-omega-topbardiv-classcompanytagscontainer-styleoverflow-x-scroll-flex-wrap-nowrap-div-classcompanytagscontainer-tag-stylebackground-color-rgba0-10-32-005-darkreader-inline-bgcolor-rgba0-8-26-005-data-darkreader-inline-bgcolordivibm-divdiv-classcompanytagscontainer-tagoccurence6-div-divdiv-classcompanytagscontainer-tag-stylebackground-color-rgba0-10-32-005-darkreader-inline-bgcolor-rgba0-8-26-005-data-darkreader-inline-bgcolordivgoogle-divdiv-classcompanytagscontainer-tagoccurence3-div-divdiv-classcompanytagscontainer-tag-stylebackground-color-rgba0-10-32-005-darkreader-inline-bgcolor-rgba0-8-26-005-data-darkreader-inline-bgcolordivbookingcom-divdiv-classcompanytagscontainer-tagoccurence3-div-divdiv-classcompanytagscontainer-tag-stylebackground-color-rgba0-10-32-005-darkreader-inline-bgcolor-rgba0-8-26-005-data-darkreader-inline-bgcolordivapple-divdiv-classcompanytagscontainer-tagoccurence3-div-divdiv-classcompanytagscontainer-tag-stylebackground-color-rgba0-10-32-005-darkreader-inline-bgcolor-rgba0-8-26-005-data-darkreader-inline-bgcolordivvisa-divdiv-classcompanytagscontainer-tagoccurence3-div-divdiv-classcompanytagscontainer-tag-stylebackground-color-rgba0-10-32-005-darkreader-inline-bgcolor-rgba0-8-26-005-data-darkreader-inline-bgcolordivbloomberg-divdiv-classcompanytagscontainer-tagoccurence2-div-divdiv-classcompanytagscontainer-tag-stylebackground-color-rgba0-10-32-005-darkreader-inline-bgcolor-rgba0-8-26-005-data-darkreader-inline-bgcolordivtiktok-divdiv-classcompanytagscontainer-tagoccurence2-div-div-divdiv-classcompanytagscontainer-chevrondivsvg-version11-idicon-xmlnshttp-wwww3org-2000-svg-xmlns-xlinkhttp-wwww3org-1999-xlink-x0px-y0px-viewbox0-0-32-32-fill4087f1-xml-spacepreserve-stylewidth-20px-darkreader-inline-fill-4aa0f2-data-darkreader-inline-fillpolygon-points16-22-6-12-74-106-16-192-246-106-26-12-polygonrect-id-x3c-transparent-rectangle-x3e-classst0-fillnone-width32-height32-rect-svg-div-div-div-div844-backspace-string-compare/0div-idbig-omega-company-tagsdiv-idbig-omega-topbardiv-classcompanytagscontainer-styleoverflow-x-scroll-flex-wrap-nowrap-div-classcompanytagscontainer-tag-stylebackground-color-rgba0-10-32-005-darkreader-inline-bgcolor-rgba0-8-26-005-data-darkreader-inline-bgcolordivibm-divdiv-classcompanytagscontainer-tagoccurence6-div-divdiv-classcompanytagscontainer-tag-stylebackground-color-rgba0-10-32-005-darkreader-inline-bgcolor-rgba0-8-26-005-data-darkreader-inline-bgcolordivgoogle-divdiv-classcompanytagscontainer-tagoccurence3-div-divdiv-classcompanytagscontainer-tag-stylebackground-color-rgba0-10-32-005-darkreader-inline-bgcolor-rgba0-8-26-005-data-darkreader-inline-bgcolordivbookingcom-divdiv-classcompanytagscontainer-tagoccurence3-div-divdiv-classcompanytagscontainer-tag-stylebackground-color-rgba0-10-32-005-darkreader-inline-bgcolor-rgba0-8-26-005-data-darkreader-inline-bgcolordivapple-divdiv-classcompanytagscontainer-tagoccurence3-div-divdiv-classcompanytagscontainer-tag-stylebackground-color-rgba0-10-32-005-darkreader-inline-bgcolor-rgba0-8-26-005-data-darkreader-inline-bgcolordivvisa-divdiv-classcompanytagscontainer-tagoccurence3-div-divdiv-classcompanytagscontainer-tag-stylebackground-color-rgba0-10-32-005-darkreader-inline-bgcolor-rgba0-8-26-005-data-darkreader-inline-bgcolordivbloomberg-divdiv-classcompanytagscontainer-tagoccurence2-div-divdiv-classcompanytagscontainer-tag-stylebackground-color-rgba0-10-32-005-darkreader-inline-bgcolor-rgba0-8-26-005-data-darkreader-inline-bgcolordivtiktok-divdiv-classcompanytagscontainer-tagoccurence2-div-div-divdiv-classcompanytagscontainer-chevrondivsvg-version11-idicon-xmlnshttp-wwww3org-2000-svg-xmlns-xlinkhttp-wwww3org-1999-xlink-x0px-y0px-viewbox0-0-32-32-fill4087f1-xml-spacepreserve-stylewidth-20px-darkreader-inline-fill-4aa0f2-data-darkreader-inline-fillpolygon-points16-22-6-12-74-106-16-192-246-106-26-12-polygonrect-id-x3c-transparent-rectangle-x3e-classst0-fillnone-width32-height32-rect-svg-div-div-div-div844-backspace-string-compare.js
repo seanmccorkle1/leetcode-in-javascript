@@ -10,17 +10,22 @@ var backspaceCompare = function(str1, str2){
                 stack.pop(); 
             } 
             
-            else {
+            else if (letter != "#") {
                 stack.push(letter);
             }
         }
         return stack.join(""); 
     }
-    if (recursive(str1) == recursive(str2) ) {
+    
+    let fixedString1 = recursive(str1)
+    let fixedString2 = recursive(str2)
+    
+    if (fixedString1 ==fixedString2) {
         return true
     } 
     return false
 }
+
 
 console.log(backspaceCompare("ab#c", "ad#c"), "both become ac" , true,
 backspaceCompare("ab##","c#d#"), true)
