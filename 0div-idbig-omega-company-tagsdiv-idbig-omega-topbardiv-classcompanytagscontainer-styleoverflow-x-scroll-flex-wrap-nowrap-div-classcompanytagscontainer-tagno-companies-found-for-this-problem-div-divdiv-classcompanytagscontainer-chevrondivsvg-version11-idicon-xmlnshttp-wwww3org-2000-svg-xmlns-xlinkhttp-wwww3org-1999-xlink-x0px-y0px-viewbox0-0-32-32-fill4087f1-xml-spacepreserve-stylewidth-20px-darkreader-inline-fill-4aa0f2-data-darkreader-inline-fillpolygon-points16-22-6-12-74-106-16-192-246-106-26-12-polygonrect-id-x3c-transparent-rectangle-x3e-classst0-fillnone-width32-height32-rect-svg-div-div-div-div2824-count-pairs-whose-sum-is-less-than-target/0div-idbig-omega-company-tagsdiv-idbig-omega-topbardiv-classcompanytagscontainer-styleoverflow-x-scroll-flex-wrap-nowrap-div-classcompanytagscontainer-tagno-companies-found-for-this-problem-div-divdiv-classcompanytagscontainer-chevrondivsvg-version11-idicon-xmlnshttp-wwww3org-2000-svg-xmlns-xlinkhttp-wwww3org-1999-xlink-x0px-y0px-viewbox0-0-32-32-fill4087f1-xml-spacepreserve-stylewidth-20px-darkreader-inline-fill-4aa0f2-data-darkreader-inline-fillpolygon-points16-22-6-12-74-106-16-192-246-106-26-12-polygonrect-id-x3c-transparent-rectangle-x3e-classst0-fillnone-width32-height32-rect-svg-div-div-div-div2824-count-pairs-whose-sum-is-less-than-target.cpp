@@ -31,7 +31,10 @@ class Solution {
     int main() {
         std::vector<int> array = {-6, 2, 5, -2, -7, -1, 3};
         int target = -2;
+        
         std::cout << countPairs(array, target) << std::endl;
+        std::cout << -2 << std::endl;
+
         return 0;
     };
 };
