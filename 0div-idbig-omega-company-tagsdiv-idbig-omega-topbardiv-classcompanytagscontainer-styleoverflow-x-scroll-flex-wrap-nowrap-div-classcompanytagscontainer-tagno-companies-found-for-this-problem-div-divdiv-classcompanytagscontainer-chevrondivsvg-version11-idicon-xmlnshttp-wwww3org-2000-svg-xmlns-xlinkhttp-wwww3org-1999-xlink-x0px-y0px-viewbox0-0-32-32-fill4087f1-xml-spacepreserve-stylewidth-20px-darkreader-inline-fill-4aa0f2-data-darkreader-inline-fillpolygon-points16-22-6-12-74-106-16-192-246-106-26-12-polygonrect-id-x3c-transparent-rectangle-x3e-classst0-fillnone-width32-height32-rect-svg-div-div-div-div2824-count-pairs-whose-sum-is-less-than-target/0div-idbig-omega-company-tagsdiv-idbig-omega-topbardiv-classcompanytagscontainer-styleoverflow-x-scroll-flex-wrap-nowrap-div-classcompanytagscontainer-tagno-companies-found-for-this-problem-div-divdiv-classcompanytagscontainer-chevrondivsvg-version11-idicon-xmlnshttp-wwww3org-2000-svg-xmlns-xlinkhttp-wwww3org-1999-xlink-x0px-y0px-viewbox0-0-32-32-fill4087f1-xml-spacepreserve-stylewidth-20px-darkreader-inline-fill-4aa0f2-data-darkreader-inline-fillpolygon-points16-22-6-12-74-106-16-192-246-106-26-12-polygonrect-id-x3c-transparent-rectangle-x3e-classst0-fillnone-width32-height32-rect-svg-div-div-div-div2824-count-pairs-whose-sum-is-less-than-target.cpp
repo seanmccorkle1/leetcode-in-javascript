@@ -5,7 +5,7 @@
 class Solution {
     
     public:
-    int countPairs(std::vector<int> array, int target) {
+    int countPairs(std::vector<int>& array, int target) {
 
         std::sort(array.begin(), array.end());
         
