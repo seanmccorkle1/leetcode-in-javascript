@@ -1,9 +1,9 @@
-package main
+// package main
 
-import (
-	"fmt"
-	"sort"
-)
+// import (
+// 	"fmt"
+// 	"sort"
+// )
 
 func countPairs(array []int, target int) int {
 	
@@ -14,17 +14,23 @@ func countPairs(array []int, target int) int {
 	backIndex := len(array) - 1
 
 	for (leftIndex < backIndex) {
+
         if (array[leftIndex]+array[backIndex] < target) {
-			currNumOfPairs := backIndex - leftIndex
+		
+            currNumOfPairs := backIndex - leftIndex
 			numOfPairs += currNumOfPairs
 			leftIndex++
 		} else {
 			backIndex--
 		}
 	}
-
+    
 	return numOfPairs
 }
 
 // func main() {
-// 	array := []int{-6, 2
+// 	array := []int{-6, 2, 5, -2, -7, -1, 3}
+// 	target := -2
+// 	result := countPairs(array, target)
+// 	fmt.Println(result)
+// }
