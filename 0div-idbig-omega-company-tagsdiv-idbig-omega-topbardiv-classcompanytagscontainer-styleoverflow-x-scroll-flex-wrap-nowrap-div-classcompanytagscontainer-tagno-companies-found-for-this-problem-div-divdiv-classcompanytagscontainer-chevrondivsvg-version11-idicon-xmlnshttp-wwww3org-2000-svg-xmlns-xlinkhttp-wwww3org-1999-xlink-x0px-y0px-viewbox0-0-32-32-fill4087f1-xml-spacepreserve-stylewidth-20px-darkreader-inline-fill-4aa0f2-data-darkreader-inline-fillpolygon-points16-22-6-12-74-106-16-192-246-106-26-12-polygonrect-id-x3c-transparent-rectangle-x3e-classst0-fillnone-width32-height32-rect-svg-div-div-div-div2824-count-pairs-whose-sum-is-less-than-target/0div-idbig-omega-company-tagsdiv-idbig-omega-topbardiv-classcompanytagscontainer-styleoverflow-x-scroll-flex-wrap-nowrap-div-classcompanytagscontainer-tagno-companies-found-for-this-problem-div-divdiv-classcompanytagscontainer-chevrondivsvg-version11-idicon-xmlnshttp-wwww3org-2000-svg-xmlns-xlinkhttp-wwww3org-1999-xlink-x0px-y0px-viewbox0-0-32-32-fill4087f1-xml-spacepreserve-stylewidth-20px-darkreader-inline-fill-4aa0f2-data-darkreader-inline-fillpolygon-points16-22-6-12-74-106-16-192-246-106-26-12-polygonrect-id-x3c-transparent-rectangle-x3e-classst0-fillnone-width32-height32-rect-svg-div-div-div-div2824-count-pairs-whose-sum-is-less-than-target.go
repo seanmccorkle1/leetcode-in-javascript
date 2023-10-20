@@ -16,7 +16,6 @@ func countPairs(array []int, target int) int {
 	for (leftIndex < backIndex) {
 
         if (array[leftIndex]+array[backIndex] < target) {
-		
             currNumOfPairs := backIndex - leftIndex
 			numOfPairs += currNumOfPairs
 			leftIndex++
