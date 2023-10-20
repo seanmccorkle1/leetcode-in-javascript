@@ -1,9 +1,9 @@
-// package main
+package main
 
-// import (
-// 	"fmt"
-// 	"sort"
-// )
+import (
+	"fmt"
+	"sort"
+)
 
 func countPairs(array []int, target int) int {
 	
