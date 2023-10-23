@@ -5,7 +5,7 @@ var isPowerOfFour = function (num) {
 //     }
     
     let twoLogExponent = Math.log2(num)
-    const exponentIsEven = (twoLogExponent % 2) == 0
+    const exponentIsEven = (twoLogExponent % 2) == 0 ? true:false
     
     if (exponentIsEven) {
         return true
