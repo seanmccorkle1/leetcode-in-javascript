@@ -12,6 +12,5 @@ var countVowelPermutation = function(n) {
             
             a = a_next, e = e_next, i = i_next, o = o_next, u = u_next;
         }
-        
-        return (a + e + i + o + u) % MOD;
-    }
+    return (a + e + i + o + u) % MOD;
+}
