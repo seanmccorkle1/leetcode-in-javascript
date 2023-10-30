@@ -1,7 +1,7 @@
 var sortByBits = function(array) {
-    return array.sort((a,b)=> giveOneBits(a) - giveOneBits(b) ||/*if its 0 - 0*/ a-b)
+    return array.sort((a,b)=> giveOneBits(a) - giveOneBits(b) /*if its 0 - 0*/    || a-b)
 }
-                      
+
 const giveOneBits = (num)=> {
     const oneBits  = num.toString(2).match(/1/g) ?? []
     return oneBits.length    
