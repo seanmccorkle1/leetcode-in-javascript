@@ -1,5 +1,5 @@
 var sortByBits = function(array) {
-    return array.sort((a,b)=> giveOneBits(a) - giveOneBits(b) || a-b)
+    return array.sort((a,b)=> giveOneBits(a) - giveOneBits(b) ||/*if its 0 - 0*/ a-b)
 }
                       
 const giveOneBits = (num)=> {
