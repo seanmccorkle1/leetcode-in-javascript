@@ -14,7 +14,7 @@ var findMode = function(root) {
         curNodeCount = 0, 
         maxCount = -Infinity;
     
-    var inorder = function(root) {
+     function inorder(root) {
         if (!root) {
             return
         }
