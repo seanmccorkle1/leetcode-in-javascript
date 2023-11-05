@@ -6,7 +6,8 @@ var getWinner = function(A, k) {
         if (A[i] > cur) {
             cur = A[i];
             win = 1;
-        } else {
+        } 
+        else if (A[i] <= cur) {
             win++;
         }
 
