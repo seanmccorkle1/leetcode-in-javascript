@@ -1,6 +1,6 @@
 
-var maximumElementAfterDecrementingAndRearranging = function (arr) {
+var maximumElementAfterDecrementingAndRearranging = function (array) {
     
-    arr.sort((a,b)=> a - b)
-    return arr.reduce((acc, num) => (acc = Math.min(acc + 1, num)), 0)
+    array.sort((a,b)=> a - b)
+    return array.reduce((acc, num) => (acc = Math.min(acc + 1, num)), 0)
 }
