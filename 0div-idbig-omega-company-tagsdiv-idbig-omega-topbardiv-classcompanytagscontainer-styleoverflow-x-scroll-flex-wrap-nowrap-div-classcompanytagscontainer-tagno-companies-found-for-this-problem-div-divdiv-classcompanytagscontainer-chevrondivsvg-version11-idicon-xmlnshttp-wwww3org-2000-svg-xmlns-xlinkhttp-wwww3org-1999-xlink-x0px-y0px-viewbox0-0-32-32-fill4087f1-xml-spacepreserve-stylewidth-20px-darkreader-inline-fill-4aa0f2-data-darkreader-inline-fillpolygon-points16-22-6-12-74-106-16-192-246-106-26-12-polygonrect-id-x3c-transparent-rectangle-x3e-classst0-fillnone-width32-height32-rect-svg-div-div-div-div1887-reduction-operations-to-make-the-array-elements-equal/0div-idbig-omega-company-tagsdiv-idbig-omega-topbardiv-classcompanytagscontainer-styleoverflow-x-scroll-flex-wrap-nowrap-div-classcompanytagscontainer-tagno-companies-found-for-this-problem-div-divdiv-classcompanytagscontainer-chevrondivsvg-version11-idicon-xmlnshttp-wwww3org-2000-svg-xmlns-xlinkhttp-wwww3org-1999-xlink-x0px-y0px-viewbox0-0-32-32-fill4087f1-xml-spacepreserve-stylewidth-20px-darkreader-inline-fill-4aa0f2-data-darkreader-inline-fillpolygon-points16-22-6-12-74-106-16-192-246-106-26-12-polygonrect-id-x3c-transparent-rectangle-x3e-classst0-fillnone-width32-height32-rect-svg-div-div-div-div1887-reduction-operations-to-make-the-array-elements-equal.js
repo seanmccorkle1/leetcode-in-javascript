@@ -4,7 +4,7 @@ var reductionOperations = function(nums) {
     const freq = new Array(50001).fill(0);
     
     for (let i = 0; i < n; i++) {
-        freq[nums[i]]++;
+        freq[nums[i]]++
     }
     
     let res = 0
