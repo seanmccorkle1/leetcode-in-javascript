@@ -22,7 +22,7 @@ var integerBreak = function (num) {
     
     // {2,2} instead of {3,1}
     if (remainder == 1){
-        return Math.pow(3, countOf3s - 1)  * 4
+        return (Math.pow(3, countOf3s - 1) ) * 4
     }
     if (remainder == 2){
         return Math.pow(3, countOf3s) * 2
@@ -33,7 +33,7 @@ var integerBreak = function (num) {
 
 console.log(integerBreak(10), 36, "10 is (3 + 3 + 4)| This sequence of integers, {3, 3, 4}, also gives the highest product, 36 | (3 × 3 × 4) = 36")
 
-console.log(integerBreak(11), 54, "(3 x 3 x 3 x 2) = (27 x 2) = 54")
+// console.log(integerBreak(11), 54, "(3 x 3 x 3 x 2) = (27 x 2) = 54")
 
 // integerBreak(2) // 1 + 1 = 2 | 1 × 1 = 1
 // integerBreak(3) // 2 x1 = 2 and 2+1 = 3
