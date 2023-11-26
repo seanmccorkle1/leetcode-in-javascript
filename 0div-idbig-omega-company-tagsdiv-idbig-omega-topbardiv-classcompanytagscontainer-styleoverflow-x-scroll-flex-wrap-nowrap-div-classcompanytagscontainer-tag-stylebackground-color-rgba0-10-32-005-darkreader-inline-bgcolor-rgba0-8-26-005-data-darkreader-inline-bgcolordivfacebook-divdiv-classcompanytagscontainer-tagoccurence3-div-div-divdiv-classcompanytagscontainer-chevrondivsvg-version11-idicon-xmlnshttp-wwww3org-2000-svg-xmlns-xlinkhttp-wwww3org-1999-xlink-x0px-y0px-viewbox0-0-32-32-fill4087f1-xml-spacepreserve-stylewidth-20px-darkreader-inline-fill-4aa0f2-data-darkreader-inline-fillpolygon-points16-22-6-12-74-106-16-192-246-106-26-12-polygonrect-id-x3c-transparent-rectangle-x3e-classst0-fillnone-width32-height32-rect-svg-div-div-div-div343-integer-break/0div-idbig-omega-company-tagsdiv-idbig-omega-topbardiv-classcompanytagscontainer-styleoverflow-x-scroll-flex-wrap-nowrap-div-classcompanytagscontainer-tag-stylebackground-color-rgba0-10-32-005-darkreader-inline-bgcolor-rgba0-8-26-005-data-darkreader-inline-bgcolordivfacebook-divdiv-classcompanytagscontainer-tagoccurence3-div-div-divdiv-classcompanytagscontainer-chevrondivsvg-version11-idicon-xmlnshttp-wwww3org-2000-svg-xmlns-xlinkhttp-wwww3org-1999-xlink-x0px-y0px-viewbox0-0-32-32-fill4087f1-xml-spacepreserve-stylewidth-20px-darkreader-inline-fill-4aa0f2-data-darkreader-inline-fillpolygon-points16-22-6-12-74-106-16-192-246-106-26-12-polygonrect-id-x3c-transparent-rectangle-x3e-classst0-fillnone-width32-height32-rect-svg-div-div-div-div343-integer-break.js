@@ -19,6 +19,8 @@ var integerBreak = function (num) {
         return Math.pow(3,countOf3s)
 
     }
+    
+    // {2,2} instead of {3,1}
     if (remainder == 1){
         return Math.pow(3, countOf3s - 1)  * 4
     }
