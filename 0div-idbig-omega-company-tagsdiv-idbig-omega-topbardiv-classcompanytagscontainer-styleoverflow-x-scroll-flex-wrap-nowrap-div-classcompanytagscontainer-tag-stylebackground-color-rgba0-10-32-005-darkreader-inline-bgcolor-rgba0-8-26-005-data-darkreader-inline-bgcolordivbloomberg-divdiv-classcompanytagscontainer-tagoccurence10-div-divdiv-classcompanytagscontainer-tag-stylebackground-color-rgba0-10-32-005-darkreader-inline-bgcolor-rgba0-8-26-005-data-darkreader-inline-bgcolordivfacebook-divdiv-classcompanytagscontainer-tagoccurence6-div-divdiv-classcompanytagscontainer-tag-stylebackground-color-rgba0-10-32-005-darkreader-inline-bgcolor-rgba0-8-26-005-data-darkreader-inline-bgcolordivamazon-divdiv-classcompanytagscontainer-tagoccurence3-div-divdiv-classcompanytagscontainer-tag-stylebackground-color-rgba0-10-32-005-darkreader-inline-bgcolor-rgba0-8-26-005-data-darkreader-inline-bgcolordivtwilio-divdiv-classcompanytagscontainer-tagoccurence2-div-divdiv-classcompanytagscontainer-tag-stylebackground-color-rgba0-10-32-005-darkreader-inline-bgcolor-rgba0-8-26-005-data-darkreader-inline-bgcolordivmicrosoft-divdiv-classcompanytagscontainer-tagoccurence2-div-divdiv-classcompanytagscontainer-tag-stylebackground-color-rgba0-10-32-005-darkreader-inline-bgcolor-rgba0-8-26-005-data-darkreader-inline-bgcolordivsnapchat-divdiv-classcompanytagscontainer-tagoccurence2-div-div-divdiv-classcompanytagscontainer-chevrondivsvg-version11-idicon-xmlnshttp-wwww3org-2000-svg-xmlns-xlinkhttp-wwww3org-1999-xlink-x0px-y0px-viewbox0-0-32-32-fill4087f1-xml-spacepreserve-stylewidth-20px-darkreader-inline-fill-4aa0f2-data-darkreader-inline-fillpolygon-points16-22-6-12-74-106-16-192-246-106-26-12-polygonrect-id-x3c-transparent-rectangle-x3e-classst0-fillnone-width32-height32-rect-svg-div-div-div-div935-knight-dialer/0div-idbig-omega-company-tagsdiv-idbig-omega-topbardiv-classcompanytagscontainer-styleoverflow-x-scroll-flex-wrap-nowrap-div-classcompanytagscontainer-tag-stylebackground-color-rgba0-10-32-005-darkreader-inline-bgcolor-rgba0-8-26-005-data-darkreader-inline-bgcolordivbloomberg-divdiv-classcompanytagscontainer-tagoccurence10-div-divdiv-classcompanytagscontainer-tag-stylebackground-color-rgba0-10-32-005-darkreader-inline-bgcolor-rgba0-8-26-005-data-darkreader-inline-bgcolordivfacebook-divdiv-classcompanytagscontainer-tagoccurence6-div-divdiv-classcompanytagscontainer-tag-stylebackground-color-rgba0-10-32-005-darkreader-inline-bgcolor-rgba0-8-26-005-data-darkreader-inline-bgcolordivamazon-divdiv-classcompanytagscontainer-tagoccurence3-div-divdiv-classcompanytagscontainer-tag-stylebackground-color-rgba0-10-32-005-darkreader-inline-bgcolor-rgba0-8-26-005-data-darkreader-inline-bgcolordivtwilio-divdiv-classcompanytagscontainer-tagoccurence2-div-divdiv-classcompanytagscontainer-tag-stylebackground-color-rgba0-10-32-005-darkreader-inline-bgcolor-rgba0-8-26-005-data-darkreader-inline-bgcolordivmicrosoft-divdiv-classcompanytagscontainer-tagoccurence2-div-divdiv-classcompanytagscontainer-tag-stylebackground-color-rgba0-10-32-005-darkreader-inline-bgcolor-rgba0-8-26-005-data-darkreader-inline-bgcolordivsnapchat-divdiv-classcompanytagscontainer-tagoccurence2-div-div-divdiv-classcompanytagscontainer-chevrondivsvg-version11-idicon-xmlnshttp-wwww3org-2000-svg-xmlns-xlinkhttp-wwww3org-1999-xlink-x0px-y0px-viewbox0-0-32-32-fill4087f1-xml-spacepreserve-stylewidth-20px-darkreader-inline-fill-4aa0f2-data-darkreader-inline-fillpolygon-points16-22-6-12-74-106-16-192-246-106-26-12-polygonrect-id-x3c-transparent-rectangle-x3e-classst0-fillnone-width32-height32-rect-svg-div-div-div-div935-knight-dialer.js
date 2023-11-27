@@ -22,7 +22,10 @@ var knightDialer = function (n) {
 
     for (let k=2; k<=n; k++) {
         for (let i=0; i<=9; i++) {
-            if (i===5) continue
+            if (i===5) {
+                continue
+            }
+
             cur[i] = cap(jumps[i].reduce((acc, c)=> {
                 return cap(acc + prev[c])
             }, 0))
