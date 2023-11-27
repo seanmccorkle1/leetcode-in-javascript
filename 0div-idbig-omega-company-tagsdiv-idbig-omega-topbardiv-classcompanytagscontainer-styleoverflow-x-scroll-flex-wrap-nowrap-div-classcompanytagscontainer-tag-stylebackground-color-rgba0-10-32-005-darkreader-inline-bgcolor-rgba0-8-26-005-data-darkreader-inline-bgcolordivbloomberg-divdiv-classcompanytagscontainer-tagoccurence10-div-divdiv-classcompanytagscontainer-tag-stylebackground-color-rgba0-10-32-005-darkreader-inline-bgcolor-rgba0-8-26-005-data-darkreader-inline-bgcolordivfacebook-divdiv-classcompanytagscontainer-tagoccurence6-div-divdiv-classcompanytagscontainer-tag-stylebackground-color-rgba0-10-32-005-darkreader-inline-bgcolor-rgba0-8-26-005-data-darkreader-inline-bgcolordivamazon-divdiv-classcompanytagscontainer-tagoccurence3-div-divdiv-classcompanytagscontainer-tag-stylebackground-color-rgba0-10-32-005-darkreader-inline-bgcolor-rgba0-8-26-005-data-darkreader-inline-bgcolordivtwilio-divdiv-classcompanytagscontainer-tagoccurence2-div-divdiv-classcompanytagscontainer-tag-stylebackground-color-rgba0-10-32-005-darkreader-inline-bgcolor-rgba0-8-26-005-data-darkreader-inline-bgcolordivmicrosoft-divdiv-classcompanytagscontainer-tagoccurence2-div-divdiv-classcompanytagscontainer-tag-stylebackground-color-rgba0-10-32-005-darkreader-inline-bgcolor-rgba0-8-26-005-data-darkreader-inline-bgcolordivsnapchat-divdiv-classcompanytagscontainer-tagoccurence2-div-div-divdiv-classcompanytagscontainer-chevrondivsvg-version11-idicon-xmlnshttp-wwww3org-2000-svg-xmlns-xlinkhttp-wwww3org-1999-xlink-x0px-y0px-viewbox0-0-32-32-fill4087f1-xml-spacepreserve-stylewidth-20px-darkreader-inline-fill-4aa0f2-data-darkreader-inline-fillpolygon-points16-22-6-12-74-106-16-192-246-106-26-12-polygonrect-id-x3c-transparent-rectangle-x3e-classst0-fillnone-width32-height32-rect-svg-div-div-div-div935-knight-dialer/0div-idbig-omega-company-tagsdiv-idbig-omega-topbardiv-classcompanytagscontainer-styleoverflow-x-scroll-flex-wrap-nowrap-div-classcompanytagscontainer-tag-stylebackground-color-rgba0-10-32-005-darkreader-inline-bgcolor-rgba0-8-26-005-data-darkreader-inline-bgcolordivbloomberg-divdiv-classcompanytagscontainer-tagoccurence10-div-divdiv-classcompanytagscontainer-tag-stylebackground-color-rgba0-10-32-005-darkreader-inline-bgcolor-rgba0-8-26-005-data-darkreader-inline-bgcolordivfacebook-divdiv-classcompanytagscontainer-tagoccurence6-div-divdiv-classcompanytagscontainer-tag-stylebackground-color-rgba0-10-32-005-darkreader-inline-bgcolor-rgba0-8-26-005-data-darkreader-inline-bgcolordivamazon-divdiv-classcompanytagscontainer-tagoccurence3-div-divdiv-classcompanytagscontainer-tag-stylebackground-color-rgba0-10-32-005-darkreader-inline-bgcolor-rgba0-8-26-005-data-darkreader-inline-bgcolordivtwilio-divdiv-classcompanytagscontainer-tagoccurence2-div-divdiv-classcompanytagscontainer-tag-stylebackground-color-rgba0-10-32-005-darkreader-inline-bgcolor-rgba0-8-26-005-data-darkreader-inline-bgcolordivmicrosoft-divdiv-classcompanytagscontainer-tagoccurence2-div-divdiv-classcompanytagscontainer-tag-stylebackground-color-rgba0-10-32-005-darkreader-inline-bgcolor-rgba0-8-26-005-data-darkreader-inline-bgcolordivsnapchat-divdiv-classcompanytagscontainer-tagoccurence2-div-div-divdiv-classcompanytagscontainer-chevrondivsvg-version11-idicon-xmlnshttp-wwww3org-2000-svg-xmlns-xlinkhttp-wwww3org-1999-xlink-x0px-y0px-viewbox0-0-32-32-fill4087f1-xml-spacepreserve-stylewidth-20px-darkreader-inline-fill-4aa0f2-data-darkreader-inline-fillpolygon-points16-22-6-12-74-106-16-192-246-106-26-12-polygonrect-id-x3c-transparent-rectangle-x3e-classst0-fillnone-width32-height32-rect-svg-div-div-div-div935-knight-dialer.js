@@ -1,5 +1,10 @@
 var knightDialer = function (n) {
-    const cap = (x) => x % (10 ** 9 + 7)
+
+    function cap(x) {
+        let mod = 1e9 + 7
+        return x % mod
+    }
+
     const jumps = {
         1: [6, 8],
         2: [7, 9],
