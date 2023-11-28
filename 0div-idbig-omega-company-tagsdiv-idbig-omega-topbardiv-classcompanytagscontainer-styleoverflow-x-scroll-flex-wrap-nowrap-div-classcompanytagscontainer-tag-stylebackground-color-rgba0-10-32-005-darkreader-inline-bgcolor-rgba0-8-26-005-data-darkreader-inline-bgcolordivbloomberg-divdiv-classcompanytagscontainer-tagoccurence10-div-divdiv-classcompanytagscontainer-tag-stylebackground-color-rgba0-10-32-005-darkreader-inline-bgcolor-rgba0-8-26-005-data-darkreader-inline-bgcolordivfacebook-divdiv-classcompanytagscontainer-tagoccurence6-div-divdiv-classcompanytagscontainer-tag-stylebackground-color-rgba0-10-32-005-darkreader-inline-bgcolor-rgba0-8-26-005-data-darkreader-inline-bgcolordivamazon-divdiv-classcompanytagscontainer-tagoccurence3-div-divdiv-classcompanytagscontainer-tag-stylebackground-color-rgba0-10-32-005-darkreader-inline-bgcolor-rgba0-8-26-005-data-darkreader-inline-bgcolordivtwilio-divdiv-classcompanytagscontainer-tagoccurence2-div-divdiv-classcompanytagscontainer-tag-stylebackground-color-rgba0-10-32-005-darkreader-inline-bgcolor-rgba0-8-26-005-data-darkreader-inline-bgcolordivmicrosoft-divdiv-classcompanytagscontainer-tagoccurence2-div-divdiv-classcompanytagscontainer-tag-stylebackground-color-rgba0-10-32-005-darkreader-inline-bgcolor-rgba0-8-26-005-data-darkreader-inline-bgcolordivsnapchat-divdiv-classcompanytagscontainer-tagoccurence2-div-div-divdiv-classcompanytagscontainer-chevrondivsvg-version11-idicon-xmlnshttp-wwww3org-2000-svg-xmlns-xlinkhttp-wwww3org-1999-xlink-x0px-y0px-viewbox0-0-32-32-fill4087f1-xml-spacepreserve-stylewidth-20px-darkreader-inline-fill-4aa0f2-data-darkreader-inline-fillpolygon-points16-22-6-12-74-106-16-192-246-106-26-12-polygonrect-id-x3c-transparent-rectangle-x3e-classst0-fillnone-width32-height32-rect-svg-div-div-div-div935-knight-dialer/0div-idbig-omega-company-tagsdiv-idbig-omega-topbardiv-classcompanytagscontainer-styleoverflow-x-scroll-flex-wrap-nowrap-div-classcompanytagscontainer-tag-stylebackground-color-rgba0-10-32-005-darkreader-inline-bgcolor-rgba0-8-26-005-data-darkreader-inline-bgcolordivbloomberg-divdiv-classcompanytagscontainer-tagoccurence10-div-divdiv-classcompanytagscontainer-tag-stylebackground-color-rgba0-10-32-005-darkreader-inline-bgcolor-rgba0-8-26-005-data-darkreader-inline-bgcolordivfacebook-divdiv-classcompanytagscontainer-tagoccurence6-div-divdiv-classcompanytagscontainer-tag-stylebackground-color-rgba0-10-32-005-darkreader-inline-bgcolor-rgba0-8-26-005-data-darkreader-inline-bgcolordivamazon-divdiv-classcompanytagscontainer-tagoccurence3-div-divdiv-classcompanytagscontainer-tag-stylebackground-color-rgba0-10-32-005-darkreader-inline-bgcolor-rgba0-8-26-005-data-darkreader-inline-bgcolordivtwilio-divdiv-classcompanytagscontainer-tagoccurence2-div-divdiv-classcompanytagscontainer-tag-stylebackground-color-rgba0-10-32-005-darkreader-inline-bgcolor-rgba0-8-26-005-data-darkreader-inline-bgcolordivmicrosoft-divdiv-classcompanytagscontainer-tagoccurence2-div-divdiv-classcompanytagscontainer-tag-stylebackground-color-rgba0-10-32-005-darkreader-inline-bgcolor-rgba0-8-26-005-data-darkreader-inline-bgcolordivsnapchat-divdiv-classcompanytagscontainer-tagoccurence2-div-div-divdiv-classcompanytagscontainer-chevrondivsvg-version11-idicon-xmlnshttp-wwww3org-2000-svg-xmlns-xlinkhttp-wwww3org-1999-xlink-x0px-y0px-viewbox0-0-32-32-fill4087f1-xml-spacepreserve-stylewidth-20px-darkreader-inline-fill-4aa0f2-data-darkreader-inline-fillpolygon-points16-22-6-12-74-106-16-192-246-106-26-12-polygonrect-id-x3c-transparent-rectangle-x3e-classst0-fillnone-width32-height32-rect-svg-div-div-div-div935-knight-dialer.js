@@ -4,10 +4,10 @@ var knightDialer = function (n) {
         let mod = 1e9 + 7
         return x % mod
     }
-
+    
     const jumps = {
-        1: [6, 8],
-        2: [7, 9],
+        "1": [6, 8],
+        "2": [7, 9],
         3: [4, 8],
         4: [3, 9, 0],
         6: [1, 7, 0],
