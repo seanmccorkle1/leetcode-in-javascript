@@ -1,9 +1,9 @@
-var knightDialer = function (n) {
+function cap(x) {
+    let mod = 1e9 + 7
+    return x % mod
+}
 
-    function cap(x) {
-        let mod = 1e9 + 7
-        return x % mod
-    }
+var knightDialer = function (n) {
     
     const jumps = {
         "1": [6, 8],
@@ -19,13 +19,15 @@ var knightDialer = function (n) {
 
     let prev = Array.from(Array(10), _=>1)
     let cur = Array.from(Array(10), _=>0)
-
+    
     for (let k=2; k<=n; k++) {
+        
         for (let i=0; i<=9; i++) {
+            
             if (i===5) {
                 continue
             }
-
+            
             cur[i] = cap(jumps[i].reduce((acc, c)=> {
                 return cap(acc + prev[c])
             }, 0))
