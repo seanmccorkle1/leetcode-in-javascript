@@ -8,7 +8,7 @@ var findSpecialInteger = function (array) {
         return array[1]
     }
 
-    const quarter = ~~(array.length / 4)
+    const quarter = Math.floor(array.length / 4)
 
     array.length
     array
